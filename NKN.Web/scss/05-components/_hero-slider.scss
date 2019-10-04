@@ -1,0 +1,20 @@
+//----------  hero slider  ----------
+.hero-banner-slider {
+	@include base-float;
+	.item {
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 915px;
+	}
+	.wrapper {
+		align-items: flex-end;
+		display: flex;
+	}
+}
+
+.hero-slider-text-holder {
+	background-color: $white;
+	float: left;
+	width: 620px;
+}

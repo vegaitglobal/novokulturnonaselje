@@ -1,0 +1,14 @@
+//----------  forms  ----------
+input,
+textarea {
+	@include placeholder {
+		color: $black;
+	}
+	background: $white;
+	border-radius: 0;
+	box-shadow: none;
+	color: $black;
+	font-family: $font-default;
+	height: 25px;
+	padding: 0 10px;
+}

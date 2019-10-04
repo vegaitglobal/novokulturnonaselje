@@ -1,0 +1,4 @@
+This project uses gulp to compile scss into css.
+DO NOT change this CSS file, because it will be overwritten when scss is compiled. 
+
+Thanks
