@@ -1,0 +1,13 @@
+//----------  four highlighted block  ----------
+.four-highlighted-block {
+	@include base-float;
+	.cols-wrap {
+		display: flex;
+	}
+	.col {
+		width: 25%;
+	}
+	.image-hover {
+		display: none;
+	}
+}
