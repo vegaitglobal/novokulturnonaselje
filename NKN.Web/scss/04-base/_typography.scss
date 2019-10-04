@@ -1,0 +1,9 @@
+//----------  typography  ----------
+
+// icon font
+[class*='font-'] {
+	display: inline-block;
+	font-size: 30px;
+	color: $black;
+	line-height: 1;
+}

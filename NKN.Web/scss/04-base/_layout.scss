@@ -1,0 +1,27 @@
+//----------  layout  ----------
+html, body {
+	@include font-smoothing(antialiased);
+	height: 100%;
+}
+
+body {
+	font-family: $font-default;
+	font-size: 14px;
+}
+
+.container {
+	@include base-float;
+	@media only screen and (max-width: 319px) {
+		width: 320px;
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 960px;
+	width: 100%;
+}
+
+.content {
+	@include base-float;
+}
