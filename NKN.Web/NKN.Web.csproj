@@ -45,8 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005">
       <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ClientDependency.Core, Version=1.9.7.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\ClientDependency.1.9.7\lib\net45\ClientDependency.Core.dll</HintPath>
@@ -435,8 +436,9 @@
       <HintPath>..\packages\Umbraco.ModelsBuilder.8.1.0\lib\net472\Umbraco.ModelsBuilder.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Umbraco.ModelsBuilder.Api, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Umbraco.ModelsBuilder.Api, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\Umbraco.ModelsBuilder.Api.8.1.0\lib\net472\Umbraco.ModelsBuilder.Api.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\UmbracoCms.Web.8.1.5\lib\net472\Umbraco.Web.dll</HintPath>
@@ -489,7 +491,6 @@
     <None Include="config\imageprocessor\cache.config" />
     <None Include="config\imageprocessor\processing.config" />
     <None Include="config\imageprocessor\security.config" />
-    <Content Include="Config\umbracoSettings.config" />
     <None Include="Config\Lang\cs-CZ.user.xml" />
     <None Include="Config\Lang\da-DK.user.xml" />
     <None Include="Config\Lang\de-DE.user.xml" />
@@ -511,6 +512,7 @@
     <None Include="Config\serilog.config" />
     <None Include="Config\serilog.user.config" />
     <None Include="Config\tinyMceConfig.config" />
+    <None Include="Config\umbracoSettings.config" />
     <None Include="Media\Web.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">

@@ -46,13 +46,6 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
-		/// Bora Bora
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("boraBora")]
-		public string BoraBora => this.Value<string>("boraBora");
-
-		///<summary>
 		/// Copyright Text: The site copyright text.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
