@@ -489,6 +489,7 @@
     <None Include="config\imageprocessor\cache.config" />
     <None Include="config\imageprocessor\processing.config" />
     <None Include="config\imageprocessor\security.config" />
+    <Content Include="Config\umbracoSettings.config" />
     <None Include="Config\Lang\cs-CZ.user.xml" />
     <None Include="Config\Lang\da-DK.user.xml" />
     <None Include="Config\Lang\de-DE.user.xml" />
@@ -510,7 +511,6 @@
     <None Include="Config\serilog.config" />
     <None Include="Config\serilog.user.config" />
     <None Include="Config\tinyMceConfig.config" />
-    <None Include="Config\umbracoSettings.config" />
     <None Include="Media\Web.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">

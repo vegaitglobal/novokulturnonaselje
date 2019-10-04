@@ -2,8 +2,9 @@
     <div class="umb-dialog-body">
         
         <umb-pane>
-
-            <umb-loader ng-show="busy"></umb-loader>
+            <div class="umb-loader-wrapper" ng-show="busy">
+                <div class="umb-loader"></div>
+            </div>
 
             <p class="abstract">
                 <localize key="defaultdialogs_recycleBinWarning">When items are deleted from the recycle bin, they will be gone forever</localize>.
