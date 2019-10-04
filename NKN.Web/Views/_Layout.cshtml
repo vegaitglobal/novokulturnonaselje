@@ -1,0 +1,27 @@
+﻿@inherits UmbracoViewPage<PageViewModel>
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	@{
+		Html.RenderAction<LayoutController>(c => nameof(c.MetaTags), new { viewModel = Model.MetaTags });
+	}
+</head>
+<body>
+@{
+	Html.RenderAction<LayoutController>(c => nameof(c.Header), new { viewModel = Model.Header });
+}
+<div>
+	@RenderBody()
+</div>
+@{
+	Html.RenderAction<LayoutController>(c => nameof(c.Footer), new { viewModel = Model.Footer });
+}
+</body>
+</html>

@@ -1,0 +1,5 @@
+﻿@inherits UmbracoViewPage<SearchResultsViewModel>
+
+@{
+	Html.RenderAction<SearchListingController>(c => nameof(c.Search), new { query = Model.Query, page = Model.Page, itemsPerPage = Model.ItemsPerPage });
+}

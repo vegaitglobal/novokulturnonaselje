@@ -1,0 +1,25 @@
+﻿@using NKN.Core.ViewModels
+@inherits UmbracoViewPage<NKN.Core.ViewModels.XMLSitemapViewModel>
+@{
+	Layout = null;
+	Response.ContentType = "text/xml";
+}<?xml version='1.0' encoding='UTF-8' ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+	@foreach (XMLSitemapItemViewModel item in Model.Items)
+	{
+		<url>
+			<loc>@item.Url</loc>
+			<lastmod>@($"{item.ChangeDate:s}Z")</lastmod>
+			@if (!string.IsNullOrWhiteSpace(item.ChangeFrequency))
+			{
+				<changefreq>@item.ChangeFrequency</changefreq>
+			}
+			@if (!string.IsNullOrWhiteSpace(item.Priority))
+			{
+				<priority>@item.Priority</priority>
+			}
+		</url>
+	}
+</urlset>
