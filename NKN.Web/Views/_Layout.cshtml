@@ -14,14 +14,16 @@
 	}
 </head>
 <body>
-@{
-	Html.RenderAction<LayoutController>(c => nameof(c.Header), new { viewModel = Model.Header });
-}
-<div>
-	@RenderBody()
-</div>
-@{
-	Html.RenderAction<LayoutController>(c => nameof(c.Footer), new { viewModel = Model.Footer });
-}
+	<div class="container">
+		@{
+			Html.RenderAction<LayoutController>(c => nameof(c.Header), new { viewModel = Model.Header });
+		}
+		<div class="content">
+			@RenderBody()
+		</div>
+		@{
+			Html.RenderAction<LayoutController>(c => nameof(c.Footer), new { viewModel = Model.Footer });
+		}
+	</div>
 </body>
 </html>
