@@ -12,6 +12,8 @@
 	@{
 		Html.RenderAction<LayoutController>(c => nameof(c.MetaTags), new { viewModel = Model.MetaTags });
 	}
+
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 	<div class="container">
