@@ -8,30 +8,30 @@
 
 <html>
 <head>
-	<meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="width=device-width"/>
 	@{
-		Html.RenderAction<LayoutController>(c => nameof(c.MetaTags), new { viewModel = Model.MetaTags });
+		Html.RenderAction<LayoutController>(c => nameof(c.MetaTags), new {viewModel = Model.MetaTags});
 	}
 
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-	<div class="container">
-		@{
-			Html.RenderAction<LayoutController>(c => nameof(c.Header), new { viewModel = Model.Header });
-		}
-		<div class="content">
-			@RenderBody()
-		</div>
-		@{
-			Html.RenderAction<LayoutController>(c => nameof(c.Footer), new { viewModel = Model.Footer });
-		}
+<div class="container">
+	@{
+		Html.RenderAction<LayoutController>(c => nameof(c.Header), new {viewModel = Model.Header});
+	}
+	<div class="content">
+		@RenderBody()
 	</div>
+	@{
+		Html.RenderAction<LayoutController>(c => nameof(c.Footer), new {viewModel = Model.Footer});
+	}
+</div>
 
-	<!-- javascript -->
-	<script type="text/javascript" src="assets/scripts/libs/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="assets/scripts/libs/slick.min.js"></script>
-	<script type="text/javascript" src="assets/scripts/functions.js"></script>
-	<script type="text/javascript" src="assets/scripts/default.js"></script>
+<!-- javascript -->
+<script type="text/javascript" src="assets/scripts/libs/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="assets/scripts/libs/slick.min.js"></script>
+<script type="text/javascript" src="assets/scripts/functions.js"></script>
+<script type="text/javascript" src="assets/scripts/default.js"></script>
 </body>
 </html>

@@ -4,17 +4,17 @@ using NKN.Core.Models;
 
 namespace NKN.Core.ViewModels.Partials.Listing
 {
-	public class ListingViewModel<T>
-	{
-		public ListingViewModel(IReadOnlyPagedCollection<T> pagedCollection)
-		{
-			if (pagedCollection == null) throw new ArgumentNullException(nameof(pagedCollection));
+    public class ListingViewModel<T>
+    {
+        public ListingViewModel(IReadOnlyPagedCollection<T> pagedCollection)
+        {
+            if (pagedCollection == null) throw new ArgumentNullException(nameof(pagedCollection));
 
-			Items = pagedCollection.Items;
-			Pagination = new PaginationViewModel(pagedCollection.Pagination);
-		}
+            Items = pagedCollection.Items;
+            Pagination = new PaginationViewModel(pagedCollection.Pagination);
+        }
 
-		public IReadOnlyList<T> Items { get; }
-		public PaginationViewModel Pagination { get; }
-	}
+        public IReadOnlyList<T> Items { get; }
+        public PaginationViewModel Pagination { get; }
+    }
 }

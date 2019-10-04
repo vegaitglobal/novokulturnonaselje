@@ -4,12 +4,16 @@ using NKN.Models.Generated;
 
 namespace NKN.Core.Extensions
 {
-	public static class UmbracoHelperExtensions
-	{
-		public static ISiteContext CreateSiteContext(this UmbracoHelper helper)
-			=> new SiteContext(helper);
+    public static class UmbracoHelperExtensions
+    {
+        public static ISiteContext CreateSiteContext(this UmbracoHelper helper)
+        {
+            return new SiteContext(helper);
+        }
 
-		public static IPageContext<T> CreatePageContext<T>(this UmbracoHelper helper, T page) where T : class, IPage
-			=> new PageContext<T>(page, helper);
-	}
+        public static IPageContext<T> CreatePageContext<T>(this UmbracoHelper helper, T page) where T : class, IPage
+        {
+            return new PageContext<T>(page, helper);
+        }
+    }
 }

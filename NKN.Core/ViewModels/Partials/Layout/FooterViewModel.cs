@@ -3,15 +3,15 @@ using NKN.Models.Generated;
 
 namespace NKN.Core.ViewModels.Partials.Layout
 {
-	public class FooterViewModel
-	{
-		public FooterViewModel(IFooter footer)
-		{
-			if (footer == null) throw new ArgumentNullException(nameof(footer));
+    public class FooterViewModel
+    {
+        public FooterViewModel(IFooter footer)
+        {
+            if (footer == null) throw new ArgumentNullException(nameof(footer));
 
-			CopyrightText = footer.CopyrightText;
-		}
+            CopyrightText = footer.CopyrightText;
+        }
 
-		public string CopyrightText { get; }
-	}
+        public string CopyrightText { get; }
+    }
 }

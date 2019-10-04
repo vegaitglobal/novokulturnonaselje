@@ -2,7 +2,7 @@
 
 namespace NKN.Models.Generated
 {
-	public partial interface IPage : ISeo
-	{
-	}
+    public partial interface IPage : ISeo
+    {
+    }
 }

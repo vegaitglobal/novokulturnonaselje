@@ -43,4 +43,4 @@
             "markup": "<blockquote>#value#</blockquote>"
         }
     }
-]
+];
