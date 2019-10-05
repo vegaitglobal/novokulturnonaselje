@@ -270,13 +270,17 @@
     <Compile Include="Attributes\ExternalRedirectAttribute.cs" />
     <Compile Include="Components\ApplicationConfigurationComponent.cs" />
     <Compile Include="Composers\SearchComposer.cs" />
+    <Compile Include="Contexts\INestedContentContext.cs" />
     <Compile Include="Contexts\IPageContext.cs" />
     <Compile Include="Contexts\ISeoContext.cs" />
     <Compile Include="Contexts\ISiteContext.cs" />
+    <Compile Include="Contexts\NestedContentContext.cs" />
     <Compile Include="Contexts\PageContext.cs" />
     <Compile Include="Contexts\SeoContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
+    <Compile Include="Controllers\RenderMvc\ContactController.cs" />
+    <Compile Include="ViewModels\Pages\ContactViewModel.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Controllers\RenderMvc\GalleryController.cs" />
     <Compile Include="Controllers\RenderMvc\HomeController.cs" />
@@ -310,6 +314,8 @@
     <Compile Include="ViewModels\Pages\HomeViewModel.cs" />
     <Compile Include="ViewModels\Pages\PageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\WriteUsViewModel.cs" />
     <Compile Include="ViewModels\Pages\XMLSitemapViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\HeaderViewModel.cs" />
