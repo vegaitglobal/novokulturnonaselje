@@ -10,6 +10,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
     {
         public FourHighlightedItemsBlockViewModel(INestedContentContext<FourHighlightedItemsBlock> context)
         {
+            Title = context.NestedContent.Title;
             HighlightedItems = context.NestedContent.HighlightedItems
                 .Select(hi => context.WithNestedContent(hi).AsViewModel<HighlightedItemViewModel>())
                 .ToList();

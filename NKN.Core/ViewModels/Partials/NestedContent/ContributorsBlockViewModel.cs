@@ -9,10 +9,16 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
     {
         public ContributorsBlockViewModel(INestedContentContext<ContributorsBlock> context)
         {
-            Contributors = context.NestedContent.Contributors?.OfType<FriendOrganization>();
+            Title = context.NestedContent.Title;
+            Contributors = context.NestedContent.Contributors?.OfType<FriendOrganization>().Select(model => new FriendOrganizationViewModel(model));
+            ShowSocialLinks = context.NestedContent.ShowSocialLinks;
+            ShowContributorTitles = context.NestedContent.ShowContributorTitles;
         }
 
-        public IEnumerable<FriendOrganization> Contributors { get; set; }
+        public string Title { get; set; }
+        public IEnumerable<FriendOrganizationViewModel> Contributors { get; set; }
+        public bool ShowSocialLinks { get; set; }
+        public bool ShowContributorTitles { get; set; }
 
     }
 }

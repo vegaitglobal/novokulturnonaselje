@@ -522,6 +522,7 @@
     <Content Include="Views\Partials\NestedContent\_HeroBannerSlider.cshtml" />
     <Content Include="Views\Partials\NestedContent\_FourHighlightedItemsBlock.cshtml" />
     <Content Include="Views\Partials\NestedContent\_ContributorsBlock.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_MissionCarouselBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

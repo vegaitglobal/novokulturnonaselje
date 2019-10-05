@@ -1,43 +1,52 @@
 ﻿@inherits UmbracoViewPage<ContactViewModel>
 
-<div class="item" style="background-image: url(@Model.BannerImage.Url)">
-	<h1>@Model.PageTitle</h1>
-</div>
-
-<div>
-	<img src="@Model.Image.Url" alt="@Model.Image.AlternateText" />
-	@Html.Raw(@Model.ContactInfo)
-</div>
-
-<section class="contact-form">
+<section class="hero-banner" style="background-image: url(@Model.BannerImage.Url)">
 	<div class="wrapper">
-		<div class="contact-form-wrap">
-			<h2>@Model.WriteUs.Title</h2>
-			<form action="#">
-				<fieldset>
-					<div class="input-wrap">
-						<input type="text" id="contactName" placeholder="@Model.WriteUs.FullName" />
-						<label for="contactName" class="sr-only">@Model.WriteUs.FullName</label>
-					</div>
-					<div class="input-wrap">
-						<input type="text" id="contactEmail" placeholder="@Model.WriteUs.Email" />
-						<label for="contactEmail" class="sr-only">@Model.WriteUs.Email</label>
-					</div>
-					<div class="input-wrap input-wrap-fullwidth">
-						<textarea id="contactMessage" placeholder="@Model.WriteUs.Message"></textarea>
-						<label for="contactMessage" class="sr-only">@Model.WriteUs.Message</label>
-					</div>
-					<div class="input-submit-wrap">
-						<button type="submit" class="btn">@Model.WriteUs.SubmitButtonText</button>
-					</div>
-				</fieldset>
-			</form>
+		<h1 class="page-title">@Model.PageTitle</h1>
+	</div>
+</section>
+
+<section class="contact-content">
+	<div class="wrapper">
+		<div class="left-col">
+			<div class="image-holder">
+				<img src="@Model.Image.Url" alt="@Model.Image.AlternateText" />
+			</div>
+			<div class="rte-content">
+				@Html.Raw(@Model.ContactInfo)
+			</div>
+		</div>
+		<div class="right-col">
+			<div class="contact-form-wrap">
+				<h2>@Model.WriteUs.Title</h2>
+				<form action="#">
+					<fieldset>
+						<div class="fieldset-inner">
+							<div class="input-wrap">
+								<input type="text" id="contactName" placeholder="@Model.WriteUs.FullName" />
+								<label for="contactName" class="sr-only">@Model.WriteUs.FullName</label>
+							</div>
+							<div class="input-wrap">
+								<input type="text" id="contactEmail" placeholder="@Model.WriteUs.Email" />
+								<label for="contactEmail" class="sr-only">@Model.WriteUs.Email</label>
+							</div>
+							<div class="input-wrap input-wrap-fullwidth">
+								<textarea id="contactMessage" placeholder="@Model.WriteUs.Message"></textarea>
+								<label for="contactMessage" class="sr-only">@Model.WriteUs.Message</label>
+							</div>
+							<div class="input-submit-wrap">
+								<button type="submit" class="btn">@Model.WriteUs.SubmitButtonText</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
 		</div>
 	</div>
 </section>
 
 
-<section class="hero-banner" style="background-image: url(assets/img/content/hero-banner.png);">
+<!-- <section class="hero-banner" style="background-image: url(assets/img/content/hero-banner.png);">
 	<div class="wrapper">
 		<h1 class="page-title">O nama</h1>
 	</div>
@@ -81,10 +90,10 @@
 			<span class="desc">posetilaca</span>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <!-- the same as for the homepage -->
-<section class="four-highlighted-block">
+<!-- <section class="four-highlighted-block">
 	<div class="wrapper">
 		<h2 class="section-title">Pridruži nam se</h2>
 		<div class="cols-wrap">
@@ -355,4 +364,4 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->

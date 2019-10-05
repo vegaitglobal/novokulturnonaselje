@@ -1,26 +1,48 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContributorsBlockViewModel>
 
+@if (Model.Title != null)
+{
+	<div>@Model.Title</div>
+}
+
 @foreach (var contributor in Model.Contributors)
 {
-
 	if (@contributor.Image != null)
 	{
-		<div>@contributor.Image</div>
+		if (@contributor.InternalLink != null)
+		{
+			<a href="@contributor.InternalLink.Url">
+				<image src="@contributor.Image.Url" />
+			</a>
+		}
+		else if (@contributor.ExternalLink != null)
+		{
+			<a href="@contributor.ExternalLink">
+				<image src="@contributor.Image.Url" />
+			</a>
+		}
+		else
+		{
+			<image src="@contributor.Image.Url" />
+		}
 	}
-	if (@contributor.Title != null)
+	if (@contributor.Title != null && Model.ShowContributorTitles)
 	{
 		<div>@contributor.Title</div>
 	}
-	if (@contributor.FacebookLink != null)
+	if (Model.ShowSocialLinks)
 	{
-		<div>@contributor.FacebookLink</div>
-	}
-	if (@contributor.YouTubeLink != null)
-	{
-		<div>@contributor.YouTubeLink</div>
-	}
-	if (@contributor.InstagramLink != null)
-	{
-		<div>@contributor.InstagramLink</div>
+		if (@contributor.FacebookLink != null)
+		{
+			<div>@contributor.FacebookLink</div>
+		}
+		if (@contributor.YouTubeLink != null)
+		{
+			<div>@contributor.YouTubeLink</div>
+		}
+		if (@contributor.InstagramLink != null)
+		{
+			<div>@contributor.InstagramLink</div>
+		}
 	}
 }

@@ -1,0 +1,46 @@
+//----------  her banner  ----------
+.hero-banner {
+	@include base-float;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 555px;
+	overflow: hidden;
+	position: relative;
+	&::before {
+		background-color: $white;
+		bottom: -90px;
+		content: '';
+		height: 160px;
+		left: -30px;
+		position: absolute;
+		right: -30px;
+		transform: rotate(-4deg);
+	}
+	.page-title {
+		color: $white;
+		float: right;
+		font-family: $bold-cons;
+		font-size: 66px;
+		line-height: 1;
+		margin-top: 177px;
+		text-transform: uppercase;
+	}
+	@include breakpoint(desktop-small) {
+		height: 500px;
+	}
+	@include breakpoint(tablet) {
+		height: 430px;
+		.page-title {
+			font-size: 50px;
+			margin-top: 120px;
+		}
+	}
+	@include breakpoint(phone) {
+		height: 400px;
+		.page-title {
+			font-size: 40px;
+			margin-top: 115px;
+		}
+	}
+}
