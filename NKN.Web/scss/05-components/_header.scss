@@ -5,10 +5,10 @@
 	top: 0;
 	width: 100%;
 	z-index: 10;
-
 	.wrapper {
 		align-items: flex-start;
 		display: flex;
+		justify-content: flex-end;
 	}
 }
 
@@ -16,6 +16,7 @@
 	position: fixed;
 }
 
+//----------  logo  ----------
 .header-logo {
 	margin: 48px auto 0 0;
 	width: 198px;
@@ -25,11 +26,18 @@
 	.header-logo-black {
 		display: none;
 	}
+	@include breakpoint(desktop-small) {
+		width: 160px;
+	}
+	@include breakpoint(touch) {
+		margin: 19px auto 0 0;
+		width: 75px;
+	}
 }
 
 //----------  navigation  ----------
 .nav {
-	margin-top: 40px;
+	margin: 40px 0 0 auto;
 	.nav-link {
 		color: $white;
 		display: inline-block;
@@ -40,8 +48,48 @@
 		margin-left: 54px;
 		text-transform: uppercase;
 		transition: .3s ease;
-		&:hover {
+		&:first-child {
+			margin-left: 0;
+		}
+		&.active {
 			color: $green;
+		}
+	}
+	@include breakpoint(desktop) {
+		.nav-link:hover {
+			color: $green;
+		}
+	}
+	@include breakpoint(desktop-small) {
+		margin-top: 45px;
+		.nav-link {
+			font-size: 18px;
+			line-height: 22px;
+			margin-left: 35px;
+		}
+	}
+	@include breakpoint(touch) {
+		background-color: $white;
+		display: none;
+		left: 0;
+		margin-top: 0;
+		padding: 20px;
+		position: absolute;
+		top: calc(100% + 10px);
+		width: 100%;
+		.nav-link {
+			color: $grey-dark;
+			border-bottom: 1px solid $grey-lines;
+			display: block;
+			font-size: 16px;
+			letter-spacing: 0;
+			line-height: 20px;
+			margin: 0;
+			padding: 10px 0;
+			text-align: center;
+			&:last-child {
+				border-bottom: 0;
+			}
 		}
 	}
 }
@@ -52,19 +100,44 @@
 	.header-social-link {
 		display: inline-block;
 		margin-left: 11px;
-		&:hover .icon {
-			color: $green;
-		}
+
 	}
 	.icon {
 		color: $white;
 		font-size: 26px;
 		transition: color .3s ease;
 	}
+	@include breakpoint(desktop) {
+		.header-social-link:hover .icon {
+			color: $green;
+		}
+	}
+	@include breakpoint(desktop-small) {
+		margin: 42px 0 0 45px;
+	}
+	@include breakpoint(touch) {
+		margin: 16px 0 0;
+		.header-social-link {
+			margin-left: 10px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
 }
 
+//----------  hamburger  ----------
 .header-hamburger {
 	display: none;
+	margin: 19px -5px 0 16px;
+	.font-ico-hamburger {
+		color: $white;
+		font-size: 21px;
+		line-height: 1;
+	}
+	@include breakpoint(touch) {
+		display: block;
+	}
 }
 
 //----------  language switcher  ----------
@@ -91,9 +164,6 @@
 			top: 6px;
 			transform: rotate(-90deg);
 		}
-		&:hover {
-			color: $green;
-		}
 	}
 	.language-list {
 		background-color: $white;
@@ -106,15 +176,40 @@
 		right: 0;
 		top: calc(100% + 10px);
 		li {
-			border-bottom: 1px solid #d4d4d4;
+			border-bottom: 1px solid $grey-lines;
 			cursor: pointer;
 			padding: 5px 15px;
 			transition: color .3s ease;
 			&:last-child {
 				border-bottom: 0;
 			}
-			&:hover {
-				color: $green;
+		}
+	}
+	@include breakpoint(desktop) {
+		.selected-item:hover {
+			color: $green;
+		}
+		.language-list li:hover {
+			color: $green;
+		}
+	}
+	@include breakpoint(desktop-small) {
+		margin: 43px 0 0 40px;
+		.selected-item {
+			font-size: 18px;
+			line-height: 22px;
+			&::after {
+				font-size: 12px;
+			}
+		}
+	}
+	@include breakpoint(touch) {
+		margin: 20px 0 0 20px;
+		.selected-item {
+			font-size: 16px;
+			&::after {
+				font-size: 12px;
+				top: 3px;
 			}
 		}
 	}

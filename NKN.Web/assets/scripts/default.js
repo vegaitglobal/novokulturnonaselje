@@ -1,6 +1,7 @@
 $(function(){
 
 	functions.languageSwitcher();
+	functions.mobileNavInit();
 	functions.heroSlider();
 
 });

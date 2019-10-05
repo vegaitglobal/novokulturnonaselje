@@ -8,6 +8,8 @@
 		@media only screen and (min-width: 120px) and (max-width: 1024px) { @content; }
 	} @else if $value == 'desktop' {
 		@media only screen and (min-width: 1025px) { @content; }
+	} @else if $value == 'desktop-small' {
+		@media only screen and (min-width: 1025px) and (max-width: 1440px) { @content; }
 	} @else {
 		@media only screen and (max-width: $value) { @content; }
 	}

@@ -1,5 +1,16 @@
-<svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect y="9" width="25" height="3" rx="1.5" fill="white"/>
-<rect width="25" height="3" rx="1.5" fill="white"/>
-<rect y="18" width="25" height="3" rx="1.5" fill="white"/>
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 597 501.5"
+	 style="enable-background:new 0 0 597 501.5;" xml:space="preserve">
+<metadata>
+	<sfw>
+		<slices></slices>
+		<sliceSourceBounds  bottomLeftOrigin="true" height="501.5" width="597" x="0" y="0"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<path d="M35.8,214.9h525.4c19.8,0,35.8,16,35.8,35.8l0,0c0,19.8-16,35.8-35.8,35.8H35.8C16,286.6,0,270.5,0,250.7l0,0
+	C0,231,16,214.9,35.8,214.9z"/>
+<path d="M35.8,0h525.4C581,0,597,16,597,35.8l0,0c0,19.8-16,35.8-35.8,35.8H35.8C16,71.6,0,55.6,0,35.8l0,0C0,16,16,0,35.8,0z"/>
+<path d="M35.8,429.8h525.4c19.8,0,35.8,16,35.8,35.8l0,0c0,19.8-16,35.8-35.8,35.8H35.8C16,501.5,0,485.4,0,465.7l0,0
+	C0,445.9,16,429.8,35.8,429.8z"/>
 </svg>
