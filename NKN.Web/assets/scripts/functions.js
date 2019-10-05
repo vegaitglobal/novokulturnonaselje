@@ -1,3 +1,4 @@
+var mobileView = $(window).width() < 768;
 var mobileAndTabletView = $(window).width() < 1025;
 
 var functions = (function() {
@@ -71,9 +72,13 @@ var functions = (function() {
 
 		fourEqualHeight: function () {
 			if ($('.js-four-highlighted-block').length) {
-				$('.js-four-highlighted-block').each(function () {
-					helpers.equalHeight($(this).find('.image-holder'), 4);
-				});
+				if (!mobileView) {
+					$('.js-four-highlighted-block').each(function () {
+						helpers.equalHeight($(this).find('.image-holder'), 4);
+					});
+				} else {
+					$('.js-four-highlighted-block').find('.image-holder').css('height', '');
+				}
 			}
 		}
 	}

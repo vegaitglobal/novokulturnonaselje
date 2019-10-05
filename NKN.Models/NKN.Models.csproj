@@ -397,6 +397,7 @@
     <Compile Include="Generated\Contact.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ContributorsBlock.cs" />
     <Compile Include="Generated\ContributorsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -496,9 +497,6 @@
     <Compile Include="Generated\StatisticsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\TitleWithLogosBlock.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Generated\WriteUs.cs" />
     <Compile Include="Generated\WriteUs.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -515,6 +513,9 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DocumentTypes\Nodes\Items\NestedContent\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />

@@ -318,7 +318,9 @@
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
     <Compile Include="ViewModels\Pages\StandardContentPageViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\BannerSlideViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\ContributorsBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\FourHighlightedItemsBlockViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\FriendOrganizationViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\HeroBannerSliderViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\HighlightedItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
@@ -335,6 +337,7 @@
     <Compile Include="ViewModels\Partials\Listing\ListingViewModel.cs" />
     <Compile Include="ViewModels\Partials\Listing\PaginationViewModel.cs" />
     <Compile Include="ViewModels\Partials\Listing\SearchResultsItemViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\NCFriendOrganizationsCarouselViewModel.cs" />
     <Compile Include="ViewModels\Shared\AlternateLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\ImageViewModel.cs" />
     <Compile Include="ViewModels\Shared\LinkViewModel.cs" />
