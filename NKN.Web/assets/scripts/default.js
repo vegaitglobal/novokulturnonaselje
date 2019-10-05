@@ -10,7 +10,7 @@ $(function(){
 
 $(window).on('load', function() {
 
-	console.log('window loaded');
+	functions.fourEqualHeight();
 
 });
 
@@ -22,6 +22,6 @@ $(window).on('scroll', function () {
 
 $(window).resize(function(){
 
-	console.log('window resized');
+	functions.fourEqualHeight();
 
 });

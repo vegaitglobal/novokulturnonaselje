@@ -46,23 +46,78 @@ var functions = (function() {
 		},
 
 		heroSlider: function () {
-			$('.js-hero-banner-slider').slick({
-				infinite: true,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				dots: true,
-				arrows: false
-			});
+			if ($('.js-hero-banner-slider').length) {
+				$('.js-hero-banner-slider').slick({
+					infinite: true,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: true,
+					arrows: false
+				});
+			}
 		},
 
 		contributorsSlider: function () {
-			$('.js-contributors-slider').slick({
-				infinite: true,
-				slidesToShow: 4,
-				slidesToScroll: 4,
-				dots: true,
-				arrows: false
-			});
+			if ($('.js-contributors-slider').length) {
+				$('.js-contributors-slider').slick({
+					infinite: true,
+					slidesToShow: 4,
+					slidesToScroll: 4,
+					dots: true,
+					arrows: false
+				});
+			}
+		},
+
+		fourEqualHeight: function () {
+			if ($('.js-four-highlighted-block').length) {
+				$('.js-four-highlighted-block').each(function () {
+					helpers.equalHeight($(this).find('.image-holder'), 4);
+				});
+			}
+		}
+	}
+}());
+
+var helpers = (function() {
+	return {
+		equalHeight : function (arrayItems, count) {
+			if (arrayItems !== undefined && arrayItems.length > 0) {
+				arrayItems.height('');
+
+				let maxH = 0;
+
+				if (count) {
+					let arrays = [];
+					while (arrayItems.length > 0) {
+						arrays.push(arrayItems.splice(0, count));
+					}
+
+					for (let i = 0; i < arrays.length; i += 1) {
+						let data = arrays[i];
+						maxH = 0;
+						for (let j = 0; j < data.length; j += 1) {
+							let currentH = $(data[j]).outerHeight(true);
+							if (currentH > maxH) {
+								maxH = currentH;
+							}
+						}
+
+						for (let k = 0; k < data.length; k += 1) {
+							$(data[k]).css('height', maxH);
+						}
+					}
+				} else {
+					arrayItems.each(function () {
+						let currentH2 = $(this).outerHeight(true);
+						if (currentH2 > maxH) {
+							maxH = currentH2;
+						}
+					});
+
+					arrayItems.css('height', maxH);
+				}
+			}
 		}
 	}
 }());

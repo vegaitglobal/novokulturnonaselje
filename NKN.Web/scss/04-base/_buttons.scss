@@ -26,6 +26,13 @@ button {
 			color: $white;
 		}
 	}
+	@include breakpoint(tablet) {
+		font-size: 14px;
+		height: auto;
+		letter-spacing: 0;
+		line-height: 20px;
+		padding: 8px 15px;
+	}
 }
 
 .slick-dots {
