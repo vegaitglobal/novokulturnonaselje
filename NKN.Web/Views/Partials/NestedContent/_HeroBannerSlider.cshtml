@@ -1,0 +1,19 @@
+﻿@using NKN.Core.ViewModels.Partials.NestedContent
+@inherits UmbracoViewPage<HeroBannerSliderViewModel>
+
+<section class="hero-banner-slider js-hero-banner-slider">
+	@foreach (var slide in Model.Slides)
+	{
+		<div class="item" style="background-image: url(@slide.BackgroundImage.Url)">
+			<div class="wrapper">
+				<div class="hero-slider-text-holder">
+					<h2>@slide.Title</h2>
+					<p>
+						@slide.Text
+					</p>
+					<a href="@slide.Link.Url" class="btn">@slide.Link.Content</a>
+				</div>
+			</div>
+		</div>
+	}
+</section>
