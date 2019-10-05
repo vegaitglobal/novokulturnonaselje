@@ -322,6 +322,8 @@
     <Compile Include="ViewModels\Partials\NestedContent\HeroBannerSliderViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\HighlightedItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\MissionCarouselBlockViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\MissionItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\RCeblockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\WriteUsViewModel.cs" />
     <Compile Include="ViewModels\Pages\XMLSitemapViewModel.cs" />
