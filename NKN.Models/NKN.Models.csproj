@@ -379,6 +379,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocumentTypes\IDomainRoot.cs" />
+    <Compile Include="DocumentTypes\INestedContent.cs" />
     <Compile Include="DocumentTypes\ISeo.cs" />
     <Compile Include="Extensions\DomainRootExtensions.cs" />
     <Compile Include="Extensions\PublishedContentExtensions.cs" />
@@ -386,7 +387,16 @@
     <Compile Include="Extensions\PublishedContentPropertyExtensions.cs" />
     <Compile Include="Extensions\PublishedElementPropertyExtensions.cs" />
     <Compile Include="Extensions\SeoExtensions.cs" />
+    <Compile Include="Generated\AboutUs.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Banner.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\BannerSlide.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Contact.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Error404.generated.cs">
@@ -403,6 +413,15 @@
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\FourHighlightedItemsBlock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\FriendOrganization.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\FriendOrganizationsCarousel.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Friends.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Gallery.generated.cs">
@@ -441,7 +460,19 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Generated\NewsDetail.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\NewsLanding.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Page.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\RCeblock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Repository.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\SearchResults.generated.cs">
@@ -450,7 +481,17 @@
     <Compile Include="Generated\SiteSettings.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\StatisticItem.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\StatisticsBlock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\TitleWithLogosBlock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\WriteUs.cs" />
+    <Compile Include="Generated\WriteUs.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="MediaTypes\IMedia.cs" />
