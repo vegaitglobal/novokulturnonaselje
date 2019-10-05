@@ -3,7 +3,7 @@ using Umbraco.Core.Models.PublishedContent;
 
 namespace NKN.Models.Generated
 {
-    public partial class RCeblock : PublishedElementModel, INestedContent
+    public partial class StatisticItem : PublishedElementModel, INestedContent
     {
     }
 }
