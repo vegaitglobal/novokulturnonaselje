@@ -12,15 +12,17 @@
 	<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-	@{
-		Html.RenderAction<LayoutController>(c => nameof(c.Header), new { viewModel = Model.Header });
-	}
-	<div class="content">
-		@RenderBody()
+	<div class="container">
+		@{
+			Html.RenderAction<LayoutController>(c => nameof(c.Header), new { viewModel = Model.Header });
+		}
+		<div class="content">
+			@RenderBody()
+		</div>
+		@{
+			Html.RenderAction<LayoutController>(c => nameof(c.Footer), new { viewModel = Model.Footer });
+		}
 	</div>
-	@{
-		Html.RenderAction<LayoutController>(c => nameof(c.Footer), new { viewModel = Model.Footer });
-	}
 
 	<!-- javascript -->
 	<script type="text/javascript" src="/assets/scripts/libs/jquery-3.1.1.min.js"></script>
