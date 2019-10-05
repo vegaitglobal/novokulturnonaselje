@@ -473,6 +473,16 @@
     <Compile Include="Generated\Page.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ProjectCategories.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ProjectCategoryLanding.cs" />
+    <Compile Include="Generated\ProjectCategoryLanding.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ProjectDetail.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\RCeblock.cs" />
     <Compile Include="Generated\RCeblock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -495,6 +505,9 @@
     </Compile>
     <Compile Include="Generated\StatisticsBlock.cs" />
     <Compile Include="Generated\StatisticsBlock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VideoBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\WriteUs.cs" />

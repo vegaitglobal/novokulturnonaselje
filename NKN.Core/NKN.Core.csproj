@@ -280,6 +280,7 @@
     <Compile Include="Contexts\SiteContext.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\ContactController.cs" />
+    <Compile Include="Controllers\RenderMvc\ProjectCategoryLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\StandardContentPageController.cs" />
     <Compile Include="Controllers\Surface\Partials\NestedContentController.cs" />
     <Compile Include="ViewModels\Pages\ContactViewModel.cs" />
@@ -314,7 +315,10 @@
     <Compile Include="ViewModels\Pages\Error404ViewModel.cs" />
     <Compile Include="ViewModels\Pages\GalleryViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomeViewModel.cs" />
+    <Compile Include="ViewModels\Pages\NewsLandingViewModel.cs" />
     <Compile Include="ViewModels\Pages\PageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ProjectCategoryLandingViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ProjectDetailPreviewViewModel.cs" />
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
     <Compile Include="ViewModels\Pages\StandardContentPageViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\BannerSlideViewModel.cs" />

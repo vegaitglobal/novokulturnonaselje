@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web.Models;
 
 namespace NKN.Core.Extensions
@@ -63,6 +64,14 @@ namespace NKN.Core.Extensions
             string modelTypeName = $"{baseType.Namespace}.{nestedContentContext.NestedContent.GetType().Name}{classSuffix}";
 
             return (TNestedContentViewModel)Activator.CreateInstance(Assembly.GetAssembly(baseType).GetType(modelTypeName), nestedContentContext);
+        }
+
+        public static IEnumerable<T> ToViewModel<T>(this IEnumerable<IPublishedContent> items, string classSuffix = "ViewModel")
+            where T : class
+        {
+            if (items == null) return Enumerable.Empty<T>();
+
+            return items.Where(pc => pc != null).Select(pc => (T)Activator.CreateInstance(typeof(T), pc));
         }
     }
 }
