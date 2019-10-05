@@ -5,12 +5,14 @@ html, body {
 }
 
 body {
+	color: $grey-dark;
 	font-family: $font-default;
 	font-size: 14px;
 }
 
 .container {
 	@include base-float;
+	overflow: hidden;
 	@media only screen and (max-width: 319px) {
 		width: 320px;
 	}

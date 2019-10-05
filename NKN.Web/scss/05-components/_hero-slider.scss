@@ -1,20 +1,170 @@
 //----------  hero slider  ----------
 .hero-banner-slider {
 	@include base-float;
+	overflow: hidden;
+	position: relative;
+	&::after {
+		background-color: $white;
+		bottom: -100px;
+		content: '';
+		display: inline-block;
+		height: 208px;
+		left: -20px;
+		position: absolute;
+		right: -20px;
+		transform: rotate(-5deg);
+	}
 	.item {
 		background-position: center top;
 		background-repeat: no-repeat;
 		background-size: cover;
+		overflow: hidden;
 	}
 	.wrapper {
 		align-items: flex-end;
 		display: flex;
 		height: 915px;
 	}
+	.slick-dots {
+		bottom: 174px;
+		max-width: 700px;
+		position: absolute;
+		padding-right: 230px;
+		right: 50%;
+		text-align: right;
+		width: 100%;
+	}
+	@media only screen and (min-width: 1025px) and (max-width: 1660px) {
+		.wrapper {
+			height: 865px;
+		}
+		.slick-dots {
+			padding-right: 134px;
+		}
+	}
+	@include breakpoint(touch) {
+		padding-bottom: 30px;
+		&::after {
+			display: none;
+		}
+		.wrapper {
+			height: auto;
+		}
+		.item {
+			background-size: auto 540px;
+		}
+		.slick-dots {
+			bottom: auto;
+			margin-top: 26px;
+			max-width: none;
+			padding-right: 0;
+			position: relative;
+			right: auto;
+			text-align: center;
+			button {
+				background-color: #d6d6d6;
+			}
+			.slick-active button {
+				background-color: $green;
+			}
+		}
+	}
 }
 
 .hero-slider-text-holder {
 	background-color: $white;
 	float: left;
-	width: 620px;
+	margin-bottom: 256px;
+	max-height: 380px;
+	position: relative;
+	width: 470px;
+	&::before {
+		background-image: url('../img/home-slider-bg.png');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		bottom: -108px;
+		content: '';
+		left: -105px;
+		position: absolute;
+		right: -80px;
+		top: -48px;
+	}
+	h2 {
+		font-family: $bold-cons;
+		font-size: 72px;
+		letter-spacing: -1.5px;
+		line-height: 86px;
+		margin-bottom: 13px;
+		position: relative;
+		text-transform: uppercase;
+	}
+	p {
+		color: $grey;
+		font-size: 18px;
+		line-height: 28px;
+		margin-bottom: 32px;
+		position: relative;
+	}
+	.btn {
+		position: relative;
+	}
+	@media only screen and (min-width: 1025px) and (max-width: 1660px) {
+		margin-left: 90px;
+		&::before {
+			bottom: -88px;
+			left: -85px;
+			right: -90px;
+			top: -38px;
+		}
+		h2 {
+			font-size: 50px;
+			line-height: 56px;
+		}
+		p {
+			font-size: 16px;
+			line-height: 26px;
+			margin-bottom: 22px;
+		}
+	}
+	@include breakpoint(touch) {
+		background-color: rgba($white, 0);
+		margin: 340px 0 0;
+		padding: 0 10px;
+		text-align: center;
+		width: 100%;
+		&::before {
+			display: none;
+		}
+		h2 {
+			color: $white;
+			font-size: 48px;
+			line-height: 50px;
+			letter-spacing: -2px;
+			margin-bottom: 61px;
+			position: relative;
+			text-align: center;
+			&::before {
+				background: $white;
+				content: '';
+				height: 500px;
+				left: -80px;
+				position: absolute;
+				right: -80px;
+				top: calc(100% + 33px);
+				transform: rotate(6deg);
+			}
+		}
+		p {
+			font-size: 14px;
+			line-height: 28px;
+			margin-bottom: 28px;
+		}
+	}
+	@include breakpoint(tablet) {
+		h2::before {
+			top: calc(100% + 27px);
+			transform: rotate(4deg);
+		}
+	}
 }
