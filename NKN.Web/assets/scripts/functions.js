@@ -37,11 +37,11 @@ var functions = (function() {
 		},
 
 		stickyHeader: function () {
-			if ($(window).scrollTop() >= 300) {
-				$('.js-header').addClass('sticky-header');
+			if ($(window).scrollTop() >= 500) {
+				$('.js-header').addClass('header-sticky');
 			}
 			else {
-				$('.js-header').removeClass('sticky-header');
+				$('.js-header').removeClass('header-sticky');
 			}
 		},
 

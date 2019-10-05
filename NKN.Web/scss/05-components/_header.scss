@@ -13,7 +13,39 @@
 }
 
 .header-sticky {
-	position: fixed;
+	@include breakpoint(desktop) {
+		background-color: rgba(214, 214, 214, .95);
+		padding-bottom: 5px;
+		position: fixed;
+		.header-logo {
+			margin: 6px auto 0 0;
+			width: 76px;
+			.header-logo-black {
+				display: block;
+			}
+			.header-logo-white {
+				display: none;
+			}
+		}
+		.nav .nav-link,
+		.header-social .icon,
+		.language-switcher .selected-item {
+			color: $grey-dark;
+		}
+		.nav {
+			margin: 22px 0 0 auto;
+		}
+		.header-social {
+			margin: 24px 0 0 45px;
+		}
+		.language-switcher {
+			margin: 25px 0 0 53px;
+			.selected-item {
+				font-size: 22px;
+				padding-right: 17px;
+			}
+		}
+	}
 }
 
 //----------  logo  ----------
