@@ -317,6 +317,10 @@
     <Compile Include="ViewModels\Pages\PageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
     <Compile Include="ViewModels\Pages\StandardContentPageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\BannerSlideViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\FourHighlightedItemsBlockViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\HeroBannerSliderViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\HighlightedItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\RCeblockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\WriteUsViewModel.cs" />

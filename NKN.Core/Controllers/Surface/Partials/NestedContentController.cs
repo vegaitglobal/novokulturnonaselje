@@ -10,9 +10,7 @@ namespace NKN.Core.Controllers.Surface.Partials
         {
             string partialView = viewModel.GetType().Name.RemoveViewModelSuffix();
 
-            var pv = PartialView(partialView, viewModel);
-
-            return pv;
+            return PartialView(partialView, viewModel);
         }
     }
 }

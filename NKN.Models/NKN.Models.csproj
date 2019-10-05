@@ -390,6 +390,7 @@
     <Compile Include="Generated\Banner.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\BannerSlide.cs" />
     <Compile Include="Generated\BannerSlide.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -409,6 +410,7 @@
     <Compile Include="Generated\Footer.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\FourHighlightedItemsBlock.cs" />
     <Compile Include="Generated\FourHighlightedItemsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -427,9 +429,11 @@
     <Compile Include="Generated\Header.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\HeroBannerSlider.cs" />
     <Compile Include="Generated\HeroBannerSlider.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\HighlightedItem.cs" />
     <Compile Include="Generated\HighlightedItem.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
