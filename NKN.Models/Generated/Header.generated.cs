@@ -24,9 +24,21 @@ namespace NKN.Models.Generated
 	/// <summary>Header</summary>
 	public partial interface IHeader : IPublishedContent
 	{
+		/// <summary>Facebook Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string FacebookLink { get; }
+
+		/// <summary>Instagram Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string InstagramLink { get; }
+
 		/// <summary>Logo</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		IPublishedContent Logo { get; }
+
+		/// <summary>YouTube Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string YouTubeLink { get; }
 	}
 
 	/// <summary>Header</summary>
@@ -55,6 +67,28 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
+		/// Facebook Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("facebookLink")]
+		public string FacebookLink => GetFacebookLink(this);
+
+		/// <summary>Static getter for Facebook Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetFacebookLink(IHeader that) => that.Value<string>("facebookLink");
+
+		///<summary>
+		/// Instagram Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("instagramLink")]
+		public string InstagramLink => GetInstagramLink(this);
+
+		/// <summary>Static getter for Instagram Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetInstagramLink(IHeader that) => that.Value<string>("instagramLink");
+
+		///<summary>
 		/// Logo: The site logo image.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -64,5 +98,16 @@ namespace NKN.Models.Generated
 		/// <summary>Static getter for Logo</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static IPublishedContent GetLogo(IHeader that) => that.Value<IPublishedContent>("logo");
+
+		///<summary>
+		/// YouTube Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("youTubeLink")]
+		public string YouTubeLink => GetYouTubeLink(this);
+
+		/// <summary>Static getter for YouTube Link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetYouTubeLink(IHeader that) => that.Value<string>("youTubeLink");
 	}
 }
