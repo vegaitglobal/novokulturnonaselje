@@ -46,6 +46,11 @@
 			}
 		}
 	}
+	@include breakpoint(desktop-small) {
+		.nav {
+			margin-top: 28px;
+		}
+	}
 }
 
 //----------  logo  ----------

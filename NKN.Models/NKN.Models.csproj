@@ -453,12 +453,6 @@
     </Compile>
     <Compile Include="Generated\ModelsBuilder.cs">
       <Generator>UmbracoModelsBuilder</Generator>
-      <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
-    </Compile>
-    <Compile Include="Generated\ModelsBuilder.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Generated\NewsDetail.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>

@@ -50,7 +50,7 @@ namespace NKN.Models.Generated
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("contactInfo")]
-		public string ContactInfo => this.Value<string>("contactInfo");
+		public IHtmlString ContactInfo => this.Value<IHtmlString>("contactInfo");
 
 		///<summary>
 		/// Image

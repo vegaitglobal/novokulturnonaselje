@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>Write Us</summary>
 	[PublishedModel("writeUs")]
-	public partial class WriteUs
+	public partial class WriteUs : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant

@@ -6,3 +6,48 @@ button {
 	font-family: $font-default;
 	padding: 0;
 }
+
+.btn {
+	border: 2px solid $green;
+	border-radius: 30px;
+	color: $grey-dark;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 600;
+	height: 40px;
+	letter-spacing: 1px;
+	line-height: 36px;
+	padding: 0 22px;
+	text-transform: uppercase;
+	@include breakpoint(desktop) {
+		transition: background .3s ease, color .3s ease;
+		&:hover {
+			background-color: $green;
+			color: $white;
+		}
+	}
+}
+
+.slick-dots {
+	font-size: 0;
+	li {
+		display: inline-block;
+		margin: 0 9px;
+	}
+	button {
+		background-color: $white;
+		display: inline-block;
+		font-size: 0;
+		height: 15px;
+		transition: background .3s ease;
+		width: 15px;
+	}
+	.slick-active button {
+		background-color: $green;
+	}
+	@include breakpoint(desktop) {
+		button:hover {
+			background-color: $green;
+		}
+	}
+}

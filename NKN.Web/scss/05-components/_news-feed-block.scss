@@ -1,0 +1,13 @@
+.news-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.news-item {
+	width: 31%;
+}
+
+.news-item-highlighted {
+	display: flex;
+	width: 100%;
+}

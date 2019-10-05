@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>Friend Organizations Carousel</summary>
 	[PublishedModel("friendOrganizationsCarousel")]
-	public partial class FriendOrganizationsCarousel : PublishedContentModel
+	public partial class FriendOrganizationsCarousel : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -39,10 +39,17 @@ namespace NKN.Models.Generated
 #pragma warning restore 0109
 
 		// ctor
-		public FriendOrganizationsCarousel(IPublishedContent content)
+		public FriendOrganizationsCarousel(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Friend Organizations
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("friendOrganizations")]
+		public IEnumerable<IPublishedContent> FriendOrganizations => this.Value<IEnumerable<IPublishedContent>>("friendOrganizations");
 	}
 }

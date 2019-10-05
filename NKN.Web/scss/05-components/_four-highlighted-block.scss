@@ -10,4 +10,10 @@
 	// .image-hover {
 	// 	display: none;
 	// }
+	@include breakpoint(phone) {
+		flex-wrap: wrap;
+		.col {
+			width: 100%;
+		}
+	}
 }
