@@ -21,25 +21,25 @@ using Umbraco.ModelsBuilder.Umbraco;
 namespace NKN.Models.Generated
 {
 	/// <summary>Standard Content Page</summary>
-	[PublishedModel("aboutUs")]
-	public partial class AboutUs : PublishedContentModel, IBanner, IFooter, IHeader, IPage, ISiteSettings
+	[PublishedModel("standardContentPage")]
+	public partial class StandardContentPage : PublishedContentModel, IBanner, IFooter, IHeader, IPage, ISiteSettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "aboutUs";
+		public new const string ModelTypeAlias = "standardContentPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUs, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<StandardContentPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public AboutUs(IPublishedContent content)
+		public StandardContentPage(IPublishedContent content)
 			: base(content)
 		{ }
 
