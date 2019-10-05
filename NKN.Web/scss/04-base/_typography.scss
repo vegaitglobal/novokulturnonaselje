@@ -15,6 +15,7 @@
 	}
 	@include breakpoint(phone) {
 		font-size: 48px;
+		letter-spacing: -1px;
 		line-height: 45px;
 	}
 }
