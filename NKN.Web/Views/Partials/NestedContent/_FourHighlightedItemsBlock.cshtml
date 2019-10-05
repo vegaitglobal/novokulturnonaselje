@@ -2,7 +2,10 @@
 
 <section class="four-highlighted-block js-four-highlighted-block">
 	<div class="wrapper">
-		<h2 class="section-title">@Model.Title</h2>
+		@if (!string.IsNullOrEmpty(Model.Title))
+		{
+			<h2 class="section-title">@Model.Title</h2>
+		}
 		<div class="cols-wrap">
 			@foreach (var item in Model.HighlightedItems)
 			{
@@ -18,11 +21,20 @@
 						}
 					</a>
 					<div class="text-holder">
-						<h3>@item.Title</h3>
-						<p>
-							@item.Text
-						</p>
-						<a href="@item.Link.Url" class="btn">@item.Link.Content</a>
+						@if (!string.IsNullOrEmpty(item.Title))
+						{
+							<h3>@item.Title</h3>
+						}
+						@if (!string.IsNullOrEmpty(item.Text))
+						{
+							<p>
+								@item.Text
+							</p>
+						}
+						@if (item.Link != null)
+						{
+							<a href="@item.Link.Url" class="btn">@item.Link.Content</a>
+						}
 					</div>
 				</div>
 			}

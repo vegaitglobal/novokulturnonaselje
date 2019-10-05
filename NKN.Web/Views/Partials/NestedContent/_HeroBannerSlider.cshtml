@@ -7,11 +7,20 @@
 		<div class="item" style="background-image: url(@slide.BackgroundImage.Url)">
 			<div class="wrapper">
 				<div class="hero-slider-text-holder">
-					<h2>@slide.Title</h2>
-					<p>
-						@slide.Text
-					</p>
-					<a href="@slide.Link.Url" class="btn">@slide.Link.Content</a>
+					@if (!string.IsNullOrEmpty(slide.Title))
+					{
+						<h2>@slide.Title</h2>
+					}
+					@if (!string.IsNullOrEmpty(slide.Text))
+					{
+						<p>
+							@slide.Text
+						</p>
+					}
+					@if (slide.Link != null)
+					{
+						<a href="@slide.Link.Url" class="btn">@slide.Link.Content</a>
+					}
 				</div>
 			</div>
 		</div>
