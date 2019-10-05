@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>Contributors Block</summary>
 	[PublishedModel("contributorsBlock")]
-	public partial class ContributorsBlock : PublishedElementModel
+	public partial class ContributorsBlock
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -53,18 +53,18 @@ namespace NKN.Models.Generated
 		public IEnumerable<IPublishedContent> Contributors => this.Value<IEnumerable<IPublishedContent>>("contributors");
 
 		///<summary>
+		/// Show Contributor Titles
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("showContributorTitles")]
+		public bool ShowContributorTitles => this.Value<bool>("showContributorTitles");
+
+		///<summary>
 		/// Show Social Links
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("showSocialLinks")]
 		public bool ShowSocialLinks => this.Value<bool>("showSocialLinks");
-
-		///<summary>
-		/// Show Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("showTitle")]
-		public bool ShowTitle => this.Value<bool>("showTitle");
 
 		///<summary>
 		/// Text
