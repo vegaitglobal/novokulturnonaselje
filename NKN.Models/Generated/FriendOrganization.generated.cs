@@ -46,6 +46,13 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
+		/// External Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("externalLink")]
+		public string ExternalLink => this.Value<string>("externalLink");
+
+		///<summary>
 		/// Facebook Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -65,6 +72,13 @@ namespace NKN.Models.Generated
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("instagramLink")]
 		public string InstagramLink => this.Value<string>("instagramLink");
+
+		///<summary>
+		/// Internal Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("internalLink")]
+		public Umbraco.Web.Models.Link InternalLink => this.Value<Umbraco.Web.Models.Link>("internalLink");
 
 		///<summary>
 		/// Title

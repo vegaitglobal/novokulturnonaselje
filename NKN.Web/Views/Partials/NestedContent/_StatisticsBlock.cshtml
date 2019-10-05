@@ -1,0 +1,13 @@
+﻿@inherits UmbracoViewPage<StatisticsBlockViewModel>
+
+<section class="statistics-block" style="background-image: url(@Model.BackgroundImage);">
+	<div class="wrapper">
+		@foreach (var item in Model.StatisticItems)
+		{
+			<div class="item">
+				<span class="value">@item.Number</span>
+				<span class="desc">@item.Text</span>
+			</div>
+		}
+	</div>
+</section>

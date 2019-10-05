@@ -488,9 +488,11 @@
     <Compile Include="Generated\StandardContentPage.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\StatisticItem.cs" />
     <Compile Include="Generated\StatisticItem.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\StatisticsBlock.cs" />
     <Compile Include="Generated\StatisticsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

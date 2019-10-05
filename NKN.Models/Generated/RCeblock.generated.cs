@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>RCE Block</summary>
 	[PublishedModel("rCEBlock")]
-	public partial class RCeblock : PublishedElementModel
+	public partial class RCeblock
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
