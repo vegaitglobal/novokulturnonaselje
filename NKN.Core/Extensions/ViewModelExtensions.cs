@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Umbraco.Web.Models;
 
 namespace NKN.Core.Extensions
 {
@@ -31,6 +32,11 @@ namespace NKN.Core.Extensions
             return image != null ? new ImageViewModel(image) : default(ImageViewModel);
         }
 
+        public static LinkViewModel ToViewModel(this Link link)
+        {
+            return link != null ? new LinkViewModel(link) : default(LinkViewModel);
+        }
+
         public static XMLSitemapItemViewModel ToViewModel(this ISeo page)
         {
             return page != null ? new XMLSitemapItemViewModel(page) : default(XMLSitemapItemViewModel);
@@ -46,6 +52,17 @@ namespace NKN.Core.Extensions
             if (items == null) return Enumerable.Empty<SearchResultsItemViewModel>();
 
             return items.Select(ToViewModel);
+        }
+
+        public static TNestedContentViewModel ToViewModel<TNestedContentViewModel>(this INestedContentContext<INestedContent> nestedContentContext, string classSuffix = "ViewModel")
+            where TNestedContentViewModel : INestedContentViewModel
+        {
+            if (nestedContentContext == null) return default(TNestedContentViewModel);
+
+            Type baseType = typeof(TNestedContentViewModel);
+            string modelTypeName = $"{baseType.Namespace}.{nestedContentContext.NestedContent.GetType().Name}{classSuffix}";
+
+            return (TNestedContentViewModel)Activator.CreateInstance(Assembly.GetAssembly(baseType).GetType(modelTypeName), nestedContentContext);
         }
     }
 }

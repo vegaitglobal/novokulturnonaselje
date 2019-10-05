@@ -1,0 +1,17 @@
+﻿@inherits UmbracoViewPage<MissionCarouselBlockViewModel>
+
+<section class="mission-carousel-block" style="@Html.Raw("background-image:url(" + Model.BackgroundImage.Url + ")")">
+	<div class="wrapper">
+		<h2 class="section-title">@Model.Title</h2>
+		<div class="mission-slider js-mission-slider">
+			@foreach (var item in Model.Items)
+			{
+				<div class="item">
+					<h3>@item.Title</h3>
+					<p>@item.Text</p>
+					<a href="@item.Link.Url" class="btn btn-white">@item.Link.Content</a>
+				</div>
+			}
+		</div>
+	</div>
+</section>

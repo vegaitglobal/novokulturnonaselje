@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>Hero Banner Slider</summary>
 	[PublishedModel("heroBannerSlider")]
-	public partial class HeroBannerSlider : PublishedElementModel
+	public partial class HeroBannerSlider
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant

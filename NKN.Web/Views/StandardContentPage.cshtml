@@ -1,4 +1,6 @@
-﻿@{
+﻿@inherits UmbracoViewPage<StandardContentPageViewModel>
+
+@{
     Layout = null;
 }
 
@@ -11,7 +13,11 @@
 </head>
 <body>
     <div>
-    
+    Standard Page
+    @foreach (var item in Model.Items)
+    {
+        Html.RenderAction<NestedContentController>(c => nameof(c.Index), new { viewModel = item });
+    }
     </div>
 </body>
 </html>
