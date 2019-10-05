@@ -46,10 +46,20 @@ var functions = (function() {
 		},
 
 		heroSlider: function () {
-			$('.js-her-banner-slider').slick({
+			$('.js-hero-banner-slider').slick({
 				infinite: true,
 				slidesToShow: 1,
 				slidesToScroll: 1,
+				dots: true,
+				arrows: false
+			});
+		},
+
+		contributorsSlider: function () {
+			$('.js-contributors-slider').slick({
+				infinite: true,
+				slidesToShow: 4,
+				slidesToScroll: 4,
 				dots: true,
 				arrows: false
 			});
