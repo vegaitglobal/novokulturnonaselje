@@ -819,7 +819,7 @@
     'use strict';
     (function () {
         'use strict';
-        function CompositionsController($scope, $location, $filter, overlayService) {
+        function CompositionsController($scope, $location, $filter) {
             var vm = this;
             var oldModel = null;
             vm.showConfirmSubmit = false;
@@ -858,33 +858,18 @@
             function submit() {
                 if ($scope.model && $scope.model.submit) {
                     // check if any compositions has been removed
-                    var compositionRemoved = false;
+                    vm.compositionRemoved = false;
                     for (var i = 0; oldModel.compositeContentTypes.length > i; i++) {
                         var oldComposition = oldModel.compositeContentTypes[i];
                         if (_.contains($scope.model.compositeContentTypes, oldComposition) === false) {
-                            compositionRemoved = true;
+                            vm.compositionRemoved = true;
                         }
                     }
                     /* submit the form if there havne't been removed any composition
         or the confirm checkbox has been checked */
-                    if (compositionRemoved) {
-                        vm.allowSubmit = false;
-                        var dialog = {
-                            view: 'views/common/infiniteeditors/compositions/overlays/confirmremove.html',
-                            submitButtonLabelKey: 'general_ok',
-                            closeButtonLabelKey: 'general_cancel',
-                            submit: function submit(model) {
-                                $scope.model.submit($scope.model);
-                                overlayService.close();
-                            },
-                            close: function close() {
-                                overlayService.close();
-                            }
-                        };
-                        overlayService.open(dialog);
-                        return;
+                    if (!vm.compositionRemoved || vm.allowSubmit) {
+                        $scope.model.submit($scope.model);
                     }
-                    $scope.model.submit($scope.model);
                 }
             }
             function close() {
@@ -1822,7 +1807,7 @@
                         $scope.model.target.url = resp.url;
                     });
                 }
-            } else if ($scope.model.target.url && $scope.model.target.url.length) {
+            } else if ($scope.model.target.url.length) {
                 // a url but no id/udi indicates an external link - trim the url to remove the anchor/qs
                 // only do the substring if there's a # or a ?
                 var indexOfAnchor = $scope.model.target.url.search(/(#|\?)/);
@@ -4777,8 +4762,7 @@
         }
         function createBlank(docType) {
             $location.path('/content/content/edit/' + $scope.currentNode.id).search('doctype', docType.alias).search('create', 'true')    /* when we create a new node we want to make sure it uses the same 
-    language as what is selected in the tree */.search('cculture', mainCulture)    /* when we create a new node we must make sure that any previously 
-    used blueprint is reset */.search('blueprintId', null);
+    language as what is selected in the tree */.search('cculture', mainCulture);
             close();
         }
         function createOrSelectBlueprintIfAny(docType) {
@@ -4910,7 +4894,7 @@
                         location = '/content/content/edit/' + $scope.currentNode.parentId;
                     $location.path(location);
                 }
-                $scope.success = true;
+                navigationService.hideMenu();
             }, function (err) {
                 toggleDeleting(false);
                 //check if response is ysod
@@ -4922,9 +4906,6 @@
         };
         $scope.cancel = function () {
             toggleDeleting(false);
-            $scope.close();
-        };
-        $scope.close = function () {
             navigationService.hideDialog();
         };
     }
@@ -10256,7 +10237,7 @@
                         location = '/media/media/edit/' + $scope.currentNode.parentId;
                     $location.path(location);
                 }
-                $scope.success = true;
+                navigationService.hideMenu();
             }, function (err) {
                 $scope.currentNode.loading = false;
                 $scope.busy = false;
@@ -10267,7 +10248,7 @@
                 }
             });
         };
-        $scope.close = function () {
+        $scope.cancel = function () {
             navigationService.hideDialog();
         };
     }
@@ -11612,7 +11593,7 @@
  * @description
  * The controller for the member creation dialog
  */
-    function memberCreateController($scope, memberTypeResource, iconHelper, navigationService, $location) {
+    function memberCreateController($scope, memberTypeResource, iconHelper, navigationService) {
         memberTypeResource.getTypes($scope.currentNode.id).then(function (data) {
             $scope.allowedTypes = iconHelper.formatContentTypeIcons(data);
         });
@@ -11620,8 +11601,7 @@
             var showMenu = true;
             navigationService.hideDialog(showMenu);
         };
-        $scope.createMemberType = function (memberType) {
-            $location.path('/member/member/edit/' + $scope.currentNode.id).search('doctype', memberType.alias).search('create', 'true');
+        $scope.hideActions = function () {
             navigationService.hideNavigation();
         };
     }
@@ -14654,7 +14634,7 @@
         var vm = this;
         vm.configItems = [];
         vm.viewItems = [];
-        vm.change = change;
+        vm.changed = changed;
         function init() {
             // currently the property editor will onyl work if our input is an object.
             if (angular.isObject($scope.model.config.items)) {
@@ -14669,7 +14649,7 @@
                         value: vals[i].value
                     });
                 }
-                // ensure the items are sorted by the provided sort order
+                //ensure the items are sorted by the provided sort order
                 sortedItems.sort(function (a, b) {
                     return a.sortOrder > b.sortOrder ? 1 : b.sortOrder > a.sortOrder ? -1 : 0;
                 });
@@ -14708,7 +14688,7 @@
                 });
             }
         }
-        function change(model, value) {
+        function changed(model, value) {
             var index = $scope.model.value.indexOf(value);
             if (model === true) {
                 //if it doesn't exist in the model, then add it
@@ -14725,7 +14705,7 @@
         init();
     });
     'use strict';
-    function ColorPickerController($scope, $timeout) {
+    function ColorPickerController($scope) {
         //setup the default config
         var config = {
             items: [],
@@ -14735,6 +14715,35 @@
         angular.extend(config, $scope.model.config);
         //map back to the model
         $scope.model.config = config;
+        // TODO: This isn't used
+        function convertArrayToDictionaryArray(model) {
+            //now we need to format the items in the dictionary because we always want to have an array
+            var newItems = [];
+            for (var i = 0; i < model.length; i++) {
+                newItems.push({
+                    id: model[i],
+                    sortOrder: 0,
+                    value: model[i]
+                });
+            }
+            return newItems;
+        }
+        // TODO: This isn't used
+        function convertObjectToDictionaryArray(model) {
+            //now we need to format the items in the dictionary because we always want to have an array
+            var newItems = [];
+            var vals = _.values($scope.model.config.items);
+            var keys = _.keys($scope.model.config.items);
+            for (var i = 0; i < vals.length; i++) {
+                var label = vals[i].value ? vals[i].value : vals[i];
+                newItems.push({
+                    id: keys[i],
+                    sortOrder: vals[i].sortOrder,
+                    value: label
+                });
+            }
+            return newItems;
+        }
         $scope.isConfigured = $scope.model.config && $scope.model.config.items && _.keys($scope.model.config.items).length > 0;
         if ($scope.isConfigured) {
             for (var key in $scope.model.config.items) {
@@ -14775,12 +14784,26 @@
             //now make the editor model the array
             $scope.model.config.items = items;
         }
-        $scope.selectColor = function (color) {
+        $scope.toggleItem = function (color) {
+            var currentColor = $scope.model.value && $scope.model.value.hasOwnProperty('value') ? $scope.model.value.value : $scope.model.value;
+            var newColor;
+            if (currentColor === color.value) {
+                // deselect
+                $scope.model.value = $scope.model.useLabel ? {
+                    value: '',
+                    label: ''
+                } : '';
+                newColor = '';
+            } else {
+                // select
+                $scope.model.value = $scope.model.useLabel ? {
+                    value: color.value,
+                    label: color.label
+                } : color.value;
+                newColor = color.value;
+            }
             // this is required to re-validate
-            $timeout(function () {
-                var newColor = color ? color.value : null;
-                $scope.propertyForm.selectedColor.$setViewValue(newColor);
-            });
+            $scope.propertyForm.modelValue.$setViewValue(newColor);
         };
         // Method required by the valPropertyValidator directive (returns true if the property editor has at least one color selected)
         $scope.validateMandatory = function () {
@@ -14792,6 +14815,17 @@
             };
         };
         $scope.isConfigured = $scope.model.config && $scope.model.config.items && _.keys($scope.model.config.items).length > 0;
+        // A color is active if it matches the value and label of the model.
+        // If the model doesn't store the label, ignore the label during the comparison.
+        $scope.isActiveColor = function (color) {
+            // no value
+            if (!$scope.model.value)
+                return false;
+            // Complex color (value and label)?
+            if (!$scope.model.value.hasOwnProperty('value'))
+                return $scope.model.value === color.value;
+            return $scope.model.value.value === color.value && $scope.model.value.label === color.label;
+        };
         // Finds the color best matching the model's color,
         // and sets the model color to that one. This is useful when
         // either the value or label was changed on the data type.
@@ -15095,11 +15129,6 @@
             }
             //merge the server config on top of the default config, then set the server config to use the result
             $scope.model.config = angular.extend(defaultConfig, $scope.model.config);
-            // if the property is mandatory, set the minCount config to 1 (unless of course it is set to something already),
-            // that way the minCount/maxCount validation handles the mandatory as well
-            if ($scope.model.validation && $scope.model.validation.mandatory && !$scope.model.config.minNumber) {
-                $scope.model.config.minNumber = 1;
-            }
         }
         //Umbraco persists boolean for prevalues as "0" or "1" so we need to convert that!
         $scope.model.config.multiPicker = Object.toBoolean($scope.model.config.multiPicker);
@@ -18963,7 +18992,7 @@
     'use strict';
     //this controller simply tells the dialogs service to open a mediaPicker window
     //with a specified callback, this callback will receive an object with a selection on it
-    angular.module('umbraco').controller('Umbraco.PropertyEditors.MediaPickerController', function ($scope, entityResource, mediaHelper, $timeout, userService, localizationService, editorService, angularHelper) {
+    angular.module('umbraco').controller('Umbraco.PropertyEditors.MediaPickerController', function ($scope, entityResource, mediaHelper, $timeout, userService, localizationService, editorService) {
         var vm = {
             labels: { mediaPicker_deletedItem: '' }    //check the pre-values for multi-picker
         };
@@ -19014,15 +19043,9 @@
                         }
                     });
                     _.each(medias, function (media, i) {
-                        if (!media.extension && media.id && media.metaData) {
-                            media.extension = mediaHelper.getFileExtension(media.metaData.MediaPath);
-                        }
                         // if there is no thumbnail, try getting one if the media is not a placeholder item
                         if (!media.thumbnail && media.id && media.metaData) {
                             media.thumbnail = mediaHelper.resolveFileFromEntity(media, true);
-                            if (!media.thumbnail && media.extension === 'svg') {
-                                media.thumbnail = media.metaData.MediaPath;
-                            }
                         }
                         $scope.mediaItems.push(media);
                         if ($scope.model.config.idType === 'udi') {
@@ -19039,9 +19062,6 @@
             $scope.model.value = $scope.ids.join();
         }
         ;
-        function setDirty() {
-            angularHelper.getCurrentForm($scope).$setDirty();
-        }
         function reloadUpdatedMediaItems(updatedMediaNodes) {
             // because the images can be edited through the media picker we need to 
             // reload. We only reload the images that is already picked but has been updated.
@@ -19076,6 +19096,12 @@
                     $scope.allowEditMedia = hasAccessToMedia;
                     $scope.allowAddMedia = hasAccessToMedia;
                     setupViewModel();
+                    //When the model value changes sync the view model
+                    $scope.$watch('model.value', function (newVal, oldVal) {
+                        if (newVal !== oldVal) {
+                            setupViewModel();
+                        }
+                    });
                 });
             });
         }
@@ -19083,7 +19109,6 @@
             $scope.mediaItems.splice(index, 1);
             $scope.ids.splice(index, 1);
             sync();
-            setDirty();
         };
         $scope.editItem = function (item) {
             var mediaEditor = {
@@ -19137,7 +19162,6 @@
                     });
                     sync();
                     reloadUpdatedMediaItems(model.updatedMediaNodes);
-                    setDirty();
                 },
                 close: function close(model) {
                     editorService.close();
@@ -19147,23 +19171,21 @@
             editorService.mediaPicker(mediaPicker);
         };
         $scope.sortableOptions = {
-            containment: 'parent',
-            cursor: 'move',
-            tolerance: 'pointer',
             disabled: !multiPicker,
             items: 'li:not(.add-wrapper)',
             cancel: '.unsortable',
             update: function update(e, ui) {
-                setDirty();
+                var r = [];
+                // TODO: Instead of doing this with a half second delay would be better to use a watch like we do in the
+                // content picker. Then we don't have to worry about setting ids, render models, models, we just set one and let the
+                // watch do all the rest.
                 $timeout(function () {
-                    // TODO: Instead of doing this with a timeout would be better to use a watch like we do in the
-                    // content picker. Then we don't have to worry about setting ids, render models, models, we just set one and let the
-                    // watch do all the rest.
-                    $scope.ids = _.map($scope.mediaItems, function (item) {
-                        return $scope.model.config.idType === 'udi' ? item.udi : item.id;
+                    angular.forEach($scope.mediaItems, function (value, key) {
+                        r.push($scope.model.config.idType === 'udi' ? value.udi : value.id);
                     });
+                    $scope.ids = r;
                     sync();
-                });
+                }, 500, false);
             }
         };
         $scope.showAdd = function () {
@@ -19549,7 +19571,7 @@
             var linkPicker = {
                 currentTarget: target,
                 dataTypeKey: $scope.model.dataTypeKey,
-                ignoreUserStartNodes: $scope.model.config && $scope.model.config.ignoreUserStartNodes ? $scope.model.config.ignoreUserStartNodes : '0',
+                ignoreUserStartNodes: $scope.model.config.ignoreUserStartNodes,
                 submit: function submit(model) {
                     if (model.target.url || model.target.anchor) {
                         // if an anchor exists, check that it is appropriately prefixed
@@ -19600,11 +19622,6 @@
             localizationService.localizeMany(['general_recycleBin']).then(function (data) {
                 vm.labels.general_recycleBin = data[0];
             });
-            // if the property is mandatory, set the minCount config to 1 (unless of course it is set to something already),
-            // that way the minCount/maxCount validation handles the mandatory as well
-            if ($scope.model.validation && $scope.model.validation.mandatory && !$scope.model.config.minNumber) {
-                $scope.model.config.minNumber = 1;
-            }
         }
         init();
     }
@@ -19807,14 +19824,13 @@
                 }
             };
             $scope.deleteNode = function (idx) {
-                $scope.nodes.splice(idx, 1);
-                $scope.setDirty();
-                updateModel();
+                if ($scope.nodes.length > $scope.model.config.minItems) {
+                    $scope.nodes.splice(idx, 1);
+                    $scope.setDirty();
+                    updateModel();
+                }
             };
             $scope.requestDeleteNode = function (idx) {
-                if ($scope.nodes.length <= $scope.model.config.minItems) {
-                    return;
-                }
                 if ($scope.model.config.confirmDeletes === true) {
                     localizationService.localizeMany([
                         'content_nestedContentDeleteItem',
@@ -20096,27 +20112,25 @@
     ]);
     'use strict';
     angular.module('umbraco').controller('Umbraco.PropertyEditors.RadioButtonsController', function ($scope) {
-        var vm = this;
-        vm.viewItems = [];
         function init() {
             //we can't really do anything if the config isn't an object
             if (angular.isObject($scope.model.config.items)) {
-                // formatting the items in the dictionary into an array
-                var sortedItems = [];
+                //now we need to format the items in the dictionary because we always want to have an array
+                var configItems = [];
                 var vals = _.values($scope.model.config.items);
                 var keys = _.keys($scope.model.config.items);
                 for (var i = 0; i < vals.length; i++) {
-                    sortedItems.push({
-                        key: keys[i],
+                    configItems.push({
+                        id: keys[i],
                         sortOrder: vals[i].sortOrder,
                         value: vals[i].value
                     });
                 }
-                // ensure the items are sorted by the provided sort order
-                sortedItems.sort(function (a, b) {
+                //ensure the items are sorted by the provided sort order
+                configItems.sort(function (a, b) {
                     return a.sortOrder > b.sortOrder ? 1 : b.sortOrder > a.sortOrder ? -1 : 0;
                 });
-                vm.viewItems = sortedItems;
+                $scope.configItems = configItems;
             }
         }
         init();
@@ -23024,7 +23038,7 @@
     'use strict';
     (function () {
         'use strict';
-        function UserGroupsController($scope, $timeout, $location, $filter, userService, userGroupsResource, formHelper, localizationService, listViewHelper, overlayService) {
+        function UserGroupsController($scope, $timeout, $location, $filter, userService, userGroupsResource, formHelper, localizationService, listViewHelper) {
             var vm = this;
             vm.userGroups = [];
             vm.selection = [];
@@ -23095,30 +23109,14 @@
             }
             function deleteUserGroups() {
                 if (vm.selection.length > 0) {
-                    localizationService.localizeMany([
-                        'general_delete',
-                        'defaultdialogs_confirmdelete',
-                        'general_cancel',
-                        'contentTypeEditor_yesDelete'
-                    ]).then(function (data) {
-                        var overlay = {
-                            title: data[0],
-                            content: data[1] + '?',
-                            closeButtonLabel: data[2],
-                            submitButtonLabel: data[3],
-                            submitButtonStyle: 'danger',
-                            close: function close() {
-                                overlayService.close();
-                            },
-                            submit: function submit() {
-                                userGroupsResource.deleteUserGroups(_.pluck(vm.selection, 'id')).then(function (data) {
-                                    clearSelection();
-                                    onInit();
-                                }, angular.noop);
-                                overlayService.close();
-                            }
-                        };
-                        overlayService.open(overlay);
+                    localizationService.localize('defaultdialogs_confirmdelete').then(function (value) {
+                        var confirmResponse = confirm(value);
+                        if (confirmResponse === true) {
+                            userGroupsResource.deleteUserGroups(_.pluck(vm.selection, 'id')).then(function (data) {
+                                clearSelection();
+                                onInit();
+                            }, angular.noop);
+                        }
                     });
                 }
             }

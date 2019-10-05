@@ -364,8 +364,9 @@
       <HintPath>..\packages\UmbracoCms.Web.8.1.5\lib\net472\Umbraco.Examine.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Umbraco.ModelsBuilder, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Umbraco.ModelsBuilder.8.0.4\lib\net472\Umbraco.ModelsBuilder.dll</HintPath>
+    <Reference Include="Umbraco.ModelsBuilder, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Umbraco.ModelsBuilder.8.1.0\lib\net472\Umbraco.ModelsBuilder.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\UmbracoCms.Web.8.1.5\lib\net472\Umbraco.Web.dll</HintPath>
@@ -385,23 +386,52 @@
     <Compile Include="Extensions\PublishedContentPropertyExtensions.cs" />
     <Compile Include="Extensions\PublishedElementPropertyExtensions.cs" />
     <Compile Include="Extensions\SeoExtensions.cs" />
-    <Compile Include="Generated\Error404.generated.cs" />
+    <Compile Include="Generated\Error404.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\File.cs" />
-    <Compile Include="Generated\File.generated.cs" />
-    <Compile Include="Generated\Folder.generated.cs" />
-    <Compile Include="Generated\Footer.generated.cs" />
-    <Compile Include="Generated\Header.generated.cs" />
+    <Compile Include="Generated\File.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Folder.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Footer.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Gallery.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Header.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Home.cs" />
-    <Compile Include="Generated\Home.generated.cs" />
+    <Compile Include="Generated\Home.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Image.cs" />
-    <Compile Include="Generated\Image.generated.cs" />
+    <Compile Include="Generated\Image.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\IPage.cs" />
     <Compile Include="Generated\ModelsBuilder.cs">
       <Generator>UmbracoModelsBuilder</Generator>
+      <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
     </Compile>
-    <Compile Include="Generated\Page.generated.cs" />
-    <Compile Include="Generated\SearchResults.generated.cs" />
-    <Compile Include="Generated\SiteSettings.generated.cs" />
+    <Compile Include="Generated\ModelsBuilder.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Generated\Page.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\SearchResults.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\SiteSettings.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="MediaTypes\IMedia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

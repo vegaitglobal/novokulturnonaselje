@@ -20,49 +20,29 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace NKN.Models.Generated
 {
-	// Mixin Content Type with alias "header"
-	/// <summary>Header</summary>
-	public partial interface IHeader : IPublishedContent
-	{
-		/// <summary>Logo</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		IPublishedContent Logo { get; }
-	}
-
-	/// <summary>Header</summary>
-	[PublishedModel("header")]
-	public partial class Header : PublishedContentModel, IHeader
+	/// <summary>Gallery</summary>
+	[PublishedModel("gallery")]
+	public partial class Gallery : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "header";
+		public new const string ModelTypeAlias = "gallery";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Header, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Gallery, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Header(IPublishedContent content)
+		public Gallery(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Logo: The site logo image.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("logo")]
-		public IPublishedContent Logo => GetLogo(this);
-
-		/// <summary>Static getter for Logo</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedContent GetLogo(IHeader that) => that.Value<IPublishedContent>("logo");
 	}
 }

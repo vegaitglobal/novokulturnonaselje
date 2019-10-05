@@ -6,15 +6,18 @@ using NKN.Core.Extensions;
 
 namespace NKN.Core.Handlers
 {
-	/// <summary>
-	/// Provides root node for the current request
-	/// </summary>
-	public class DomainRootRouteHandler : UmbracoVirtualNodeRouteHandler
-	{
-		public DomainRootRouteHandler()
-		{ }
+    /// <summary>
+    /// Provides root node for the current request
+    /// </summary>
+    public class DomainRootRouteHandler : UmbracoVirtualNodeRouteHandler
+    {
+        public DomainRootRouteHandler()
+        {
+        }
 
-		protected override IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext) 
-			=> umbracoContext.TypedContentAtDomainRoot(requestContext.HttpContext.Request.Url.AbsolutePath);
-	}
+        protected override IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext)
+        {
+            return umbracoContext.TypedContentAtDomainRoot(requestContext.HttpContext.Request.Url.AbsolutePath);
+        }
+    }
 }

@@ -2,7 +2,7 @@
 
 namespace NKN.Models.MediaTypes
 {
-	public interface IMedia : IPublishedContent
-	{
-	}
+    public interface IMedia : IPublishedContent
+    {
+    }
 }

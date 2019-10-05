@@ -1,24 +1,23 @@
 ﻿@inherits UmbracoViewPage<NKN.Core.ViewModels.Partials.Layout.MetaTagsViewModel>
 
 <title>@Model.Title</title>
-<meta name="description" content="@Model.Description" />
-<meta name="keywords" content="@Model.Keywords" />
-<link rel="canonical" href="@Model.CanonicalLink" />
+<meta name="description" content="@Model.Description"/>
+<meta name="keywords" content="@Model.Keywords"/>
+<link rel="canonical" href="@Model.CanonicalLink"/>
 @if (Model.AlternateLanguageLinks != null && Model.AlternateLanguageLinks.Any())
 {
 	foreach (var link in Model.AlternateLanguageLinks)
 	{
-		<link rel="alternate" hreflang="@link.Language" href="@link.Url" />
+		<link rel="alternate" hreflang="@link.Language" href="@link.Url"/>
 	}
 }
 @if (Model.HideFromSearchEngines)
 {
-	<meta name="robots" content="noindex,nofollow" />
-	<meta name="googlebot" content="noindex,nofollow" />
+	<meta name="robots" content="noindex,nofollow"/>
+	<meta name="googlebot" content="noindex,nofollow"/>
 }
 else
 {
-
-	<meta name="robots" content="index,follow" />
-	<meta name="googlebot" content="index,follow" />
+	<meta name="robots" content="index,follow"/>
+	<meta name="googlebot" content="index,follow"/>
 }

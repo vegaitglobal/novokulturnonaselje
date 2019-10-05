@@ -7,7 +7,9 @@
                 <localize key="contentTypeEditor_folderToCopy">Select the folder to copy</localize> <strong>{{source.name}}</strong>&nbsp;<localize key="contentTypeEditor_structureBelow">to in the tree structure below</localize>
             </p>
 
-            <umb-loader ng-show="busy"></umb-loader>
+            <div class="umb-loader-wrapper" ng-show="busy">
+                <div class="umb-loader"></div>
+            </div>
 
             <div ng-show="error">
                 <div class="alert alert-error">

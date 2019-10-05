@@ -7,15 +7,19 @@ using NKN.Models.Generated;
 
 namespace NKN.Core.Handlers
 {
-	/// <summary>
-	/// Provides Error 404 node for the current request
-	/// </summary>
-	public class Error404RouteHandler : UmbracoVirtualNodeRouteHandler
-	{
-		public Error404RouteHandler()
-		{ }
+    /// <summary>
+    /// Provides Error 404 node for the current request
+    /// </summary>
+    public class Error404RouteHandler : UmbracoVirtualNodeRouteHandler
+    {
+        public Error404RouteHandler()
+        {
+        }
 
-		protected override IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext)
-			=> umbracoContext.TypedContentAtDomainRoot(requestContext.HttpContext.Request.Url.AbsolutePath)?.FirstChild<Error404>();
-	}
+        protected override IPublishedContent FindContent(RequestContext requestContext, UmbracoContext umbracoContext)
+        {
+            return umbracoContext.TypedContentAtDomainRoot(requestContext.HttpContext.Request.Url.AbsolutePath)
+                ?.FirstChild<Error404>();
+        }
+    }
 }

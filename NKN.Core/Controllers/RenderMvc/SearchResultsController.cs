@@ -5,12 +5,14 @@ using NKN.Models.Generated;
 
 namespace NKN.Core.Controllers.RenderMvc
 {
-	public class SearchResultsController : BasePageController<SearchResults>
-	{
-		public ActionResult Index(SearchResults model)
-			=> CurrentTemplate(
-				new SearchResultsViewModel(CreatePageContext(model), 
-				Request.GetQueryParameter(),
-				Request.GetPageParameter()));
-	}
+    public class SearchResultsController : BasePageController<SearchResults>
+    {
+        public ActionResult Index(SearchResults model)
+        {
+            return CurrentTemplate(
+                new SearchResultsViewModel(CreatePageContext(model),
+                    Request.GetQueryParameter(),
+                    Request.GetPageParameter()));
+        }
+    }
 }
