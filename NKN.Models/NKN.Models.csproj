@@ -485,7 +485,6 @@
     <Compile Include="Generated\SiteSettings.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\StandardContentPage.cs" />
     <Compile Include="Generated\StandardContentPage.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

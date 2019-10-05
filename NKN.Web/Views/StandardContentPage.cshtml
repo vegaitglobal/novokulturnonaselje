@@ -1,23 +1,12 @@
 ﻿@inherits UmbracoViewPage<StandardContentPageViewModel>
 
-@{
-    Layout = null;
-}
+<div class="item" style="background-image: url(@Model.BannerImage.Url)">
+	<h1>@Model.PageTitle</h1>
+</div>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    Standard Page
-    @foreach (var item in Model.Items)
-    {
-        Html.RenderAction<NestedContentController>(c => nameof(c.Index), new { viewModel = item });
-    }
-    </div>
-</body>
-</html>
+<div>
+	@foreach (var item in Model.Items)
+	{
+		Html.RenderAction<NestedContentController>(c => nameof(c.Index), new { viewModel = item });
+	}
+</div>
