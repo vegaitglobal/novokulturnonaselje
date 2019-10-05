@@ -46,6 +46,13 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
+		/// Background Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("backgroundImage")]
+		public IPublishedContent BackgroundImage => this.Value<IPublishedContent>("backgroundImage");
+
+		///<summary>
 		/// Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

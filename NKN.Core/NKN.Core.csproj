@@ -278,6 +278,7 @@
     <Compile Include="Contexts\SiteContext.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
+    <Compile Include="Controllers\RenderMvc\GalleryController.cs" />
     <Compile Include="Controllers\RenderMvc\HomeController.cs" />
     <Compile Include="Controllers\RenderMvc\SearchResultsController.cs" />
     <Compile Include="Controllers\RenderMvc\XMLSitemapController.cs" />
@@ -305,6 +306,7 @@
     <Compile Include="UmbracoDictionary.cs" />
     <Compile Include="ViewEngines\PartialViewEngine.cs" />
     <Compile Include="ViewModels\Pages\Error404ViewModel.cs" />
+    <Compile Include="ViewModels\Pages\GalleryViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomeViewModel.cs" />
     <Compile Include="ViewModels\Pages\PageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
