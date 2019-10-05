@@ -1,6 +1,8 @@
 ﻿@inherits UmbracoViewPage<ContactViewModel>
 
-
+<div class="item" style="background-image: url(@Model.BannerImage.Url)">
+	<h1>@Model.PageTitle</h1>
+</div>
 
 <div>
 	<img src="@Model.Image.Url" alt="@Model.Image.AlternateText" />
