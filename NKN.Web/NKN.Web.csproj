@@ -517,6 +517,8 @@
     <None Include="packages.config" />
     <Content Include="Views\Gallery.cshtml" />
     <Content Include="Views\Contact.cshtml" />
+    <Content Include="Views\StandardContentPage.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_RCeblock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
