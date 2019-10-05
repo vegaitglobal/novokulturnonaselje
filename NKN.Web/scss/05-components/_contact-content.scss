@@ -1,0 +1,82 @@
+//----------  contact content  ----------
+.contact-content {
+	@include base-float;
+	position: relative;
+	.left-col {
+		align-items: center;
+		display: flex;
+		float: left;
+		margin-top: 63px;
+		width: 38%;
+	}
+	.image-holder {
+		width: 30%;
+	}
+	.rte-content {
+		padding-left: 10px;
+		width: 70%;
+		p {
+			font-size: 22px;
+			line-height: 40px;
+		}
+	}
+	.right-col {
+		float: right;
+		width: 62%;
+	}
+	@include breakpoint(desktop-small) {
+		.left-col {
+			margin-top: 30px;
+		}
+		.rte-content {
+			p {
+				font-size: 18px;
+				line-height: 34px;
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		.left-col {
+			float: none;
+			margin: 0 auto;
+			max-width: 570px;
+			width: 100%;
+		}
+		.rte-content {
+			p {
+				font-size: 18px;
+				line-height: 36px;
+			}
+		}
+		.right-col {
+			float: none;
+			margin: 0 auto;
+			max-width: 590px;
+			width: 100%;
+		}
+	}
+	@include breakpoint(phone) {
+		overflow: hidden;
+		.left-col {
+			display: block;
+			margin-top: 0;
+			text-align: center;
+			width: 100%;
+		}
+		.image-holder {
+			margin-bottom: 20px;
+			width: 100%;
+		}
+		.rte-content {
+			padding-left: 0;
+			width: 100%;
+			p {
+				font-size: 18px;
+				line-height: 30px;
+			}
+		}
+		.right-col {
+			width: 100%;
+		}
+	}
+}

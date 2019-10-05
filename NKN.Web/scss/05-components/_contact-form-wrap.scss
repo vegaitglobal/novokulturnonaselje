@@ -1,0 +1,98 @@
+//----------  contact content  ----------
+.contact-form-wrap {
+	background-image: url('../img/contact-form-bg.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 89% 100%;
+	margin-top: -156px;
+	padding: 50px 0 0 95px;
+	h2 {
+		font-family: $bold-cons;
+		font-size: 35px;
+		font-weight: bold;
+		letter-spacing: -.8px;
+		line-height: 40px;
+		margin-bottom: 33px;
+		text-transform: uppercase;
+	}
+	form {
+		width: calc(100% - 145px);
+	}
+	.fieldset-inner {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.input-wrap {
+		margin-bottom: 20px;
+		width: 46%;
+	}
+	.input-wrap-fullwidth {
+		width: 100%;
+	}
+	.input-submit-wrap {
+		margin-top: 37px;
+		width: 100%;
+	}
+	.btn {
+		float: right;
+		padding: 0 40px;
+		transform: translate(90%, 46%);
+	}
+	@include breakpoint(desktop-small) {
+		margin-top: -130px;
+		.btn {
+			padding: 0 20px;
+			transform: translate(130%, 46%);
+		}
+	}
+	@include breakpoint(touch) {
+		margin-top: 0;
+	}
+	@include breakpoint(tablet) {
+		.btn {
+			transform: translate(132%, 46%);
+		}
+	}
+	@include breakpoint(phone) {
+		background: none;
+		padding: 30px 0 0;
+		position: relative;
+		&::before {
+			background-image: url('../img/contact-form-mobile-bg.png');
+			background-position: left bottom;
+			background-repeat: no-repeat;
+			background-size: 780px auto;
+			bottom: 15px;
+			content: '';
+			display: inline-block;
+			height: 100px;
+			left: 50%;
+			position: absolute;
+			transform: translateX(-50%);
+			width: 780px;
+		}
+		h2 {
+			letter-spacing: -1.5px;
+			margin-bottom: 45px;
+			text-align: center;
+			width: 100%;
+		}
+		form {
+			padding: 0 13px;
+			position: relative;
+			width: 100%;
+		}
+		.input-wrap {
+			margin-bottom: 36px;
+			width: 100%;
+		}
+		.input-submit-wrap {
+			margin-top: 54px;
+		}
+		.btn {
+			float: left;
+			transform: translate(0, 0);
+		}
+	}
+}

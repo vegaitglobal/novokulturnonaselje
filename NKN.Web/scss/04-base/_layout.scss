@@ -13,6 +13,11 @@ body {
 .container {
 	@include base-float;
 	overflow: hidden;
+	@include breakpoint(desktop) {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
 	@media only screen and (max-width: 319px) {
 		width: 320px;
 	}
@@ -27,4 +32,8 @@ body {
 
 .content {
 	@include base-float;
+	padding-bottom: 70px;
+	@include breakpoint(phone) {
+		padding-bottom: 50px;
+	}
 }

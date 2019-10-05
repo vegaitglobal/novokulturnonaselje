@@ -1,1 +1,27 @@
 //----------  footer  ----------
+.footer {
+	@include base-float;
+	background-color: $green;
+	margin-top: auto;
+	padding: 29px 0;
+	text-align: center;
+	.footer-links {
+		font-size: 0;
+		text-align: center;
+		li {
+			display: inline-block;
+			margin:  0 20px;
+		}
+	}
+	.footer-links-item {
+		color: $white;
+		font-size: 14px;
+		letter-spacing: .5px;
+		line-height: 20px;
+	}
+	@include breakpoint(phone) {
+		.footer-links li {
+			margin: 0 10px;
+		}
+	}
+}

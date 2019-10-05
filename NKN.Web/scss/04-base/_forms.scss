@@ -2,13 +2,28 @@
 input,
 textarea {
 	@include placeholder {
-		color: $black;
+		color: $grey-lines;
 	}
 	background: $white;
+	border: 0;
+	border-bottom: 2px solid $green;
+	border-left: 2px solid $green;
 	border-radius: 0;
 	box-shadow: none;
-	color: $black;
+	color: $grey-dark;
 	font-family: $font-default;
-	height: 25px;
 	padding: 0 10px;
+	width: 100%;
+}
+
+input {
+	height: 25px;
+}
+
+textarea {
+	height: 78px;
+	resize: none;
+	@include breakpoint(phone) {
+		height: 148px;
+	}
 }
