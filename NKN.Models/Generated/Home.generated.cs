@@ -46,6 +46,13 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
+		/// Content Blocks
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("contentBlocks")]
+		public IEnumerable<HeroBannerSlider> ContentBlocks => this.Value<IEnumerable<HeroBannerSlider>>("contentBlocks");
+
+		///<summary>
 		/// Copyright Text: The site copyright text.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -53,11 +60,32 @@ namespace NKN.Models.Generated
 		public string CopyrightText => Footer.GetCopyrightText(this);
 
 		///<summary>
+		/// Facebook Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("facebookLink")]
+		public string FacebookLink => Header.GetFacebookLink(this);
+
+		///<summary>
+		/// Instagram Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("instagramLink")]
+		public string InstagramLink => Header.GetInstagramLink(this);
+
+		///<summary>
 		/// Logo: The site logo image.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("logo")]
 		public IPublishedContent Logo => Header.GetLogo(this);
+
+		///<summary>
+		/// YouTube Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("youTubeLink")]
+		public string YouTubeLink => Header.GetYouTubeLink(this);
 
 		///<summary>
 		/// Alternate Languages: Language codes (en-US, en-GB etc).
