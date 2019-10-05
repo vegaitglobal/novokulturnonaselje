@@ -50,7 +50,7 @@ namespace NKN.Models.Generated
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("contentBlocks")]
-		public IEnumerable<HeroBannerSlider> ContentBlocks => this.Value<IEnumerable<HeroBannerSlider>>("contentBlocks");
+		public IEnumerable<IPublishedElement> ContentBlocks => this.Value<IEnumerable<IPublishedElement>>("contentBlocks");
 
 		///<summary>
 		/// Copyright Text: The site copyright text.

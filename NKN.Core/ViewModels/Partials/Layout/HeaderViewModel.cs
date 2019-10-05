@@ -12,7 +12,7 @@ namespace NKN.Core.ViewModels.Partials.Layout
         {
             if (header == null) throw new ArgumentNullException(nameof(header));
 
-            //Logo = header.Logo.ToViewModel();
+            Logo = (header.Logo as Image).ToViewModel();
             LogoUrl = header.AncestorOrSelf<Home>().Url;
         }
 
