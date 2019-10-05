@@ -14,5 +14,13 @@ namespace NKN.Core.Extensions
         {
             return controllerName.RemoveSuffix(nameof(Controller));
         }
+
+        /// <summary>
+        /// Returns <paramref name="viewModelName"/> string after stripping "ViewModel" suffix from it.
+        /// </summary>
+        /// <param name="viewModelName">The name of the view model class.</param>
+        /// <returns>Name without "ViewModel" suffix.</returns>
+        public static string RemoveViewModelSuffix(this string viewModelName)
+            => viewModelName.RemoveSuffix("ViewModel");
     }
 }

@@ -280,6 +280,8 @@
     <Compile Include="Contexts\SiteContext.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\ContactController.cs" />
+    <Compile Include="Controllers\RenderMvc\StandardContentPageController.cs" />
+    <Compile Include="Controllers\Surface\Partials\NestedContentController.cs" />
     <Compile Include="ViewModels\Pages\ContactViewModel.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Controllers\RenderMvc\GalleryController.cs" />
@@ -314,7 +316,14 @@
     <Compile Include="ViewModels\Pages\HomeViewModel.cs" />
     <Compile Include="ViewModels\Pages\PageViewModel.cs" />
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
+    <Compile Include="ViewModels\Pages\StandardContentPageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\BannerSlideViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\ContributorsBlockViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\FourHighlightedItemsBlockViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\HeroBannerSliderViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\HighlightedItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\RCeblockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\WriteUsViewModel.cs" />
     <Compile Include="ViewModels\Pages\XMLSitemapViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />

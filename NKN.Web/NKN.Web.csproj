@@ -516,8 +516,12 @@
     <None Include="Media\Web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Gallery.cshtml" />
-    <Content Include="Views\Partials\NestedContent\_NCFriendOrganizationsCarousel.cshtml" />
     <Content Include="Views\Contact.cshtml" />
+    <Content Include="Views\StandardContentPage.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_RCeblock.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_HeroBannerSlider.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_FourHighlightedItemsBlock.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_ContributorsBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

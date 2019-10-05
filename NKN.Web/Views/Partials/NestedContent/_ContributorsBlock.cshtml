@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContributorsBlockViewModel>
+
+@foreach (var contributor in Model.Contributors)
+{
+
+	if (@contributor.Image != null)
+	{
+		<div>@contributor.Image</div>
+	}
+	if (@contributor.Title != null)
+	{
+		<div>@contributor.Title</div>
+	}
+	if (@contributor.FacebookLink != null)
+	{
+		<div>@contributor.FacebookLink</div>
+	}
+	if (@contributor.YouTubeLink != null)
+	{
+		<div>@contributor.YouTubeLink</div>
+	}
+	if (@contributor.InstagramLink != null)
+	{
+		<div>@contributor.InstagramLink</div>
+	}
+}

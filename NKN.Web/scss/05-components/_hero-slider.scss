@@ -38,6 +38,17 @@
 		.wrapper {
 			height: 865px;
 		}
+	}
+	@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+		.slick-dots {
+			max-width: none;
+			left: 0;
+			padding-right: 0;
+			right: auto;
+			width: 600px;
+		}
+	}
+	@media only screen and (min-width: 1441px) and (max-width: 1660px) {
 		.slick-dots {
 			padding-right: 134px;
 		}

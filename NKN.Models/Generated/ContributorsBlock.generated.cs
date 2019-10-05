@@ -20,36 +20,36 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace NKN.Models.Generated
 {
-	/// <summary>Friend Organizations Carousel</summary>
-	[PublishedModel("friendOrganizationsCarousel")]
-	public partial class FriendOrganizationsCarousel : PublishedElementModel
+	/// <summary>Contributors Block</summary>
+	[PublishedModel("contributorsBlock")]
+	public partial class ContributorsBlock : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "friendOrganizationsCarousel";
+		public new const string ModelTypeAlias = "contributorsBlock";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FriendOrganizationsCarousel, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContributorsBlock, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public FriendOrganizationsCarousel(IPublishedElement content)
+		public ContributorsBlock(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Friend Organizations
+		/// Contributors
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("friendOrganizations")]
-		public IEnumerable<IPublishedContent> FriendOrganizations => this.Value<IEnumerable<IPublishedContent>>("friendOrganizations");
+		[ImplementPropertyType("contributors")]
+		public IEnumerable<IPublishedContent> Contributors => this.Value<IEnumerable<IPublishedContent>>("contributors");
 	}
 }

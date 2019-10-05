@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NKN.Core.Contexts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
 {
     public class NCFriendOrganizationsCarouselViewModel// : INestedContentViewModel
     {
-        /*public NCFriendOrganizationsCarouselViewModel(INestedContentContext<NCrichText> context)
+        /*public NCFriendOrganizationsCarouselViewModel(INestedContentContext<NCFriendOrganizationsCarousel> context)
         {
             Text = context.NestedContent.Text;
         }*/
