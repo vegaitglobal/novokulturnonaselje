@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>Mission Carousel Block</summary>
 	[PublishedModel("missionCarouselBlock")]
-	public partial class MissionCarouselBlock : PublishedElementModel
+	public partial class MissionCarouselBlock
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant

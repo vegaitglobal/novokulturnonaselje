@@ -13,8 +13,8 @@ namespace NKN.Core.ViewModels.Pages
         public ContactViewModel(IPageContext<Contact> context) : base(context)
         {
             PageTitle = context.Page.PageTitle;
-            BannerImage = new ImageViewModel(context.Page.BannerImage as Image);
-            Image = new ImageViewModel(context.Page.Image as Image);
+            BannerImage = (context.Page.BannerImage as Image).ToViewModel();
+            Image = (context.Page.Image as Image).ToViewModel();
             ContactInfo = HttpUtility.HtmlDecode(context.Page.ContactInfo.ToHtmlString());
             WriteUs = context.WithNestedContent(context.Page.WriteUs?.First()).AsViewModel<WriteUsViewModel>();
         }
