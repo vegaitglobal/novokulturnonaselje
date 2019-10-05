@@ -1,6 +1,6 @@
 $(function(){
 
-	functions.accordion();
+	functions.languageSwitcher();
 	functions.heroSlider();
 
 });

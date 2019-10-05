@@ -1,4 +1,13 @@
 //----------  typography  ----------
+.section-title {
+	color: $grey-dark;
+	font-family: $bold-cons;
+	font-size: 48px;
+	font-weight: bold;
+	line-height: 58px;
+	text-align: center;
+	text-transform: uppercase;
+}
 
 // icon font
 [class*='font-'] {

@@ -1,21 +1,15 @@
 var functions = (function() {
 	return {
-		//acordion
-		accordion: function () {
-			$('.accordion .acc-head').on('click', function () {
-				if (!$(this).hasClass('selected')) {
-					$('.accordion .acc-head').removeClass('selected');
-					$('.accordion .acc-content').slideUp().attr('aria-hidden', 'true');
-					$(this).addClass('selected');
-					$(this).parent().removeAttr('aria-haspopup')
-					$(this).next('.acc-content').slideDown().removeAttr('aria-hidden');
+		languageSwitcher: function () {
+			$('.js-selected-item').on('click', function () {
+				if (!$(this).hasClass('open')) {
+					$(this).addClass('open');
+					$(this).next('.js-language-list').stop().slideDown();
 				} else {
-					$(this).removeClass('selected');
-					$(this).parent().attr('aria-haspopup', 'true');
-					$(this).next('.acc-content').slideUp().attr('aria-hidden', 'true');
+					$(this).removeClass('open');
+					$(this).next('.js-language-list').stop().slideUp();
 				}
 			});
-			$('.accordion .acc-item:first').find('.acc-head').click();
 		},
 
 		heroSlider: function () {
