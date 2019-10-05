@@ -48,7 +48,7 @@ ul,
 li { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
 //----------  embedded content  ----------
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; max-width: 100%; }
 svg:not(:root) { overflow: hidden; }
 
 //----------  forms  ----------

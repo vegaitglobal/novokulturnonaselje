@@ -25,14 +25,20 @@
 @function font-char($filename) {
 	$char: "";
 
-	@if $filename == ico-facebook {
+	@if $filename == ico-arrow {
 		$char: "\E001";
 	}
-	@if $filename == ico-instagram {
+	@if $filename == ico-facebook {
 		$char: "\E002";
 	}
-	@if $filename == ico-youtube {
+	@if $filename == ico-hamburger {
 		$char: "\E003";
+	}
+	@if $filename == ico-instagram {
+		$char: "\E004";
+	}
+	@if $filename == ico-youtube {
+		$char: "\E005";
 	}
 
 	@return $char;
@@ -49,8 +55,14 @@
 	}
 }
 
+.font-ico-arrow {
+	@include font(ico-arrow);
+}
 .font-ico-facebook {
 	@include font(ico-facebook);
+}
+.font-ico-hamburger {
+	@include font(ico-hamburger);
 }
 .font-ico-instagram {
 	@include font(ico-instagram);

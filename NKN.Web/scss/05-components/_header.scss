@@ -7,6 +7,7 @@
 	z-index: 10;
 
 	.wrapper {
+		align-items: flex-start;
 		display: flex;
 	}
 }
@@ -16,7 +17,7 @@
 }
 
 .header-logo {
-	margin-right: auto;
+	margin: 48px auto 0 0;
 	width: 198px;
 	img {
 		width: 100%;
@@ -26,18 +27,95 @@
 	}
 }
 
+//----------  navigation  ----------
 .nav {
+	margin-top: 40px;
 	.nav-link {
 		color: $white;
+		display: inline-block;
+		font-size: 24px;
+		font-weight: 600;
+		letter-spacing: -.6px;
+		line-height: 29px;
+		margin-left: 54px;
+		text-transform: uppercase;
+		transition: .3s ease;
+		&:hover {
+			color: $green;
+		}
 	}
 }
 
+//----------  social icons  ----------
 .header-social {
+	margin: 42px 0 0 45px;
+	.header-social-link {
+		display: inline-block;
+		margin-left: 11px;
+		&:hover .icon {
+			color: $green;
+		}
+	}
 	.icon {
 		color: $white;
+		font-size: 26px;
+		transition: color .3s ease;
 	}
 }
 
 .header-hamburger {
 	display: none;
+}
+
+//----------  language switcher  ----------
+.language-switcher {
+	margin: 43px 0 0 52px;
+	position: relative;
+	.selected-item {
+		color: $white;
+		display: inline-block;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1;
+		padding-right: 14px;
+		position: relative;
+		transition: color .3s ease;
+		&::after {
+			@include font-styles;
+			content: font-char(ico-arrow);
+			display: inline-block;
+			font-size: 14px;
+			line-height: 1;
+			position: absolute;
+			right: 0;
+			top: 6px;
+			transform: rotate(-90deg);
+		}
+		&:hover {
+			color: $green;
+		}
+	}
+	.language-list {
+		background-color: $white;
+		color: $grey-dark;
+		display: none;
+		font-size: 20px;
+		font-weight: 600;
+		padding: 10px 15px;
+		position: absolute;
+		right: 0;
+		top: calc(100% + 10px);
+		li {
+			border-bottom: 1px solid #d4d4d4;
+			cursor: pointer;
+			padding: 5px 15px;
+			transition: color .3s ease;
+			&:last-child {
+				border-bottom: 0;
+			}
+			&:hover {
+				color: $green;
+			}
+		}
+	}
 }
