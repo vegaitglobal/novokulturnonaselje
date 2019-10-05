@@ -516,6 +516,7 @@
     <None Include="Media\Web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Gallery.cshtml" />
+    <Content Include="Views\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
