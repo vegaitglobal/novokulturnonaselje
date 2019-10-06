@@ -401,6 +401,10 @@
     <Compile Include="Generated\ContributorsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\EmbeddedVideoBlock.cs" />
+    <Compile Include="Generated\EmbeddedVideoBlock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Error404.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -453,6 +457,9 @@
     </Compile>
     <Compile Include="Generated\MissionItem.cs" />
     <Compile Include="Generated\MissionItem.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\Missions.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\ModelsBuilder.cs">
