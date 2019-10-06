@@ -1,0 +1,114 @@
+//----------  statistics block  ----------
+.statistics-block {
+	@include base-float;
+	overflow: hidden;
+	padding: 150px 0;
+	position: relative;
+	&::before,
+	&::after {
+		background-color: $white;
+		content: '';
+		display: inline-block;
+		height: 200px;
+		left: -30px;
+		position: absolute;
+		right: -30px;
+		z-index: 1;
+	}
+	&::before {
+		top: -130px;
+		transform: rotate(-3deg);
+	}
+	&::after {
+		bottom: -140px;
+		transform: rotate(3deg);
+	}
+	.overlay {
+		background-color: #096161;
+		bottom: 0;
+		left: 0;
+		opacity: .6;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+	}
+	.item {
+		min-height: 170px;
+		position: relative;
+		text-align: center;
+		width: 25%;
+	}
+	.value {
+		color: rgba($white, .6);
+		display: inline-block;
+		font-family: $bold-cons;
+		font-size: 160px;
+		line-height: 1;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.desc {
+		color: $black;
+		font-size: 22px;
+		font-style: italic;
+		line-height: 30px;
+		position: relative;
+		text-transform: uppercase;
+	}
+	@include breakpoint(desktop) {
+		.item {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+		}
+		.value {
+			@include responsive-font(120, 160, 1025, 1600);
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	@include breakpoint(touch) {
+		.wrapper {
+			flex-wrap: wrap;
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 150px 0 130px;
+		.item {
+			min-height: 10px;
+			margin-bottom: 20px;
+			width: 50%;
+		}
+		.value {
+			display: block;
+			font-size: 120px;
+		}
+		.desc {
+			color: $white;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 110px 0 80px;
+		.item {
+			margin-bottom: 30px;
+			min-height: 10px;
+			width: 100%;
+		}
+		.value {
+			display: block;
+			font-size: 100px;
+		}
+		.desc {
+			color: $white;
+			font-size: 18px;
+			line-height: 26px;
+		}
+	}
+}
