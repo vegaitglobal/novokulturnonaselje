@@ -13,8 +13,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
             FacebookLink = model.FacebookLink;
             YouTubeLink = model.YouTubeLink;
             InstagramLink = model.InstagramLink;
-            ExternalLink = model.ExternalLink;
-            InternalLink = model.InternalLink.ToViewModel();
+            Link = model.Link.ToViewModel();
         }
 
         public ImageViewModel Image { get; set; }
@@ -22,7 +21,6 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         public string FacebookLink { get; set; }
         public string YouTubeLink { get; set; }
         public string InstagramLink { get; set; }
-        public string ExternalLink { get; set; }
-        public LinkViewModel InternalLink { get; set; }
+        public LinkViewModel Link { get; set; }
     }
 }

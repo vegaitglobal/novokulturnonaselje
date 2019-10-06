@@ -432,6 +432,9 @@
     <Compile Include="Generated\Gallery.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\GallerySimpleBlock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Header.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -452,6 +455,9 @@
     <Compile Include="Generated\Image.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ImageWithRtetext.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\IPage.cs" />
     <Compile Include="Generated\MissionCarouselBlock.cs" />
     <Compile Include="Generated\MissionCarouselBlock.generated.cs">
@@ -466,6 +472,12 @@
     </Compile>
     <Compile Include="Generated\ModelsBuilder.cs">
       <Generator>UmbracoModelsBuilder</Generator>
+      <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
+    </Compile>
+    <Compile Include="Generated\ModelsBuilder.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Generated\NewsDetail.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>

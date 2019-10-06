@@ -20,71 +20,43 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace NKN.Models.Generated
 {
-	/// <summary>Contributors Block</summary>
-	[PublishedModel("contributorsBlock")]
-	public partial class ContributorsBlock
+	/// <summary>Image With RTE Text</summary>
+	[PublishedModel("imageWithRTEText")]
+	public partial class ImageWithRtetext : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "contributorsBlock";
+		public new const string ModelTypeAlias = "imageWithRTEText";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContributorsBlock, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImageWithRtetext, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContributorsBlock(IPublishedElement content)
+		public ImageWithRtetext(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Contributors
+		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("contributors")]
-		public IEnumerable<IPublishedContent> Contributors => this.Value<IEnumerable<IPublishedContent>>("contributors");
-
-		///<summary>
-		/// Include Hover
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("includeHover")]
-		public bool IncludeHover => this.Value<bool>("includeHover");
-
-		///<summary>
-		/// Show Contributor Titles
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("showContributorTitles")]
-		public bool ShowContributorTitles => this.Value<bool>("showContributorTitles");
-
-		///<summary>
-		/// Show Social Links
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("showSocialLinks")]
-		public bool ShowSocialLinks => this.Value<bool>("showSocialLinks");
+		[ImplementPropertyType("image")]
+		public IPublishedContent Image => this.Value<IPublishedContent>("image");
 
 		///<summary>
 		/// Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("text")]
-		public string Text => this.Value<string>("text");
-
-		///<summary>
-		/// Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("title")]
-		public string Title => this.Value<string>("title");
+		public IHtmlString Text => this.Value<IHtmlString>("text");
 	}
 }
