@@ -35,6 +35,18 @@ button {
 	}
 }
 
+.btn-white {
+	border-color: $white;
+	color: $white;
+	@include breakpoint(desktop) {
+		transition: background .3s ease, color .3s ease;
+		&:hover {
+			background-color: $white;
+			color: $grey-dark;
+		}
+	}
+}
+
 .slick-dots {
 	font-size: 0;
 	li {

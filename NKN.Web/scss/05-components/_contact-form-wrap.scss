@@ -99,4 +99,14 @@
 
 .contact-form {
 	@include base-float;
+	position: relative;
+	z-index: 5;
+	.contact-form-wrap {
+		margin: -85px auto 0;
+		max-width: 885px;
+		padding: 37px 0 0 84px;
+		h2 {
+			margin-bottom: 24px;
+		}
+	}
 }

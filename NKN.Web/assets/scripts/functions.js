@@ -76,7 +76,15 @@ var functions = (function() {
 					infinite: true,
 					slidesToShow: 4,
 					slidesToScroll: 1,
-					arrows: true
+					arrows: true,
+					responsive: [
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1
+							}
+						}
+					]
 				});
 			}
 		},

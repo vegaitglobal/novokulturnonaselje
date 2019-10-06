@@ -4,10 +4,30 @@
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 180px 0;
+	overflow: hidden;
+	padding: 180px 0 320px;
 	position: relative;
+	&::before,
+	&::after {
+		background-color: $white;
+		content: '';
+		display: inline-block;
+		height: 200px;
+		left: -30px;
+		position: absolute;
+		right: -30px;
+		z-index: 1;
+	}
+	&::before {
+		top: -97px;
+		transform: rotate(4deg);
+	}
+	&::after {
+		bottom: -130px;
+		transform: rotate(-4deg);
+	}
 	.overlay {
-		background-color: $green;
+		background-color: #096161;
 		bottom: 0;
 		left: 0;
 		opacity: .6;
@@ -15,7 +35,155 @@
 		right: 0;
 		top: 0;
 	}
+	.wrapper {
+		position: relative;
+	}
 	.section-title {
 		color: $white;
+		margin-bottom: 65px;
+		position: relative;
+		&::before {
+			background-color: $green;
+			content: '';
+			display: inline-block;
+			height: 54px;
+			left: 50%;
+			position: absolute;
+			top: calc(100% + 12px);
+			transform: translateX(-50%);
+			width: 3px;
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 180px 0 220px;
+	}
+	@include breakpoint(phone) {
+		padding: 100px 0 133px;
+		&::before,
+		&::after {
+			height: 100px;
+		}
+		&::before {
+			top: -76px;
+			transform: rotate(4deg);
+		}
+		&::after {
+			bottom: -86px;
+		}
+		.section-title {
+			margin-bottom: 104px;
+			&::before {
+				height: 78px;
+				top: calc(100% + 26px);
+			}
+		}
+	}
+}
+
+.mission-slider {
+	border-top: 3px solid $green;
+	.item {
+		margin: 0 10px;
+		text-align: center;
+		padding: 60px 30px 0;
+		position: relative;
+		&::before {
+			background-color: $green;
+			content: '';
+			display: inline-block;
+			height: 45px;
+			left: 50%;
+			top: 0;
+			transform: translateX(-50%);
+			width: 3px;
+		}
+	}
+	h3 {
+		color: $white;
+		font-family: $bold-cons;
+		font-size: 36px;
+		line-height: 43px;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+	}
+	p {
+		color: $white;
+		font-size: 16px;
+		line-height: 28px;
+		margin-bottom: 17px;
+	}
+	.slick-arrow {
+		font-size: 0;
+		position: absolute;
+		top: calc(50% - 20px);
+		transform: translateY(-50%);
+		&::before {
+			@include font-styles;
+			color: $white;
+			content: font-char(ico-arrow);
+			display: inline-block;
+			font-size: 24px;
+			line-height: 1;
+		}
+	}
+	.slick-prev {
+		left: -4px;
+	}
+	.slick-next {
+		right: -4px;
+		&::before {
+			transform: rotate(-180deg);
+		}
+	}
+	@include breakpoint(desktop) {
+		.slick-arrow {
+			transition: color .3s ease;
+			&:hover::before {
+				color: $green;
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		.item {
+			padding: 40px 10px 0;
+		}
+		h3 {
+			font-size: 24px;
+			line-height: 30px;
+			margin-bottom: 15px;
+		}
+		p {
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+	@include breakpoint(phone) {
+		margin: 0 auto;
+		max-width: 220px;
+		.item {
+			margin: 0;
+			padding: 22px 0 0;
+		}
+		h3 {
+			font-size: 33px;
+			margin-bottom: 11px;
+		}
+		p {
+			font-size: 13px;
+			margin-bottom: 24px;
+		}
+		.slick-arrow {
+			bottom: -33px;
+			top: auto;
+			transform: none;
+		}
+		.slick-prev {
+			left: auto;
+			right: calc(50% + 37px);
+		}
+		.slick-next {
+			right: auto;
+			left: calc(50% + 37px);
+		}
 	}
 }

@@ -1,48 +1,59 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContributorsBlockViewModel>
 
-@if (Model.Title != null)
-{
-	<div>@Model.Title</div>
-}
+<section class="contributors-block">
+	<div class="wrapper">
+		@if (Model.Title != null)
+		{
+			<h2 class="section-title">@Model.Title</h2>
+		}
 
-@foreach (var contributor in Model.Contributors)
-{
-	if (@contributor.Image != null)
-	{
-		if (@contributor.InternalLink != null)
-		{
-			<a href="@contributor.InternalLink.Url">
-				<img src="@contributor.Image.Url" />
-			</a>
-		}
-		else if (@contributor.ExternalLink != null)
-		{
-			<a href="@contributor.ExternalLink">
-				<img src="@contributor.Image.Url" />
-			</a>
-		}
-		else
-		{
-			<img src="@contributor.Image.Url" />
-		}
-	}
-	if (@contributor.Title != null && Model.ShowContributorTitles)
-	{
-		<div>@contributor.Title</div>
-	}
-	if (Model.ShowSocialLinks)
-	{
-		if (@contributor.FacebookLink != null)
-		{
-			<div>@contributor.FacebookLink</div>
-		}
-		if (@contributor.YouTubeLink != null)
-		{
-			<div>@contributor.YouTubeLink</div>
-		}
-		if (@contributor.InstagramLink != null)
-		{
-			<div>@contributor.InstagramLink</div>
-		}
-	}
-}
+		<p>@Model.Text</p>
+
+		<div class="contributors-slider js-contributors-slider">
+			@foreach (var contributor in Model.Contributors)
+			{
+				<div>
+					if (@contributor.Image != null)
+					{
+						if (@contributor.InternalLink != null)
+						{
+							<a href="@contributor.InternalLink.Url">
+								<img src="@contributor.Image.Url" />
+							</a>
+						}
+						else if (@contributor.ExternalLink != null)
+						{
+							<a href="@contributor.ExternalLink">
+								<img src="@contributor.Image.Url" />
+							</a>
+						}
+						else
+						{
+							<img src="@contributor.Image.Url" />
+						}
+					}
+
+					if (@contributor.Title != null && Model.ShowContributorTitles)
+					{
+						<div>@contributor.Title</div>
+					}
+					if (Model.ShowSocialLinks)
+					{
+						if (@contributor.FacebookLink != null)
+						{
+							<div>@contributor.FacebookLink</div>
+						}
+						if (@contributor.YouTubeLink != null)
+						{
+							<div>@contributor.YouTubeLink</div>
+						}
+						if (@contributor.InstagramLink != null)
+						{
+							<div>@contributor.InstagramLink</div>
+						}
+					}
+				</div>
+			}
+		</div>
+	</div>
+</section>
