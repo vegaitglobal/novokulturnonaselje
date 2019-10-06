@@ -575,6 +575,7 @@
     <Content Include="Views\Partials\NestedContent\_MissionCarouselBlock.cshtml" />
     <Content Include="Views\Partials\NestedContent\_StatisticsBlock.cshtml" />
     <Content Include="Views\ProjectCategoryLanding.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_EmbeddedVideoBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
