@@ -26,30 +26,32 @@
 	</div>
 
 	<div class="projects-list-holder">
-		<h2 class="section-title">Realizovani projekti</h2>
-		<ul class="projects-list">
-			@foreach (var projectPreview in Model.AllProjects)
-			{
-			<li>
-				@if (@projectPreview.SmallImage != null)
+		<div class="wrapper">
+			<h2 class="section-title">Realizovani projekti</h2>
+			<div class="projects-list js-projects-list">
+				@foreach (var projectPreview in Model.AllProjects)
 				{
-					<div class="image-holder">
-						<img src="@projectPreview.SmallImage.Url" alt="" />
+				<div class="item">
+					@if (@projectPreview.SmallImage != null)
+					{
+						<div class="image-holder">
+							<img src="@projectPreview.SmallImage.Url" alt="" />
+						</div>
+					}
+					<div class="text-holder">
+						@if (@projectPreview.Title != null)
+						{
+							<h3>@projectPreview.Title</h3>
+						}
+						@if (@projectPreview.Summary != null)
+						{
+							<p>@projectPreview.Summary</p>
+						}
+						<a href="@projectPreview.Url" class="btn">Saznaj više</a>
 					</div>
-				}
-				<div class="text-holder">
-					@if (@projectPreview.Title != null)
-					{
-						<h3>@projectPreview.Title</h3>
-					}
-					@if (@projectPreview.Summary != null)
-					{
-						<p>@projectPreview.Summary</p>
-					}
-					<a href="@projectPreview.Url">@projectPreview.Url</a>
 				</div>
-			</li>
-			}
-		</ul>
+				}
+			</div>
+		</div>
 	</div>
 </section>

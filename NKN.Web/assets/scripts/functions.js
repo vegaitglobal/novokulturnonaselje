@@ -70,7 +70,7 @@ var functions = (function() {
 			if ($('.js-contributors-slider').length) {
 				$('.js-contributors-slider').slick({
 					infinite: true,
-					slidesToShow: 4,
+					slidesToShow: 3,
 					slidesToScroll: 1,
 					dots: true,
 					arrows: false,
@@ -79,6 +79,27 @@ var functions = (function() {
 							breakpoint: 768,
 							settings: {
 								slidesToShow: 1
+							}
+						}
+					]
+				});
+			}
+		},
+
+		projectsSlider: function () {
+			if ($('.js-projects-list').length) {
+				$('.js-projects-list').slick({
+					infinite: true,
+					slidesToScroll: 1,
+					slidesPerRow: 3,
+					rows: 2,
+					dots: true,
+					arrows: false,
+					responsive: [
+						{
+							breakpoint: 768,
+							settings: {
+								slidesPerRow: 1
 							}
 						}
 					]

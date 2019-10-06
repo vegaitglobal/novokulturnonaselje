@@ -30,8 +30,10 @@
 @import '05-components/news-feed-block';
 @import '05-components/rte-block';
 @import '05-components/statistics-block';
+@import '05-components/video';
 
 //----------  layout  ----------
+@import '06-layout/projects-list';
 
 //----------  libs  ----------
 @import '07-libs/slick';
