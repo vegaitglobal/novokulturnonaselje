@@ -1,8 +1,11 @@
-﻿<header class="header js-header">
+﻿@using NKN.Core.ViewModels.Partials.Layout
+@inherits UmbracoViewPage<HeaderViewModel>
+
+<header class="header js-header">
 	<div class="wrapper">
-		<a href="javascript:;" class="header-logo">
-			<img src="/assets/img/logo-white.png" class="header-logo-white" alt=""/>
-			<img src="/assets/img/logo-black.png" class="header-logo-black" alt=""/>
+		<a href="@Model.LogoUrl" class="header-logo">
+			<img src="@Model.Logo.Url" class="header-logo-white" alt="" />
+			<img src="@Model.LogoBlack.Url" class="header-logo-black" alt="" />
 		</a>
 		<nav class="nav js-nav">
 			<a href="javascript:;" class="nav-link">O nama</a>
@@ -11,20 +14,32 @@
 			<a href="javascript:;" class="nav-link">Donacije</a>
 			<a href="javascript:;" class="nav-link">Kontakt</a>
 		</nav>
-		<div class="header-social">
-			<a href="javascript:;" class="header-social-link">
-				<span class="sr-only">Facebook</span>
-				<span class="icon font-ico-facebook"></span>
-			</a>
-			<a href="javascript:;" class="header-social-link">
-				<span class="sr-only">Instagram</span>
-				<span class="icon font-ico-instagram"></span>
-			</a>
-			<a href="javascript:;" class="header-social-link">
-				<span class="sr-only">YouTube</span>
-				<span class="icon font-ico-youtube"></span>
-			</a>
-		</div>
+		@if (!string.IsNullOrEmpty(Model.FacebookLink) || !string.IsNullOrEmpty(Model.InstagramLink) || !string.IsNullOrEmpty(Model.YouTubeLink))
+		{
+			<div class="header-social">
+				@if (!string.IsNullOrEmpty(Model.FacebookLink))
+				{
+					<a href="@Model.FacebookLink" class="header-social-link">
+						<span class="sr-only">Facebook</span>
+						<span class="icon font-ico-facebook"></span>
+					</a>
+				}
+				@if (!string.IsNullOrEmpty(Model.InstagramLink))
+				{
+					<a href="@Model.InstagramLink" class="header-social-link">
+						<span class="sr-only">Instagram</span>
+						<span class="icon font-ico-instagram"></span>
+					</a>
+				}
+				@if (!string.IsNullOrEmpty(Model.YouTubeLink))
+				{
+					<a href="@Model.YouTubeLink" class="header-social-link">
+						<span class="sr-only">YouTube</span>
+						<span class="icon font-ico-youtube"></span>
+					</a>
+				}
+			</div>
+		}
 		<div class="language-switcher">
 			<button type="button" class="selected-item js-selected-item">SR</button>
 			<ul class="language-list js-language-list">

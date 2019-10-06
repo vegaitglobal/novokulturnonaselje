@@ -1,19 +1,17 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContributorsBlockViewModel>
+﻿@inherits UmbracoViewPage<ContributorsBlockViewModel>
 
 <section class="contributors-block">
 	<div class="wrapper">
-		@if (Model.Title != null)
+		@if (!string.IsNullOrEmpty(Model.Title))
 		{
 			<h2 class="section-title">@Model.Title</h2>
 		}
 
-		<p>@Model.Text</p>
-
 		<div class="contributors-slider js-contributors-slider">
 			@foreach (var contributor in Model.Contributors)
 			{
-				<div>
-					if (@contributor.Image != null)
+				<div class="item">
+					@if (@contributor.Image != null)
 					{
 						if (@contributor.InternalLink != null)
 						{
@@ -33,24 +31,38 @@
 						}
 					}
 
-					if (@contributor.Title != null && Model.ShowContributorTitles)
+					@if (!string.IsNullOrEmpty(contributor.Title))
 					{
-						<div>@contributor.Title</div>
+						<p>
+							@contributor.Title
+						</p>
 					}
-					if (Model.ShowSocialLinks)
+
+					@if (Model.ShowSocialLinks)
 					{
-						if (@contributor.FacebookLink != null)
-						{
-							<div>@contributor.FacebookLink</div>
-						}
-						if (@contributor.YouTubeLink != null)
-						{
-							<div>@contributor.YouTubeLink</div>
-						}
-						if (@contributor.InstagramLink != null)
-						{
-							<div>@contributor.InstagramLink</div>
-						}
+						<div class="social-icons">
+							@if (!string.IsNullOrEmpty(contributor.FacebookLink))
+							{
+								<a href="@contributor.FacebookLink">
+									<span class="sr-only">Facebook</span>
+									<span class="icon font-ico-facebook"></span>
+								</a>
+							}
+							@if (!string.IsNullOrEmpty(contributor.InstagramLink))
+							{
+								<a href="@contributor.InstagramLink">
+									<span class="sr-only">Instagram</span>
+									<span class="icon font-ico-instagram"></span>
+								</a>
+							}
+							@if (!string.IsNullOrEmpty(contributor.YouTubeLink))
+							{
+								<a href="@contributor.YouTubeLink">
+									<span class="sr-only">YouTube</span>
+									<span class="icon font-ico-youtube"></span>
+								</a>
+							}
+						</div>
 					}
 				</div>
 			}

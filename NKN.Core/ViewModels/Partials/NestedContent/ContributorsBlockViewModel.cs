@@ -10,12 +10,14 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         public ContributorsBlockViewModel(INestedContentContext<ContributorsBlock> context)
         {
             Title = context.NestedContent.Title;
+            Text = context.NestedContent.Text;
             Contributors = context.NestedContent.Contributors?.OfType<FriendOrganization>().Select(model => new FriendOrganizationViewModel(model));
             ShowSocialLinks = context.NestedContent.ShowSocialLinks;
             ShowContributorTitles = context.NestedContent.ShowContributorTitles;
         }
 
         public string Title { get; set; }
+        public string Text { get; set; }
         public IEnumerable<FriendOrganizationViewModel> Contributors { get; set; }
         public bool ShowSocialLinks { get; set; }
         public bool ShowContributorTitles { get; set; }
