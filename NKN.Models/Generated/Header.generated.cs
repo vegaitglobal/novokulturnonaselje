@@ -36,6 +36,10 @@ namespace NKN.Models.Generated
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		IPublishedContent Logo { get; }
 
+		/// <summary>Logo Black</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IPublishedContent LogoBlack { get; }
+
 		/// <summary>YouTube Link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		string YouTubeLink { get; }
@@ -98,6 +102,17 @@ namespace NKN.Models.Generated
 		/// <summary>Static getter for Logo</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static IPublishedContent GetLogo(IHeader that) => that.Value<IPublishedContent>("logo");
+
+		///<summary>
+		/// Logo Black
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("logoBlack")]
+		public IPublishedContent LogoBlack => GetLogoBlack(this);
+
+		/// <summary>Static getter for Logo Black</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IPublishedContent GetLogoBlack(IHeader that) => that.Value<IPublishedContent>("logoBlack");
 
 		///<summary>
 		/// YouTube Link

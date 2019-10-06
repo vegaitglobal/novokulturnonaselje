@@ -88,6 +88,13 @@ namespace NKN.Models.Generated
 		public IPublishedContent Logo => Header.GetLogo(this);
 
 		///<summary>
+		/// Logo Black
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("logoBlack")]
+		public IPublishedContent LogoBlack => Header.GetLogoBlack(this);
+
+		///<summary>
 		/// YouTube Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
