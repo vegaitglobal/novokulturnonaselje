@@ -53,6 +53,13 @@ namespace NKN.Models.Generated
 		public IEnumerable<IPublishedContent> Contributors => this.Value<IEnumerable<IPublishedContent>>("contributors");
 
 		///<summary>
+		/// Include Hover
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("includeHover")]
+		public bool IncludeHover => this.Value<bool>("includeHover");
+
+		///<summary>
 		/// Show Contributor Titles
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

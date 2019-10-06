@@ -19,12 +19,11 @@
 		<div class="right-col">
 			<div class="contact-form-wrap">
 				<h2>@Model.WriteUs.Title</h2>
-
 				<form id="contact-us" action="/umbraco/api/forms/contactus" method="post">
 					<fieldset>
 						<div class="fieldset-inner">
 							<div class="input-wrap">
-								<input type="text" id="contactName" name="fullName" placeholder="@Model.WriteUs.FullName" />
+								<input type="text" id="contactName" name="name" placeholder="@Model.WriteUs.FullName" />
 								<label for="contactName" class="sr-only">@Model.WriteUs.FullName</label>
 							</div>
 							<div class="input-wrap">
@@ -35,9 +34,10 @@
 								<textarea id="contactMessage" name="message" placeholder="@Model.WriteUs.Message"></textarea>
 								<label for="contactMessage" class="sr-only">@Model.WriteUs.Message</label>
 							</div>
-							<span class="error-message"></span>
+							<span class="error-message" style="color: red"></span>
+							<span class="success-message" style="display: none; color:green">@Model.WriteUs.OnSubmitMessage</span>
 							<div class="input-submit-wrap">
-								<button type="submit" class="btn">@Model.WriteUs.SubmitButtonText</button>
+								<button type="submit" id="contact-us-submit" class="btn">@Model.WriteUs.SubmitButtonText</button>
 							</div>
 						</div>
 					</fieldset>
@@ -46,8 +46,6 @@
 		</div>
 	</div>
 </section>
-
-<script src="~/assets/scripts/contact-us.js"></script>
 
 <!-- <section class="rte-block">
 	<div class="wrapper">
@@ -69,7 +67,6 @@
 		</ul>
 	</div>
 </section> -->
-
 <!-- <section class="statistics-block" style="background-image: url(assets/img/content/mission-background.jpg);">
 	<div class="wrapper">
 		<div class="item">

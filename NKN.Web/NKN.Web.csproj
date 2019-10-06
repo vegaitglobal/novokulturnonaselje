@@ -576,6 +576,8 @@
     <Content Include="Views\Partials\NestedContent\_StatisticsBlock.cshtml" />
     <Content Include="Views\ProjectCategoryLanding.cshtml" />
     <Content Include="Views\Partials\NestedContent\_EmbeddedVideoBlock.cshtml" />
+    <Content Include="Views\NewsLanding.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_WriteUs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
