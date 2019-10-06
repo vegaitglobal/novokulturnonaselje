@@ -1,13 +1,11 @@
-﻿using System;
-using Umbraco.Web;
-using NKN.Core.Extensions;
-using NKN.Models.Extensions;
-using NKN.Core.ViewModels.Shared;
-using NKN.Models.Generated;
+﻿using NKN.Core.Extensions;
 using NKN.Core.ViewModels.Partials.NestedContent;
-using System.Linq;
+using NKN.Core.ViewModels.Shared;
+using NKN.Models.Extensions;
+using NKN.Models.Generated;
+using System;
 using System.Collections.Generic;
-using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Web;
 
 namespace NKN.Core.ViewModels.Partials.Layout
 {

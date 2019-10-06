@@ -419,11 +419,17 @@
     <Compile Include="Generated\Footer.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\FooterPages.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\FourHighlightedItemsBlock.cs" />
     <Compile Include="Generated\FourHighlightedItemsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\FriendOrganization.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\FriendOrganizationsPages.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Friends.generated.cs">
@@ -453,6 +459,9 @@
     <Compile Include="Generated\IHeader.cs" />
     <Compile Include="Generated\Image.cs" />
     <Compile Include="Generated\Image.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ImageAlbum.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\ImageWithRtetext.generated.cs">
