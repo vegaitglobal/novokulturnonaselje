@@ -2,3 +2,11 @@
 
 <h2>Gallery</h2>
 
+@foreach (var album in Model.ImageAlbums)
+{
+	<div>@album.Title</div>
+	foreach (var image in album.Images)
+	{
+		<img src="@image.Url" />
+	}
+}

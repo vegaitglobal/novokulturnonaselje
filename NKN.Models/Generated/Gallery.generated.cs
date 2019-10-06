@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>Gallery</summary>
 	[PublishedModel("gallery")]
-	public partial class Gallery : PublishedContentModel, IFooter, IHeader, IPage, ISiteSettings
+	public partial class Gallery : PublishedContentModel, IBanner, IFooter, IHeader, IPage, ISiteSettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,6 +44,20 @@ namespace NKN.Models.Generated
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Video Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("videoLinks")]
+		public IEnumerable<string> VideoLinks => this.Value<IEnumerable<string>>("videoLinks");
+
+		///<summary>
+		/// Banner Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage => Banner.GetBannerImage(this);
 
 		///<summary>
 		/// Copyright Text: The site copyright text.

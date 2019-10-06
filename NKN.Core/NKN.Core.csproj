@@ -345,6 +345,7 @@
     <Compile Include="ViewModels\Partials\NestedContent\GallerySimpleBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\HeroBannerSliderViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\HighlightedItemViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\ImageAlbumViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ImageWithRtetextViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MissionCarouselBlockViewModel.cs" />
