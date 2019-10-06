@@ -1,4 +1,21 @@
 //----------  mission carousel block  ----------
 .mission-carousel-block {
 	@include base-float;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 180px 0;
+	position: relative;
+	.overlay {
+		background-color: $green;
+		bottom: 0;
+		left: 0;
+		opacity: .6;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.section-title {
+		color: $white;
+	}
 }

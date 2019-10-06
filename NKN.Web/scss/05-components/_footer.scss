@@ -9,7 +9,11 @@
 		font-size: 0;
 		text-align: center;
 		li {
+			color: $white;
 			display: inline-block;
+			font-size: 14px;
+			letter-spacing: .5px;
+			line-height: 20px;
 			margin:  0 20px;
 		}
 	}
@@ -19,9 +23,15 @@
 		letter-spacing: .5px;
 		line-height: 20px;
 	}
+	.footer-credit a {
+		font-weight: bold;
+	}
 	@include breakpoint(phone) {
 		.footer-links li {
 			margin: 0 10px;
+		}
+		.footer-credit {
+			display: block;
 		}
 	}
 }

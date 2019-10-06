@@ -70,6 +70,17 @@ var functions = (function() {
 			}
 		},
 
+		missionSlider: function () {
+			if ($('.js-mission-slider').length) {
+				$('.js-mission-slider').slick({
+					infinite: true,
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					arrows: true
+				});
+			}
+		},
+
 		fourEqualHeight: function () {
 			if ($('.js-four-highlighted-block').length) {
 				if (!mobileView) {
