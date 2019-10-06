@@ -1,7 +1,33 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ProjectCategoryLanding>
-@using ContentModels = NKN.Models.Generated;
-@{
-	Layout = null;
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProjectCategoryLandingViewModel>
+
+
+@if (Model.Image != null)
+{
+	<img src="@Model.Image.Url" />
 }
 
-looool its a project category
+@if (Model.Text != null)
+{
+	<div>@Model.Text</div>
+}
+
+<ul>
+	@foreach (var projectPreview in Model.AllProjects)
+	{
+	<li>
+		@if (@projectPreview.SmallImage != null)
+		{
+			<img src="@projectPreview.SmallImage.Url" />
+		}
+		@if (@projectPreview.Title != null)
+		{
+			@projectPreview.Title
+		}
+		@if (@projectPreview.Summary != null)
+		{
+			@projectPreview.Summary
+		}
+		<a href="@projectPreview.Url">@projectPreview.Url</a>
+	</li>
+	}
+</ul>

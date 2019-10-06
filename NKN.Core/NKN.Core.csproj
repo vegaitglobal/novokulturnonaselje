@@ -280,6 +280,8 @@
     <Compile Include="Contexts\SiteContext.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\ContactController.cs" />
+    <Compile Include="Controllers\RenderMvc\NewsDetailController.cs" />
+    <Compile Include="Controllers\RenderMvc\ProjectDetailController.cs" />
     <Compile Include="Controllers\RenderMvc\ProjectCategoryLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\StandardContentPageController.cs" />
     <Compile Include="Controllers\Surface\Partials\NestedContentController.cs" />
