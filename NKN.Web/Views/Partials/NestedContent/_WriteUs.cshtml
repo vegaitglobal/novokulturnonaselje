@@ -1,0 +1,40 @@
+﻿@inherits UmbracoViewPage<WriteUsViewModel>
+
+@if (Model.BackgroundImage == null)
+{
+	<section class="contact-form">
+		<div class="wrapper">
+			<div class="contact-form-wrap">
+				<h2>@Model.Title</h2>
+				<form id="contact-us" action="/umbraco/api/forms/contactus" method="post">
+					<fieldset>
+						<div class="fieldset-inner">
+							<div class="input-wrap">
+								<input type="text" id="contactName" name="name" placeholder="@Model.FullName" />
+								<label for="contactName" class="sr-only">@Model.FullName</label>
+							</div>
+							<div class="input-wrap">
+								<input type="text" id="contactEmail" name="email" placeholder="@Model.Email" />
+								<label for="contactEmail" class="sr-only">@Model.Email</label>
+							</div>
+							<div class="input-wrap input-wrap-fullwidth">
+								<textarea id="contactMessage" name="message" placeholder="@Model.Message"></textarea>
+								<label for="contactMessage" class="sr-only">@Model.Message</label>
+							</div>
+							<span class="error-message" style="color: red"></span>
+							<span class="success-message" style="display: none">@Model.OnSubmitMessage</span>
+							<div class="input-submit-wrap">
+								<button type="submit" id="contact-us-submit" class="btn">@Model.SubmitButtonText</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</section>
+}
+else
+{
+	// another type of contact form layout, when bg image is set
+}
+

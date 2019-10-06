@@ -1,71 +1,89 @@
 ﻿var constraints = {
-    email: {
-        presence: true,
-        email: true
-    },
-    fullName: {
-        presence: true,
-        length: {
-            minimum: 3,
-            maximum: 50
-        }
-    },
-    message: {
-        presence: true,
-        length: {
-            minimum: 3,
-            maximum: 500
-        }
-    }
+	email: {
+		presence: {
+			message: 'Email adresa nije uneta'
+		},
+		email: {
+			message: 'Email adresa nije validna'
+		}
+	},
+	name: {
+		presence: {
+			message: 'Ime i prezime nije uneto'
+		},
+		length: {
+			minimum: 3,
+			maximum: 50,
+			message: 'Ime i prezime može biti max 50 slova'
+		}
+	},
+	message: {
+		presence: {
+			message: 'Poruka nije uneta'
+		},
+		length: {
+			minimum: 3,
+			maximum: 500,
+			message: 'Poruka može biti max 500 slova'
+		}
+	}
 };
 
-document.getElementById("contact-us")
-    .addEventListener("submit", function (ev) {
-        ev.preventDefault();
-        handleFormSubmit(this);
-    });
-
-function handleFormSubmit(form) {
-    // First we gather the values from the form
-    var contactInfo = validate.collectFormValues(form);
-    // then we validate them against the constraints
-    var errors = validate(contactInfo, constraints, { format: "flat" });
-    // then we update the form to reflect the results
-    showErrors(form, errors || []);
-    // And if all constraints pass we let the user know
-    if (!errors) {
-        contact(contactInfo);
-    }
+var contactForm = document.getElementById("contact-us");
+if (contactForm !== null) {
+	document.getElementById("contact-us")
+		.addEventListener("submit", function (ev) {
+			ev.preventDefault();
+			handleFormSubmit(this);
+		});
 }
 
-// Updates the inputs with the validation errors
+function handleFormSubmit(form) {
+	var contactInfo = validate.collectFormValues(form);
+	var errors = validate(contactInfo, constraints, { format: "flat" });
+	showErrors(form, errors || []);
+
+	if (!errors) {
+		contact(contactInfo);
+	}
+}
+
 function showErrors(form, errors) {
-    if (errors.length > 0)
-        document.getElementsByClassName('error-message')[0].innerHTML = errors.reduce(function (message, error) {
-            return message + error;
-        });
+	clearSuccessMessage();
+	if (errors.length > 0) {
+		var message = errors.reduce(function (message, error) { return message + error.split(' ').slice(1).join(' ') + "!<br>"; }, '');
+		document.getElementsByClassName('error-message')[0].innerHTML = message;
+	}
 }
 
 function setErrorMessage() {
-    return document.getElementsByClassName('error-message')[0].innerHTML = 'Udruženje nije kontaktirano. Email nije uspešno poslat.';
+	clearSuccessMessage();
+	return document.getElementsByClassName('error-message')[0].innerHTML = 'Udruženje nije kontaktirano. Email nije uspešno poslat.';
 }
 
-function contact(contactInfo) {
-    fetch('/umbraco/api/forms/contactus', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(contactInfo)
-    }).then(function (response) {
-        if (response.status === 400) {
-            setErrorMessage();
-            return;
-        }
+function clearErrorMessage() {
+	return document.getElementsByClassName('error-message')[0].innerHTML = '';
+}
 
-        // Your code for handling the data you get from the API
-        document.getElementsByClassName('error-message')[0].innerHTML = '@Model.WriteUs.OnSubmitMessage'
-    }).catch(function () {
-        setErrorMessage();
-    });
+function clearSuccessMessage() {
+	$('.success-message').css({ "display": "none", "color": "green" });
+}
+function contact(contactInfo) {
+	fetch('/umbraco/api/forms/contactus', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(contactInfo)
+	}).then(function (response) {
+		if (response.status === 400) {
+			setErrorMessage();
+			return;
+		}
+
+		$('.success-message').css({ "display": "block", "color": "green" });
+		clearErrorMessage();
+	}).catch(function (error) {
+		setErrorMessage();
+	});
 }
