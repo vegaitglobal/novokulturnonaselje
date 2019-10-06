@@ -12,6 +12,7 @@ $(function(){
 $(window).on('load', function() {
 
 	functions.fourEqualHeight();
+	functions.contributorsEqualHeight();
 
 });
 
@@ -24,5 +25,6 @@ $(window).on('scroll', function () {
 $(window).resize(function(){
 
 	functions.fourEqualHeight();
+	functions.contributorsEqualHeight();
 
 });

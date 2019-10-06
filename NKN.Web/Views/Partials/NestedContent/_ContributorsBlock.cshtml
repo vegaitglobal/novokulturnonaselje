@@ -7,6 +7,8 @@
 			<h2 class="section-title">@Model.Title</h2>
 		}
 
+		<p>@Model.Text</p>
+
 		<div class="contributors-slider js-contributors-slider">
 			@foreach (var contributor in Model.Contributors)
 			{
@@ -15,19 +17,21 @@
 					{
 						if (@contributor.InternalLink != null)
 						{
-							<a href="@contributor.InternalLink.Url">
+							<a href="@contributor.InternalLink.Url" class="image-holder js-image-holder">
 								<img src="@contributor.Image.Url" />
 							</a>
 						}
 						else if (@contributor.ExternalLink != null)
 						{
-							<a href="@contributor.ExternalLink">
+							<a href="@contributor.ExternalLink" class="image-holder js-image-holder">
 								<img src="@contributor.Image.Url" />
 							</a>
 						}
 						else
 						{
-							<img src="@contributor.Image.Url" />
+							<div class="image-holder js-image-holder">
+								<img src="@contributor.Image.Url" />
+							</div>
 						}
 					}
 

@@ -58,6 +58,18 @@ var functions = (function() {
 			}
 		},
 
+		contributorsEqualHeight: function () {
+			if ($('.js-contributors-slider').length) {
+				if (!mobileView) {
+					$('.js-contributors-slider').each(function () {
+						helpers.equalHeight($(this).find('.js-image-holder'), 4);
+					});
+				} else {
+					$('.js-contributors-slider').find('.js-image-holder').css('height', '');
+				}
+			}
+		},
+
 		contributorsSlider: function () {
 			if ($('.js-contributors-slider').length) {
 				$('.js-contributors-slider').slick({
