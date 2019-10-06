@@ -419,6 +419,9 @@
     <Compile Include="Generated\Footer.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\FooterPages.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\FourHighlightedItemsBlock.cs" />
     <Compile Include="Generated\FourHighlightedItemsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -426,12 +429,17 @@
     <Compile Include="Generated\FriendOrganization.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\FriendOrganizationsPages.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\Friends.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\Gallery.cs" />
     <Compile Include="Generated\Gallery.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\GallerySimpleBlock.cs" />
     <Compile Include="Generated\GallerySimpleBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -455,6 +463,10 @@
     <Compile Include="Generated\Image.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ImageAlbum.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ImageWithRtetext.cs" />
     <Compile Include="Generated\ImageWithRtetext.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -478,6 +490,9 @@
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Generated\NewsContainer.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\NewsDetail.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>

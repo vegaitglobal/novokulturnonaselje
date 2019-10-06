@@ -20,93 +20,30 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace NKN.Models.Generated
 {
-	/// <summary>News Landing</summary>
-	[PublishedModel("newsLanding")]
-	public partial class NewsLanding : PublishedContentModel, IFooter, IHeader, IPage, ISiteSettings
+	/// <summary>Footer Pages</summary>
+	[PublishedModel("footerPages")]
+	public partial class FooterPages : PublishedContentModel, IPage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "newsLanding";
+		public new const string ModelTypeAlias = "footerPages";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NewsLanding, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FooterPages, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public NewsLanding(IPublishedContent content)
+		public FooterPages(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Full With Banner
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("fullWithBanner")]
-		public IEnumerable<IPublishedElement> FullWithBanner => this.Value<IEnumerable<IPublishedElement>>("fullWithBanner");
-
-		///<summary>
-		/// Highlighted News
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("highlightedNews")]
-		public IPublishedContent HighlightedNews => this.Value<IPublishedContent>("highlightedNews");
-
-		///<summary>
-		/// WriteUs
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("writeUs")]
-		public IEnumerable<WriteUs> WriteUs => this.Value<IEnumerable<WriteUs>>("writeUs");
-
-		///<summary>
-		/// Copyright Text: The site copyright text.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("copyrightText")]
-		public string CopyrightText => Footer.GetCopyrightText(this);
-
-		///<summary>
-		/// Facebook Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("facebookLink")]
-		public string FacebookLink => Header.GetFacebookLink(this);
-
-		///<summary>
-		/// Instagram Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("instagramLink")]
-		public string InstagramLink => Header.GetInstagramLink(this);
-
-		///<summary>
-		/// Logo: The site logo image.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("logo")]
-		public IPublishedContent Logo => Header.GetLogo(this);
-
-		///<summary>
-		/// Logo Black
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("logoBlack")]
-		public IPublishedContent LogoBlack => Header.GetLogoBlack(this);
-
-		///<summary>
-		/// YouTube Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("youTubeLink")]
-		public string YouTubeLink => Header.GetYouTubeLink(this);
 
 		///<summary>
 		/// Alternate Languages: Language codes (en-US, en-GB etc).
@@ -219,54 +156,5 @@ namespace NKN.Models.Generated
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("umbracoUrlName")]
 		public string UmbracoUrlName => Page.GetUmbracoUrlName(this);
-
-		///<summary>
-		/// Canonical Domain: The site canonical domain.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("canonicalDomain")]
-		public string CanonicalDomain => SiteSettings.GetCanonicalDomain(this);
-
-		///<summary>
-		/// Google Analytics Script Code
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("googleAnalyticsScriptCode")]
-		public string GoogleAnalyticsScriptCode => SiteSettings.GetGoogleAnalyticsScriptCode(this);
-
-		///<summary>
-		/// Google Tag Manager Non-Script Code
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("googleTagManagerNonScriptCode")]
-		public string GoogleTagManagerNonScriptCode => SiteSettings.GetGoogleTagManagerNonScriptCode(this);
-
-		///<summary>
-		/// Google Tag Manager Script Code
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("googleTagManagerScriptCode")]
-		public string GoogleTagManagerScriptCode => SiteSettings.GetGoogleTagManagerScriptCode(this);
-
-		///<summary>
-		/// Hide All Pages From Search Engines: This will create robots meta tag with "noindex,nofollow" value. Note: this should be unchecked on the live site.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("hideAllPagesFromSearchEngines")]
-		public bool HideAllPagesFromSearchEngines => SiteSettings.GetHideAllPagesFromSearchEngines(this);
-
-		///<summary>
-		/// Robots: Content that will be served when Robots.txt is requested.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("robots")]
-		public string Robots => SiteSettings.GetRobots(this);
-
-		///<summary>
-		/// Site Name: The site name.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("siteName")]
-		public string SiteName => SiteSettings.GetSiteName(this);
 	}
 }
