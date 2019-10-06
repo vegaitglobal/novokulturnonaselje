@@ -578,6 +578,10 @@
     <Content Include="Views\Partials\NestedContent\_EmbeddedVideoBlock.cshtml" />
     <Content Include="Views\NewsLanding.cshtml" />
     <Content Include="Views\Partials\NestedContent\_WriteUs.cshtml" />
+    <Content Include="Views\Partials\_NewsDetailPreview.cshtml" />
+    <Content Include="Views\Partials\_NewsDetailHighlightedPreview.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_GallerySimpleBlock.cshtml" />
+    <Content Include="Views\Partials\NestedContent\_ImageWithRteText.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

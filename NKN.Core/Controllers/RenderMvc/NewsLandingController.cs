@@ -6,6 +6,7 @@ namespace NKN.Core.Controllers.RenderMvc
 {
     public class NewsLandingController : BasePageController<NewsLanding>
     {
-        public ActionResult Index(NewsLanding model) => CurrentTemplate(new NewsLandingViewModel(CreatePageContext(model)));
+        public ActionResult Index(NewsLanding model) 
+            => CurrentTemplate(new NewsLandingViewModel(CreatePageContext(model)));
     }
 }

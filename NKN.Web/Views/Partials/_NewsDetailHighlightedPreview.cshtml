@@ -1,0 +1,15 @@
+﻿@model NewsDetailPreviewViewModel
+
+<div class="item news-item-highlighted">
+	<div class="image-holder">
+		<img src="@Model.SmallImage.Url" alt="@Model.SmallImage?.AlternateText" />
+	</div>
+	<div class="text-holder">
+		<h3>@Model.PageTitle</h3>
+		<span class="date">@Model.ReleaseDate</span>
+		<p>
+			@Model.SummaryHighlighted
+		</p>
+		<a href="@Model.Link.Url" class="btn">@Model.Link.Content</a>
+	</div>
+</div>

@@ -1,13 +1,37 @@
+.news-list-holder {
+	padding-top: 80px;
+}
+
 .news-list {
 	display: flex;
 	justify-content: space-between;
-}
 
-.news-item {
-	width: 31%;
+	.item {
+		width: 33.33%;
+
+		.date {
+			color: $grey;
+			display: block;
+			font-size: 20px;
+			font-style: italic;
+			margin-bottom: 10px;
+		}
+	}
 }
 
 .news-item-highlighted {
 	display: flex;
 	width: 100%;
+
+	&.item .image-holder::after {
+		transform: rotate(3deg);
+	}
+
+	.text-holder {
+		padding-left: 40px;
+
+		.btn {
+			float: left;
+		}
+	}
 }

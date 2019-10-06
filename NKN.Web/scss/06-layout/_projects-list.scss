@@ -2,21 +2,26 @@
 .projects-list-holder {
 	@include base-float;
 	padding-bottom: 80px;
+
 	.project-list {
 		margin-left: -35px;
 		width: calc(100% + 70px);
 	}
+
 	.slick-slide > div {
 		margin: 0 -35px;
 	}
+
 	.item {
 		margin-bottom: 60px;
 		padding: 0 35px;
 	}
+
 	.image-holder {
 		overflow: hidden;
 		position: relative;
 		width: 100%;
+
 		&::after {
 			background-color: $white;
 			bottom: -72px;
@@ -28,13 +33,16 @@
 			right: -20px;
 			transform: rotate(6deg);
 		}
+
 		img {
 			width: 100%;
 		}
 	}
+
 	.text-holder {
 		width: 100%;
 	}
+
 	h3 {
 		font-family: $bold-cons;
 		font-size: 46px;
@@ -43,6 +51,7 @@
 		margin-bottom: 12px;
 		text-transform: uppercase;
 	}
+
 	p {
 		color: $grey;
 		font-size: 16px;
@@ -50,16 +59,25 @@
 		line-height: 28px;
 		margin-bottom: 12px;
 	}
+
 	.btn {
 		float: right;
 	}
+
 	.slick-dots {
 		margin-top: 26px;
 		text-align: center;
 		width: 100%;
+
 		li:not(.slick-active) button {
 			background-color: $grey-lines;
 		}
+	}
+
+	.news-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 	@include breakpoint(desktop-small) {
 		h3 {
