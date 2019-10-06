@@ -1,6 +1,9 @@
 //----------  statistics block  ----------
 .statistics-block {
 	@include base-float;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
 	overflow: hidden;
 	padding: 150px 0;
 	position: relative;
@@ -24,7 +27,7 @@
 		transform: rotate(3deg);
 	}
 	.overlay {
-		background-color: #096161;
+		background-color: #19caca;
 		bottom: 0;
 		left: 0;
 		opacity: .6;
