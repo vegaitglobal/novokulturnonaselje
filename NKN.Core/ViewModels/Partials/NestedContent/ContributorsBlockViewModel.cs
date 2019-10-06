@@ -14,6 +14,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
             Contributors = context.NestedContent.Contributors?.OfType<FriendOrganization>().Select(model => new FriendOrganizationViewModel(model));
             ShowSocialLinks = context.NestedContent.ShowSocialLinks;
             ShowContributorTitles = context.NestedContent.ShowContributorTitles;
+            IncludeHover = context.NestedContent.IncludeHover;
         }
 
         public string Title { get; set; }
@@ -21,6 +22,6 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         public IEnumerable<FriendOrganizationViewModel> Contributors { get; set; }
         public bool ShowSocialLinks { get; set; }
         public bool ShowContributorTitles { get; set; }
-
+        public bool IncludeHover { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace NKN.Core.Models
     public struct ContactUsModel
     {
         [Required]
-        public string FullName { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [EmailAddress]

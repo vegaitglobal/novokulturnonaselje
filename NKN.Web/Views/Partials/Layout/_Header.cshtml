@@ -4,15 +4,22 @@
 <header class="header js-header">
 	<div class="wrapper">
 		<a href="@Model.LogoUrl" class="header-logo">
-			<img src="@Model.Logo.Url" class="header-logo-white" alt="" />
-			<img src="@Model.LogoBlack.Url" class="header-logo-black" alt="" />
+			@if (Model.Logo != null)
+			{
+				<img src="@Model.Logo.Url" class="header-logo-white" alt="" />
+
+			}
+			@if (Model.LogoBlack != null)
+			{
+				<img src="@Model.LogoBlack.Url" class="header-logo-black" alt="" />
+
+			}
 		</a>
 		<nav class="nav js-nav">
-			<a href="javascript:;" class="nav-link">O nama</a>
-			<a href="javascript:;" class="nav-link">Vesti</a>
-			<a href="javascript:;" class="nav-link">Galerija</a>
-			<a href="javascript:;" class="nav-link">Donacije</a>
-			<a href="javascript:;" class="nav-link">Kontakt</a>
+			@foreach (var item in Model.NavigationItems)
+			{
+				<a href="@item.Url" class="nav-link">@item.PageTitle</a>
+			}
 		</nav>
 		@if (!string.IsNullOrEmpty(Model.FacebookLink) || !string.IsNullOrEmpty(Model.InstagramLink) || !string.IsNullOrEmpty(Model.YouTubeLink))
 		{

@@ -292,6 +292,7 @@
     <Compile Include="Controllers\RenderMvc\ContactController.cs" />
     <Compile Include="Controllers\RenderMvc\NewsDetailController.cs" />
     <Compile Include="Controllers\RenderMvc\ProjectDetailController.cs" />
+    <Compile Include="Controllers\RenderMvc\NewsLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\ProjectCategoryLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\StandardContentPageController.cs" />
     <Compile Include="Controllers\Api\FormsController.cs" />
@@ -348,6 +349,7 @@
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MissionCarouselBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MissionItemViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\NewsDetailPreviewViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\RCeblockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\StatisticItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\StatisticsBlockViewModel.cs" />

@@ -14,7 +14,7 @@ namespace NKN.Core.Services
         {
             var emailBodyBuilder = new StringBuilder()
                 .Append("Kontaktirao/la nas je ")
-                .Append(model.FullName)
+                .Append(model.Name)
                 .Append(", njegova/njena imejl adresa je ")
                 .Append(model.Email)
                 .Append(" sa porukom:")
