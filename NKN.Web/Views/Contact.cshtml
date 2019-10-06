@@ -20,19 +20,19 @@
 			<div class="contact-form-wrap">
 				<h2>@Model.WriteUs.Title</h2>
 
-				<form id="contact-us-form" action="/umbraco/api/forms/contactus" method="post">
+				<form id="contact-us" action="/umbraco/api/forms/contactus" method="post">
 					<fieldset>
 						<div class="fieldset-inner">
 							<div class="input-wrap">
-								<input type="text" id="contactName" placeholder="@Model.WriteUs.FullName" />
+								<input type="text" id="contactName" name="fullName" placeholder="@Model.WriteUs.FullName" />
 								<label for="contactName" class="sr-only">@Model.WriteUs.FullName</label>
 							</div>
 							<div class="input-wrap">
-								<input type="text" id="contactEmail" placeholder="@Model.WriteUs.Email" />
+								<input type="text" id="contactEmail" name="email" placeholder="@Model.WriteUs.Email" />
 								<label for="contactEmail" class="sr-only">@Model.WriteUs.Email</label>
 							</div>
 							<div class="input-wrap input-wrap-fullwidth">
-								<textarea id="contactMessage" placeholder="@Model.WriteUs.Message"></textarea>
+								<textarea id="contactMessage" name="message" placeholder="@Model.WriteUs.Message"></textarea>
 								<label for="contactMessage" class="sr-only">@Model.WriteUs.Message</label>
 							</div>
 							<span class="error-message"></span>
@@ -47,34 +47,7 @@
 	</div>
 </section>
 
-<script>
-	document.getElementById("contact-us-form")
-        .addEventListener("submit", function (ev) {
-            ev.preventDefault();
-            contact();
-		});
-
-	function contact() {
-		var fullName = document.getElementById('contactName').value;
-		var email = document.getElementById('contactEmail').value;
-		var message = document.getElementById('contactMessage').value;
-
-		fetch('/umbraco/api/forms/contactus', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				fullName,
-				email,
-				message
-			})
-		}).then(function () {
-			// Your code for handling the data you get from the API
-			document.getElementsByClassName('error-message')[0].innerHTML = '@Model.WriteUs.OnSubmitMessage'
-		});
-	}
-</script>
+<script src="~/assets/scripts/contact-us.js"></script>
 <!-- <section class="hero-banner" style="background-image: url(assets/img/content/hero-banner.png);">
 	<div class="wrapper">
 		<h1 class="page-title">O nama</h1>
