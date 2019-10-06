@@ -15,7 +15,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
             ReleaseDate = news.ReleaseDate.ToString(AppSettings.DateFormat);
             Summary = string.Join(string.Empty, news.Summary.ToCharArray().Take(150));
             SummaryHighlighted = string.Join(string.Empty, news.Summary.ToCharArray().Take(200));
-            Link = new LinkViewModel(news.Url, "Saznaj Vise", "");
+            Link = new LinkViewModel(news.Url, "Saznaj Više", "");
         }
 
         public string PageTitle { get; private set; }
