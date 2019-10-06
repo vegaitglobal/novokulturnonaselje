@@ -60,13 +60,9 @@ var functions = (function() {
 
 		contributorsEqualHeight: function () {
 			if ($('.js-contributors-slider').length) {
-				if (!mobileView) {
-					$('.js-contributors-slider').each(function () {
-						helpers.equalHeight($(this).find('.js-image-holder'), 4);
-					});
-				} else {
-					$('.js-contributors-slider').find('.js-image-holder').css('height', '');
-				}
+				$('.js-contributors-slider').each(function () {
+					helpers.equalHeight($(this).find('.js-image-holder'), 4);
+				});
 			}
 		},
 
@@ -77,7 +73,15 @@ var functions = (function() {
 					slidesToShow: 4,
 					slidesToScroll: 1,
 					dots: true,
-					arrows: false
+					arrows: false,
+					responsive: [
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1
+							}
+						}
+					]
 				});
 			}
 		},

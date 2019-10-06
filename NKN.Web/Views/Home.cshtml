@@ -4,30 +4,3 @@
 {
 	Html.RenderAction<NestedContentController>(c => nameof(c.Index), new { viewModel = item });
 }
-
-<!-- <section class="contact-form">
-	<div class="wrapper">
-		<div class="contact-form-wrap">
-			<h2>Hej, pišite nam ovde</h2>
-			<form action="#">
-				<fieldset>
-					<div class="input-wrap">
-						<input type="text" id="contactName" placeholder="Ime i Prezime" />
-						<label for="contactName" class="sr-only">Ime i Prezime</label>
-					</div>
-					<div class="input-wrap">
-						<input type="text" id="contactEmail" placeholder="E-mail" />
-						<label for="contactEmail" class="sr-only">E-mail</label>
-					</div>
-					<div class="input-wrap input-wrap-fullwidth">
-						<textarea id="contactMessage" placeholder="Poruka"></textarea>
-						<label for="contactMessage" class="sr-only">Poruka</label>
-					</div>
-					<div class="input-submit-wrap">
-						<button type="submit" class="btn">Pošalji</button>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-</section> -->
