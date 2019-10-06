@@ -20,50 +20,36 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace NKN.Models.Generated
 {
-	/// <summary>News Detail</summary>
-	[PublishedModel("newsDetail")]
-	public partial class NewsDetail : StandardContentPage
+	/// <summary>Embedded Video Block</summary>
+	[PublishedModel("embeddedVideoBlock")]
+	public partial class EmbeddedVideoBlock
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public new const string ModelTypeAlias = "newsDetail";
+		public new const string ModelTypeAlias = "embeddedVideoBlock";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NewsDetail, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<EmbeddedVideoBlock, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public NewsDetail(IPublishedContent content)
+		public EmbeddedVideoBlock(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Release Date
+		/// Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("releaseDate")]
-		public DateTime ReleaseDate => this.Value<DateTime>("releaseDate");
-
-		///<summary>
-		/// Small Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("smallImage")]
-		public IPublishedContent SmallImage => this.Value<IPublishedContent>("smallImage");
-
-		///<summary>
-		/// Summary
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("summary")]
-		public string Summary => this.Value<string>("summary");
+		[ImplementPropertyType("link")]
+		public string Link => this.Value<string>("link");
 	}
 }

@@ -8,8 +8,10 @@ namespace NKN.Common
     /// </summary>
     public static class AppSettings
     {
-        public static bool DisableHttpCompression => Get<bool>("disableHttpCompression", false);
-        public static string XMLSitemapRouteUrl => Get<string>("xmlSitemapRouteUrl", "xmlsitemap");
+        public static bool DisableHttpCompression => Get("disableHttpCompression", false);
+        public static string XMLSitemapRouteUrl => Get("xmlSitemapRouteUrl", "xmlsitemap");
+        public static string SmtpUsername => Get("smtp.Username", "xmlsitemap");
+        public static string SmtpPassword => Get("smtp.Password", "xmlsitemap");
 
         /// <summary>
         /// Retrieves configuration value associated with given <paramref name="key"/>.

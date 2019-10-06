@@ -1,3 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<RCeblockViewModel>
 
-<section>@Model.Text</section>
+@if (Model.Text != null)
+{
+	<section>@Model.Text</section>
+}

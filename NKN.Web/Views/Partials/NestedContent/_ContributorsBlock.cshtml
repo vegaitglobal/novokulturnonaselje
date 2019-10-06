@@ -12,18 +12,18 @@
 		if (@contributor.InternalLink != null)
 		{
 			<a href="@contributor.InternalLink.Url">
-				<image src="@contributor.Image.Url" />
+				<img src="@contributor.Image.Url" />
 			</a>
 		}
 		else if (@contributor.ExternalLink != null)
 		{
 			<a href="@contributor.ExternalLink">
-				<image src="@contributor.Image.Url" />
+				<img src="@contributor.Image.Url" />
 			</a>
 		}
 		else
 		{
-			<image src="@contributor.Image.Url" />
+			<img src="@contributor.Image.Url" />
 		}
 	}
 	if (@contributor.Title != null && Model.ShowContributorTitles)

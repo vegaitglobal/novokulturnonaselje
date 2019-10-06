@@ -5,8 +5,14 @@
 		@foreach (var item in Model.StatisticItems)
 		{
 			<div class="item">
+				@*@if(item.Number )
+					{
+						sta se desi kada se ne prosledi number?				}*@
 				<span class="value">@item.Number</span>
-				<span class="desc">@item.Text</span>
+				@if (!string.IsNullOrEmpty(item.Text))
+				{
+					<span class="desc">@item.Text</span>
+				}
 			</div>
 		}
 	</div>

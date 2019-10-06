@@ -8,8 +8,16 @@
 			@foreach (var item in Model.Items)
 			{
 				<div class="item">
-					<h3>@item.Title</h3>
-					<p>@item.Text</p>
+					@if (!string.IsNullOrEmpty(item.Title))
+					{
+						<h3>@item.Title</h3>
+					}
+					@if (!string.IsNullOrEmpty(item.Text))
+					{
+						<p>
+							@item.Text
+						</p>
+					}
 					@if (item.Link != null)
 					{
 						<a href="@item.Link.Url" class="btn btn-white">@item.Link.Content</a>
