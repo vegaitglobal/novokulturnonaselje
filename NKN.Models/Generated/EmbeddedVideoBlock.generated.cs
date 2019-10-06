@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>Embedded Video Block</summary>
 	[PublishedModel("embeddedVideoBlock")]
-	public partial class EmbeddedVideoBlock : PublishedElementModel
+	public partial class EmbeddedVideoBlock
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant

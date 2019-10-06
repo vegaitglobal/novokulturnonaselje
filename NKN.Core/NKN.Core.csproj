@@ -52,6 +52,12 @@
     <Reference Include="Examine, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Examine.1.0.1\lib\net452\Examine.dll</HintPath>
     </Reference>
+    <Reference Include="FluentEmail.Core, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEmail.Core.2.7.0\lib\netstandard2.0\FluentEmail.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentEmail.Smtp, Version=2.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEmail.Smtp.2.7.1\lib\netstandard2.0\FluentEmail.Smtp.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -91,8 +97,8 @@
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -269,6 +275,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attributes\ExternalRedirectAttribute.cs" />
     <Compile Include="Components\ApplicationConfigurationComponent.cs" />
+    <Compile Include="Composers\ServicesComposer.cs" />
     <Compile Include="Composers\SearchComposer.cs" />
     <Compile Include="Contexts\INestedContentContext.cs" />
     <Compile Include="Contexts\IPageContext.cs" />
@@ -278,13 +285,15 @@
     <Compile Include="Contexts\PageContext.cs" />
     <Compile Include="Contexts\SeoContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
-    <Compile Include="Controllers\Api\FormsController.cs" />
+    <Compile Include="Extensions\SendResponseExtensions.cs" />
+    <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\ContactController.cs" />
     <Compile Include="Controllers\RenderMvc\NewsDetailController.cs" />
     <Compile Include="Controllers\RenderMvc\ProjectDetailController.cs" />
     <Compile Include="Controllers\RenderMvc\ProjectCategoryLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\StandardContentPageController.cs" />
+    <Compile Include="Controllers\Api\FormsController.cs" />
     <Compile Include="Controllers\Surface\Partials\NestedContentController.cs" />
     <Compile Include="Services\EmailComposer.cs" />
     <Compile Include="Services\EmailSender.cs" />
