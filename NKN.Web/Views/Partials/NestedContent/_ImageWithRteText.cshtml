@@ -1,6 +1,19 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ImageWithRtetextViewModel>
-    
 
-@Model.Text
+<div class="image-with-text-block">
+	<div class="wrapper">
+		<div class="rte-block">
+			@if (Model.Image != null)
+			{
+				<div class="image-holder">
+					<img src="@Model.Image.Url" alt="" />
+				</div>
+			}
 
-<img src="@Model.Image.Url" />
+			@if (Model.Text != null)
+			{
+				@Model.Text
+			}
+		</div>
+	</div>
+</div>

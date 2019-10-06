@@ -1,6 +1,12 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<GallerySimpleBlockViewModel>
 
-@foreach (var image in Model.Images)
-{
-    <img src="@image.Url" />
-}
+<section class="gallery-section-block">
+    <div class="wrapper">
+        @foreach (var image in Model.Images)
+        {
+            <div class="image-holder">
+                <img src="@image.Url" alt="" />
+            </div>
+        }
+    </div>
+</section>
