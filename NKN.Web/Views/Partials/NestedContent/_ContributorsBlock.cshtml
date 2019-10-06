@@ -7,23 +7,19 @@
 			<h2 class="section-title">@Model.Title</h2>
 		}
 
-		@if (!string.IsNullOrEmpty(Model.Text))
-		{
-			<p class="intro-text">@Model.Text</p>
-		}
-
 		<div class="contributors-slider js-contributors-slider">
 			@foreach (var contributor in Model.Contributors)
 			{
 			<div class="item">
 				@if (@contributor.Image != null)
 					{
-					<a class="image-holder js-image-holder @(Model.IncludeHover ? "image-holder-hover" : "")" href="@(contributor.Link != null ? contributor.Link.Url : "")">
-						<img src="@contributor.Image.Url" alt="" />
+					//TODO: apply the same class rendering with Model.IncludeHover on img tag (if needed)
+					<a class="@(Model.IncludeHover ? "test-hover" : "")" href="@(contributor.Link != null ? contributor.Link.Url : "")">
+						<img src="@contributor.Image.Url" />
 					</a>
 				}
 
-				@if (!string.IsNullOrEmpty(contributor.Title))
+				@if (!string.IsNullOrEmpty(contributor.Title) && Model.ShowContributorTitles)
 				{
 					<p>
 						@contributor.Title
