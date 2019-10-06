@@ -1,9 +1,13 @@
 ﻿using System;
 using Umbraco.Web;
 using NKN.Core.Extensions;
+using NKN.Models.Extensions;
 using NKN.Core.ViewModels.Shared;
 using NKN.Models.Generated;
 using NKN.Core.ViewModels.Partials.NestedContent;
+using System.Linq;
+using System.Collections.Generic;
+using Umbraco.Core.Models.PublishedContent;
 
 namespace NKN.Core.ViewModels.Partials.Layout
 {
@@ -19,7 +23,7 @@ namespace NKN.Core.ViewModels.Partials.Layout
             FacebookLink = header.AncestorOrSelf<Home>().FacebookLink;
             InstagramLink = header.AncestorOrSelf<Home>().InstagramLink;
             YouTubeLink = header.AncestorOrSelf<Home>().YouTubeLink;
-            // .Home.GetNavigationItems<IPage>().AsNavigationViewModel().ToList();
+            NavigationItems = header.AncestorOrSelf<Home>().GetNavigationItems<IPage>();
         }
 
         public ImageViewModel Logo { get; }
@@ -28,6 +32,6 @@ namespace NKN.Core.ViewModels.Partials.Layout
         public string FacebookLink { get; }
         public string InstagramLink { get; }
         public string YouTubeLink { get; }
-        //public IEnumerable<NavigationItemViewModel> NavigationItems { get; }
+        public IEnumerable<IPage> NavigationItems { get; }
     }
 }
