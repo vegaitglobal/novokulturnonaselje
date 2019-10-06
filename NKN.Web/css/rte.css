@@ -1,0 +1,19 @@
+
+
+/**umb_name:Heading 2*/
+h2.h2 {
+	color: #000;
+	font-family: "Open Sans Condensed",sans-serif;
+	font-size: 46px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	line-height: 58px;
+	margin-bottom: 50px;
+	text-transform: uppercase;
+}
+
+/**umb_name:Highlighted text*/
+.highlighted {
+	font-size: 20px;
+	line-height: 30px;
+}

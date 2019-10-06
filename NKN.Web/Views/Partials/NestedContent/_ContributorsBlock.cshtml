@@ -19,7 +19,7 @@
 					</a>
 				}
 
-				@if (!string.IsNullOrEmpty(contributor.Title))
+				@if (!string.IsNullOrEmpty(contributor.Title) && Model.ShowContributorTitles)
 				{
 					<p>
 						@contributor.Title

@@ -117,3 +117,9 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+@include breakpoint(desktop) {
+    .contributors-slider .image-holder-hover img {
+        -webkit-filter: grayscale(1);
+    }
+}

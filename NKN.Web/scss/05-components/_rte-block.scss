@@ -1,0 +1,81 @@
+//----------  RTE  ----------
+.rte-block {
+	@include base-float;
+	padding: 87px 0;
+	h2 {
+		color: $black;
+		font-family: $bold-cons;
+		font-size: 46px;
+		font-weight: bold;
+		letter-spacing: -1px;
+		line-height: 58px;
+		margin-bottom: 47px;
+		text-transform: uppercase;
+	}
+	p {
+		font-size: 16px;
+		line-height: 28px;
+		margin-bottom: 28px;
+		a {
+			color: $green;
+			text-decoration: underline;
+		}
+	}
+	b, strong {
+		font-weight: 600;
+	}
+	.highlighted {
+		font-size: 20px;
+		line-height: 30px;
+	}
+	ul, ol {
+		margin-bottom: 28px;
+		li {
+			font-size: 16px;
+			line-height: 28px;
+			margin-bottom: 15px;
+		}
+		a {
+			color: $green;
+			text-decoration: underline;
+		}
+	}
+	ul li {
+		&::before {
+			content: '- ';
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 50px 0;
+		h2 {
+			font-size: 40px;
+			line-height: 50px;
+		}
+		.highlighted {
+			font-size: 18px;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 40px 0;
+		h2 {
+			font-size: 30px;
+			line-height: 38px;
+		}
+		p {
+			font-size: 14px;
+			line-height: 24px;
+			margin-bottom: 20px;
+		}
+		ul, ol {
+			margin-bottom: 20px;
+			li {
+				font-size: 14px;
+				line-height: 24px;
+			}
+		}
+		.highlighted {
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+}

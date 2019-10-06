@@ -1,0 +1,90 @@
+//----------  contributors block  ----------
+.contributors-block {
+	@include base-float;
+	padding: 95px 0 100px;
+	.intro-text {
+		font-size: 20px;
+		font-style: italic;
+		line-height: 30px;
+		text-align: center;
+		width: 100%;
+	}
+	@include breakpoint(tablet) {
+		padding: 60px 0;
+	}
+	@include breakpoint(phone) {
+		padding: 50px 0;
+		p {
+			font-size: 18px;
+		}
+	}
+}
+
+.contributors-slider {
+	padding-top: 50px;
+	width: 100%;
+	.item {
+		padding: 0 20px;
+		text-align: center;
+	}
+	.image-holder {
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	img {
+		@include align(relative, y);
+	}
+	p {
+		color: $grey;
+		font-size: 14px;
+		line-height: 28px;
+		margin-bottom: 18px;
+		padding: 0 20px;
+	}
+	.social-icons {
+		.icon {
+			color: $green;
+			font-size: 26px;
+			transition: color .3s ease;
+		}
+	}
+	.slick-dots {
+		margin-top: 80px;
+		text-align: center;
+		li:not(.slick-active) button {
+			background-color: $grey-lines;
+		}
+	}
+	@include breakpoint(desktop) {
+		.image-holder-hover {
+			img {
+				filter: grayscale(1);
+				transition: filter .3s ease;
+			}
+			&:hover img {
+				filter: grayscale(0);
+			}
+		}
+		.social-icons a:hover .icon {
+			color: $grey-dark;
+		}
+	}
+	@include breakpoint(tablet) {
+		.image-holder-hover img {
+			filter: grayscale(1);
+			transition: filter .3s ease;
+		}
+		.item {
+			padding: 0 10px;
+		}
+		p {
+			padding: 0 5px;
+		}
+	}
+	@include breakpoint(phone) {
+		padding-top: 0;
+		.slick-dots {
+			margin-top: 30px;
+		}
+	}
+}

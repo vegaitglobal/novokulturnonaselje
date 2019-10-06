@@ -1,21 +1,15 @@
-﻿<footer class="footer">
+﻿@using NKN.Core.ViewModels.Partials.Layout
+@inherits UmbracoViewPage<FooterViewModel>
+
+<footer class="footer">
 	<div class="wrapper">
 		<ul class="footer-links">
-			<li>
-				<a href="javascript:;" class="footer-links-item">Uslovi korišćenja</a>
-			</li>
-			<li>
-				<a href="javascript:;" class="footer-links-item">Pravila privatnosti</a>
-			</li>
-			<li>
-				<a href="javascript:;" class="footer-links-item">Politiika o kolačićima</a>
-			</li>
-			<li>
-				<a href="javascript:;" class="footer-links-item">Uslovi korišćenja</a>
-			</li>
-			<li class="footer-credit">
-				Designed by <a href="javascript:;" class="footer-links-item">Baseline</a>
-			</li>
+			@foreach (var page in Model.Pages)
+			{
+				<li>
+					<a href="@page.Url" class="footer-links-item">@page.PageTitle</a>
+				</li>
+			}
 		</ul>
 	</div>
 </footer>

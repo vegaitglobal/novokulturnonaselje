@@ -93,6 +93,7 @@
 			display: inline-block;
 			height: 45px;
 			left: 50%;
+			position: absolute;
 			top: 0;
 			transform: translateX(-50%);
 			width: 3px;
@@ -163,6 +164,9 @@
 		.item {
 			margin: 0;
 			padding: 22px 0 0;
+			&::before {
+				display: none;
+			}
 		}
 		h3 {
 			font-size: 33px;
