@@ -1,0 +1,17 @@
+//----------  RTE  ----------
+.rte-block {
+	@include base-float;
+	padding: 87px 0;
+	p {
+		font-size: 16px;
+		line-height: 28px;
+		margin-bottom: 28px;
+		a {
+			color: $green;
+			text-decoration: underline;
+		}
+	}
+	b, strong {
+		font-weight: 600;
+	}
+}
