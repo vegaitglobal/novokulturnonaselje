@@ -1,0 +1,9 @@
+//----------  image with text block  ----------
+.image-with-text-block {
+	@include base-float;
+	.image-holder {
+		float: left;
+		padding-left: 30px;
+		width: 30%;
+	}
+}

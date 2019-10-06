@@ -1,33 +1,55 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProjectCategoryLandingViewModel>
 
+<section class="hero-banner" style="background-image: url(@Model.BannerImage.Url)">
+	<div class="wrapper">
+		<h1 class="page-title">@Model.PageTitle</h1>
+	</div>
+</section>
 
-@if (Model.Image != null)
-{
-	<img src="@Model.Image.Url" />
-}
+<section class="projects-landing">
+	<div class="image-with-text-block">
+		<div class="wrapper">
+			<div class="rte-block">
+				@if (Model.Image != null)
+				{
+					<div class="image-holder">
+						<img src="@Model.Image.Url" alt="" />
+					</div>
+				}
 
-@if (Model.Text != null)
-{
-	<div>@Model.Text</div>
-}
+				@if (Model.Text != null)
+				{
+					@Model.Text
+				}
+			</div>
+		</div>
+	</div>
 
-<ul>
-	@foreach (var projectPreview in Model.AllProjects)
-	{
-	<li>
-		@if (@projectPreview.SmallImage != null)
-		{
-			<img src="@projectPreview.SmallImage.Url" />
-		}
-		@if (@projectPreview.Title != null)
-		{
-			@projectPreview.Title
-		}
-		@if (@projectPreview.Summary != null)
-		{
-			@projectPreview.Summary
-		}
-		<a href="@projectPreview.Url">@projectPreview.Url</a>
-	</li>
-	}
-</ul>
+	<div class="projects-list-holder">
+		<h2 class="section-title">Realizovani projekti</h2>
+		<ul class="projects-list">
+			@foreach (var projectPreview in Model.AllProjects)
+			{
+			<li>
+				@if (@projectPreview.SmallImage != null)
+				{
+					<div class="image-holder">
+						<img src="@projectPreview.SmallImage.Url" alt="" />
+					</div>
+				}
+				<div class="text-holder">
+					@if (@projectPreview.Title != null)
+					{
+						<h3>@projectPreview.Title</h3>
+					}
+					@if (@projectPreview.Summary != null)
+					{
+						<p>@projectPreview.Summary</p>
+					}
+					<a href="@projectPreview.Url">@projectPreview.Url</a>
+				</div>
+			</li>
+			}
+		</ul>
+	</div>
+</section>
