@@ -12,6 +12,7 @@ namespace NKN.Common
         public static string XMLSitemapRouteUrl => Get("xmlSitemapRouteUrl", "xmlsitemap");
         public static string SmtpUsername => Get("smtp.Username", "xmlsitemap");
         public static string SmtpPassword => Get("smtp.Password", "xmlsitemap");
+        public static string DateFormat => Get("dateFormat", "dd.MM.yyyy.");
 
         /// <summary>
         /// Retrieves configuration value associated with given <paramref name="key"/>.

@@ -1,4 +1,37 @@
 ﻿@inherits UmbracoViewPage<NewsLandingViewModel>
 
-<h2>NewsLanding</h2>
+<section class="hero-banner" style="background-image: url(@Model.BannerImage.Url)">
+	<div class="wrapper">
+		<h1 class="page-title">@Model.PageTitle</h1>
+	</div>
+</section>
 
+<section class="projects-list-holder news-list-holder">
+	<div class="wrapper">
+		<div class="projects-list news-list">
+			@{
+				var itemCount = Model.NewsPreviews.Count() > 2 ? 3 : Model.NewsPreviews.Count();
+			}
+			@foreach (var newsPreview in Model.NewsPreviews.Take(itemCount))
+			{
+				if (newsPreview != null)
+				{
+					Html.RenderPartial("_NewsDetailPreview", newsPreview);
+				}
+			}
+		</div>
+		@{Html.RenderPartial("_NewsDetailHighlightedPreview", Model.HighlightedNewsPreview);}
+	</div>
+
+	<div class="wrapper">
+		<div class="projects-list news-list">
+			@foreach (var newsPreview in Model.NewsPreviews.Skip(itemCount))
+			{
+				if (newsPreview != null)
+				{
+					Html.RenderPartial("_NewsDetailPreview", newsPreview);
+				}
+			}
+		</div>
+	</div>
+</section>

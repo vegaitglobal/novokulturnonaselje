@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>News Landing</summary>
 	[PublishedModel("newsLanding")]
-	public partial class NewsLanding : PublishedContentModel, IFooter, IHeader, IPage, ISiteSettings
+	public partial class NewsLanding : PublishedContentModel, IBanner, IFooter, IHeader, IPage, ISiteSettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,11 +46,11 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
-		/// Full With Banner
+		/// Full Width Banner
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("fullWithBanner")]
-		public IEnumerable<IPublishedElement> FullWithBanner => this.Value<IEnumerable<IPublishedElement>>("fullWithBanner");
+		[ImplementPropertyType("fullWidthBanner")]
+		public IEnumerable<IPublishedElement> FullWidthBanner => this.Value<IEnumerable<IPublishedElement>>("fullWidthBanner");
 
 		///<summary>
 		/// Highlighted News
@@ -65,6 +65,13 @@ namespace NKN.Models.Generated
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("writeUs")]
 		public IEnumerable<WriteUs> WriteUs => this.Value<IEnumerable<WriteUs>>("writeUs");
+
+		///<summary>
+		/// Banner Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage => Banner.GetBannerImage(this);
 
 		///<summary>
 		/// Copyright Text: The site copyright text.
