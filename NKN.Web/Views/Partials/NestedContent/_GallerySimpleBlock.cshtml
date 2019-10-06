@@ -1,0 +1,6 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<GallerySimpleBlockViewModel>
+
+@foreach (var image in Model.Images)
+{
+    <img src="@image.Url" />
+}

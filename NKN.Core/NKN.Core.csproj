@@ -341,8 +341,10 @@
     <Compile Include="ViewModels\Partials\NestedContent\EmbeddedVideoBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\FourHighlightedItemsBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\FriendOrganizationViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\GallerySimpleBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\HeroBannerSliderViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\HighlightedItemViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\ImageWithRtetextViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MissionCarouselBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MissionItemViewModel.cs" />
