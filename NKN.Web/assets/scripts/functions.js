@@ -46,49 +46,56 @@ var functions = (function() {
 			}
 		},
 
-		heroSlider: function () {
-			if ($('.js-hero-banner-slider').length) {
-				$('.js-hero-banner-slider').slick({
+		sliderInit: function () {
+			var $missionSlider = $('.js-mission-slider');
+			var $contributorsSlider = $('.js-contributors-slider');
+			var $projectSlider = $('.js-projects-slider');
+
+			if ($('.js-slider').length) {
+				$('.js-slider').slick({
 					infinite: true,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					dots: true,
 					arrows: false
 				});
-			}
-		},
 
-		contributorsEqualHeight: function () {
-			if ($('.js-contributors-slider').length) {
-				$('.js-contributors-slider').each(function () {
-					helpers.equalHeight($(this).find('.js-image-holder'), 4);
-				});
-			}
-		},
-
-		contributorsSlider: function () {
-			if ($('.js-contributors-slider').length) {
-				$('.js-contributors-slider').slick({
-					infinite: true,
-					slidesToShow: 3,
-					slidesToScroll: 1,
-					dots: true,
-					arrows: false,
-					responsive: [
-						{
-							breakpoint: 768,
-							settings: {
-								slidesToShow: 1
+				//mission slider
+				if ($missionSlider.length) {
+					$missionSlider.slick('slickSetOption', {
+						slidesToShow: 4,
+						arrows: true,
+						dots: false,
+						responsive: [
+							{
+								breakpoint: 768,
+								settings: {
+									slidesToShow: 1
+								}
 							}
-						}
-					]
-				});
-			}
-		},
+						]
+					}, true);
+				}
 
-		projectsSlider: function () {
-			if ($('.js-projects-list').length) {
-				$('.js-projects-list').slick({
+				//contributors slider
+				if ($contributorsSlider.length) {
+					$contributorsSlider.slick('slickSetOption', {
+						slidesToShow: 4,
+						responsive: [
+							{
+								breakpoint: 768,
+								settings: {
+									slidesToShow: 1
+								}
+							}
+						]
+					}, true);
+				}
+			}
+
+			//projects slider
+			if ($projectSlider.length) {
+				$projectSlider.slick({
 					infinite: true,
 					slidesToScroll: 1,
 					slidesPerRow: 3,
@@ -107,26 +114,13 @@ var functions = (function() {
 			}
 		},
 
-		missionSlider: function () {
-			if ($('.js-mission-slider').length) {
-				$('.js-mission-slider').slick({
-					infinite: true,
-					slidesToShow: 4,
-					slidesToScroll: 1,
-					arrows: true,
-					responsive: [
-						{
-							breakpoint: 768,
-							settings: {
-								slidesToShow: 1
-							}
-						}
-					]
+		equalHeightInit: function () {
+			if ($('.js-contributors-slider').length) {
+				$('.js-contributors-slider').each(function () {
+					helpers.equalHeight($(this).find('.js-image-holder'), 4);
 				});
 			}
-		},
 
-		fourEqualHeight: function () {
 			if ($('.js-four-highlighted-block').length) {
 				if (!mobileView) {
 					$('.js-four-highlighted-block').each(function () {

@@ -3,29 +3,24 @@ $(function(){
 	functions.languageSwitcher();
 	functions.mobileNavInit();
 	functions.stickyHeader();
-	functions.heroSlider();
-	functions.contributorsSlider();
-	functions.projectsSlider();
-	functions.missionSlider();
+	functions.sliderInit();
 
 });
 
 $(window).on('load', function() {
 
-	functions.fourEqualHeight();
-	functions.contributorsEqualHeight();
+	functions.equalHeightInit();
+
+});
+
+$(window).resize(function(){
+
+	functions.equalHeightInit();
 
 });
 
 $(window).on('scroll', function () {
 
 	functions.stickyHeader();
-
-});
-
-$(window).resize(function(){
-
-	functions.fourEqualHeight();
-	functions.contributorsEqualHeight();
 
 });
