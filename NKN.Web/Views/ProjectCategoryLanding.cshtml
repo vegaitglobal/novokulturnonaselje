@@ -6,8 +6,8 @@
 	</div>
 </section>
 
-<section class="projects-landing">
-	<div class="image-with-text-block">
+<div class="projects-landing">
+	<section class="image-with-text-block">
 		<div class="wrapper">
 			<div class="rte-block">
 				@if (Model.Image != null)
@@ -23,35 +23,101 @@
 				}
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div class="projects-list-holder">
+	<section class="feed-wrapper projects-wrapper">
 		<div class="wrapper">
+			<!-- TODO-from-Tijana hardcoded section title -->
 			<h2 class="section-title">Realizovani projekti</h2>
-			<div class="projects-list js-projects-slider">
+			<div class="feed-list js-projects-slider">
 				@foreach (var projectPreview in Model.AllProjects)
 				{
-				<div class="item">
+				<div class="feed-item">
 					@if (@projectPreview.SmallImage != null)
 					{
-						<div class="image-holder">
+						<a href="@projectPreview.Url" class="feed-image-holder">
 							<img src="@projectPreview.SmallImage.Url" alt="" />
-						</div>
+						</a>
 					}
-					<div class="text-holder">
+					<div class="feed-text-holder">
 						@if (@projectPreview.Title != null)
 						{
-							<h3>@projectPreview.Title</h3>
+							<h3><a href="@projectPreview.Url">@projectPreview.Title</a></h3>
 						}
 						@if (@projectPreview.Summary != null)
 						{
 							<p>@projectPreview.Summary</p>
 						}
+						<!-- TODO-from-Tijana hardcoded button text -->
 						<a href="@projectPreview.Url" class="btn">Saznaj više</a>
 					</div>
 				</div>
 				}
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+
+	<!-- TODO-from-Tijana hardcoded newsletter -->
+	<section class="newsletter-block">
+		<div class="contact-background" style="background-image:url(/assets/img/content/naselje-bg.jpg)">
+			<span class="green-overlay"></span>
+		</div>
+		<div class="wrapper">
+			<div class="text-holder">
+				<h2>Budi u toku sa dešavanjima!</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.</p>
+			</div>
+			<div class="newsletter-form">
+				<form action="#">
+					<fieldset>
+						<div class="fieldset-inner">
+							<div class="input-wrap">
+								<input type="text" id="newsletterEmail" placeholder="E-mail" />
+								<label for="newsletterEmail" class="sr-only">E-mail</label>
+							</div>
+							<div class="input-submit-wrap">
+								<button type="submit" class="btn btn-white">Prijavi se</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- TODO-from-Tijana hardcoded newsletter -->
+	<section class="future-projects-block">
+		<div class="wrapper">
+			<h2 class="section-title">Projekti u najavi</h2>
+			<div class="cols-wrap">
+				<div class="col">
+					<div class="image-holder" style="background-image: url(/assets/img/content/future-project.jpg);">
+						<span class="green-overlay"></span>
+						<h3>Projekat #1</h3>
+					</div>
+					<div class="text-holder">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.</p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="image-holder" style="background-image: url(/assets/img/content/future-project.jpg);">
+						<span class="green-overlay"></span>
+						<h3>Projekat #1</h3>
+					</div>
+					<div class="text-holder">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.</p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="image-holder" style="background-image: url(/assets/img/content/future-project.jpg);">
+						<span class="green-overlay"></span>
+						<h3>Projekat #1</h3>
+					</div>
+					<div class="text-holder">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

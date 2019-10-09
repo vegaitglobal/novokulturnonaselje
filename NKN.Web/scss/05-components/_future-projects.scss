@@ -1,0 +1,84 @@
+//----------  future projects  ----------
+.future-projects-block {
+	@include base-float;
+	padding: 95px 0;
+	.cols-wrap {
+		float: left;
+		font-size: 0;
+		margin-left: -35px;
+		text-align: center;
+		width: calc(100% + 70px);
+	}
+	.col {
+		display: inline-block;
+		padding: 0 35px;
+		text-align: left;
+		width: 33.333%;
+	}
+	.image-holder {
+		margin-bottom: 5px;
+		min-height: 200px;
+		overflow: hidden;
+		padding: 20px 30px;
+		position: relative;
+		width: 100%;
+		&::after {
+			background-color: $white;
+			bottom: -70px;
+			content: '';
+			display: inline-block;
+			height: 100px;
+			left: -20px;
+			position: absolute;
+			right: -20px;
+			transform: rotate(6deg);
+			z-index: 3;
+		}
+	}
+	h3 {
+		color: $white;
+		font-family: $bold-cons;
+		font-size: 48px;
+		line-height: 1.2;
+		position: relative;
+		text-transform: uppercase;
+		z-index: 3;
+	}
+	p {
+		color: $grey;
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 28px;
+	}
+	@include breakpoint(touch) {
+		h3 {
+			font-size: 28px;
+			line-height: 1.2;
+		}
+		p {
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 80px 0;
+		.image-holder {
+			min-height: 180px;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 50px 0 10px;
+		.cols-wrap {
+			margin-left: 0;
+			width: 100%;
+		}
+		.col {
+			margin-bottom: 40px;
+			padding: 0;
+			width: 100%;
+		}
+		.image-holder {
+			min-height: 160px;
+		}
+	}
+}

@@ -1,0 +1,103 @@
+//----------  newsletter  ----------
+.newsletter-block {
+	@include base-float;
+	padding: 140px 0 190px;
+	position: relative;
+	.contact-background {
+		bottom: 0;
+		height: auto;
+		left: 0;
+		position: absolute;
+		top: 0;
+		&::before {
+			transform: rotate(2deg);
+		}
+		&::after {
+			transform: rotate(-3deg);
+		}
+	}
+	.wrapper {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		z-index: 3;
+	}
+	.text-holder {
+		color: $white;
+		width: 60%;
+	}
+	h2 {
+		font-family: $bold-cons;
+		font-weight: bold;
+		font-size: 46px;
+		margin-bottom: 12px;
+		text-transform: uppercase;
+	}
+	p {
+		font-size: 17px;
+		line-height: 28px;
+	}
+	.newsletter-form {
+		width: 35%;
+		.fieldset-inner {
+			background: url('../img/newsletter-form-bg.png') no-repeat center center;
+			background-size: 100% 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 41px 54px 57px 55px;
+			position: relative;
+			width: 100%;
+		}
+		.input-wrap {
+			width: 100%;
+		}
+		.input-submit-wrap {
+			bottom: -40px;
+			position: absolute;
+			right: 10px;
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 130px 0 150px;
+		.text-holder {
+			width: 50%;
+		}
+		h2 {
+			font-size: 42px;
+			line-height: 1.2;
+		}
+		p {
+			font-size: 16px;
+			line-height: 24px;
+		}
+		.newsletter-form {
+			width: 48%;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 80px 0 130px;
+		.wrapper {
+			display: block;
+		}
+		.text-holder {
+			@include base-float;
+			margin-bottom: 20px;
+		}
+		h2 {
+			font-size: 40px;
+			line-height: 50px;
+		}
+		p {
+			font-size: 16px;
+			line-height: 24px;
+		}
+		.newsletter-form {
+			@include base-float;
+			.fieldset-inner {
+				padding: 40px 30px 50px;
+			}
+		}
+	}
+}

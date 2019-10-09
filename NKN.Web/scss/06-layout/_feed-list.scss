@@ -177,43 +177,58 @@
 	}
 }
 
-
-.projects-list-holder {
+//----------  projects page  ----------
+.projects-landing {
 	@include base-float;
-	padding-bottom: 80px;
+	.rte-block {
+		padding-bottom: 44px;
+	}
+	@include breakpoint(desktop) {
+		.section-title {
+			margin-bottom: 77px;
+		}
+	}
+	@include breakpoint(tablet) {
+		.section-title {
+			margin-bottom: 50px;
+		}
+	}
+}
 
+.projects-wrapper {
+	padding-bottom: 70px;
+	.feed-list:not(.slick-initialized) {
+		.feed-item {
+			width: 30%;
+		}
+	}
 	.feed-item {
+		margin-bottom: 55px;
 		padding: 0 35px;
 	}
-
-	.project-list {
-		margin-left: -35px;
-		width: calc(100% + 70px);
-	}
-
 	.slick-slide > div {
 		margin: 0 -35px;
 	}
-
 	.slick-dots {
-		margin-top: 26px;
+		margin-top: 30px;
 		text-align: center;
 		width: 100%;
-
 		li:not(.slick-active) button {
 			background-color: $grey-lines;
 		}
 	}
-
-	.news-list {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+	@include breakpoint(tablet) {
+		.feed-item {
+			padding: 0 16px;
+		}
+		.slick-slide > div {
+			margin: 0 -16px;
+		}
 	}
-	@include breakpoint(desktop-small) {
-		h3 {
-			font-size: 30px;
-			line-height: 38px;
+	@include breakpoint(phone) {
+		padding-bottom: 70px;
+		.feed-item {
+			margin-bottom: 10px;
 		}
 	}
 }

@@ -106,7 +106,8 @@ var functions = (function() {
 						{
 							breakpoint: 768,
 							settings: {
-								slidesPerRow: 1
+								slidesPerRow: 1,
+								rows: 1
 							}
 						}
 					]
