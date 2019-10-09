@@ -34,8 +34,8 @@
 								<textarea id="contactMessage" name="message" placeholder="@Model.WriteUs.Message"></textarea>
 								<label for="contactMessage" class="sr-only">@Model.WriteUs.Message</label>
 							</div>
-							<span class="error-message" style="color: red"></span>
-							<span class="success-message" style="display: none; color:green">@Model.WriteUs.OnSubmitMessage</span>
+							<span class="contact-form-error js-error-message"></span>
+							<span class="contact-form-success js-success-message">@Model.WriteUs.OnSubmitMessage</span>
 							<div class="input-submit-wrap">
 								<button type="submit" id="contact-us-submit" class="btn">@Model.WriteUs.SubmitButtonText</button>
 							</div>

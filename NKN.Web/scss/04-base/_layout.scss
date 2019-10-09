@@ -32,8 +32,7 @@ body {
 
 .content {
 	@include base-float;
-	//padding-bottom: 70px;
 	@include breakpoint(phone) {
-		padding-bottom: 50px;
+		padding-bottom: 30px;
 	}
 }

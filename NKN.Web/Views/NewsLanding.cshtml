@@ -6,9 +6,9 @@
 	</div>
 </section>
 
-<section class="projects-list-holder news-list-holder">
+<section class="feed-wrapper news-wrapper news-top-wrapper">
 	<div class="wrapper">
-		<div class="projects-list news-list">
+		<div class="feed-list">
 			@{
 				var itemCount = Model.NewsPreviews.Count() > 2 ? 3 : Model.NewsPreviews.Count();
 			}
@@ -22,9 +22,48 @@
 		</div>
 		@{Html.RenderPartial("_NewsDetailHighlightedPreview", Model.HighlightedNewsPreview);}
 	</div>
+</section>
 
+<!-- TODO hardcoded -->
+<!-- contact form already exists but without background image (_WriteUs.cshtml).
+	if it has background image, "contact-background" div should be added like in an example below -->
+<section class="contact-form">
+	<div class="contact-background" style="background-image:url(/media/igbjh4dt/mission-background.jpg)">
+		<span class="green-overlay"></span>
+	</div>
 	<div class="wrapper">
-		<div class="projects-list news-list">
+		<div class="contact-form-wrap">
+			<h2>Hej, pišite nam ovde!</h2>
+			<form id="contact-us" action="#">
+				<fieldset>
+					<div class="fieldset-inner">
+						<div class="input-wrap">
+							<input type="text" id="contactName" name="name" placeholder="Ime i Prezime">
+							<label for="contactName" class="sr-only">Ime i Prezime</label>
+						</div>
+						<div class="input-wrap">
+							<input type="text" id="contactEmail" name="email" placeholder="E-mail">
+							<label for="contactEmail" class="sr-only">E-mail</label>
+						</div>
+						<div class="input-wrap input-wrap-fullwidth">
+							<textarea id="contactMessage" name="message" placeholder="Poruka"></textarea>
+							<label for="contactMessage" class="sr-only">Poruka</label>
+						</div>
+						<span class="contact-form-error js-error-message"></span>
+						<span class="contact-form-success js-success-message">Hvala vam sto ste nas kontaktirali</span>
+						<div class="input-submit-wrap">
+							<button type="submit" id="contact-us-submit" class="btn">Pošalji</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</section>
+
+<section class="feed-wrapper news-wrapper">
+	<div class="wrapper">
+		<div class="feed-list">
 			@foreach (var newsPreview in Model.NewsPreviews.Skip(itemCount))
 			{
 				if (newsPreview != null)

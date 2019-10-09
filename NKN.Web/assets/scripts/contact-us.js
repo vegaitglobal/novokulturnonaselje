@@ -52,21 +52,21 @@ function showErrors(form, errors) {
 	clearSuccessMessage();
 	if (errors.length > 0) {
 		var message = errors.reduce(function (message, error) { return message + error.split(' ').slice(1).join(' ') + "!<br>"; }, '');
-		document.getElementsByClassName('error-message')[0].innerHTML = message;
+		document.getElementsByClassName('js-error-message')[0].innerHTML = message;
 	}
 }
 
 function setErrorMessage() {
 	clearSuccessMessage();
-	return document.getElementsByClassName('error-message')[0].innerHTML = 'Udruženje nije kontaktirano. Email nije uspešno poslat.';
+	return document.getElementsByClassName('js-error-message')[0].innerHTML = 'Udruženje nije kontaktirano. Email nije uspešno poslat.';
 }
 
 function clearErrorMessage() {
-	return document.getElementsByClassName('error-message')[0].innerHTML = '';
+	return document.getElementsByClassName('js-error-message')[0].innerHTML = '';
 }
 
 function clearSuccessMessage() {
-	$('.success-message').css({ "display": "none", "color": "green" });
+	$('.js-success-message').removeClass('show');
 }
 function contact(contactInfo) {
 	fetch('/umbraco/api/forms/contactus', {
@@ -81,7 +81,7 @@ function contact(contactInfo) {
 			return;
 		}
 
-		$('.success-message').css({ "display": "block", "color": "green" });
+		$('.js-success-message').addClass('show');
 		clearErrorMessage();
 	}).catch(function (error) {
 		setErrorMessage();

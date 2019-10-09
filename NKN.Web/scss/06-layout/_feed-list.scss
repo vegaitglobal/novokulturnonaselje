@@ -1,0 +1,219 @@
+//----------  feed page  ----------
+.feed-wrapper {
+	@include base-float;
+	@include breakpoint(phone) {
+		.wrapper {
+			overflow: hidden;
+		}
+	}
+}
+
+.feed-list {
+	@include base-float;
+}
+
+.feed-item {
+	margin-bottom: 80px;
+	@include breakpoint(tablet) {
+		margin-bottom: 60px;
+	}
+	@include breakpoint(phone) {
+		margin-bottom: 40px;
+	}
+}
+
+//----------  image holder  ----------
+.feed-image-holder {
+	@include base-float;
+	overflow: hidden;
+	position: relative;
+	&::after {
+		background-color: $white;
+		bottom: -75px;
+		content: '';
+		display: inline-block;
+		height: 100px;
+		left: -20px;
+		position: absolute;
+		right: -20px;
+		transform: rotate(6deg);
+	}
+	img {
+		transition: transform .3s ease;
+		width: 100%;
+	}
+	@include breakpoint(desktop) {
+		&:hover img {
+			transform: scale(1.05);
+		}
+	}
+	@include breakpoint(phone) {
+		&::after {
+			bottom: -65px;
+			transform: rotate(3deg);
+		}
+	}
+}
+
+//----------  text holder  ----------
+.feed-text-holder {
+	@include base-float;
+	h3 {
+		font-family: $bold-cons;
+		font-size: 46px;
+		font-weight: bold;
+		line-height: 52px;
+		margin-bottom: 13px;
+		text-transform: uppercase;
+		a {
+			color: $grey-dark;
+			transition: color .3s ease;
+		}
+	}
+	.feed-date {
+		color: $grey;
+		display: block;
+		font-size: 20px;
+		font-style: italic;
+		line-height: 1;
+		margin-bottom: 16px;
+	}
+	p {
+		color: $grey;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 28px;
+		margin-bottom: 15px;
+	}
+	.btn {
+		float: right;
+	}
+	@include breakpoint(desktop) {
+		h3 a:hover {
+			color: $green;
+		}
+	}
+	@include breakpoint(touch) {
+		h3 {
+			font-size: 28px;
+			line-height: 1.2;
+			margin-bottom: 10px;
+		}
+		.feed-date {
+			font-size: 16px;
+		}
+		p {
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+}
+
+//----------  news page  ----------
+.news-wrapper {
+	&.news-top-wrapper {
+		padding-top: 124px;
+	}
+	.feed-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	@include breakpoint(tablet-desktop) {
+		.feed-item:not(.feed-item-highlighted) {
+			width: 30%;
+		}
+	}
+	@include breakpoint(tablet) {
+		&.news-top-wrapper {
+			padding-top: 20px;
+		}
+	}
+	@include breakpoint(phone) {
+		&.news-top-wrapper {
+			padding-top: 10px;
+		}
+		.feed-item:not(.feed-item-highlighted) {
+			width: 100%;
+		}
+	}
+	@media only screen and (min-width: 500px) and (max-width: 767px) {
+		.feed-item:not(.feed-item-highlighted) {
+			width: 48%;
+		}
+	}
+}
+
+//----------  highlighted news  ----------
+.feed-item-highlighted {
+	@include breakpoint(tablet-desktop) {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		.feed-image-holder {
+			width: 46.6%;
+			&::after {
+				bottom: -64px;
+			}
+		}
+		.feed-text-holder {
+			width: 49%;
+			p {
+				margin-bottom: 35px;
+			}
+			.btn {
+				float: left;
+			}
+		}
+		.feed-date {
+			margin-bottom: 36px;
+		}
+	}
+	@include breakpoint(tablet) {
+		.feed-date,
+		.feed-text-holder p {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
+.projects-list-holder {
+	@include base-float;
+	padding-bottom: 80px;
+
+	.feed-item {
+		padding: 0 35px;
+	}
+
+	.project-list {
+		margin-left: -35px;
+		width: calc(100% + 70px);
+	}
+
+	.slick-slide > div {
+		margin: 0 -35px;
+	}
+
+	.slick-dots {
+		margin-top: 26px;
+		text-align: center;
+		width: 100%;
+
+		li:not(.slick-active) button {
+			background-color: $grey-lines;
+		}
+	}
+
+	.news-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	@include breakpoint(desktop-small) {
+		h3 {
+			font-size: 30px;
+			line-height: 38px;
+		}
+	}
+}

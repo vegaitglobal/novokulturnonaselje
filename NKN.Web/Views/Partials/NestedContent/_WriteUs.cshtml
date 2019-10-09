@@ -19,8 +19,8 @@
 							<textarea id="contactMessage" name="message" placeholder="@Model.Message"></textarea>
 							<label for="contactMessage" class="sr-only">@Model.Message</label>
 						</div>
-						<span class="error-message" style="color: red"></span>
-						<span class="success-message" style="display: none">@Model.OnSubmitMessage</span>
+						<span class="contact-form-error js-error-message"></span>
+						<span class="contact-form-success js-success-message">@Model.OnSubmitMessage</span>
 						<div class="input-submit-wrap">
 							<button type="submit" id="contact-us-submit" class="btn">@Model.SubmitButtonText</button>
 						</div>
