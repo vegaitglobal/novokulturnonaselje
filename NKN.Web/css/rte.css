@@ -1,7 +1,31 @@
 
 
+
+
+
+
+
+
+
+
+ul, ol {
+	margin-bottom: 28px;
+}
+ul li, ol li {
+	font-size: 16px;
+	line-height: 28px;
+	margin-bottom: 15px;
+}
+ul li a, ol li a {
+	color: #40b9b9;
+	text-decoration: underline;
+}
+ul li::before {
+	content: '- ';
+}
+
 /**umb_name:Heading 2*/
-h2.h2 {
+h2 {
 	color: #000;
 	font-family: "Open Sans Condensed",sans-serif;
 	font-size: 46px;
@@ -10,6 +34,18 @@ h2.h2 {
 	line-height: 58px;
 	margin-bottom: 50px;
 	text-transform: uppercase;
+}
+
+/**umb_name:Heading 3*/
+h3 {
+	color: #000;
+	font-family: "Open Sans Condensed",sans-serif;
+}
+
+/**umb_name:Heading 4*/
+h4 {
+	color: #000;
+	font-family: "Open Sans Condensed",sans-serif;
 }
 
 /**umb_name:Highlighted text*/

@@ -12,6 +12,22 @@
 		margin-bottom: 30px;
 		text-transform: uppercase;
 	}
+	h3 {
+		color: $black;
+		font-family: $bold-cons;
+		font-size: 24px;
+		line-height: 1.3;
+		margin-bottom: 20px;
+	}
+	h4 {
+		color: $black;
+		font-family: $bold-cons;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1.2;
+		margin-bottom: 15px;
+		text-transform: uppercase;
+	}
 	p {
 		font-size: 16px;
 		line-height: 28px;
@@ -45,6 +61,29 @@
 			content: '- ';
 		}
 	}
+	ol {
+		counter-reset: counter;
+		li {
+			counter-increment: counter;
+			&::before {
+				content: counter(counter) '. ';
+			}
+		}
+	}
+	table {
+		border-color: $grey-lines;
+		margin-bottom: 28px;
+		td, th {
+			border-color: $grey-lines;
+			font-size: 16px;
+			line-height: 28px;
+			padding: 5px 10px;
+		}
+		a {
+			color: $green;
+			text-decoration: underline;
+		}
+	}
 	@include breakpoint(tablet) {
 		padding: 50px 0;
 		h2 {
@@ -69,6 +108,13 @@
 		ul, ol {
 			margin-bottom: 20px;
 			li {
+				font-size: 14px;
+				line-height: 24px;
+			}
+		}
+		table {
+			margin-bottom: 20px;
+			td, th {
 				font-size: 14px;
 				line-height: 24px;
 			}
