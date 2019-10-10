@@ -1,9 +1,10 @@
 //----------  four highlighted block  ----------
 .four-highlighted-block {
 	@include base-float;
-	padding: 34px 0 50px;
+	padding: 30px 0 50px;
 	.cols-wrap {
 		display: flex;
+		justify-content: center;
 	}
 	.col {
 		width: 25%;

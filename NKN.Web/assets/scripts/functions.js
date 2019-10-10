@@ -64,13 +64,18 @@ var functions = (function() {
 				if ($missionSlider.length) {
 					$missionSlider.slick('slickSetOption', {
 						slidesToShow: 4,
+						slidesToScroll: 1,
+						slidesPerRow: 4,
+						rows: 1,
 						arrows: true,
 						dots: false,
 						responsive: [
 							{
 								breakpoint: 768,
 								settings: {
-									slidesToShow: 1
+									slidesToShow: 1,
+									slidesPerRow: 1,
+									rows: 2
 								}
 							}
 						]

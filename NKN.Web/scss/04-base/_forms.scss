@@ -30,12 +30,10 @@ textarea {
 
 //----------  form  ----------
 .contact-form-wrap {
-	background-image: url('../img/contact-form-bg.png');
-	background-position: left top;
-	background-repeat: no-repeat;
-	background-size: 89% 100%;
+	background: url('../img/contact-form-bg.png') no-repeat left top;
+	background-size: 90% 100%;
 	margin-top: -156px;
-	padding: 50px 0 0 95px;
+	padding: 49px 0 78px 90px;
 	position: relative;
 	z-index: 4;
 	h2 {
@@ -48,12 +46,13 @@ textarea {
 		text-transform: uppercase;
 	}
 	form {
-		width: calc(100% - 145px);
+		width: 82.5%;
 	}
 	.fieldset-inner {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		position: relative;
 	}
 	.input-wrap {
 		margin-bottom: 20px;
@@ -63,34 +62,32 @@ textarea {
 		width: 100%;
 	}
 	.input-submit-wrap {
-		margin-top: 37px;
-		width: 100%;
+		bottom: -96px;
+		position: absolute;
+		right: -22%;
 	}
 	.btn {
-		float: right;
-		padding: 0 40px;
-		transform: translate(90%, 46%);
+		padding-left: 40px;
+		padding-right: 40px;
+		&:not(:hover) {
+			background-color: $white;
+		}
 	}
 	@include breakpoint(desktop-small) {
 		margin-top: -130px;
-		.btn {
-			padding: 0 20px;
-			transform: translate(130%, 46%);
-		}
 	}
 	@include breakpoint(touch) {
 		margin-top: 0;
 	}
 	@include breakpoint(tablet) {
-		.btn {
-			padding: 8px 20px;
-			transform: translate(132%, 46%);
+		padding-left: 60px;
+		.input-submit-wrap {
+			right: -36%;
 		}
 	}
 	@include breakpoint(phone) {
 		background: none;
-		padding: 30px 0 0;
-		position: relative;
+		padding: 30px 0 95px;
 		&::before {
 			background-image: url('../img/contact-form-mobile-bg.png');
 			background-position: left bottom;
@@ -121,11 +118,9 @@ textarea {
 			width: 100%;
 		}
 		.input-submit-wrap {
-			margin-top: 54px;
-		}
-		.btn {
-			float: left;
-			transform: translate(0, 0);
+			bottom: -96px;
+			left: 0;
+			right: auto;
 		}
 	}
 }

@@ -5,18 +5,29 @@
 	z-index: 5;
 	@include breakpoint(tablet-desktop) {
 		.contact-form-wrap {
-			margin: -185px auto 0;
-			max-width: 885px;
-			padding: 37px 0 0 84px;
+			background-size: 87% 100%;
+			margin: -80px auto 0;
+			max-width: 850px;
+			padding: 34px 0 77px 77px;
+			transform: translateX(-17px);
 			h2 {
 				margin-bottom: 24px;
+			}
+			textarea {
+				height: 60px;
 			}
 		}
 	}
 	@include breakpoint(tablet) {
-		.contact-form-wrap .btn {
-			transform: translate(100%, 46%);
+		.contact-form-wrap {
+			transform: none;
+			.input-submit-wrap {
+				right: -20%;
+			}
 		}
+	}
+	@include breakpoint(phone) {
+		padding: 30px 0 57px;
 	}
 }
 
@@ -51,17 +62,12 @@
 	.green-overlay {
 		display: block;
 	}
-	+ .wrapper .contact-form-wrap {
-		textarea {
-			height: 60px;
-		}
-	}
 	@include breakpoint(tablet-desktop) {
 		+ .wrapper .contact-form-wrap {
+			background-size: 89% 100%;
 			margin: -185px auto 106px;
-			max-width: 862px;
-			padding: 35px 0 0 81px;
-			transform: translateX(17px);
+			padding: 33px 0 72px 79px;
+			transform: translateX(14px);
 			.input-wrap {
 				margin-bottom: 10px;
 			}

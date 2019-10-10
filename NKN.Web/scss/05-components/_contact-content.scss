@@ -23,7 +23,7 @@
 	}
 	.right-col {
 		float: right;
-		width: 62%;
+		width: 61%;
 	}
 	@include breakpoint(desktop-small) {
 		.left-col {
@@ -78,6 +78,7 @@
 			}
 		}
 		.right-col {
+			padding-top: 30px;
 			width: 100%;
 		}
 	}

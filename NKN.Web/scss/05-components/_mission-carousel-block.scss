@@ -5,7 +5,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	overflow: hidden;
-	padding: 180px 0 320px;
+	padding: 180px 0 370px;
 	position: relative;
 	&::before,
 	&::after {
@@ -74,11 +74,16 @@
 
 .mission-slider {
 	border-top: 3px solid $green;
-	.item {
-		margin: 0 10px;
+	.slick-slide {
 		text-align: center;
-		padding: 60px 30px 0;
+	}
+	.item {
+		margin: 0 auto;
+		max-width: 300px;
+		text-align: center;
+		padding: 60px 20px 0;
 		position: relative;
+		width: 100%;
 		&::before {
 			background-color: $green;
 			content: '';
@@ -153,9 +158,22 @@
 	@include breakpoint(phone) {
 		margin: 0 auto;
 		max-width: 220px;
-		padding-bottom: 40px;
+		.slick-slide > div:nth-child(2n) {
+			margin-top: 32px;
+			position: relative;
+			&::before {
+				background-color: $green;
+				bottom: 100%;
+				content: '';
+				height: 45px;
+				left: 50%;
+				position: absolute;
+				transform: translateX(-50%);
+				width: 3px;
+			}
+		}
 		.item {
-			margin: 0;
+			margin: 0 0 40px;
 			padding: 22px 0 0;
 			&::before {
 				display: none;
