@@ -78,10 +78,10 @@
 //resizable font
 @mixin responsive-font($minS, $maxS, $minW, $maxW) {
 	font-size: #{$minS}px;
-	@media all and (min-width: #{$minW}px) and (max-width: #{$maxW}px) {
-	  font-size: calc(#{$minS}px + (#{$maxS} - #{$minS}) * (100vw - #{$minW}px) / (#{$maxW} - #{$minW})) !important;
+	@media only screen and (min-width: #{$minW}px) and (max-width: #{$maxW}px) {
+	  font-size: calc(#{$minS}px + (#{$maxS} - #{$minS}) * (100vw - #{$minW}px) / (#{$maxW} - #{$minW}));
 	}
-	@media all and (min-width: #{$maxW}px) {
-	  font-size: #{$maxS}px !important;
+	@media only screen and (min-width: #{$maxW}px) {
+	  font-size: #{$maxS}px;
 	}
 }

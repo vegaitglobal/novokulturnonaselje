@@ -3,8 +3,32 @@
 	@include base-float;
 	.image-holder {
 		float: left;
-		padding-right: 30px;
-		padding-bottom: 20px;
-		width: 30%;
+		margin: 0 40px 30px 0;
+		max-width: 52%;
+	}
+	&.right-aligned {
+		.image-holder {
+			float: right;
+			margin: 0 0 30px 40px;
+		}
+	}
+	@include breakpoint(tablet) {
+		.image-holder {
+			margin: 0 30px 30px 0;
+			max-width: 48%;
+		}
+		&.right-aligned .image-holder {
+			margin: 0 0 30px 30px;
+		}
+	}
+	@include breakpoint(phone) {
+		.image-holder {
+			margin: 0 0 30px;
+			max-width: none;
+			width: 100%;
+		}
+		&.right-aligned .image-holder {
+			margin: 0 0 30px;
+		}
 	}
 }
