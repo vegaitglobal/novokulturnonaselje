@@ -16,3 +16,153 @@
 {
 	Html.RenderAction<NestedContentController>(c => nameof(c.Index), new { viewModel = item });
 }
+
+<!-- TODO-from-Tijana hardcoded newsletter -->
+<section class="newsletter-block">
+	<div class="contact-background" style="background-image:url(/assets/img/content/naselje-bg.jpg)">
+		<span class="green-overlay"></span>
+	</div>
+	<div class="wrapper">
+		<div class="text-holder">
+			<h2>Budi u toku sa dešavanjima!</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.</p>
+		</div>
+		<div class="newsletter-form">
+			<form action="#">
+				<fieldset>
+					<div class="fieldset-inner">
+						<div class="input-wrap">
+							<input type="text" id="newsletterEmail" placeholder="E-mail" />
+							<label for="newsletterEmail" class="sr-only">E-mail</label>
+						</div>
+						<div class="input-submit-wrap">
+							<button type="submit" class="btn btn-white">Prijavi se</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</section>
+
+<!-- TODO-from-Tijana hardcoded future projects -->
+<section class="future-projects-block">
+	<div class="wrapper">
+		<h2 class="section-title">Projekti u najavi</h2>
+		<div class="cols-wrap">
+			<div class="col">
+				<div class="image-holder" style="background-image: url(/assets/img/content/future-project.jpg);">
+					<span class="green-overlay"></span>
+					<h3>Projekat #1</h3>
+				</div>
+				<div class="text-holder">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.</p>
+				</div>
+			</div>
+			<div class="col">
+				<div class="image-holder" style="background-image: url(/assets/img/content/future-project.jpg);">
+					<span class="green-overlay"></span>
+					<h3>Projekat #1</h3>
+				</div>
+				<div class="text-holder">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.</p>
+				</div>
+			</div>
+			<div class="col">
+				<div class="image-holder" style="background-image: url(/assets/img/content/future-project.jpg);">
+					<span class="green-overlay"></span>
+					<h3>Projekat #1</h3>
+				</div>
+				<div class="text-holder">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- TODO-from-Tijana hardcoded -->
+<!-- contact form already exists but without background image (_WriteUs.cshtml).
+	if it has background image, "contact-background" div should be added like in an example below -->
+<section class="contact-form">
+	<div class="contact-background" style="background-image:url(/media/igbjh4dt/mission-background.jpg)">
+		<span class="green-overlay"></span>
+	</div>
+	<div class="wrapper">
+		<div class="contact-form-wrap">
+			<h2>Hej, pišite nam ovde!</h2>
+			<form id="contact-us" action="#">
+				<fieldset>
+					<div class="fieldset-inner">
+						<div class="input-wrap">
+							<input type="text" id="contactName" name="name" placeholder="Ime i Prezime">
+							<label for="contactName" class="sr-only">Ime i Prezime</label>
+						</div>
+						<div class="input-wrap">
+							<input type="text" id="contactEmail" name="email" placeholder="E-mail">
+							<label for="contactEmail" class="sr-only">E-mail</label>
+						</div>
+						<div class="input-wrap input-wrap-fullwidth">
+							<textarea id="contactMessage" name="message" placeholder="Poruka"></textarea>
+							<label for="contactMessage" class="sr-only">Poruka</label>
+						</div>
+						<span class="contact-form-error js-error-message"></span>
+						<span class="contact-form-success js-success-message">Hvala vam sto ste nas kontaktirali</span>
+						<div class="input-submit-wrap">
+							<button type="submit" id="contact-us-submit" class="btn">Pošalji</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</section>
+
+<!-- TODO-from-Tijana hardcoded news block -->
+<!-- use things we already have on news landing page? -->
+<section class="feed-wrapper news-wrapper news-single-block">
+	<div class="wrapper">
+		<h2 class="section-title">Najnovije vesti</h2>
+		<div class="feed-list">
+			<div class="feed-item">
+				<a href="javascript:;" class="feed-image-holder">
+					<img src="/assets/img/content/news.jpg" alt="" />
+				</a>
+				<div class="feed-text-holder">
+					<h3><a href="javascript:;">Vest #1</a></h3>
+					<span class="feed-date">10.10.2019.</span>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.
+					</p>
+					<a href="javascript:;" class="btn">Saznaj više</a>
+				</div>
+			</div>
+			<div class="feed-item">
+				<a href="javascript:;" class="feed-image-holder">
+					<img src="/assets/img/content/news.jpg" alt="" />
+				</a>
+				<div class="feed-text-holder">
+					<h3><a href="javascript:;">Vest #1</a></h3>
+					<span class="feed-date">10.10.2019.</span>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.
+					</p>
+					<a href="javascript:;" class="btn">Saznaj više</a>
+				</div>
+			</div>
+			<div class="feed-item">
+				<a href="javascript:;" class="feed-image-holder">
+					<img src="/assets/img/content/news.jpg" alt="" />
+				</a>
+				<div class="feed-text-holder">
+					<h3><a href="javascript:;">Vest #1</a></h3>
+					<span class="feed-date">10.10.2019.</span>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.
+					</p>
+					<a href="javascript:;" class="btn">Saznaj više</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

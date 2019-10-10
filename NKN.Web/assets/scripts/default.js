@@ -4,6 +4,7 @@ $(function(){
 	functions.mobileNavInit();
 	functions.stickyHeader();
 	functions.sliderInit();
+	functions.simpleGalleryInit();
 
 });
 

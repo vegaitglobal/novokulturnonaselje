@@ -1,0 +1,42 @@
+//----------  simple gallery  ----------
+.gallery-simple-block {
+	@include base-float;
+	padding: 50px 0;
+	.gallery-simple {
+		width: 100%;
+		&:not(.slick-initialized) {
+			text-align: center;
+			.item {
+				display: inline-block;
+				width: 30%;
+			}
+		}
+	}
+	.item {
+		margin-bottom: 30px;
+		padding: 0 15px;
+	}
+	.slick-slide > div {
+		margin: 0 -15px;
+	}
+	.image-holder {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: block;
+		height: 0;
+		padding-bottom: 50%;
+		width: 100%;
+		img {
+			display: none;
+		}
+	}
+	.slick-dots {
+		margin-top: 30px;
+		text-align: center;
+		width: 100%;
+		li:not(.slick-active) button {
+			background-color: $grey-lines;
+		}
+	}
+}
