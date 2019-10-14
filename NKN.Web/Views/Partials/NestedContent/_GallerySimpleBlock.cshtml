@@ -1,110 +1,23 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<GallerySimpleBlockViewModel>
 
-<!-- <section class="gallery-simple-block">
-    <div class="wrapper">
-        @foreach (var image in Model.Images)
-        {
-            <div class="image-holder">
-                <img src="@image.Url" alt="" />
-            </div>
-        }
-    </div>
-</section> -->
-
-
-<!-- TODO-from-Tijana hardcoded gallery simple -->
 <section class="gallery-simple-block">
     <div class="wrapper">
         <div class="gallery-simple js-gallery-simple">
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/future-project.jpg" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/hero-banner.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/homepage-hero.jpg" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/naselje-bg.jpg" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/news.jpg" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/projects-03.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/mission-background.jpg" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
-            <div class="item">
-                <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('/assets/img/content/gallery-medju-brezama.png');">
-                    <img data-src="/assets/img/content/gallery-medju-brezama.png" class="js-gallery-simple-src" alt="" />
-                </a>
-            </div>
+            @foreach (var image in Model.Images)
+            {
+                <div class="item">
+                    <!-- TODO-from-Tijana -->
+                    <!-- is it possible to have thumbnails here? we don't want to load all large images here before they are opened in a popup -->
+                    <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('@image.Url');">
+                        <span data-src="@image.Url" class="js-gallery-simple-src"></span>
+                    </a>
+                </div>
+            }
         </div>
+
         <div class="popup js-popup">
             <span class="popup-overlay js-popup-overlay"></span>
-            <div class="popup-content">
+            <div class="popup-content js-popup-content">
                 <button type="button" class="popup-close js-popup-close"><span class="sr-only">Click here to close popup</span></button>
                 <div class="popup-image-holder">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="js-gallery-simple-image" alt="" />
