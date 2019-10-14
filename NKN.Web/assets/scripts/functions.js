@@ -129,6 +129,7 @@ var functions = (function() {
 					rows: 2,
 					dots: true,
 					arrows: false,
+					swipe: false,
 					responsive: [
 						{
 							breakpoint: 768,
