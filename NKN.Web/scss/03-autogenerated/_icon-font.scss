@@ -37,8 +37,11 @@
 	@if $filename == ico-instagram {
 		$char: "\E004";
 	}
-	@if $filename == ico-youtube {
+	@if $filename == ico-play {
 		$char: "\E005";
+	}
+	@if $filename == ico-youtube {
+		$char: "\E006";
 	}
 
 	@return $char;
@@ -66,6 +69,9 @@
 }
 .font-ico-instagram {
 	@include font(ico-instagram);
+}
+.font-ico-play {
+	@include font(ico-play);
 }
 .font-ico-youtube {
 	@include font(ico-youtube);
