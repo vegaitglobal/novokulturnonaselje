@@ -129,6 +129,7 @@ var functions = (function() {
 					rows: 2,
 					dots: true,
 					arrows: false,
+					swipe: false,
 					responsive: [
 						{
 							breakpoint: 768,
@@ -165,9 +166,9 @@ var functions = (function() {
 				var $this = $(this);
 				var thiSrc = $this.find('.js-gallery-simple-src').data('src');
 				var $activePopup = $this.parents('.js-gallery-simple').next('.js-popup');
+
 				$activePopup.stop().fadeIn();
 				$('body').css('overflow', 'hidden');
-
 				$activePopup.find('.js-gallery-simple-image').attr('src', thiSrc);
 			});
 
