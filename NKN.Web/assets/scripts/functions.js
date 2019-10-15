@@ -162,10 +162,11 @@ var functions = (function() {
 		},
 
 		simpleGalleryInit: function () {
+			var popupClass = '.js-popup';
 			$('.js-open-gallery-simple').on('click', function () {
 				var $this = $(this);
 				var thiSrc = $this.find('.js-gallery-simple-src').data('src');
-				var $activePopup = $this.parents('.js-gallery-simple').next('.js-popup');
+				var $activePopup = $this.parents('.js-gallery-simple').next(popupClass);
 
 				$activePopup.stop().fadeIn();
 				$('body').css('overflow', 'hidden');
@@ -176,6 +177,15 @@ var functions = (function() {
 				$('.js-popup').fadeOut();
 				$('body').css('overflow', '');
 			});
+
+			if ($(popupClass).length) {
+				$(document).on('keyup', function(e){
+					if (e.which == 27) {
+						$(popupClass).fadeOut();
+						$('body').css('overflow', '');
+					}
+				});
+			}
 		}
 	}
 }());
