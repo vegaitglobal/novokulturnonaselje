@@ -1,5 +1,5 @@
-﻿using NKN.Core.Extensions;
-using NKN.Core.ViewModels.Partials.NestedContent;
+﻿using NKN.Core.Contexts;
+using NKN.Core.Extensions;
 using NKN.Core.ViewModels.Shared;
 using NKN.Models.Extensions;
 using NKN.Models.Generated;
@@ -9,19 +9,19 @@ using Umbraco.Web;
 
 namespace NKN.Core.ViewModels.Partials.Layout
 {
-    public class HeaderViewModel : INestedContentViewModel
+	public class HeaderViewModel
     {
-        public HeaderViewModel(IHeader header)
+        public HeaderViewModel(ICompositionContext<IHeader> header)
         {
             if (header == null) throw new ArgumentNullException(nameof(header));
 
-            Logo = (header.Logo as Image).ToViewModel();
-            LogoBlack = (header.LogoBlack as Image).ToViewModel();
-            LogoUrl = header.AncestorOrSelf<Home>().Url;
-            FacebookLink = header.AncestorOrSelf<Home>().FacebookLink;
-            InstagramLink = header.AncestorOrSelf<Home>().InstagramLink;
-            YouTubeLink = header.AncestorOrSelf<Home>().YouTubeLink;
-            NavigationItems = header.AncestorOrSelf<Home>().GetNavigationItems<IPage>();
+            Logo = (header.Home.Logo as Image).ToViewModel();
+            LogoBlack = (header.Home.LogoBlack as Image).ToViewModel();
+            LogoUrl = header.Home.AncestorOrSelf<Home>().Url;
+            FacebookLink = header.Home.FacebookLink;
+            InstagramLink = header.Home.InstagramLink;
+            YouTubeLink = header.Home.YouTubeLink;
+            NavigationItems = header.Home.AncestorOrSelf<Home>().GetNavigationItems<IPage>();
         }
 
         public ImageViewModel Logo { get; }

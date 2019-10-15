@@ -1,26 +1,24 @@
-﻿using NKN.Core.ViewModels.Partials.NestedContent;
-using NKN.Models.Extensions;
+﻿using NKN.Core.Contexts;
+using NKN.Core.Extensions;
+using NKN.Core.ViewModels.Shared;
 using NKN.Models.Generated;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Umbraco.Web;
 
 namespace NKN.Core.ViewModels.Partials.Layout
 {
-    public class FooterViewModel : INestedContentViewModel
+	public class FooterViewModel
     {
-        public FooterViewModel(IFooter footer)
+        public FooterViewModel(ICompositionContext<IFooter> footer)
         {
             if (footer == null) throw new ArgumentNullException(nameof(footer));
 
-            CopyrightText = footer.CopyrightText;
-            Pages = footer.AncestorOrSelf<Home>().Children<FooterPages>()
-                .SelectMany(child => child.Children<IPage>())
-                .Distinct();
-        }
+            CopyrightText = footer.Composition.CopyrightText;
+			HygieneLinks = footer.Composition.HygieneLinks?.Select(h => h.ToViewModel()).ToList();
+		}
 
         public string CopyrightText { get; }
-        public IEnumerable<IPage> Pages { get; }
+		public IReadOnlyList<LinkViewModel> HygieneLinks { get; }
     }
 }

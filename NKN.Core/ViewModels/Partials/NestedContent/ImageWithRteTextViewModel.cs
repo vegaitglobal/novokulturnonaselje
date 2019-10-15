@@ -11,10 +11,12 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         public ImageWithRtetextViewModel(INestedContentContext<ImageWithRtetext> context)
         {
             Image = (context.NestedContent.Image as Image).ToViewModel();
+			IsImageRight = context.NestedContent.IsImageRight;
             Text = context.NestedContent.Text;
         }
 
         public ImageViewModel Image { get; private set; }
+		public bool IsImageRight { get; }
         public IHtmlString Text { get; private set; }
     }
 }

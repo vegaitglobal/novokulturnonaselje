@@ -1,15 +1,8 @@
 ﻿@inherits UmbracoViewPage<StandardContentPageViewModel>
 
-@if (Model.BannerImage != null)
+@if (Model.Banner != null)
 {
-	<section class="hero-banner" style="background-image: url(@Model.BannerImage.Url)">
-		@if (!string.IsNullOrEmpty(Model.PageTitle))
-		{
-			<div class="wrapper">
-				<h1 class="page-title">@Model.PageTitle</h1>
-			</div>
-		}
-	</section>
+	Html.RenderAction<LayoutController>(c => nameof(c.Banner), new { viewModel = Model.Banner });
 }
 
 @foreach (var item in Model.Items)

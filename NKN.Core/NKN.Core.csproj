@@ -278,6 +278,8 @@
     <Compile Include="Components\ApplicationConfigurationComponent.cs" />
     <Compile Include="Composers\ServicesComposer.cs" />
     <Compile Include="Composers\SearchComposer.cs" />
+    <Compile Include="Contexts\CompositionContext.cs" />
+    <Compile Include="Contexts\ICompositionContext.cs" />
     <Compile Include="Contexts\INestedContentContext.cs" />
     <Compile Include="Contexts\IPageContext.cs" />
     <Compile Include="Contexts\ISeoContext.cs" />
@@ -337,11 +339,13 @@
     <Compile Include="ViewModels\Pages\ProjectDetailPreviewViewModel.cs" />
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
     <Compile Include="ViewModels\Pages\StandardContentPageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Layout\BannerViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\BannerSlideViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ContributorsBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\EmbeddedVideoBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\FourHighlightedItemsBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\FriendOrganizationViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\FutureProjectItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\GallerySimpleBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\HeroBannerSliderViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\HighlightedItemViewModel.cs" />

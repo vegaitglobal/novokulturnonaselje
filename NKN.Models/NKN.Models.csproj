@@ -379,6 +379,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentTypes\Compositions\IBanner.cs" />
+    <Compile Include="DocumentTypes\Compositions\ICompositions.cs" />
+    <Compile Include="DocumentTypes\Compositions\IFooter.cs" />
+    <Compile Include="DocumentTypes\Compositions\IHeader.cs" />
     <Compile Include="DocumentTypes\IDomainRoot.cs" />
     <Compile Include="DocumentTypes\INestedContent.cs" />
     <Compile Include="DocumentTypes\ISeo.cs" />
@@ -419,9 +423,6 @@
     <Compile Include="Generated\Footer.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\FooterPages.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Generated\FourHighlightedItemsBlock.cs" />
     <Compile Include="Generated\FourHighlightedItemsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -433,6 +434,10 @@
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Friends.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\FutureProjectItem.cs" />
+    <Compile Include="Generated\FutureProjectItem.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Gallery.cs" />

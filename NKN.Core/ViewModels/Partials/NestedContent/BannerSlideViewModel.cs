@@ -1,4 +1,5 @@
 ﻿using NKN.Core.Contexts;
+using NKN.Core.Extensions;
 using NKN.Core.ViewModels.Shared;
 using NKN.Models.Generated;
 
@@ -11,7 +12,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
             BackgroundImage = new ImageViewModel(context.NestedContent.BackgroundImage as Image);
             Title = context.NestedContent.Title;
             Text = context.NestedContent.Text;
-            Link = new LinkViewModel(context.NestedContent.Link);
+            Link = context.NestedContent.Link?.ToViewModel();
         }
 
         public ImageViewModel BackgroundImage { get; private set; }

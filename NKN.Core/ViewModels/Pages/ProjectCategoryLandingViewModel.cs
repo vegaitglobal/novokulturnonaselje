@@ -1,5 +1,7 @@
 ﻿using NKN.Core.Contexts;
 using NKN.Core.Extensions;
+using NKN.Core.ViewModels.Partials.Layout;
+using NKN.Core.ViewModels.Partials.NestedContent;
 using NKN.Core.ViewModels.Shared;
 using NKN.Models.Generated;
 using System.Collections.Generic;
@@ -12,17 +14,16 @@ namespace NKN.Core.ViewModels.Pages
     {
         public ProjectCategoryLandingViewModel(IPageContext<ProjectCategoryLanding> context) : base(context)
         {
-            PageTitle = context.Page.PageTitle;
-            BannerImage = (context.Page.BannerImage as Image).ToViewModel();
-            Image = (context.Page.Image as Image).ToViewModel();
+			Banner = new BannerViewModel(context.WithComposition(context.Page));
+			Image = (context.Page.Image as Image).ToViewModel();
             Text = context.Page.Text;
-            AllProjects = context.Page.AllProjects.ToViewModel<ProjectDetailPreviewViewModel>().OrderBy(project => project.ReleaseDate);
+            AllProjects = context.Page.AllProjects?.ToViewModel<ProjectDetailPreviewViewModel>().OrderBy(project => project.ReleaseDate);
+			FutureProjects = context.Page.Items?.Select(fp => context.WithNestedContent(fp).ToViewModel<FutureProjectItemViewModel>()).ToList();
         }
-
-        public string PageTitle { get; private set; }
-        public ImageViewModel BannerImage { get; private set; }
+		public BannerViewModel Banner { get; set; }
         public ImageViewModel Image { get; private set; }
         public IHtmlString Text { get; private set; }
         public IEnumerable<ProjectDetailPreviewViewModel> AllProjects { get; }
+		public IEnumerable<FutureProjectItemViewModel> FutureProjects { get; }
     }
 }

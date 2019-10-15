@@ -3,13 +3,17 @@
 
 <footer class="footer">
 	<div class="wrapper">
-		<ul class="footer-links">
-			@foreach (var page in Model.Pages)
-			{
-				<li>
-					<a href="@page.Url" class="footer-links-item">@page.PageTitle</a>
-				</li>
-			}
-		</ul>
+		@if (Model.HygieneLinks != null && Model.HygieneLinks.Any())
+		{
+			<ul class="footer-links">
+				@foreach (var hygieneLink in Model.HygieneLinks)
+				{
+					<li>
+						<a href="@hygieneLink.Url" target="@hygieneLink.Target" class="footer-links-item">@hygieneLink.Content</a>
+					</li>
+				}
+			</ul>
+		}
+
 	</div>
 </footer>

@@ -27,6 +27,10 @@ namespace NKN.Models.Generated
 		/// <summary>Copyright Text</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		string CopyrightText { get; }
+
+		/// <summary>Hygiene Links</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		IEnumerable<Umbraco.Web.Models.Link> HygieneLinks { get; }
 	}
 
 	/// <summary>Footer</summary>
@@ -64,5 +68,16 @@ namespace NKN.Models.Generated
 		/// <summary>Static getter for Copyright Text</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static string GetCopyrightText(IFooter that) => that.Value<string>("copyrightText");
+
+		///<summary>
+		/// Hygiene Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("hygieneLinks")]
+		public IEnumerable<Umbraco.Web.Models.Link> HygieneLinks => GetHygieneLinks(this);
+
+		/// <summary>Static getter for Hygiene Links</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static IEnumerable<Umbraco.Web.Models.Link> GetHygieneLinks(IFooter that) => that.Value<IEnumerable<Umbraco.Web.Models.Link>>("hygieneLinks");
 	}
 }

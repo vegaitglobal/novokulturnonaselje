@@ -1,6 +1,7 @@
 ﻿using System;
 using NKN.Core.Contexts;
 using NKN.Models.DocumentTypes;
+using NKN.Models.DocumentTypes.Compositions;
 
 namespace NKN.Core.Extensions
 {
@@ -20,5 +21,12 @@ namespace NKN.Core.Extensions
 
             return (INestedContentContext<T>)Activator.CreateInstance(typeof(NestedContentContext<>).MakeGenericType(nestedContent.GetType()), nestedContent, siteContext);
         }
-    }
+		public static ICompositionContext<T> WithComposition<T>(this ISiteContext siteContext, T composition)
+		where T : class, ICompositions
+		{
+			if (composition == null) return default(ICompositionContext<T>);
+
+			return (ICompositionContext<T>)Activator.CreateInstance(typeof(CompositionContext<>).MakeGenericType(composition.GetType()), composition, siteContext);
+		}
+	}
 }

@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>News Landing</summary>
 	[PublishedModel("newsLanding")]
-	public partial class NewsLanding : PublishedContentModel, IBanner, IFooter, IHeader, IPage, ISiteSettings
+	public partial class NewsLanding : PublishedContentModel, IBanner, IPage, ISiteSettings
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -60,60 +60,11 @@ namespace NKN.Models.Generated
 		public IPublishedContent HighlightedNews => this.Value<IPublishedContent>("highlightedNews");
 
 		///<summary>
-		/// WriteUs
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("writeUs")]
-		public IEnumerable<WriteUs> WriteUs => this.Value<IEnumerable<WriteUs>>("writeUs");
-
-		///<summary>
 		/// Banner Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("bannerImage")]
 		public IPublishedContent BannerImage => Banner.GetBannerImage(this);
-
-		///<summary>
-		/// Copyright Text: The site copyright text.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("copyrightText")]
-		public string CopyrightText => Footer.GetCopyrightText(this);
-
-		///<summary>
-		/// Facebook Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("facebookLink")]
-		public string FacebookLink => Header.GetFacebookLink(this);
-
-		///<summary>
-		/// Instagram Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("instagramLink")]
-		public string InstagramLink => Header.GetInstagramLink(this);
-
-		///<summary>
-		/// Logo: The site logo image.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("logo")]
-		public IPublishedContent Logo => Header.GetLogo(this);
-
-		///<summary>
-		/// Logo Black
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("logoBlack")]
-		public IPublishedContent LogoBlack => Header.GetLogoBlack(this);
-
-		///<summary>
-		/// YouTube Link
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("youTubeLink")]
-		public string YouTubeLink => Header.GetYouTubeLink(this);
 
 		///<summary>
 		/// Alternate Languages: Language codes (en-US, en-GB etc).

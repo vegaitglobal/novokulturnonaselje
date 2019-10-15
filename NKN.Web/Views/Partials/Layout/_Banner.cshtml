@@ -1,0 +1,7 @@
+﻿@inherits UmbracoViewPage<BannerViewModel>
+
+<section class="hero-banner" @{if (Model.BannerImage != null) { <text> style="background-image: url('@Model.BannerImage.Url');" </text>  }}>
+	<div class="wrapper">
+		<h1 class="page-title">@Model.PageTitle</h1>
+	</div>
+</section>

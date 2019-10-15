@@ -22,5 +22,12 @@ namespace NKN.Core.Controllers.Surface.Partials
         {
             return PartialView(viewModel);
         }
-    }
+
+		[ChildActionOnly]
+		public ActionResult Banner(BannerViewModel viewModel)
+		{
+			return PartialView(viewModel);
+		}
+
+	}
 }

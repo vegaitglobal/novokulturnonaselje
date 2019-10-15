@@ -1,17 +1,16 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ImageWithRtetextViewModel>
 
-<!-- TODO-from-Tijana add class "right-aligned" if the image should be right aligned -->
-<div class="image-with-text-block">
+<div class="image-with-text-block@(Model.IsImageRight ? " right-aligned" : string.Empty)">
 	<div class="wrapper">
 		<div class="rte-block">
 			@if (Model.Image != null)
 			{
 				<div class="image-holder">
-					<img src="@Model.Image.Url" alt="" />
+					<img src="@Model.Image.Url" alt="@Model.Image.AlternateText" />
 				</div>
 			}
 
-			@if (Model.Text != null)
+			@if (!string.IsNullOrWhiteSpace(Model.Text.ToString()))
 			{
 				@Model.Text
 			}

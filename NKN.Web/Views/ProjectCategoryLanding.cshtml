@@ -1,10 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProjectCategoryLandingViewModel>
 
-<section class="hero-banner" style="background-image: url(@Model.BannerImage.Url)">
-	<div class="wrapper">
-		<h1 class="page-title">@Model.PageTitle</h1>
-	</div>
-</section>
+@if (Model.Banner != null)
+{
+	
+	Html.RenderAction<LayoutController>(c => nameof(c.Banner), new { viewModel = Model.Banner });
+	
+}
 
 <div class="projects-landing">
 	<section class="image-with-text-block">
@@ -13,51 +14,81 @@
 				@if (Model.Image != null)
 				{
 					<div class="image-holder">
-						<img src="@Model.Image.Url" alt="" />
+						<img src="@Model.Image.Url" alt="@Model.Image.AlternateText" />
 					</div>
 				}
 
-				@if (Model.Text != null)
+				@if (!string.IsNullOrWhiteSpace(Model.Text.ToString()))
 				{
 					@Model.Text
 				}
 			</div>
 		</div>
 	</section>
-
-	<section class="feed-wrapper projects-wrapper">
-		<div class="wrapper">
-			<!-- TODO-from-Tijana hardcoded section title -->
-			<h2 class="section-title">Realizovani projekti</h2>
-			<div class="feed-list js-projects-slider">
-				@foreach (var projectPreview in Model.AllProjects)
-				{
-				<div class="feed-item">
-					@if (@projectPreview.SmallImage != null)
+	@if (Model.AllProjects != null && Model.AllProjects.Any())
+	{
+		<section class="feed-wrapper projects-wrapper">
+			<div class="wrapper">
+				<h2 class="section-title">@UmbracoDictionary.ProjectLanding.RealizedProjects</h2>
+				<div class="feed-list js-projects-slider">
+					@foreach (var projectPreview in Model.AllProjects)
 					{
-						<a href="@projectPreview.Url" class="feed-image-holder">
-							<img src="@projectPreview.SmallImage.Url" alt="" />
-						</a>
+						<div class="feed-item">
+							@if (projectPreview.SmallImage != null)
+							{
+								<a href="@projectPreview.Url" class="feed-image-holder">
+									<img src="@projectPreview.SmallImage.Url" alt="" />
+								</a>
+							}
+							<div class="feed-text-holder">
+								@if (!string.IsNullOrWhiteSpace(projectPreview.Title))
+								{
+									<h3><a href="@projectPreview.Url">@projectPreview.Title</a></h3>
+								}
+								@if (!string.IsNullOrWhiteSpace(projectPreview.Summary))
+								{
+									<p>@projectPreview.Summary</p>
+								}
+								<a href="@projectPreview.Url" class="btn">@UmbracoDictionary.ProjectLanding.ViewMore</a>
+							</div>
+						</div>
 					}
-					<div class="feed-text-holder">
-						@if (@projectPreview.Title != null)
-						{
-							<h3><a href="@projectPreview.Url">@projectPreview.Title</a></h3>
-						}
-						@if (@projectPreview.Summary != null)
-						{
-							<p>@projectPreview.Summary</p>
-						}
-						<!-- TODO-from-Tijana hardcoded button text -->
-						<a href="@projectPreview.Url" class="btn">Saznaj više</a>
-					</div>
 				</div>
-				}
 			</div>
-		</div>
-	</section>
+		</section>
+	}
+
 
 	<!-- TODO-from-Tijana here should go newsletter block -->
+	@if (Model.FutureProjects != null && Model.FutureProjects.Any())
+	{
+		<section class="future-projects-block">
+			<div class="wrapper">
+				<h2 class="section-title">@UmbracoDictionary.ProjectLanding.FutureProjects</h2>
+				<div class="cols-wrap">
+					@foreach (var item in Model.FutureProjects)
+					{
+					<div class="col">
+						<div class="image-holder" style="background-image: url('@item.Image.Url');">
+							<span class="green-overlay"></span>
+							@if (!string.IsNullOrWhiteSpace(item.Title))
+							{
+								<h3>@item.Title</h3>
+							}
+						</div>
+						@if (!string.IsNullOrWhiteSpace(item.Text))
+						{
+							<div class="text-holder">
+								<p>@item.Text</p>
+							</div>
+						}
 
-	<!-- TODO-from-Tijana here should go future projects block -->
+					</div>
+					}
+				</div>
+			</div>
+		</section>
+	}
+
+</div>
 </div>

@@ -60,6 +60,13 @@ namespace NKN.Models.Generated
 		public string CopyrightText => Footer.GetCopyrightText(this);
 
 		///<summary>
+		/// Hygiene Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("hygieneLinks")]
+		public IEnumerable<Umbraco.Web.Models.Link> HygieneLinks => Footer.GetHygieneLinks(this);
+
+		///<summary>
 		/// Facebook Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

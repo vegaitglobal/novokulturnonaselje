@@ -1,10 +1,11 @@
 ﻿@inherits UmbracoViewPage<NewsLandingViewModel>
 
-<section class="hero-banner" style="background-image: url(@Model.BannerImage.Url)">
-	<div class="wrapper">
-		<h1 class="page-title">@Model.PageTitle</h1>
-	</div>
-</section>
+@if (Model.Banner != null)
+{
+
+	Html.RenderAction<LayoutController>(c => nameof(c.Banner), new { viewModel = Model.Banner });
+	
+}
 
 <section class="feed-wrapper news-wrapper news-top-wrapper">
 	<div class="wrapper">

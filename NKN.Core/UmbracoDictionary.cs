@@ -13,6 +13,13 @@ namespace NKN.Core
             }
         }
 
+		public static class ProjectLanding
+		{
+			public static string RealizedProjects => UmbracoHelper.GetDictionaryValue("ProjectLanding.RealizedProjects");
+			public static string FutureProjects => UmbracoHelper.GetDictionaryValue("ProjectLanding.FutureProjects");
+			public static string ViewMore => UmbracoHelper.GetDictionaryValue("ProjectLanding.ViewMore");
+		}
+
         private static UmbracoHelper UmbracoHelper =>
             (UmbracoHelper)Current.Factory.GetInstance(typeof(UmbracoHelper));
     }

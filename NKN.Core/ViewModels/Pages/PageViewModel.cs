@@ -12,10 +12,9 @@ namespace NKN.Core.ViewModels.Pages
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            MetaTagsLazy =
-                new Lazy<MetaTagsViewModel>(() => new MetaTagsViewModel(context.CreateSeoContext(context.Page)));
-            HeaderLazy = new Lazy<HeaderViewModel>(() => new HeaderViewModel(context.Home));
-            FooterLazy = new Lazy<FooterViewModel>(() => new FooterViewModel(context.Home));
+            MetaTagsLazy = new Lazy<MetaTagsViewModel>(() => new MetaTagsViewModel(context.CreateSeoContext(context.Page)));
+            HeaderLazy = new Lazy<HeaderViewModel>(() => new HeaderViewModel(context.WithComposition(context.Home)));
+            FooterLazy = new Lazy<FooterViewModel>(() => new FooterViewModel(context.WithComposition(context.Home)));
             GoogleTagManagerScriptCodeLazy = new Lazy<string>(() => context.Home.GoogleTagManagerScriptCode);
             GoogleTagManagerNonScriptCodeLazy = new Lazy<string>(() => context.Home.GoogleTagManagerNonScriptCode);
             GoogleAnalyticsCodeLazy = new Lazy<string>(() => context.Home.GoogleAnalyticsScriptCode);

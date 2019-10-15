@@ -6,20 +6,24 @@
 		<a href="@Model.LogoUrl" class="header-logo">
 			@if (Model.Logo != null)
 			{
-				<img src="@Model.Logo.Url" class="header-logo-white" alt="" />
+				<img src="@Model.Logo.Url" class="header-logo-white" alt="@Model.Logo.AlternateText" />
 
 			}
 			@if (Model.LogoBlack != null)
 			{
-				<img src="@Model.LogoBlack.Url" class="header-logo-black" alt="" />
+				<img src="@Model.LogoBlack.Url" class="header-logo-black" alt="@Model.LogoBlack.AlternateText" />
 
 			}
 		</a>
 		<nav class="nav js-nav">
-			@foreach (var item in Model.NavigationItems)
+			@if (Model.NavigationItems != null && Model.NavigationItems.Any())
 			{
-				<a href="@item.Url" class="nav-link">@item.PageTitle</a>
+				foreach (var item in Model.NavigationItems)
+				{
+					<a href="@item.Url" class="nav-link">@item.PageTitle</a>
+				}
 			}
+
 		</nav>
 		@if (!string.IsNullOrEmpty(Model.FacebookLink) || !string.IsNullOrEmpty(Model.InstagramLink) || !string.IsNullOrEmpty(Model.YouTubeLink))
 		{

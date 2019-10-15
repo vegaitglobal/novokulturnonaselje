@@ -1,6 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<RCeblockViewModel>
 
-@if (Model.Text != null)
+@if (!string.IsNullOrWhiteSpace(Model.Text.ToString()))
 {
 	<section class="rte-block">
 		<div class="wrapper">

@@ -582,6 +582,7 @@
     <Content Include="Views\Partials\_NewsDetailHighlightedPreview.cshtml" />
     <Content Include="Views\Partials\NestedContent\_GallerySimpleBlock.cshtml" />
     <Content Include="Views\Partials\NestedContent\_ImageWithRteText.cshtml" />
+    <Content Include="Views\Partials\Layout\_Banner.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,6 +1,9 @@
 ﻿@inherits UmbracoViewPage<HomeViewModel>
 
-@foreach (var item in Model.ContentBlocks)
+@if (Model.ContentBlocks != null && Model.ContentBlocks.Any())
 {
-	Html.RenderAction<NestedContentController>(c => nameof(c.Index), new { viewModel = item });
+	@foreach (var item in Model.ContentBlocks)
+	{
+		Html.RenderAction<NestedContentController>(c => nameof(c.Index), new { viewModel = item });
+	}
 }
