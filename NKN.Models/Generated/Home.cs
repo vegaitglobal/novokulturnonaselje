@@ -2,7 +2,7 @@
 
 namespace NKN.Models.Generated
 {
-    public partial class Home : IDomainRoot
+	public partial class Home : IDomainRoot
     {
-    }
+	}
 }

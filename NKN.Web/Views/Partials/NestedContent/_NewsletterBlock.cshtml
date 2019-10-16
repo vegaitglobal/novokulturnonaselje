@@ -1,0 +1,27 @@
+﻿@inherits UmbracoViewPage<NewsletterBlockViewModel>
+@using NKN.Core.Controllers.Surface
+
+<section class="newsletter-block">
+	@if (Model.BackgroundImage != null)
+	{
+		<div class="contact-background" style="background-image:url('@Model.BackgroundImage.Url')">
+			<span class="green-overlay"></span>
+		</div>
+	}
+	<div class="wrapper">
+		<div class="text-holder">
+			@if (!string.IsNullOrWhiteSpace(Model.Title))
+			{
+				<h2>@Model.Title</h2>
+			}
+			@if (!string.IsNullOrWhiteSpace(Model.Text))
+			{
+				<p>@Model.Text</p>
+			}
+		</div>
+
+		@{
+			Html.RenderAction<NewsletterFormController>(c => nameof(c.NewsletterForm));
+		}
+	</div>
+</section>

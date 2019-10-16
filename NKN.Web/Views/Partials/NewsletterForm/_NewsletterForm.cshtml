@@ -1,0 +1,19 @@
+﻿@inherits UmbracoViewPage<NewsletterFormViewModel>
+	@using NKN.Core.ViewModels.Partials.Forms
+
+<div class="newsletter-form">
+	<form method="post">
+		<fieldset>
+			<div class="fieldset-inner">
+				<div class="input-wrap">
+					@Html.TextBoxFor(m => m.EmailAddress, new { placeholder = "E-mail", @type = "email" })
+					@Html.ValidationMessageFor(m => m.EmailAddress)
+					@Html.LabelFor(m=>m.EmailAddress, new { @class="sr-only"})
+				</div>
+				<div class="input-submit-wrap">
+					<button type="submit" data-controller-url="@Url.Action("SubscribeForm", "NewsletterForm")" class="btn btn-white">@UmbracoDictionary.Mailchimp.SubscribeButton</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>

@@ -14,13 +14,19 @@ namespace NKN.Common
         public static string SmtpPassword => Get("smtp.Password", "xmlsitemap");
         public static string DateFormat => Get("dateFormat", "dd.MM.yyyy.");
 
-        /// <summary>
-        /// Retrieves configuration value associated with given <paramref name="key"/>.
-        /// </summary>
-        /// <typeparam name="T">Configuration value type.</typeparam>
-        /// <param name="key">Configuration key.</param>
-        /// <returns>Configuration value associated with given <paramref name="key"/>.</returns>
-        public static T Get<T>(string key)
+		//MailChimp
+		public static string MailchimpApiKey => Get<string>("mailchimpApiKey");
+		public static string MailchimpListId => Get<string>("mailchimpListId");
+
+		public static string EmailRegex => Get<string>("emailRegex");
+
+		/// <summary>
+		/// Retrieves configuration value associated with given <paramref name="key"/>.
+		/// </summary>
+		/// <typeparam name="T">Configuration value type.</typeparam>
+		/// <param name="key">Configuration key.</param>
+		/// <returns>Configuration value associated with given <paramref name="key"/>.</returns>
+		public static T Get<T>(string key)
         {
             var setting = ConfigurationManager.AppSettings[key];
             if (string.IsNullOrWhiteSpace(setting))

@@ -2,7 +2,6 @@
 using NKN.Core.Extensions;
 using NKN.Core.ViewModels.Partials.Layout;
 using NKN.Core.ViewModels.Partials.NestedContent;
-using NKN.Core.ViewModels.Shared;
 using NKN.Models.Extensions;
 using NKN.Models.Generated;
 using System.Collections.Generic;
@@ -16,14 +15,14 @@ namespace NKN.Core.ViewModels.Pages
         {
 			Banner = new BannerViewModel(context.WithComposition(context.Page));
             NewsPreviews = context.Page.Descendants<NewsContainer>(nd => true)
-                .Select(nc => nc.Descendants<NewsDetail>(nd => true))
+                .Select(nc => nc.Descendants<NewsDetails>(nd => true))
                 .SelectMany(nd => nd)
                 .Where(nd => nd.Id != context.Page.HighlightedNews.Id)
                 .OrderByDescending(nd => nd.ReleaseDate)
                 .Select(nd => new NewsDetailPreviewViewModel(nd))
                 .ToArray();
 
-            HighlightedNewsPreview = new NewsDetailPreviewViewModel(context.Page.HighlightedNews as NewsDetail);
+            HighlightedNewsPreview = new NewsDetailPreviewViewModel(context.Page.HighlightedNews as NewsDetails);
           
         }
 		

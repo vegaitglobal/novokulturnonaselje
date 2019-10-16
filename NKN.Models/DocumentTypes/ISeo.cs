@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using NKN.Models.Generated;
+using System.Collections.Generic;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web.Models;
 
@@ -14,5 +15,6 @@ namespace NKN.Models.DocumentTypes
         string SitemapPriority { get; }
         IEnumerable<string> AlternateLanguages { get; }
         Link CanonicalLink { get; }
-    }
+		
+	}
 }

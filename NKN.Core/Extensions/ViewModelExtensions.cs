@@ -43,7 +43,10 @@ namespace NKN.Core.Extensions
             return page != null ? new XMLSitemapItemViewModel(page) : default(XMLSitemapItemViewModel);
         }
 
-        public static SearchResultsItemViewModel ToViewModel(this ISearchResultItem item)
+		public static LanguageLinkViewModel ToViewModel(this IPage page, string language)
+			=> page != null ? new LanguageLinkViewModel(page, language) : default(LanguageLinkViewModel);
+
+		public static SearchResultsItemViewModel ToViewModel(this ISearchResultItem item)
         {
             return new SearchResultsItemViewModel(item);
         }
@@ -55,7 +58,7 @@ namespace NKN.Core.Extensions
             return items.Select(ToViewModel);
         }
 
-        public static TNestedContentViewModel ToViewModel<TNestedContentViewModel>(this INestedContentContext<INestedContent> nestedContentContext, string classSuffix = "ViewModel")
+		public static TNestedContentViewModel ToViewModel<TNestedContentViewModel>(this INestedContentContext<INestedContent> nestedContentContext, string classSuffix = "ViewModel")
             where TNestedContentViewModel : INestedContentViewModel
         {
             if (nestedContentContext == null) return default(TNestedContentViewModel);
