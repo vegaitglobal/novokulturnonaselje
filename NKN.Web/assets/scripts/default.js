@@ -6,6 +6,8 @@ $(function(){
 	functions.sliderInit();
 	functions.simpleGalleryInit();
 	functions.subscribe();
+	functions.simpleVideoInit();
+	functions.popupClose();
 
 });
 

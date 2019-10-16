@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500"
+	 style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<metadata>
+	<sfw >
+		<slices></slices>
+		<sliceSourceBounds  bottomLeftOrigin="true" height="500" width="500" x="-166" y="-166"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<path d="M250,0C112.2,0,0,112.2,0,250c0,137.9,112.2,250,250,250c137.9,0,250-112.1,250-250C500,112.2,387.9,0,250,0z M379.7,256.9
+	l-183.3,125c-1.4,1-3.1,1.4-4.7,1.4c-1.3,0-2.7-0.3-3.9-1c-2.7-1.4-4.4-4.3-4.4-7.4V125c0-3.1,1.7-5.9,4.4-7.4
+	c2.7-1.4,6-1.2,8.6,0.5l183.3,125c2.3,1.6,3.6,4.1,3.6,6.9S382,255.3,379.7,256.9z"/>
+</svg>
