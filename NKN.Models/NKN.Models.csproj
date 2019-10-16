@@ -499,10 +499,14 @@
     <Compile Include="Generated\NewsContainer.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\NewsDetail.generated.cs">
+    <Compile Include="Generated\NewsDetails.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\NewsLanding.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\NewsletterBlock.cs" />
+    <Compile Include="Generated\NewsletterBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\Page.generated.cs">
@@ -564,6 +568,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DocumentTypes\Nodes\Items\NestedContent\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NKN.Common\NKN.Common.csproj">
+      <Project>{C28F2FB2-897D-465C-8640-29228D6AC213}</Project>
+      <Name>NKN.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />

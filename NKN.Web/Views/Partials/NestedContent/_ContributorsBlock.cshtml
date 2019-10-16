@@ -16,7 +16,7 @@
 			@foreach (var contributor in Model.Contributors)
 			{
 				<div class="item">
-					@if (@contributor.Image != null)
+					@if (contributor.Image != null)
 					{
 						<a class="image-holder js-image-holder @(Model.IncludeHover ? "image-holder-hover" : "")" href="@(contributor.Link != null ? contributor.Link.Url : "")">
 							<img src="@contributor.Image.Url" alt="" />

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NKN.Common.Extensions;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
@@ -59,5 +61,25 @@ namespace NKN.Models.Extensions
         {
             return source?.DescendantsOrSelf<T>().Where(predicate) ?? Enumerable.Empty<T>();
         }
-    }
+
+		public static T AsType<T>(this IPublishedContent source, CultureInfo culture = null) where T : class
+		{
+			if (source == null) return default(T);
+
+			return culture != null ? (T)Activator.CreateInstance(typeof(T), source, culture) :
+									 (T)Activator.CreateInstance(typeof(T), source);
+		}
+
+		/// <summary>
+		/// Creates instances of specified type, based on the source enumeration.
+		/// </summary>
+		/// <typeparam name="T">Type to create instances of.</typeparam>
+		/// <param name="source">The source enumeration.</param>
+		/// <param name="culture">The culture. Note: Should be used when creating a model that inherits RenderModel.</param>
+		/// <returns>Enumeration of specified type instances.</returns>
+		public static IEnumerable<T> AsType<T>(this IEnumerable<IPublishedContent> source, CultureInfo culture = null) where T : class
+		{
+			return source.EmptyIfNull().Where(c => c != null).Select(c => c.AsType<T>(culture));
+		}
+	}
 }

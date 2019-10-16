@@ -1,6 +1,7 @@
 ﻿using NKN.Core.Contexts;
 using NKN.Core.Extensions;
 using NKN.Core.ViewModels.Partials.NestedContent;
+using NKN.Core.ViewModels.Shared;
 using NKN.Models.DocumentTypes;
 using NKN.Models.Generated;
 using System.Collections.Generic;

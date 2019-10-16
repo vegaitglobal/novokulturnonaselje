@@ -189,6 +189,27 @@ var functions = (function() {
 			}
 		},
 
+		subscribe: function () {
+
+			$('.newsletter-form .btn-white').off('click').on('click', function (e) {
+
+				const error = $('span#EmailAddress-error').text();
+				if (error) return;
+				const controllerUrl = $(this).data('controller-url');
+				console.log(controllerUrl);
+				const emailAddress = $('.newsletter-form input').val();
+				if (!emailAddress) return;
+				e.preventDefault();
+				$.post(controllerUrl, { emailAddress: emailAddress }, function (response) {
+					$('.newsletter-form .fieldset-inner').empty();
+					$('.newsletter-form .fieldset-inner').append("<h2 class='centered'>" + response + "</h2>");
+				}, 'html');
+
+			});
+		},
+
+
+
 		popupClose: function () {
 			$(document).on('click', '.js-popup-overlay, .js-popup-close', function () {
 				helpers.closePopupActions();

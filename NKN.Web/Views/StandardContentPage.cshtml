@@ -1,4 +1,8 @@
 ﻿@inherits UmbracoViewPage<StandardContentPageViewModel>
+@{
+	Html.EnableClientValidation(true);
+	Html.EnableUnobtrusiveJavaScript(true);
+}
 
 @if (Model.Banner != null)
 {
@@ -10,33 +14,6 @@
 	Html.RenderAction<NestedContentController>(c => nameof(c.Index), new { viewModel = item });
 }
 
-<!-- TODO-from-Tijana hardcoded newsletter -->
-<section class="newsletter-block">
-	<div class="contact-background" style="background-image:url(/assets/img/content/naselje-bg.jpg)">
-		<span class="green-overlay"></span>
-	</div>
-	<div class="wrapper">
-		<div class="text-holder">
-			<h2>Budi u toku sa dešavanjima!</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare est commodo vulputate pharetra et elit accumsan. Enim dictumst lacus enim vestibulum sed amet aliquam nulla.</p>
-		</div>
-		<div class="newsletter-form">
-			<form action="#">
-				<fieldset>
-					<div class="fieldset-inner">
-						<div class="input-wrap">
-							<input type="text" id="newsletterEmail" placeholder="E-mail" />
-							<label for="newsletterEmail" class="sr-only">E-mail</label>
-						</div>
-						<div class="input-submit-wrap">
-							<button type="submit" class="btn btn-white">Prijavi se</button>
-						</div>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-</section>
 
 <!-- TODO-from-Tijana hardcoded future projects -->
 <section class="future-projects-block">
@@ -159,3 +136,6 @@
 		</div>
 	</div>
 </section>
+
+<script defer type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+<script defer type="text/javascript" src="/Scripts/jquery.validate.unobtrusive.js"></script>

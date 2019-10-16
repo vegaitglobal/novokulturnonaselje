@@ -85,6 +85,9 @@
     <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
       <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
     </Reference>
+    <Reference Include="MailChimp.Net, Version=4.2.1.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailChimp.Net.V3.4.2.1\lib\net45\MailChimp.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Markdown, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
       <HintPath>..\packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
     </Reference>
@@ -126,7 +129,7 @@
       <HintPath>..\packages\MiniProfiler.Shared.4.0.138\lib\net461\MiniProfiler.Shared.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NPoco, Version=3.9.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NPoco.3.9.4\lib\net45\NPoco.dll</HintPath>
@@ -288,6 +291,7 @@
     <Compile Include="Contexts\PageContext.cs" />
     <Compile Include="Contexts\SeoContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
+    <Compile Include="Controllers\Surface\NewsletterFormController.cs" />
     <Compile Include="Extensions\SendResponseExtensions.cs" />
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
@@ -301,6 +305,14 @@
     <Compile Include="Controllers\Surface\Partials\NestedContentController.cs" />
     <Compile Include="Services\EmailComposer.cs" />
     <Compile Include="Services\EmailSender.cs" />
+    <Compile Include="Validations\UmbracoCompare.cs" />
+    <Compile Include="Validations\UmbracoDataType.cs" />
+    <Compile Include="Validations\UmbracoDisplay.cs" />
+    <Compile Include="Validations\UmbracoEmail.cs" />
+    <Compile Include="Validations\UmbracoRegexValidation.cs" />
+    <Compile Include="Validations\UmbracoRequired.cs" />
+    <Compile Include="Validations\UmbracoStringLength.cs" />
+    <Compile Include="Validations\UmbracoValidationHelper.cs" />
     <Compile Include="ViewModels\Pages\ContactViewModel.cs" />
     <Compile Include="Controllers\RenderMvc\Error404Controller.cs" />
     <Compile Include="Controllers\RenderMvc\GalleryController.cs" />
@@ -339,6 +351,7 @@
     <Compile Include="ViewModels\Pages\ProjectDetailPreviewViewModel.cs" />
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
     <Compile Include="ViewModels\Pages\StandardContentPageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\NewsletterFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\BannerViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\BannerSlideViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ContributorsBlockViewModel.cs" />
@@ -355,6 +368,7 @@
     <Compile Include="ViewModels\Partials\NestedContent\MissionCarouselBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MissionItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\NewsDetailPreviewViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\NewsletterBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\RCeblockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\StatisticItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\StatisticsBlockViewModel.cs" />
@@ -368,6 +382,7 @@
     <Compile Include="ViewModels\Partials\Listing\SearchResultsItemViewModel.cs" />
     <Compile Include="ViewModels\Shared\AlternateLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\ImageViewModel.cs" />
+    <Compile Include="ViewModels\Shared\LanguageLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\LinkViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

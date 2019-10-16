@@ -11,7 +11,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         {
             Image = (model.NestedContent.Image as Image).ToViewModel();
             ImageHover = (model.NestedContent.ImageHover as Image).ToViewModel();
-            Link = model.NestedContent.Link.ToViewModel();
+            Link = model.NestedContent.Link?.ToViewModel();
             Text = model.NestedContent.Text;
             Title = model.NestedContent.Title;
         }

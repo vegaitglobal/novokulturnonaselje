@@ -5,6 +5,7 @@ $(function(){
 	functions.stickyHeader();
 	functions.sliderInit();
 	functions.simpleGalleryInit();
+	functions.subscribe();
 	functions.simpleVideoInit();
 	functions.popupClose();
 
@@ -13,6 +14,7 @@ $(function(){
 $(window).on('load', function() {
 
 	functions.equalHeightInit();
+	
 
 });
 
@@ -27,3 +29,4 @@ $(window).on('scroll', function () {
 	functions.stickyHeader();
 
 });
+

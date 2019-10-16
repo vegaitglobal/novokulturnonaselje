@@ -109,6 +109,13 @@ namespace NKN.Models.Generated
 		public IEnumerable<string> AlternateLanguages => Page.GetAlternateLanguages(this);
 
 		///<summary>
+		/// Alternate Pages
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("alternatePages")]
+		public IEnumerable<IPublishedContent> AlternatePages => Page.GetAlternatePages(this);
+
+		///<summary>
 		/// Canonical Link: The page canonical link.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

@@ -10,7 +10,7 @@
 			@foreach (var item in Model.HighlightedItems)
 			{
 				<div class="col">
-					<a href="@item.Link.Url" class="image-holder @(item.ImageHover != null ? "image-holder-hover" : "")">
+					<a href="@(item.Link != null ? item.Link.Url : string.Empty)" class="image-holder @(item.ImageHover != null ? "image-holder-hover" : "")">
 						@if (item.Image != null)
 						{
 							<img src="@item.Image.Url" class="image-regular" alt="" />

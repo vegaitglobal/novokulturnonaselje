@@ -1,6 +1,7 @@
 ﻿using NKN.Models.DocumentTypes.Compositions;
 using NKN.Models.Generated;
 using System;
+using System.Collections.Generic;
 
 namespace NKN.Core.Contexts
 {
@@ -16,6 +17,8 @@ namespace NKN.Core.Contexts
 		public IPage CurrentPage => SiteContext.CurrentPage;
 		public Home Home => SiteContext.Home;
 		public ISiteSettings SiteSettings => SiteContext.SiteSettings;
+
+		public IEnumerable<Home> Languages => SiteContext.Languages;
 
 		private ISiteContext SiteContext { get; }
 	}

@@ -1,4 +1,5 @@
 ﻿using NKN.Models.Generated;
+using System.Collections.Generic;
 
 namespace NKN.Core.Contexts
 {
@@ -7,5 +8,6 @@ namespace NKN.Core.Contexts
         IPage CurrentPage { get; }
         Home Home { get; }
         ISiteSettings SiteSettings { get; }
-    }
+		IEnumerable<Home> Languages { get; }
+	}
 }

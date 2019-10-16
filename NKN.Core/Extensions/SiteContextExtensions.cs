@@ -2,6 +2,7 @@
 using NKN.Core.Contexts;
 using NKN.Models.DocumentTypes;
 using NKN.Models.DocumentTypes.Compositions;
+using NKN.Models.Generated;
 
 namespace NKN.Core.Extensions
 {
@@ -15,7 +16,15 @@ namespace NKN.Core.Extensions
                 context);
         }
 
-        public static INestedContentContext<T> WithNestedContent<T>(this ISiteContext siteContext, T nestedContent) where T : class, INestedContent
+		public static IPageContext<T> CreatePageContext<T>(this ISiteContext context, T page) where T : class, IPage
+		{
+			if (page == null) return default(IPageContext<T>);
+
+			return (IPageContext<T>)Activator.CreateInstance(typeof(PageContext<>).MakeGenericType(page.GetType()), page,
+				context);
+		}
+
+		public static INestedContentContext<T> WithNestedContent<T>(this ISiteContext siteContext, T nestedContent) where T : class, INestedContent
         {
             if (nestedContent == null) return default(INestedContentContext<T>);
 

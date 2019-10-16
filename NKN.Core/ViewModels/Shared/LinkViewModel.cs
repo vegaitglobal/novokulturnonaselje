@@ -1,5 +1,6 @@
 ﻿using Umbraco.Web.Models;
 using NKN.Models.Generated;
+using NKN.Core.ViewModels.Pages;
 
 namespace NKN.Core.ViewModels.Shared
 {
@@ -23,5 +24,5 @@ namespace NKN.Core.ViewModels.Shared
         public string Url { get; }
         public string Content { get; }
         public string Target { get; }
-    }
+	}
 }

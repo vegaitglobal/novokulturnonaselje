@@ -8,7 +8,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
 {
     public class NewsDetailPreviewViewModel
     {
-        public NewsDetailPreviewViewModel(NewsDetail news)
+        public NewsDetailPreviewViewModel(NewsDetails news)
         {
             PageTitle = news.PageTitle;
             SmallImage = (news.SmallImage as Image).ToViewModel();
