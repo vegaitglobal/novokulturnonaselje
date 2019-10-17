@@ -51,6 +51,7 @@ var functions = (function() {
 			var $contributorsSlider = $('.js-contributors-slider');
 			var $projectSlider = $('.js-projects-slider');
 			var $gallerySimple = $('.js-gallery-simple');
+			var $imageGallery = $('.js-album-slider');
 
 			if ($('.js-slider').length) {
 				$('.js-slider').slick({
@@ -135,6 +136,33 @@ var functions = (function() {
 							breakpoint: 768,
 							settings: {
 								slidesPerRow: 1,
+								rows: 1
+							}
+						}
+					]
+				});
+			}
+
+			if ($imageGallery.length) {
+				$imageGallery.slick({
+					infinite: true,
+					slidesToScroll: 1,
+					slidesPerRow: 4,
+					rows: 4,
+					dots: true,
+					arrows: false,
+					swipe: false,
+					responsive: [
+						{
+							breakpoint: 1024,
+							settings: {
+								rows: 2
+							}
+						},
+						{
+							breakpoint: 768,
+							settings: {
+								slidesPerRow: 2,
 								rows: 1
 							}
 						}
