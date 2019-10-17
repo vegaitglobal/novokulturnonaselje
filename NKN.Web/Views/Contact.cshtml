@@ -1,5 +1,8 @@
 ﻿@inherits UmbracoViewPage<ContactViewModel>
-
+@{
+	Html.EnableClientValidation(true);
+	Html.EnableUnobtrusiveJavaScript(true);
+}
 
 @if (Model.Banner != null)
 {

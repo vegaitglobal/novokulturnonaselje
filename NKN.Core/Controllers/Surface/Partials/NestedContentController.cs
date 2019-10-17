@@ -16,5 +16,9 @@ namespace NKN.Core.Controllers.Surface.Partials
 		{
 			return PartialView(viewModel);
 		}
+		public ActionResult WriteUs(WriteUsViewModel viewModel)
+		{
+			return PartialView(viewModel);
+		}
 	}
 }

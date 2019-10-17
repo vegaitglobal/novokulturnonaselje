@@ -35,6 +35,10 @@ namespace NKN.Core
 		{
 			public static string ValidEmail => UmbracoHelper.GetDictionaryValue("NewsletterBlock.ValidEmail");
 		}
+		public static class NewsLanding
+		{
+			public static string Archive => UmbracoHelper.GetDictionaryValue("NewsLanding.ArchiveButton");
+		}
 		public static class Mailchimp
 		{
 			public static string SucceededMessage => UmbracoHelper.GetDictionaryValue("Mailchimp.SucceededMessage");

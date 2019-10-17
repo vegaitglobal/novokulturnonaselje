@@ -597,6 +597,7 @@
     <Content Include="Views\Partials\NewsletterForm\_NewsletterForm.cshtml" />
     <Content Include="Views\Partials\ContactForm\_ContactForm.cshtml" />
     <Content Include="Views\Partials\NestedContent\_LatestNewsBlock.cshtml" />
+    <None Include="Views\Partials\_NewsArchive.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

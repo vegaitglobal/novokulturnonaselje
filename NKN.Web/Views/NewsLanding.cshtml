@@ -1,4 +1,10 @@
 ﻿@inherits UmbracoViewPage<NewsLandingViewModel>
+@using Constants = NKN.Core.Constants.Constants
+
+@{
+	Html.EnableClientValidation(true);
+	Html.EnableUnobtrusiveJavaScript(true);
+}
 
 @if (Model.Banner != null)
 {
@@ -7,36 +13,68 @@
 
 }
 
-<section class="feed-wrapper news-wrapper news-top-wrapper">
-	<div class="wrapper">
-		<div class="feed-list">
-			@{
-				var itemCount = Model.NewsPreviews.Count() > 2 ? 3 : Model.NewsPreviews.Count();
-			}
-			@foreach (var newsPreview in Model.NewsPreviews.Take(itemCount))
-			{
-				if (newsPreview != null)
-				{
-					Html.RenderPartial("_NewsDetailPreview", newsPreview);
-				}
-			}
-		</div>
-		@{Html.RenderPartial("_NewsDetailHighlightedPreview", Model.HighlightedNewsPreview);}
-	</div>
-</section>
+@if (TempData[Constants.TempDataArchiveNews] != null)
+{
 
-<!-- TODO-from-Tijana here should go contact form with background block -->
-
-<section class="feed-wrapper news-wrapper">
-	<div class="wrapper">
-		<div class="feed-list">
-			@foreach (var newsPreview in Model.NewsPreviews.Skip(itemCount))
-			{
-				if (newsPreview != null)
+	Html.RenderPartial("_NewsArchive");
+}
+else
+{
+	<section class="feed-wrapper news-wrapper news-top-wrapper">
+		<div class="wrapper">
+			<div class="feed-list">
+				@foreach (var newsPreview in Model.FirstRowNews)
 				{
-					Html.RenderPartial("_NewsDetailPreview", newsPreview);
+					if (newsPreview != null)
+					{
+						Html.RenderPartial("_NewsDetailPreview", newsPreview);
+					}
 				}
-			}
+			</div>
+			@{Html.RenderPartial("_NewsDetailHighlightedPreview", Model.HighlightedNewsPreview);}
 		</div>
-	</div>
-</section>
+	</section>
+
+	<section class="feed-wrapper news-wrapper">
+		<div class="wrapper">
+			<div class="feed-list">
+				@foreach (var newsPreview in Model.SecondRowNews)
+				{
+					if (newsPreview != null)
+					{
+						Html.RenderPartial("_NewsDetailPreview", newsPreview);
+					}
+				}
+			</div>
+		</div>
+	</section>
+	if (Model.NewsletterBlock != null)
+	{
+		Html.RenderAction<NestedContentController>(c => nameof(c.NewsletterBlock), new { viewModel = Model.NewsletterBlock });
+	}
+	<section class="feed-wrapper news-wrapper">
+		<div class="wrapper">
+			<div class="feed-list">
+				@foreach (var newsPreview in Model.LastRowItems)
+				{
+					if (newsPreview != null)
+					{
+						Html.RenderPartial("_NewsDetailPreview", newsPreview);
+					}
+				}
+			</div>
+		</div>
+	</section>
+	using (Html.BeginUmbracoForm("NewsArchive", "NewsArchive", FormMethod.Get))
+	{
+		<button type="submit" class="btn">@UmbracoDictionary.NewsLanding.Archive</button>
+	}
+
+	if (Model.ContactBlock != null)
+	{
+		Html.RenderAction<NestedContentController>(c => nameof(c.WriteUs), new { viewModel = Model.ContactBlock });
+	}
+
+
+}
+

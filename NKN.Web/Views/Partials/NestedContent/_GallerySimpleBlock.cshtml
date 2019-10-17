@@ -1,28 +1,29 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<GallerySimpleBlockViewModel>
 
+@if (Model.Images != null && Model.Images.Any())
+{
 <section class="gallery-simple-block">
-    <div class="wrapper">
-        <div class="gallery-simple js-gallery-simple">
-            @foreach (var image in Model.Images)
-            {
-                <div class="item">
-                    <!-- TODO-from-Tijana -->
-                    <!-- is it possible to have thumbnails here? we don't want to load all large images here before they are opened in a popup -->
-                    <a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('@image.Url');">
-                        <span data-src="@image.Url" class="js-gallery-simple-src"></span>
-                    </a>
-                </div>
-            }
-        </div>
+	<div class="wrapper">
+		<div class="gallery-simple js-gallery-simple">
+			@foreach (var image in Model.Images)
+			{
+				<div class="item">
+					<a href="javascript:;" class="image-holder js-open-gallery-simple" style="background-image: url('@image.Url');">
+						<span data-src="@image.Url" class="js-gallery-simple-src"></span>
+					</a>
+				</div>
+			}
+		</div>
 
-        <div class="popup js-popup">
-            <span class="popup-overlay js-popup-overlay"></span>
-            <button type="button" class="popup-close js-popup-close"><span class="sr-only">Click here to close popup</span></button>
-            <div class="popup-content js-popup-content">
-                <div class="popup-image-holder">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="js-gallery-simple-image" alt="" />
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="popup js-popup">
+			<span class="popup-overlay js-popup-overlay"></span>
+			<button type="button" class="popup-close js-popup-close"><span class="sr-only">Click here to close popup</span></button>
+			<div class="popup-content js-popup-content">
+				<div class="popup-image-holder">
+					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="js-gallery-simple-image" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
+}

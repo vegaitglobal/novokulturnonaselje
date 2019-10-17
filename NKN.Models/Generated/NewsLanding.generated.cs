@@ -46,11 +46,11 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
-		/// Full Width Banner
+		/// Contact Us Block
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("fullWidthBanner")]
-		public IEnumerable<IPublishedElement> FullWidthBanner => this.Value<IEnumerable<IPublishedElement>>("fullWidthBanner");
+		[ImplementPropertyType("contactUsBlock")]
+		public IEnumerable<WriteUs> ContactUsBlock => this.Value<IEnumerable<WriteUs>>("contactUsBlock");
 
 		///<summary>
 		/// Highlighted News
@@ -58,6 +58,13 @@ namespace NKN.Models.Generated
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("highlightedNews")]
 		public IPublishedContent HighlightedNews => this.Value<IPublishedContent>("highlightedNews");
+
+		///<summary>
+		/// Newsletter Block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("newsletterBlock")]
+		public IEnumerable<NewsletterBlock> NewsletterBlock => this.Value<IEnumerable<NewsletterBlock>>("newsletterBlock");
 
 		///<summary>
 		/// Banner Image

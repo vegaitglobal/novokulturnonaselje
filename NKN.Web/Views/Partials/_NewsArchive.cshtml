@@ -1,0 +1,19 @@
+﻿@inherits UmbracoViewPage<NewsLandingViewModel>
+
+
+@if (Model.ArchiveNews != null && Model.ArchiveNews.Any())
+{
+	<section class="feed-wrapper news-wrapper">
+		<div class="wrapper">
+			<div class="feed-list">
+				@foreach (var newsPreview in Model.ArchiveNews)
+				{
+					if (newsPreview != null)
+					{
+						Html.RenderPartial("_NewsDetailPreview", newsPreview);
+					}
+				}
+			</div>
+		</div>
+	</section>
+}

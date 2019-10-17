@@ -11,7 +11,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
     {
         public GallerySimpleBlockViewModel(INestedContentContext<GallerySimpleBlock> context)
         {
-            Images = context.NestedContent.Images.Select(image => (image as Image).ToViewModel());
+            Images = context.NestedContent.Images?.Select(image => (image as Image).ToViewModel());
         }
 
         public IEnumerable<ImageViewModel> Images { get; }
