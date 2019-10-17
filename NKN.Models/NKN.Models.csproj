@@ -476,6 +476,10 @@
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\IPage.cs" />
+    <Compile Include="Generated\LatestNewsBlock.cs" />
+    <Compile Include="Generated\LatestNewsBlock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\MissionCarouselBlock.cs" />
     <Compile Include="Generated\MissionCarouselBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>

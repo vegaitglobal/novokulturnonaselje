@@ -9,5 +9,6 @@ namespace NKN.Core.Contexts
         Home Home { get; }
         ISiteSettings SiteSettings { get; }
 		IEnumerable<Home> Languages { get; }
+		IEnumerable<NewsDetails> LatestNews { get; }
 	}
 }

@@ -1,32 +1,22 @@
 ﻿@inherits UmbracoViewPage<WriteUsViewModel>
 
 <section class="contact-form">
+	@if (Model.BackgroundImage != null)
+	{
+		<div class="contact-background" style="background-image:url('@Model.BackgroundImage.Url')">
+			<span class="green-overlay"></span>
+		</div>
+	}
 	<div class="wrapper">
 		<div class="contact-form-wrap">
-			<h2>@Model.Title</h2>
-			<form id="contact-us" action="/umbraco/api/forms/contactus" method="post">
-				<fieldset>
-					<div class="fieldset-inner">
-						<div class="input-wrap">
-							<input type="text" id="contactName" name="name" placeholder="@Model.FullName" />
-							<label for="contactName" class="sr-only">@Model.FullName</label>
-						</div>
-						<div class="input-wrap">
-							<input type="text" id="contactEmail" name="email" placeholder="@Model.Email" />
-							<label for="contactEmail" class="sr-only">@Model.Email</label>
-						</div>
-						<div class="input-wrap input-wrap-fullwidth">
-							<textarea id="contactMessage" name="message" placeholder="@Model.Message"></textarea>
-							<label for="contactMessage" class="sr-only">@Model.Message</label>
-						</div>
-						<span class="contact-form-error js-error-message"></span>
-						<span class="contact-form-success js-success-message">@Model.OnSubmitMessage</span>
-						<div class="input-submit-wrap">
-							<button type="submit" id="contact-us-submit" class="btn">@Model.SubmitButtonText</button>
-						</div>
-					</div>
-				</fieldset>
-			</form>
+			@if (!string.IsNullOrWhiteSpace(Model.Title))
+			{
+				<h2>@Model.Title</h2>
+			}
+			@{
+				Html.RenderAction<ContactFormController>(c => nameof(c.ContactForm));
+			}
+
 		</div>
 	</div>
 </section>

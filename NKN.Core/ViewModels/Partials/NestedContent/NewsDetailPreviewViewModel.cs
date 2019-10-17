@@ -16,6 +16,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
             Summary = string.Join(string.Empty, news.Summary.ToCharArray().Take(150));
             SummaryHighlighted = string.Join(string.Empty, news.Summary.ToCharArray().Take(200));
             Link = new LinkViewModel(news.Url, "Saznaj Više", "");
+			PageUrl = news.Url;
         }
 
         public string PageTitle { get; private set; }
@@ -24,5 +25,6 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         public string Summary { get; private set; }
         public string SummaryHighlighted { get; private set; }
         public LinkViewModel Link { get; private set; }
+		public string PageUrl { get; }
     }
 }

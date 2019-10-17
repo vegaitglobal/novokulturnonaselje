@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
 
 	functions.languageSwitcher();
 	functions.mobileNavInit();
@@ -14,7 +14,8 @@ $(function(){
 $(window).on('load', function() {
 
 	functions.equalHeightInit();
-	
+
+
 
 });
 

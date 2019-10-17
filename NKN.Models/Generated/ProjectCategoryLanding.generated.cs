@@ -60,6 +60,13 @@ namespace NKN.Models.Generated
 		public IEnumerable<FutureProjectItem> Items => this.Value<IEnumerable<FutureProjectItem>>("items");
 
 		///<summary>
+		/// Newsletter Block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("newsletterBlock")]
+		public IEnumerable<NewsletterBlock> NewsletterBlock => this.Value<IEnumerable<NewsletterBlock>>("newsletterBlock");
+
+		///<summary>
 		/// Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

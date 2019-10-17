@@ -20,6 +20,8 @@ namespace NKN.Common
 
 		public static string EmailRegex => Get<string>("emailRegex");
 
+		public static string AdminEmailAdress => Get<string>("adminEmailAdress");
+
 		/// <summary>
 		/// Retrieves configuration value associated with given <paramref name="key"/>.
 		/// </summary>

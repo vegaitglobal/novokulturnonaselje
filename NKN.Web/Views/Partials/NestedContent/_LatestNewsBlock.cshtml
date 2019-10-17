@@ -1,0 +1,37 @@
+﻿@inherits UmbracoViewPage<LatestNewsBlockViewModel>
+<section class="feed-wrapper news-wrapper news-single-block">
+	<div class="wrapper">
+		@if (!string.IsNullOrWhiteSpace(Model.Title))
+		{
+			<h2 class="section-title">@Model.Title</h2>
+		}
+		@if (Model.LatestNews != null && Model.LatestNews.Any())
+		{
+			<div class="feed-list">
+				@foreach (var item in Model.LatestNews)
+				{
+					<div class="feed-item">
+						@if (item.SmallImage != null)
+						{
+							<a href="@item.PageUrl" class="feed-image-holder">
+								<img src="@item.SmallImage.Url" alt="@item.SmallImage.AlternateText" />
+							</a>
+						}
+						<div class="feed-text-holder">
+							<h3><a href="@item.PageUrl">@item.PageTitle</a></h3>
+							<span class="feed-date">@item.ReleaseDate</span>
+							@if (!string.IsNullOrWhiteSpace(item.Summary))
+							{
+								<p>
+									@item.Summary
+								</p>
+							}
+							<a href="@item.PageUrl" class="btn">@UmbracoDictionary.ProjectLanding.ViewMore</a>
+						</div>
+					</div>
+				}
+			</div>
+		}
+
+	</div>
+</section>

@@ -1,0 +1,52 @@
+﻿@inherits UmbracoViewPage<ContactFormViewModel>
+@using NKN.Core.ViewModels.Partials.Forms
+@using Constants = NKN.Core.Constants.Constants
+
+@if (TempData[Constants.TempDataSuccess] != null)
+{
+<form>
+	<span class="contact-form-success js-success-message" style="display:block">@UmbracoDictionary.Forms.Labels.SuccessMessage</span>
+</form>
+	
+}
+else
+{
+	if (TempData[Constants.TempDataFail] != null)
+	{
+		<form><span>@UmbracoDictionary.Forms.Labels.FailMessage</span></form>
+	}
+	using (Html.BeginUmbracoForm("SubmitForm", "ContactForm", null, new { id = "contact-us"}, FormMethod.Post))
+	{
+		@Html.AntiForgeryToken()
+		<fieldset>
+			<div class="fieldset-inner">
+				<div class="input-wrap">
+					@Html.LabelFor(f => f.FullName, new { @class = "sr-only" })
+					@Html.TextBoxFor(f => f.FullName, new { placeholder = UmbracoDictionary.Forms.Labels.FullName })
+					@Html.ValidationMessageFor(f => f.FullName)
+					@*<input type="text" id="contactName" name="name" placeholder="@Model.FullName" />
+						<label for="contactName" class="sr-only">@Model.FullName</label>*@
+				</div>
+				<div class="input-wrap">
+					@Html.LabelFor(f => f.Email, new { @class = "sr-only" })
+					@Html.TextBoxFor(f => f.Email, new { placeholder = UmbracoDictionary.Forms.Labels.Email})
+					@Html.ValidationMessageFor(f => f.Email)
+					@*<input type="text" id="contactEmail" name="email" placeholder="@Model.Email" />
+						<label for="contactEmail" class="sr-only">@Model.Email</label>*@
+				</div>
+				<div class="input-wrap input-wrap-fullwidth">
+					@Html.LabelFor(f => f.Message, new { @class = "sr-only" })
+					@Html.TextAreaFor(f => f.Message, new { placeholder = UmbracoDictionary.Forms.Labels.Message})
+					@Html.ValidationMessageFor(f => f.Message)
+					@*<textarea id="contactMessage" name="message" placeholder="@Model.Message"></textarea>
+						<label for="contactMessage" class="sr-only">@Model.Message</label>*@
+				</div>
+				<span class="contact-form-error js-error-message"></span>
+				<div class="input-submit-wrap">
+					<button type="submit" id="contact-us-submit" class="btn">Posalji</button>
+				</div>
+			</div>
+		</fieldset>
+	}
+
+}

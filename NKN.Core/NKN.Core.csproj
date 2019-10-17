@@ -281,6 +281,7 @@
     <Compile Include="Components\ApplicationConfigurationComponent.cs" />
     <Compile Include="Composers\ServicesComposer.cs" />
     <Compile Include="Composers\SearchComposer.cs" />
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Contexts\CompositionContext.cs" />
     <Compile Include="Contexts\ICompositionContext.cs" />
     <Compile Include="Contexts\INestedContentContext.cs" />
@@ -292,7 +293,10 @@
     <Compile Include="Contexts\SeoContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
     <Compile Include="Controllers\Surface\NewsletterFormController.cs" />
+    <Compile Include="Controllers\Surface\Partials\ContactFormController.cs" />
     <Compile Include="Extensions\SendResponseExtensions.cs" />
+    <Compile Include="Handlers\EmailHandler.cs" />
+    <Compile Include="Handlers\SmtpEmailSender.cs" />
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\ContactController.cs" />
@@ -351,6 +355,7 @@
     <Compile Include="ViewModels\Pages\ProjectDetailPreviewViewModel.cs" />
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
     <Compile Include="ViewModels\Pages\StandardContentPageViewModel.cs" />
+    <Compile Include="ViewModels\Partials\Forms\ContactFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\NewsletterFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\BannerViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\BannerSlideViewModel.cs" />
@@ -365,6 +370,7 @@
     <Compile Include="ViewModels\Partials\NestedContent\ImageAlbumViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ImageWithRtetextViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\INestedContentViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\LatestNewsBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MissionCarouselBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MissionItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\NewsDetailPreviewViewModel.cs" />

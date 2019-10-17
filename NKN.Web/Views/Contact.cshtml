@@ -26,29 +26,9 @@
 		<div class="right-col">
 			<div class="contact-form-wrap">
 				<h2>@Model.WriteUs.Title</h2>
-				<form id="contact-us" action="/umbraco/api/forms/contactus" method="post">
-					<fieldset>
-						<div class="fieldset-inner">
-							<div class="input-wrap">
-								<input type="text" id="contactName" name="name" placeholder="@Model.WriteUs.FullName" />
-								<label for="contactName" class="sr-only">@Model.WriteUs.FullName</label>
-							</div>
-							<div class="input-wrap">
-								<input type="text" id="contactEmail" name="email" placeholder="@Model.WriteUs.Email" />
-								<label for="contactEmail" class="sr-only">@Model.WriteUs.Email</label>
-							</div>
-							<div class="input-wrap input-wrap-fullwidth">
-								<textarea id="contactMessage" name="message" placeholder="@Model.WriteUs.Message"></textarea>
-								<label for="contactMessage" class="sr-only">@Model.WriteUs.Message</label>
-							</div>
-							<span class="contact-form-error js-error-message"></span>
-							<span class="contact-form-success js-success-message">@Model.WriteUs.OnSubmitMessage</span>
-							<div class="input-submit-wrap">
-								<button type="submit" id="contact-us-submit" class="btn">@Model.WriteUs.SubmitButtonText</button>
-							</div>
-						</div>
-					</fieldset>
-				</form>
+				@{
+					Html.RenderAction<ContactFormController>(c => nameof(c.ContactForm));
+				}
 			</div>
 		</div>
 	</div>

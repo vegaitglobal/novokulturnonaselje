@@ -10,7 +10,11 @@ namespace NKN.Core
             public static class Labels
             {
                 public static string FullName => UmbracoHelper.GetDictionaryValue("Forms.Labels.FullName");
-            }
+				public static string Email => UmbracoHelper.GetDictionaryValue("Forms.Labels.Email");
+				public static string Message => UmbracoHelper.GetDictionaryValue("Forms.Labels.Message");
+				public static string SuccessMessage => UmbracoHelper.GetDictionaryValue("Forms.Labels.SuccessMessage");
+				public static string FailMessage => UmbracoHelper.GetDictionaryValue("Forms.Labels.FailMessage");
+			}
         }
 
 		public static class ProjectLanding

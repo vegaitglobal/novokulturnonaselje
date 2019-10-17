@@ -20,6 +20,8 @@ namespace NKN.Core.Contexts
 
 		public IEnumerable<Home> Languages => SiteContext.Languages;
 
+		public IEnumerable<NewsDetails> LatestNews => SiteContext.LatestNews;
+
 		private ISiteContext SiteContext { get; }
 	}
 }

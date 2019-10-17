@@ -1,10 +1,13 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProjectCategoryLandingViewModel>
-
+@{
+	Html.EnableClientValidation(true);
+	Html.EnableUnobtrusiveJavaScript(true);
+}
 @if (Model.Banner != null)
 {
-	
+
 	Html.RenderAction<LayoutController>(c => nameof(c.Banner), new { viewModel = Model.Banner });
-	
+
 }
 
 <div class="projects-landing">
@@ -58,8 +61,11 @@
 		</section>
 	}
 
+	@if (Model.NewsletterBlock != null)
+	{
+		Html.RenderAction<NestedContentController>(c => nameof(c.NewsletterBlock), new { viewModel = Model.NewsletterBlock });
+	}
 
-	<!-- TODO-from-Tijana here should go newsletter block -->
 	@if (Model.FutureProjects != null && Model.FutureProjects.Any())
 	{
 		<section class="future-projects-block">
@@ -68,22 +74,22 @@
 				<div class="cols-wrap">
 					@foreach (var item in Model.FutureProjects)
 					{
-					<div class="col">
-						<div class="image-holder" style="background-image: url('@item.Image.Url');">
-							<span class="green-overlay"></span>
-							@if (!string.IsNullOrWhiteSpace(item.Title))
-							{
-								<h3>@item.Title</h3>
-							}
-						</div>
-						@if (!string.IsNullOrWhiteSpace(item.Text))
-						{
-							<div class="text-holder">
-								<p>@item.Text</p>
+						<div class="col">
+							<div class="image-holder" @{if (item.Image != null) { <text> style="background-image: url('@item.Image.Url');" </text>  } }>
+								<span class="green-overlay"></span>
+								@if (!string.IsNullOrWhiteSpace(item.Title))
+								{
+									<h3>@item.Title</h3>
+								}
 							</div>
-						}
+							@if (!string.IsNullOrWhiteSpace(item.Text))
+							{
+								<div class="text-holder">
+									<p>@item.Text</p>
+								</div>
+							}
 
-					</div>
+						</div>
 					}
 				</div>
 			</div>
@@ -92,3 +98,5 @@
 
 </div>
 </div>
+<script defer type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+<script defer type="text/javascript" src="/Scripts/jquery.validate.unobtrusive.js"></script>

@@ -1,25 +1,30 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<EmbeddedVideoBlockViewModel>
 
-<!-- TODO-from-Tijana mostly hardcoded -->
 <section class="video-block">
 	<div class="wrapper">
 		<div class="video-thumbnail js-video-thumbnail">
-			<img src="/assets/img/content/video-cover.jpg" alt="" />
+			@if (Model.VideoCoverImage != null)
+			{
+				<img src="@Model.VideoCoverImage.Url" alt="@Model.VideoCoverImage.AlternateText" />
+			}
 			<span class="icon font-ico-play"></span>
 			<span class="sr-only">Click here to open a popup with video</span>
-			<h3>Park "Medju brezama"</h3>
+			@if (!string.IsNullOrWhiteSpace(Model.Title))
+			{
+				<h3>@Model.Title</h3>
+			}
 		</div>
-
 		<div class="popup js-popup">
 			<span class="popup-overlay js-popup-overlay"></span>
 			<button type="button" class="popup-close js-popup-close"><span class="sr-only">Click here to close popup</span></button>
-			<div class="popup-content js-popup-content">
-				<div class="responsive-video">
-					<!-- TODO-from-Tijana -->
-					<!-- @Model.Link may should be video ID . I thought I should paste URL for the video but actually the link should be embeded link in order to work. If it was confusing to me, regular people won't know how to add a video -->
-					<iframe class="js-simple-video-iframe" width="560" height="315" data-src="@Model.Link" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			@if (!string.IsNullOrWhiteSpace(Model.Link))
+			{
+				<div class="popup-content js-popup-content">
+					<div class="responsive-video">
+						<iframe class="js-simple-video-iframe" width="560" height="315" data-src="@Model.Link" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				</div>
-			</div>
+			}
 		</div>
 	</div>
 </section>
