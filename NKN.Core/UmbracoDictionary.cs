@@ -14,6 +14,7 @@ namespace NKN.Core
 				public static string Message => UmbracoHelper.GetDictionaryValue("Forms.Labels.Message");
 				public static string SuccessMessage => UmbracoHelper.GetDictionaryValue("Forms.Labels.SuccessMessage");
 				public static string FailMessage => UmbracoHelper.GetDictionaryValue("Forms.Labels.FailMessage");
+				public static string SubmitButton => UmbracoHelper.GetDictionaryValue("Forms.Labels.SubmitButton");
 			}
         }
 

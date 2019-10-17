@@ -6,7 +6,7 @@
 		<fieldset>
 			<div class="fieldset-inner">
 				<div class="input-wrap">
-					@Html.TextBoxFor(m => m.EmailAddress, new { placeholder = "E-mail", @type = "email" })
+					@Html.TextBoxFor(m => m.EmailAddress, new { placeholder = "E-mail" })
 					@Html.ValidationMessageFor(m => m.EmailAddress)
 					@Html.LabelFor(m=>m.EmailAddress, new { @class="sr-only"})
 				</div>
