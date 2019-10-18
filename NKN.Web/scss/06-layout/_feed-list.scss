@@ -119,14 +119,29 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
-	@include breakpoint(tablet-desktop) {
+	@include breakpoint(desktop) {
+		.feed-list {
+			justify-content: flex-start;
+			margin-left: -30px;
+			width: calc(100% + 60px);
+		}
 		.feed-item:not(.feed-item-highlighted) {
-			width: 30%;
+			padding: 0 30px;
+			width: 33.333%;
 		}
 	}
 	@include breakpoint(tablet) {
 		&.news-top-wrapper {
 			padding-top: 20px;
+		}
+		.feed-list {
+			justify-content: flex-start;
+			margin-left: -10px;
+			width: calc(100% + 20px);
+		}
+		.feed-item:not(.feed-item-highlighted) {
+			padding: 0 10px;
+			width: 33.333%;
 		}
 	}
 	@include breakpoint(phone) {
@@ -174,6 +189,16 @@
 		.feed-text-holder p {
 			margin-bottom: 20px;
 		}
+	}
+}
+
+//----------  load more  ----------
+.feed-load-more {
+	@include base-float;
+	padding: 30px 0 50px;
+	text-align: center;
+	@include breakpoint(touch) {
+		padding: 10px 0;
 	}
 }
 
