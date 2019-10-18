@@ -1,12 +1,16 @@
 ﻿@model NewsDetailPreviewViewModel
 
 <div class="feed-item">
-	<a href="@Model.Link.Url" class="feed-image-holder">
-		<img src="@Model.SmallImage.Url" alt="@Model.SmallImage.AlternateText" />
-	</a>
+	@if (Model.SmallImage != null)
+	{
+		<a href="@Model.PageUrl"  class="feed-image-holder">
+			<img src="@Model.SmallImage.Url" alt="@Model.SmallImage.AlternateText" />
+		</a>
+	}
 	<div class="feed-text-holder">
-		<h3><a href="@Model.Link.Url">@Model.PageTitle</a></h3>
+		<h3><a href="@Model.PageUrl">@Model.PageTitle</a></h3>
 		<span class="feed-date">@Model.ReleaseDate</span>
+
 		<p>
 			@Model.Summary
 		</p>

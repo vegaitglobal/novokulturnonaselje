@@ -65,10 +65,17 @@ else
 			</div>
 		</div>
 	</section>
-	using (Html.BeginUmbracoForm("NewsArchive", "NewsArchive", FormMethod.Get))
-	{
+	<div>
+		@if (Model.ArchiveNews != null && Model.ArchiveNews.Any())
+		{
+		using (Html.BeginUmbracoForm("NewsArchive", "NewsArchive", FormMethod.Get))
+		{
 		<button type="submit" class="btn">@UmbracoDictionary.NewsLanding.Archive</button>
-	}
+		}
+		}
+
+	</div>
+
 
 	if (Model.ContactBlock != null)
 	{
