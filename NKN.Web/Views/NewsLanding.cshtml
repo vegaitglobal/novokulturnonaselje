@@ -48,10 +48,12 @@ else
 			</div>
 		</div>
 	</section>
+
 	if (Model.NewsletterBlock != null)
 	{
 		Html.RenderAction<NestedContentController>(c => nameof(c.NewsletterBlock), new { viewModel = Model.NewsletterBlock });
 	}
+
 	<section class="feed-wrapper news-wrapper">
 		<div class="wrapper">
 			<div class="feed-list">
@@ -65,17 +67,19 @@ else
 			</div>
 		</div>
 	</section>
-	<div>
-		@if (Model.ArchiveNews != null && Model.ArchiveNews.Any())
-		{
-		using (Html.BeginUmbracoForm("NewsArchive", "NewsArchive", FormMethod.Get))
-		{
-		<button type="submit" class="btn">@UmbracoDictionary.NewsLanding.Archive</button>
-		}
-		}
+
+	<div class="feed-load-more">
+		<div class="wrapper">
+			@if (Model.ArchiveNews != null && Model.ArchiveNews.Any())
+			{
+				using (Html.BeginUmbracoForm("NewsArchive", "NewsArchive", FormMethod.Get))
+				{
+					<button type="submit" class="btn">@UmbracoDictionary.NewsLanding.Archive</button>
+				}
+			}
+		</div>
 
 	</div>
-
 
 	if (Model.ContactBlock != null)
 	{
