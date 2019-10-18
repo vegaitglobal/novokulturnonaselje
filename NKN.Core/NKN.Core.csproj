@@ -292,6 +292,7 @@
     <Compile Include="Contexts\PageContext.cs" />
     <Compile Include="Contexts\SeoContext.cs" />
     <Compile Include="Contexts\SiteContext.cs" />
+    <Compile Include="Controllers\RenderMvc\GalleryDetailsController.cs" />
     <Compile Include="Controllers\Surface\NewsletterFormController.cs" />
     <Compile Include="Controllers\Surface\Partials\ContactFormController.cs" />
     <Compile Include="Controllers\Surface\Partials\NewsArchiveController.cs" />
@@ -301,7 +302,7 @@
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Controllers\RenderMvc\BasePageController.cs" />
     <Compile Include="Controllers\RenderMvc\ContactController.cs" />
-    <Compile Include="Controllers\RenderMvc\NewsDetailController.cs" />
+    <Compile Include="Controllers\RenderMvc\NewsDetailsController.cs" />
     <Compile Include="Controllers\RenderMvc\ProjectDetailController.cs" />
     <Compile Include="Controllers\RenderMvc\NewsLandingController.cs" />
     <Compile Include="Controllers\RenderMvc\ProjectCategoryLandingController.cs" />
@@ -348,6 +349,7 @@
     <Compile Include="UmbracoDictionary.cs" />
     <Compile Include="ViewEngines\PartialViewEngine.cs" />
     <Compile Include="ViewModels\Pages\Error404ViewModel.cs" />
+    <Compile Include="ViewModels\Pages\GalleryDetailsViewModel.cs" />
     <Compile Include="ViewModels\Pages\GalleryViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomeViewModel.cs" />
     <Compile Include="ViewModels\Pages\NewsLandingViewModel.cs" />
@@ -379,6 +381,7 @@
     <Compile Include="ViewModels\Partials\NestedContent\RCeblockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\StatisticItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\StatisticsBlockViewModel.cs" />
+    <Compile Include="ViewModels\Partials\NestedContent\VideoGalleryItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\WriteUsViewModel.cs" />
     <Compile Include="ViewModels\Pages\XMLSitemapViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\FooterViewModel.cs" />

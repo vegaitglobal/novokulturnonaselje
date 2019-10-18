@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace NKN.Core.Controllers.RenderMvc
 {
-    public class NewsDetailController : BasePageController<NewsDetails>
+    public class NewsDetailsController : BasePageController<NewsDetails>
     {
         public ActionResult Index(NewsDetails model)
             => CurrentTemplate(new StandardContentPageViewModel(CreatePageContext(model)));

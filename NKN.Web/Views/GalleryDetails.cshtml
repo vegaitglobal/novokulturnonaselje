@@ -1,0 +1,41 @@
+﻿@inherits UmbracoViewPage<GalleryDetailsViewModel>
+
+@if (Model.Banner != null)
+{
+	Html.RenderAction<LayoutController>(c => nameof(c.Banner), new { viewModel = Model.Banner });
+}
+
+@if (Model.Images != null && Model.Images.Any())
+{
+	<section class="image-gallery-detail">
+		<div class="wrapper">
+			<h2 class="gallery-section-title">@Model.PageTitle</h2>
+
+			<div class="album-list js-album-list">
+				@foreach (var image in Model.Images)
+				{
+					<div class="item">
+						<a href="javascript:;" class="gallery-image-holder js-gallery-detail-item" @{if (image != null) { <text> style="background-image: url('@image.Url');" </text>  }}>
+							<span class="sr-only">Click here to see image</span>
+						</a>
+					</div>
+				}
+			</div>
+			<div class="popup js-popup">
+				<span class="popup-overlay js-popup-overlay"></span>
+				<button type="button" class="popup-close js-popup-close"><span class="sr-only">Click here to close popup</span></button>
+				<div class="popup-content js-popup-content">
+					<div class="popup-image-slider js-popup-image-slider">
+						@foreach (var image in Model.Images)
+						{
+							<div class="slider-item">
+								<img src="@image.Url" alt="@image.AlternateText" />
+							</div>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+}
+

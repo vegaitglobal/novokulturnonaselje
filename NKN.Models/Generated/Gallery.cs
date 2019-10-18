@@ -6,6 +6,6 @@ namespace NKN.Models.Generated
 {
     public partial class Gallery
     {
-        public IEnumerable<ImageAlbum> AllAlbums => this.Descendants<ImageAlbum>();
+        public IEnumerable<GalleryDetails> AllAlbums => this.Descendants<GalleryDetails>();
     }
 }

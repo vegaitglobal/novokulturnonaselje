@@ -51,24 +51,22 @@
 				}
 			</div>
 		}
-		@*@if (Model.Languages != null && Model.Languages.Any())
-		{
-			<div class="language-switcher">
-				<button type="button" class="selected-item js-selected-item">SR</button>
-				<ul class="language-list js-language-list">
-					@foreach (var language in Model.Languages)
-					{
-						<li>
-							<span class="js-language-item">@language.Content</span>
-						</li>
-					}
 
+
+
+
+		<div class="language-switcher">
+			<button type="button" class="selected-item js-selected-item">@Model.HomeName</button>
+			<ul class="language-list js-language-list">
+				@foreach (var (language, info) in Model.Cultures)
+				{
 					<li>
-						<span class="js-language-item">EN</span>
+						<a href="@Model.CurrentPage.Url(language)" class="js-language-item">@language.Split('-')[0].ToUpper()</a>
 					</li>
-				</ul>
-			</div>
-		}*@
+				}
+			</ul>
+		</div>
+
 
 		<button class="header-hamburger js-header-hamburger" aria-hidden="true">
 			<span class="sr-only">Click to open navigation</span>

@@ -444,6 +444,10 @@
     <Compile Include="Generated\Gallery.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\GalleryDetails.cs" />
+    <Compile Include="Generated\GalleryDetails.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\GallerySimpleBlock.cs" />
     <Compile Include="Generated\GallerySimpleBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -551,6 +555,10 @@
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\VideoBlock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VideoGalleryItem.cs" />
+    <Compile Include="Generated\VideoGalleryItem.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\WriteUs.cs" />
