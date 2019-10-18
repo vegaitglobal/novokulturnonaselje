@@ -3,19 +3,23 @@ $(function () {
 	functions.languageSwitcher();
 	functions.mobileNavInit();
 	functions.stickyHeader();
-	functions.sliderInit();
-	functions.simpleGalleryInit();
 	functions.subscribe();
 	functions.simpleVideoInit();
 	functions.popupClose();
+	functions.simpleGalleryInit();
+	functions.galleryVideoInit();
+	sliders.sliderInit();
+	sliders.projectSliderInit();
+	sliders.gallerySimpleSliderInit();
+	sliders.imageGallerySliderInit();
+	sliders.imageGalleryDetailSliderInit();
+	sliders.videoGallerySliderInit();
 
 });
 
 $(window).on('load', function() {
 
 	functions.equalHeightInit();
-
-
 
 });
 
