@@ -14,6 +14,7 @@ $(function () {
 	sliders.imageGallerySliderInit();
 	sliders.imageGalleryDetailSliderInit();
 	sliders.videoGallerySliderInit();
+	sliders.mixedImageGallerySliderInit();
 
 });
 

@@ -44,22 +44,6 @@
 		transform: translate(-50%, -50%);
 		z-index: 3;
 	}
-	.responsive-video {
-		height: 0;
-		padding-bottom: 56%;
-		position: relative;
-		width: 100%;
-	}
-	iframe {
-		border: 0;
-		bottom: 0;
-		height: 100%;
-		left: 0;
-		position: absolute;
-		right: 0 ;
-		top: 0;
-		width: 100%;
-	}
 	@include breakpoint(touch) {
 		.album-slider {
 			margin-left: -10px;
@@ -203,5 +187,22 @@
 		li:not(.slick-active) button {
 			background-color: $grey-lines;
 		}
+	}
+}
+
+.gallery-responsive-video {
+	height: 0;
+	padding-bottom: 56%;
+	position: relative;
+	width: 100%;
+	iframe {
+		border: 0;
+		bottom: 0;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		right: 0 ;
+		top: 0;
+		width: 100%;
 	}
 }

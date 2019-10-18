@@ -1,0 +1,144 @@
+.gallery-mixed-block {
+	@include base-float;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	padding: 257px 0 280px;
+	position: relative;
+	&::before,
+	&::after {
+		background-color: $white;
+		content: '';
+		display: inline-block;
+		height: 200px;
+		left: -30px;
+		position: absolute;
+		right: -30px;
+		z-index: 2;
+	}
+	&::before {
+		top: -77px;
+		transform: rotate(4deg);
+	}
+	&::after {
+		bottom: -90px;
+		transform: rotate(-6deg);
+	}
+	.wrapper {
+		position: relative;
+		z-index: 2;
+	}
+	.section-title {
+		color: $white;
+	}
+	.row {
+		@include base-float;
+		margin-bottom: 50px;
+	}
+	h3 {
+		color: $white;
+		font-family: $bold-cons;
+		font-size: 35px;
+		letter-spacing: -1px;
+		line-height: 1.3;
+		margin-bottom: 40px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.mixed-image-gallery {
+		margin-left: -15px;
+		width: calc(100% + 30px);
+		&:not(.slick-initialized) .item {
+			float: left;
+			width: 33.333%;
+		}
+		.item {
+			padding: 0 15px;
+		}
+	}
+	.mixed-video-gallery {
+		margin: 0 auto;
+		max-width: 1080px;
+		width: 100%;
+		&:not(.slick-initialized) .item {
+			float: left;
+			width: 33.333%;
+		}
+		.item {
+			padding: 0 15px;
+		}
+	}
+	.gallery-image-holder {
+		filter: grayscale(100%);
+		margin-bottom: 10px;
+		transition: filter .3s ease;
+		&::before {
+			height: 10px;
+			top: auto;
+		}
+		&::after {
+			background-color: rgba($black, .3);
+			left: auto;
+			right: -10px;
+			top: 10px;
+			width: 10px;
+		}
+		&:hover {
+			filter: grayscale(0);
+		}
+		h4 {
+			bottom: 13px;
+			color: $white;
+			font-size: 17px;
+			left: 15px;
+			letter-spacing: -.5px;
+			line-height: 1.3;
+			position: absolute;
+		}
+	}
+	.icon {
+		color: $white;
+		display: inline-block;
+		font-size: 60px;
+		height: 60px;
+		line-height: 1;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 3;
+	}
+	.slick-dots {
+		margin-top: 30px;
+		text-align: center;
+	}
+	@include breakpoint(desktop) {
+		.section-title {
+			margin-bottom: 58px;
+		}
+	}
+	@include breakpoint(tablet) {
+		padding: 170px 0;
+		&::before {
+			top: -100px;
+		}
+		.icon {
+			font-size: 40px;
+			height: 40px;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 110px 0;
+		&::before {
+			top: -130px;
+		}
+		// .gallery-image-holder {
+		// 	filter: grayscale(0);
+		// }
+		.icon {
+			font-size: 30px;
+			height: 30px;
+		}
+	}
+}

@@ -54,7 +54,7 @@
 						}
 						@if (!string.IsNullOrWhiteSpace(item.VideoUrl))
 						{
-							<a href="javascript:;" class="gallery-image-holder js-gallert-video-thumbnail" data-src="@item.VideoUrl" @{if (item.CoverImage != null) { <text> style="background-image: url('@item.CoverImage.Url');" </text>  }}>
+							<a href="javascript:;" class="gallery-image-holder js-gallery-video-thumbnail" data-src="@item.VideoUrl" @{if (item.CoverImage != null) { <text> style="background-image: url('@item.CoverImage.Url');" </text>  }}>
 								<span class="sr-only">Click here to open a popup with video</span>
 								<span class="icon font-ico-play"></span>
 							</a>
@@ -68,7 +68,7 @@
 				<span class="popup-overlay js-popup-overlay"></span>
 				<button type="button" class="popup-close js-popup-close"><span class="sr-only">Click here to close popup</span></button>
 				<div class="popup-content js-popup-content">
-					<div class="responsive-video">
+					<div class="gallery-responsive-video">
 						<iframe class="js-gallery-video-iframe" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				</div>
