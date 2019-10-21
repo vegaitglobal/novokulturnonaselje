@@ -406,6 +406,9 @@
     <Compile Include="Generated\ContributorsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\DetailsPage.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\EmbeddedVideoBlock.cs" />
     <Compile Include="Generated\EmbeddedVideoBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
@@ -511,9 +514,6 @@
     <Compile Include="Generated\NewsContainer.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\NewsDetails.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Generated\NewsLanding.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -531,14 +531,11 @@
     <Compile Include="Generated\ProjectCategoryLanding.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\ProjectDetail.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Generated\RCeblock.cs" />
-    <Compile Include="Generated\RCeblock.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Generated\Repository.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\RTeblock.cs" />
+    <Compile Include="Generated\RTeblock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\SearchResults.generated.cs">
@@ -547,7 +544,7 @@
     <Compile Include="Generated\SiteSettings.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\StandardContentPage.generated.cs">
+    <Compile Include="Generated\StandardContent.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="Generated\StatisticItem.cs" />

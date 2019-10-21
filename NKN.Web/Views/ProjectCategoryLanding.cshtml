@@ -1,8 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ProjectCategoryLandingViewModel>
-@{
-	Html.EnableClientValidation(true);
-	Html.EnableUnobtrusiveJavaScript(true);
-}
+
 @if (Model.Banner != null)
 {
 
@@ -39,20 +36,20 @@
 						<div class="feed-item">
 							@if (projectPreview.SmallImage != null)
 							{
-								<a href="@projectPreview.Url" class="feed-image-holder">
+								<a href="@projectPreview.PageUrl" class="feed-image-holder">
 									<img src="@projectPreview.SmallImage.Url" alt="" />
 								</a>
 							}
 							<div class="feed-text-holder">
-								@if (!string.IsNullOrWhiteSpace(projectPreview.Title))
+								@if (!string.IsNullOrWhiteSpace(projectPreview.PageTitle))
 								{
-									<h3><a href="@projectPreview.Url">@projectPreview.Title</a></h3>
+									<h3><a href="@projectPreview.PageUrl">@projectPreview.PageTitle</a></h3>
 								}
 								@if (!string.IsNullOrWhiteSpace(projectPreview.Summary))
 								{
 									<p>@projectPreview.Summary</p>
 								}
-								<a href="@projectPreview.Url" class="btn">@UmbracoDictionary.ProjectLanding.ViewMore</a>
+								<a href="@projectPreview.PageUrl" class="btn">@UmbracoDictionary.ProjectLanding.ViewMore</a>
 							</div>
 						</div>
 					}

@@ -15,14 +15,14 @@ namespace NKN.Core.ViewModels.Pages
 		{
 			Banner = new BannerViewModel(context.WithComposition(context.Page));
 			NewsPreviews = context.Page.Descendants<NewsContainer>(nd => true)
-				.Select(nc => nc.Descendants<NewsDetails>(nd => true))
+				.Select(nc => nc.Descendants<DetailsPage>(nd => true))
 				.SelectMany(nd => nd)
 				.Where(nd => nd.Id != context.Page.HighlightedNews.Id)
 				.OrderByDescending(nd => nd.ReleaseDate)
-				.Select(nd => new NewsDetailPreviewViewModel(nd))
+				.Select(nd => new DetailsPagePreviewViewModel(nd))
 				.ToList();
 
-			HighlightedNewsPreview = new NewsDetailPreviewViewModel(context.Page.HighlightedNews as NewsDetails);
+			HighlightedNewsPreview = new DetailsPagePreviewViewModel(context.Page.HighlightedNews as DetailsPage);
 			FirstRowNews = GetNews().Take(3);
 			SecondRowNews = GetNews().Skip(FirstRowNews.Count());
 			LastRowItems = GetLastSectionNews();
@@ -37,17 +37,17 @@ namespace NKN.Core.ViewModels.Pages
 		public NewsletterBlockViewModel NewsletterBlock { get; }
 
 		#region NewsSection
-		public IEnumerable<NewsDetailPreviewViewModel> NewsPreviews { get; private set; }
-		public IEnumerable<NewsDetailPreviewViewModel> FirstRowNews { get; }
-		public IEnumerable<NewsDetailPreviewViewModel> SecondRowNews { get; }
-		public IEnumerable<NewsDetailPreviewViewModel> LastRowItems { get; }
-		public IEnumerable<NewsDetailPreviewViewModel> ArchiveNews { get; }
+		public IEnumerable<DetailsPagePreviewViewModel> NewsPreviews { get; private set; }
+		public IEnumerable<DetailsPagePreviewViewModel> FirstRowNews { get; }
+		public IEnumerable<DetailsPagePreviewViewModel> SecondRowNews { get; }
+		public IEnumerable<DetailsPagePreviewViewModel> LastRowItems { get; }
+		public IEnumerable<DetailsPagePreviewViewModel> ArchiveNews { get; }
 
-		public NewsDetailPreviewViewModel HighlightedNewsPreview { get; private set; }
+		public DetailsPagePreviewViewModel HighlightedNewsPreview { get; private set; }
 
-		private IEnumerable<NewsDetailPreviewViewModel> GetNews()
+		private IEnumerable<DetailsPagePreviewViewModel> GetNews()
 		{
-			IList<NewsDetailPreviewViewModel> news = new List<NewsDetailPreviewViewModel>();
+			IList<DetailsPagePreviewViewModel> news = new List<DetailsPagePreviewViewModel>();
 
 			foreach (var newItem in NewsPreviews.Take(6))
 			{
@@ -56,9 +56,9 @@ namespace NKN.Core.ViewModels.Pages
 			return news;
 		}
 
-		private IEnumerable<NewsDetailPreviewViewModel> GetLastSectionNews()
+		private IEnumerable<DetailsPagePreviewViewModel> GetLastSectionNews()
 		{
-			IList<NewsDetailPreviewViewModel> news = new List<NewsDetailPreviewViewModel>();
+			IList<DetailsPagePreviewViewModel> news = new List<DetailsPagePreviewViewModel>();
 
 			foreach (var newItem in NewsPreviews.Skip(GetNews().Count()).Take(6))
 			{

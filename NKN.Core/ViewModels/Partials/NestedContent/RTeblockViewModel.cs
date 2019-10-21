@@ -4,9 +4,9 @@ using System.Web;
 
 namespace NKN.Core.ViewModels.Partials.NestedContent
 {
-    public class RCeblockViewModel : INestedContentViewModel
+    public class RTeblockViewModel : INestedContentViewModel
     {
-        public RCeblockViewModel(INestedContentContext<RCeblock> context)
+        public RTeblockViewModel(INestedContentContext<RTeblock> context)
         {
             Text = context.NestedContent.Text;
         }

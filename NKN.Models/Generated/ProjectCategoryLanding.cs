@@ -6,6 +6,6 @@ namespace NKN.Models.Generated
 {
     public partial class ProjectCategoryLanding
     {
-        public IEnumerable<ProjectDetail> AllProjects => this.Descendants<ProjectDetail>();
+        public IEnumerable<DetailsPage> AllProjects => this.Descendants<DetailsPage>();
     }
 }

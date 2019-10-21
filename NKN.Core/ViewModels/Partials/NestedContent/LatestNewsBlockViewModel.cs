@@ -11,9 +11,9 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
 		public LatestNewsBlockViewModel(INestedContentContext<LatestNewsBlock> context)
 		{
 			Title = context.NestedContent.Title;
-			LatestNews = context.LatestNews?.ToViewModel<NewsDetailPreviewViewModel>().ToList();
+			LatestNews = context.LatestNews?.ToViewModel<DetailsPagePreviewViewModel>().ToList();
 		}
 		public string Title { get; }
-		public IList<NewsDetailPreviewViewModel> LatestNews { get; }
+		public IList<DetailsPagePreviewViewModel> LatestNews { get; }
 	}
 }

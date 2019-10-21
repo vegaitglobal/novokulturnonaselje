@@ -1,11 +1,6 @@
 ﻿@inherits UmbracoViewPage<NewsLandingViewModel>
 @using Constants = NKN.Core.Constants.Constants
 
-@{
-	Html.EnableClientValidation(true);
-	Html.EnableUnobtrusiveJavaScript(true);
-}
-
 @if (Model.Banner != null)
 {
 

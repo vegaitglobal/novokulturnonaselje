@@ -21,6 +21,6 @@ namespace NKN.Core.Contexts
         public ISiteSettings SiteSettings => _siteContext.SiteSettings;
 		
 
-		public IEnumerable<NewsDetails> LatestNews => _siteContext.LatestNews;
+		public IEnumerable<DetailsPage> LatestNews => _siteContext.LatestNews;
 	}
 }

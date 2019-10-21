@@ -6,10 +6,6 @@
 		@foreach (var item in Model.StatisticItems)
 		{
 			<div class="item">
-				<!-- TODO-from-Tijana comment in Serbian, I have no idea why :) -->
-				@*@if(item.Number )
-					{
-						sta se desi kada se ne prosledi number?				}*@
 				<span class="value">@item.Number</span>
 				@if (!string.IsNullOrEmpty(item.Text))
 				{

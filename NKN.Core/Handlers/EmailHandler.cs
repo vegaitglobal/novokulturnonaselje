@@ -17,7 +17,7 @@ namespace NKN.Core.Handlers
 			subject.Append("Podaci sa kontakt forme: ");
 
 			StringBuilder body = new StringBuilder();
-			body.Append($"Ime i prezime: {model.FullName}");
+			body.Append($"Ime i prezime: {model.FullName}{ Environment.NewLine}");
 			body.AppendLine($"E-mail: {model.Email}");
 			body.AppendLine($"Poruka: {model.Message}");
 

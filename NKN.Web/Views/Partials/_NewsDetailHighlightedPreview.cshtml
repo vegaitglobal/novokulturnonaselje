@@ -1,4 +1,4 @@
-﻿@model NewsDetailPreviewViewModel
+﻿@inherits UmbracoViewPage<DetailsPagePreviewViewModel>
 
 <div class="feed-item feed-item-highlighted">
 	@if (Model.SmallImage != null)
@@ -7,25 +7,23 @@
 			<img src="@Model.SmallImage.Url" alt="@Model.SmallImage.AlternateText" />
 		</div>
 	}
-		<div class="feed-text-holder">
-			@if (!string.IsNullOrWhiteSpace(Model.PageTitle))
-			{
-				<h3>@Model.PageTitle</h3>
-			}
-			@if (!string.IsNullOrWhiteSpace(Model.ReleaseDate))
-			{
-				<span class="feed-date">@Model.ReleaseDate</span>
-			}
-			@if (!string.IsNullOrWhiteSpace(Model.SummaryHighlighted))
-			{
-				<p>
-					@Model.SummaryHighlighted
-				</p>
-			}
-			@if (Model.Link != null)
-			{
-				<a href="@Model.Link.Url" target="@Model.Link.Target" class="btn">@Model.Link.Content</a>
-			}
+	<div class="feed-text-holder">
+		@if (!string.IsNullOrWhiteSpace(Model.PageTitle))
+		{
+			<h3>@Model.PageTitle</h3>
+		}
+		@if (!string.IsNullOrWhiteSpace(Model.ReleaseDate))
+		{
+			<span class="feed-date">@Model.ReleaseDate</span>
+		}
+		@if (!string.IsNullOrWhiteSpace(Model.SummaryHighlighted))
+		{
+			<p>
+				@Model.SummaryHighlighted
+			</p>
+		}
+			<a href="@Model.PageUrl"  class="btn">@UmbracoDictionary.ProjectLanding.ViewMore</a>
+		
 
-		</div>
+	</div>
 </div>

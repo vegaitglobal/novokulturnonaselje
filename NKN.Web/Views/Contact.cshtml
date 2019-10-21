@@ -1,14 +1,9 @@
 ﻿@inherits UmbracoViewPage<ContactViewModel>
-@{
-	Html.EnableClientValidation(true);
-	Html.EnableUnobtrusiveJavaScript(true);
-}
 
 @if (Model.Banner != null)
 {
 	Html.RenderAction<LayoutController>(c => nameof(c.Banner), new { viewModel = Model.Banner });
 }
-
 <section class="contact-content">
 	<div class="wrapper">
 		<div class="left-col">
@@ -24,7 +19,6 @@
 					@Html.Raw(Model.ContactInfo)
 				</div>
 			}
-
 		</div>
 		<div class="right-col">
 			<div class="contact-form-wrap">

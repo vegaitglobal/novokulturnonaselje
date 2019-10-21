@@ -1,8 +1,5 @@
 ﻿@inherits UmbracoViewPage<GalleryViewModel>
-@{
-	Html.EnableClientValidation(true);
-	Html.EnableUnobtrusiveJavaScript(true);
-}
+
 @if (Model.Banner != null)
 {
 	Html.RenderAction<LayoutController>(c => nameof(c.Banner), new { viewModel = Model.Banner });

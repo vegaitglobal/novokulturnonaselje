@@ -1,8 +1,4 @@
 ﻿@inherits UmbracoViewPage<HomeViewModel>
-@{
-	Html.EnableClientValidation(true);
-	Html.EnableUnobtrusiveJavaScript(true);
-}
 
 @if (Model.ContentBlocks != null && Model.ContentBlocks.Any())
 {
