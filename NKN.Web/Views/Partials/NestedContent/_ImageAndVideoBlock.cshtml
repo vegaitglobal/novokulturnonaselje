@@ -1,0 +1,85 @@
+﻿@inherits UmbracoViewPage<ImageAndVideoBlockViewModel>
+
+<section class="gallery-mixed-block js-gallery-mixed-block"   @{if (Model.BackgroungImage != null) { <text> style="background-image: url('@Model.BackgroungImage.Url');" </text>  }}>>
+	<span class="green-overlay"></span>
+	<div class="wrapper">
+		@if (!string.IsNullOrWhiteSpace(Model.SectionTitle))
+		{
+			<h2 class="section-title">@Model.SectionTitle</h2>
+		}
+		@if (Model.Images != null && Model.Images.Any())
+		{
+			<div class="row">
+				@if (!string.IsNullOrWhiteSpace(Model.ImageBlockTitle))
+				{
+					<h3>@Model.ImageBlockTitle</h3>
+				}
+				<div class="mixed-image-gallery js-slider js-mixed-image-slider">
+					@foreach (var image in Model.Images)
+					{
+						<div class="item">
+							<a href="javascript:;" class="gallery-image-holder js-mixed-image-gallery-item" style="background-image: url('@image.Url')">
+								<span class="sr-only">Click here to open a popup with images</span>
+							</a>
+						</div>
+					}
+				</div>
+			</div>
+		}
+		@if (Model.VideoItems != null && Model.VideoItems.Any())
+		{
+			<div class="row">
+				@if (!string.IsNullOrWhiteSpace(Model.VideoSectionTitle))
+				{
+					<h3>@Model.VideoSectionTitle</h3>
+				}
+
+				<div class="mixed-video-gallery js-slider js-mixed-video-slider">
+					@foreach (var videoItem in Model.VideoItems)
+					{
+						<div class="item">
+							<a href="javascript:;" class="gallery-image-holder js-gallery-video-thumbnail" data-src="@(!string.IsNullOrWhiteSpace(videoItem.VideoUrl) ? videoItem.VideoUrl : string.Empty)" @{if (videoItem.CoverImage != null) { <text> style="background-image: url('@videoItem.CoverImage.Url');" </text>  }}>
+								<span class="sr-only">Click here to open a popup with video</span>
+								<span class="icon font-ico-play"></span>
+								@if (!string.IsNullOrWhiteSpace(videoItem.Title))
+								{
+									<h4>@videoItem.Title</h4>
+								}
+							</a>
+						</div>
+					}
+				</div>
+			</div>
+		}
+
+	</div>
+	@if (Model.Images != null && Model.Images.Any())
+	{
+		<div class="popup js-popup js-mixed-image-popup">
+			<span class="popup-overlay js-popup-overlay"></span>
+			<button type="button" class="popup-close js-popup-close"><span class="sr-only">Click here to close popup</span></button>
+			<div class="popup-content js-popup-content">
+				<div class="popup-image-slider js-popup-mixed-slider">
+					@foreach (var image in Model.Images)
+					{
+						<div class="slider-item">
+							<img src="@image.Url" alt="@image.AlternateText" />
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	}
+	@if (Model.VideoItems != null && Model.VideoItems.Any())
+	{
+		<div class="popup js-popup js-mixed-video-popup">
+			<span class="popup-overlay js-popup-overlay"></span>
+			<button type="button" class="popup-close js-popup-close"><span class="sr-only">Click here to close popup</span></button>
+			<div class="popup-content js-popup-content">
+				<div class="gallery-responsive-video">
+					<iframe class="js-gallery-video-iframe" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	}
+</section>

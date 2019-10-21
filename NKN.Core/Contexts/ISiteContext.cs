@@ -8,7 +8,6 @@ namespace NKN.Core.Contexts
         IPage CurrentPage { get; }
         Home Home { get; }
         ISiteSettings SiteSettings { get; }
-		IEnumerable<Home> Languages { get; }
 		IEnumerable<NewsDetails> LatestNews { get; }
 	}
 }

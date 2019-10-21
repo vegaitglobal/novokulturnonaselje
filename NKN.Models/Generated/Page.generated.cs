@@ -28,10 +28,6 @@ namespace NKN.Models.Generated
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		IEnumerable<string> AlternateLanguages { get; }
 
-		/// <summary>Alternate Pages</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		IEnumerable<IPublishedContent> AlternatePages { get; }
-
 		/// <summary>Canonical Link</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		Umbraco.Web.Models.Link CanonicalLink { get; }
@@ -128,17 +124,6 @@ namespace NKN.Models.Generated
 		/// <summary>Static getter for Alternate Languages</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static IEnumerable<string> GetAlternateLanguages(IPage that) => that.Value<IEnumerable<string>>("alternateLanguages");
-
-		///<summary>
-		/// Alternate Pages
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("alternatePages")]
-		public IEnumerable<IPublishedContent> AlternatePages => GetAlternatePages(this);
-
-		/// <summary>Static getter for Alternate Pages</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		public static IEnumerable<IPublishedContent> GetAlternatePages(IPage that) => that.Value<IEnumerable<IPublishedContent>>("alternatePages");
 
 		///<summary>
 		/// Canonical Link: The page canonical link.

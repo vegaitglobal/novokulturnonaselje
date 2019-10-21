@@ -17,9 +17,6 @@ namespace NKN.Core.Contexts
         public IPage CurrentPage => SiteContext.CurrentPage;
         public Home Home => SiteContext.Home;
         public ISiteSettings SiteSettings => SiteContext.SiteSettings;
-
-		public IEnumerable<Home> Languages => SiteContext.Languages;
-
 		public IEnumerable<NewsDetails> LatestNews => SiteContext.LatestNews;
 
 		private ISiteContext SiteContext { get; }

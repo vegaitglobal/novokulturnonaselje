@@ -475,6 +475,10 @@
     <Compile Include="Generated\ImageAlbum.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\ImageAndVideoBlock.cs" />
+    <Compile Include="Generated\ImageAndVideoBlock.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generated\ImageWithRtetext.cs" />
     <Compile Include="Generated\ImageWithRtetext.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>

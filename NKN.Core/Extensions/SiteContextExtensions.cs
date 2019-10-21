@@ -37,5 +37,6 @@ namespace NKN.Core.Extensions
 
 			return (ICompositionContext<T>)Activator.CreateInstance(typeof(CompositionContext<>).MakeGenericType(composition.GetType()), composition, siteContext);
 		}
+	
 	}
 }
