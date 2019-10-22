@@ -58,11 +58,6 @@
 		</section>
 	}
 
-	@if (Model.NewsletterBlock != null)
-	{
-		Html.RenderAction<NestedContentController>(c => nameof(c.NewsletterBlock), new { viewModel = Model.NewsletterBlock });
-	}
-
 	@if (Model.FutureProjects != null && Model.FutureProjects.Any())
 	{
 		<section class="future-projects-block">

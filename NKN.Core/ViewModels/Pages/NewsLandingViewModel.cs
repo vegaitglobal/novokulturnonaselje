@@ -27,14 +27,11 @@ namespace NKN.Core.ViewModels.Pages
 			SecondRowNews = GetNews().Skip(FirstRowNews.Count());
 			LastRowItems = GetLastSectionNews();
 			ArchiveNews = NewsPreviews.Skip(FirstRowNews.Count() + SecondRowNews.Count() + LastRowItems.Count());
-
 			ContactBlock = context.WithNestedContent(context.Page.ContactUsBlock?.FirstOrDefault()).ToViewModel<WriteUsViewModel>();
-			NewsletterBlock = context.WithNestedContent(context.Page.NewsletterBlock?.FirstOrDefault()).ToViewModel<NewsletterBlockViewModel>();
 		}
 
 		public BannerViewModel Banner { get; set; }
 		public WriteUsViewModel ContactBlock { get; }
-		public NewsletterBlockViewModel NewsletterBlock { get; }
 
 		#region NewsSection
 		public IEnumerable<DetailsPagePreviewViewModel> NewsPreviews { get; private set; }

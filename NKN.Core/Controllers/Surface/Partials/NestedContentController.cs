@@ -12,10 +12,6 @@ namespace NKN.Core.Controllers.Surface.Partials
 
             return PartialView(partialView, viewModel);
         }
-		public ActionResult NewsletterBlock(NewsletterBlockViewModel viewModel)
-		{
-			return PartialView(viewModel);
-		}
 		public ActionResult WriteUs(WriteUsViewModel viewModel)
 		{
 			return PartialView(viewModel);

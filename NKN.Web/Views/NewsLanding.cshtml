@@ -44,9 +44,9 @@ else
 		</div>
 	</section>
 
-	if (Model.NewsletterBlock != null)
+	if (Model.ContactBlock != null)
 	{
-		Html.RenderAction<NestedContentController>(c => nameof(c.NewsletterBlock), new { viewModel = Model.NewsletterBlock });
+		Html.RenderAction<NestedContentController>(c => nameof(c.WriteUs), new { viewModel = Model.ContactBlock });
 	}
 
 	<section class="feed-wrapper news-wrapper">
@@ -73,10 +73,6 @@ else
 
 	</div>
 
-	if (Model.ContactBlock != null)
-	{
-		Html.RenderAction<NestedContentController>(c => nameof(c.WriteUs), new { viewModel = Model.ContactBlock });
-	}
 
 
 }

@@ -517,10 +517,6 @@
     <Compile Include="Generated\NewsLanding.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\NewsletterBlock.cs" />
-    <Compile Include="Generated\NewsletterBlock.generated.cs">
-      <DependentUpon>ModelsBuilder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Generated\Page.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>

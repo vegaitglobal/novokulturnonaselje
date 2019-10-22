@@ -105,9 +105,6 @@
       <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MailChimp.Net, Version=4.2.1.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
-      <HintPath>..\packages\MailChimp.Net.V3.4.2.1\lib\net45\MailChimp.Net.dll</HintPath>
-    </Reference>
     <Reference Include="Markdown, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89">
       <HintPath>..\packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
       <Private>True</Private>
@@ -591,7 +588,6 @@
     <Content Include="Views\Partials\NestedContent\_ImageWithRteText.cshtml" />
     <Content Include="Views\Partials\Layout\_Banner.cshtml" />
     <Content Include="Views\Partials\NestedContent\_NewsletterBlock.cshtml" />
-    <Content Include="Views\Partials\NewsletterForm\_NewsletterForm.cshtml" />
     <Content Include="Views\Partials\ContactForm\_ContactForm.cshtml" />
     <Content Include="Views\Partials\NestedContent\_LatestNewsBlock.cshtml" />
     <Content Include="Views\GalleryDetails.cshtml" />

@@ -60,13 +60,6 @@ namespace NKN.Models.Generated
 		public IPublishedContent HighlightedNews => this.Value<IPublishedContent>("highlightedNews");
 
 		///<summary>
-		/// Newsletter Block
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("newsletterBlock")]
-		public IEnumerable<NewsletterBlock> NewsletterBlock => this.Value<IEnumerable<NewsletterBlock>>("newsletterBlock");
-
-		///<summary>
 		/// Banner Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

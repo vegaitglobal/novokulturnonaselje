@@ -85,9 +85,6 @@
     <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
       <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
     </Reference>
-    <Reference Include="MailChimp.Net, Version=4.2.1.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
-      <HintPath>..\packages\MailChimp.Net.V3.4.2.1\lib\net45\MailChimp.Net.dll</HintPath>
-    </Reference>
     <Reference Include="Markdown, Version=2.0.0.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
       <HintPath>..\packages\Markdown.2.2.1\lib\net451\Markdown.dll</HintPath>
     </Reference>
@@ -294,7 +291,6 @@
     <Compile Include="Controllers\RenderMvc\DetailsPageController.cs" />
     <Compile Include="Controllers\RenderMvc\GalleryDetailsController.cs" />
     <Compile Include="Controllers\RenderMvc\StandardContentController.cs" />
-    <Compile Include="Controllers\Surface\NewsletterFormController.cs" />
     <Compile Include="Controllers\Surface\Partials\ContactFormController.cs" />
     <Compile Include="Extensions\SendResponseExtensions.cs" />
     <Compile Include="Handlers\EmailHandler.cs" />
@@ -351,7 +347,6 @@
     <Compile Include="ViewModels\Pages\SearchResultsViewModel.cs" />
     <Compile Include="ViewModels\Pages\StandardContentViewModel.cs" />
     <Compile Include="ViewModels\Partials\Forms\ContactFormViewModel.cs" />
-    <Compile Include="ViewModels\Partials\Forms\NewsletterFormViewModel.cs" />
     <Compile Include="ViewModels\Partials\Layout\BannerViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\BannerSlideViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\ContributorsBlockViewModel.cs" />
@@ -370,7 +365,6 @@
     <Compile Include="ViewModels\Partials\NestedContent\MissionCarouselBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\MissionItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\DetailsPagePreviewViewModel.cs" />
-    <Compile Include="ViewModels\Partials\NestedContent\NewsletterBlockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\RTeblockViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\StatisticItemViewModel.cs" />
     <Compile Include="ViewModels\Partials\NestedContent\StatisticsBlockViewModel.cs" />
