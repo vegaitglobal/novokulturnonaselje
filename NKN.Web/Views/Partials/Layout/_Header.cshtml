@@ -15,62 +15,61 @@
 
 			}
 		</a>
-		<nav class="nav js-nav">
-			@if (Model.NavigationItems != null && Model.NavigationItems.Any())
-			{
-				foreach (var item in Model.NavigationItems)
+
+		<div class="header-right-content">
+			<nav class="nav js-nav">
+				@if (Model.NavigationItems != null && Model.NavigationItems.Any())
 				{
-					<a href="@item.Url" class="nav-link">@item.PageTitle</a>
+					foreach (var item in Model.NavigationItems)
+					{
+						<a href="@item.Url" class="nav-link">@item.PageTitle</a>
+					}
 				}
+
+			</nav>
+			@if (!string.IsNullOrEmpty(Model.FacebookLink) || !string.IsNullOrEmpty(Model.InstagramLink) || !string.IsNullOrEmpty(Model.YouTubeLink))
+			{
+				<div class="header-social">
+					@if (!string.IsNullOrEmpty(Model.FacebookLink))
+					{
+						<a href="@Model.FacebookLink" class="header-social-link">
+							<span class="sr-only">Facebook</span>
+							<span class="icon font-ico-facebook"></span>
+						</a>
+					}
+					@if (!string.IsNullOrEmpty(Model.InstagramLink))
+					{
+						<a href="@Model.InstagramLink" class="header-social-link">
+							<span class="sr-only">Instagram</span>
+							<span class="icon font-ico-instagram"></span>
+						</a>
+					}
+					@if (!string.IsNullOrEmpty(Model.YouTubeLink))
+					{
+						<a href="@Model.YouTubeLink" class="header-social-link">
+							<span class="sr-only">YouTube</span>
+							<span class="icon font-ico-youtube"></span>
+						</a>
+					}
+				</div>
 			}
 
-		</nav>
-		@if (!string.IsNullOrEmpty(Model.FacebookLink) || !string.IsNullOrEmpty(Model.InstagramLink) || !string.IsNullOrEmpty(Model.YouTubeLink))
-		{
-			<div class="header-social">
-				@if (!string.IsNullOrEmpty(Model.FacebookLink))
-				{
-					<a href="@Model.FacebookLink" class="header-social-link">
-						<span class="sr-only">Facebook</span>
-						<span class="icon font-ico-facebook"></span>
-					</a>
-				}
-				@if (!string.IsNullOrEmpty(Model.InstagramLink))
-				{
-					<a href="@Model.InstagramLink" class="header-social-link">
-						<span class="sr-only">Instagram</span>
-						<span class="icon font-ico-instagram"></span>
-					</a>
-				}
-				@if (!string.IsNullOrEmpty(Model.YouTubeLink))
-				{
-					<a href="@Model.YouTubeLink" class="header-social-link">
-						<span class="sr-only">YouTube</span>
-						<span class="icon font-ico-youtube"></span>
-					</a>
-				}
+			<div class="language-switcher">
+				<button type="button" class="selected-item js-selected-item">@Model.HomeName</button>
+				<ul class="language-list js-language-list">
+					@foreach (var (language, info) in Model.Cultures)
+					{
+						<li>
+							<a href="@Model.CurrentPage.Url(language)" class="js-language-item">@language.Split('-')[0].ToUpper()</a>
+						</li>
+					}
+				</ul>
 			</div>
-		}
 
-
-
-
-		<div class="language-switcher">
-			<button type="button" class="selected-item js-selected-item">@Model.HomeName</button>
-			<ul class="language-list js-language-list">
-				@foreach (var (language, info) in Model.Cultures)
-				{
-					<li>
-						<a href="@Model.CurrentPage.Url(language)" class="js-language-item">@language.Split('-')[0].ToUpper()</a>
-					</li>
-				}
-			</ul>
+			<button class="header-hamburger js-header-hamburger" aria-hidden="true">
+				<span class="sr-only">Click to open navigation</span>
+				<span class="font-ico-hamburger"></span>
+			</button>
 		</div>
-
-
-		<button class="header-hamburger js-header-hamburger" aria-hidden="true">
-			<span class="sr-only">Click to open navigation</span>
-			<span class="font-ico-hamburger"></span>
-		</button>
 	</div>
 </header>

@@ -37,12 +37,17 @@
 		margin-bottom: 19px;
 		text-align: center;
 		text-transform: uppercase;
+		width: 100%;
 	}
 	p {
 		color: $grey;
 		font-size: 14px;
 		line-height: 28px;
 		margin-bottom: 46px;
+		width: 100%;
+	}
+	.btn {
+		margin-top: auto;
 	}
 	@include breakpoint(desktop) {
 		.image-holder-hover:hover {
@@ -52,6 +57,22 @@
 			.image-hover {
 				display: inline-block;
 			}
+		}
+	}
+	@include breakpoint(tablet-desktop) {
+		.col {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+		}
+		.image-holder {
+			flex-shrink: 0;
+		}
+		.text-holder {
+			display: flex;
+			flex-wrap: wrap;
+			height: 100%;
+			justify-content: center;
 		}
 	}
 	@include breakpoint(tablet) {
