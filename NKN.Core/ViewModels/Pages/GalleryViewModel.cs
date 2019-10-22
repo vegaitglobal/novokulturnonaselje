@@ -17,7 +17,7 @@ namespace NKN.Core.ViewModels.Pages
 			VideoItems = context.Page.VideoItems?.Select(i => context.WithNestedContent(i).ToViewModel<VideoGalleryItemViewModel>()).ToList();
 			VideoGalleryTitle = context.Page.VideoGalleryTitle;
 			ImageGalleryTitle = context.Page.ImageGalleryTitle;
-			ContactBlock = context.WithNestedContent(context.Page.ContactUs?.First()).AsViewModel<WriteUsViewModel>();
+			ContactBlock = context.WithNestedContent(context.Page.ContactUs?.FirstOrDefault()).AsViewModel<WriteUsViewModel>();
 
 		}
 

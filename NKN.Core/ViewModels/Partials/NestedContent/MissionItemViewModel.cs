@@ -11,7 +11,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         {
             Title = context.NestedContent.Title;
             Text = context.NestedContent.Text;
-            Link = context.NestedContent.Link.ToViewModel();
+            Link = context.NestedContent.Link?.ToViewModel();
         }
 
         public string Title { get; private set; }

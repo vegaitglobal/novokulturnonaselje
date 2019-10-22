@@ -43,8 +43,6 @@ namespace NKN.Core.Extensions
             return page != null ? new XMLSitemapItemViewModel(page) : default(XMLSitemapItemViewModel);
         }
 
-		public static LanguageLinkViewModel ToViewModel(this IPage page, string language)
-			=> page != null ? new LanguageLinkViewModel(page, language) : default(LanguageLinkViewModel);
 
 		public static SearchResultsItemViewModel ToViewModel(this ISearchResultItem item)
         {
