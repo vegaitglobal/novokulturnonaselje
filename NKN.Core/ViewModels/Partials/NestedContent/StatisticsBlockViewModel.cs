@@ -12,7 +12,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         public StatisticsBlockViewModel(INestedContentContext<StatisticsBlock> context)
         {
             BackgroundImage = (context.NestedContent.BackgroundImage as Image).ToViewModel();
-            StatisticItems = context.NestedContent.StatisticItems.Select(i => context.WithNestedContent(i).ToViewModel<StatisticItemViewModel>());
+            StatisticItems = context.NestedContent.StatisticItems?.Select(i => context.WithNestedContent(i).ToViewModel<StatisticItemViewModel>());
         }
 
         public ImageViewModel BackgroundImage { get; private set; }

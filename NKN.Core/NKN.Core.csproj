@@ -385,7 +385,6 @@
     <Compile Include="ViewModels\Partials\Listing\SearchResultsItemViewModel.cs" />
     <Compile Include="ViewModels\Shared\AlternateLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\ImageViewModel.cs" />
-    <Compile Include="ViewModels\Shared\LanguageLinkViewModel.cs" />
     <Compile Include="ViewModels\Shared\LinkViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

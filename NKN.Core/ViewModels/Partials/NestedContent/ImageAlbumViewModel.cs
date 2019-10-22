@@ -11,7 +11,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         public ImageAlbumViewModel(ImageAlbum model)
         {
             Title = model.Title;
-            Images = model.Images.Select(image => (image as Image).ToViewModel());
+            Images = model.Images?.Select(image => (image as Image).ToViewModel());
         }
 
         public string Title { get; set; }

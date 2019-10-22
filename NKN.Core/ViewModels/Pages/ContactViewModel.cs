@@ -17,7 +17,7 @@ namespace NKN.Core.ViewModels.Pages
 			Banner = new BannerViewModel(context.WithComposition(context.Page));
             Image = (context.Page.Image as Image).ToViewModel();
             ContactInfo = HttpUtility.HtmlDecode(context.Page.ContactInfo?.ToHtmlString());
-            WriteUs = context.WithNestedContent(context.Page.WriteUs?.First()).AsViewModel<WriteUsViewModel>();
+            WriteUs = context.WithNestedContent(context.Page.WriteUs?.FirstOrDefault()).AsViewModel<WriteUsViewModel>();
         }
 
         public ImageViewModel Image { get; private set; }
