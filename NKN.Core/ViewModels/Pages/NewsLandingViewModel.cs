@@ -42,6 +42,7 @@ namespace NKN.Core.ViewModels.Pages
 		public IEnumerable<DetailsPagePreviewViewModel> SecondRowNews { get; }
 		public IEnumerable<DetailsPagePreviewViewModel> LastRowItems { get; }
 		public IEnumerable<DetailsPagePreviewViewModel> ArchiveNews { get; }
+		public bool IsArchive { get; set; }
 
 		public DetailsPagePreviewViewModel HighlightedNewsPreview { get; private set; }
 

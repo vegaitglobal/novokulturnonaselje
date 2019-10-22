@@ -8,7 +8,7 @@
 				<img src="@Model.VideoCoverImage.Url" alt="@Model.VideoCoverImage.AlternateText" />
 			}
 			<span class="icon font-ico-play"></span>
-			<span class="sr-only">Click here to open a popup with video</span>
+			<span class="sr-only">@UmbracoDictionary.Common.OpenPopup</span>
 			@if (!string.IsNullOrWhiteSpace(Model.Title))
 			{
 				<h3>@Model.Title</h3>
@@ -16,7 +16,7 @@
 		</div>
 		<div class="popup js-popup">
 			<span class="popup-overlay js-popup-overlay"></span>
-			<button type="button" class="popup-close js-popup-close"><span class="sr-only">Click here to close popup</span></button>
+			<button type="button" class="popup-close js-popup-close"><span class="sr-only">@UmbracoDictionary.Common.ClosePopup</span></button>
 			@if (!string.IsNullOrWhiteSpace(Model.Link))
 			{
 				<div class="popup-content js-popup-content">

@@ -296,7 +296,6 @@
     <Compile Include="Controllers\RenderMvc\StandardContentController.cs" />
     <Compile Include="Controllers\Surface\NewsletterFormController.cs" />
     <Compile Include="Controllers\Surface\Partials\ContactFormController.cs" />
-    <Compile Include="Controllers\Surface\Partials\NewsArchiveController.cs" />
     <Compile Include="Extensions\SendResponseExtensions.cs" />
     <Compile Include="Handlers\EmailHandler.cs" />
     <Compile Include="Handlers\SmtpEmailSender.cs" />

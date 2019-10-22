@@ -40,6 +40,11 @@ namespace NKN.Core
 		{
 			public static string Archive => UmbracoHelper.GetDictionaryValue("NewsLanding.ArchiveButton");
 		}
+		public static class Common
+		{
+			public static string ClosePopup => UmbracoHelper.GetDictionaryValue("Common.ClosePopup");
+			public static string OpenPopup => UmbracoHelper.GetDictionaryValue("Common.OpenPopup");
+		}
 		public static class Mailchimp
 		{
 			public static string SucceededMessage => UmbracoHelper.GetDictionaryValue("Mailchimp.SucceededMessage");

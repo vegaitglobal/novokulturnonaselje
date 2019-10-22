@@ -8,7 +8,7 @@
 
 }
 
-@if (TempData[Constants.TempDataArchiveNews] != null)
+@if (Model.IsArchive)
 {
 
 	Html.RenderPartial("_NewsArchive");
@@ -67,10 +67,7 @@ else
 		<div class="wrapper">
 			@if (Model.ArchiveNews != null && Model.ArchiveNews.Any())
 			{
-				using (Html.BeginUmbracoForm("NewsArchive", "NewsArchive", FormMethod.Get))
-				{
-					<button type="submit" class="btn">@UmbracoDictionary.NewsLanding.Archive</button>
-				}
+				<a href="@Model.PageUrl?q=archive" target="_blank" class="btn">@UmbracoDictionary.NewsLanding.Archive</a>
 			}
 		</div>
 
