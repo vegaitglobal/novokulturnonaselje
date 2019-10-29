@@ -14,6 +14,11 @@ textarea {
 	font-family: $font-default;
 	padding: 0 10px;
 	width: 100%;
+
+	&.input-validation-error {
+		border-color: $red;
+		color: $red;
+	}
 }
 
 input {
@@ -126,10 +131,14 @@ textarea {
 }
 
 //----------  error message  ----------
-.contact-form-error {
+.contact-form-error,
+.field-validation-error {
 	color: $red;
 	display: block;
 	width: 100%;
+	&.error-message-top {
+		margin-bottom: 30px;
+	}
 }
 
 .contact-form-success {
