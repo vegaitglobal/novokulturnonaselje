@@ -173,10 +173,10 @@
 	@include breakpoint(phone) {
 		margin: 0 auto;
 		max-width: 220px;
-		.slick-slide > div:nth-child(2n) {
+		.slick-slide > div:nth-child(2n) .item {
 			margin-top: 32px;
 			position: relative;
-			&::before {
+			&::after {
 				background-color: $green;
 				bottom: 100%;
 				content: '';
