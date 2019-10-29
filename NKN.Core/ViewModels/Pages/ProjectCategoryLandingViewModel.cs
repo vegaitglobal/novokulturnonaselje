@@ -15,7 +15,7 @@ namespace NKN.Core.ViewModels.Pages
         public ProjectCategoryLandingViewModel(IPageContext<ProjectCategoryLanding> context) : base(context)
         {
 			Banner = new BannerViewModel(context.WithComposition(context.Page));
-			Image = (context.Page.Image as Image).ToViewModel();
+			Image = context.Page.Image?.ToViewModel();
             Text = context.Page.Text;
             AllProjects = context.Page.AllProjects?.ToViewModel<DetailsPagePreviewViewModel>().OrderBy(project => project.ReleaseDate);
 			FutureProjects = context.Page.Items?.Select(fp => context.WithNestedContent(fp).ToViewModel<FutureProjectItemViewModel>()).ToList();

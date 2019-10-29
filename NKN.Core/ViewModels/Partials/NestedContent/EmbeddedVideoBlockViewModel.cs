@@ -11,7 +11,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         {
             Link = context.NestedContent.Link;
 			Title = context.NestedContent.Title;
-			VideoCoverImage = (context.NestedContent.VideoCoverImage as Image)?.ToViewModel();
+			VideoCoverImage = context.NestedContent.VideoCoverImage?.ToViewModel();
         }
 
         public string Link { get; }

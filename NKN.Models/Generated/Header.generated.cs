@@ -93,7 +93,7 @@ namespace NKN.Models.Generated
 		public static string GetInstagramLink(IHeader that) => that.Value<string>("instagramLink");
 
 		///<summary>
-		/// Logo: The site logo image.
+		/// Logo: The site logo image. Recommended dimensions: 140x120 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("logo")]
@@ -104,7 +104,7 @@ namespace NKN.Models.Generated
 		public static IPublishedContent GetLogo(IHeader that) => that.Value<IPublishedContent>("logo");
 
 		///<summary>
-		/// Logo Black
+		/// Logo Black: Recommended dimensions: 140x120 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("logoBlack")]

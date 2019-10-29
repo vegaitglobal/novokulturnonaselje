@@ -53,14 +53,14 @@ namespace NKN.Models.Generated
 		public IEnumerable<IPublishedContent> Images => this.Value<IEnumerable<IPublishedContent>>("images");
 
 		///<summary>
-		/// Preview Image
+		/// Preview Image: Note: Recommended dimensions should be: 330x188 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("previewImage")]
 		public IPublishedContent PreviewImage => this.Value<IPublishedContent>("previewImage");
 
 		///<summary>
-		/// Banner Image
+		/// Banner Image: Note: Recommended dimensions: 1093x555 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("bannerImage")]

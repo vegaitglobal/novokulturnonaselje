@@ -53,7 +53,7 @@ namespace NKN.Models.Generated
 		public string Title => this.Value<string>("title");
 
 		///<summary>
-		/// Video Cover Image
+		/// Video Cover Image: Note: Recommended dimensions should be: 330x188 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("videoCoverImage")]
