@@ -115,6 +115,7 @@
 		position: absolute;
 		top: calc(50% - 20px);
 		transform: translateY(-50%);
+		z-index: 2;
 		&::before {
 			@include font-styles;
 			color: $white;
@@ -131,6 +132,20 @@
 		right: -4px;
 		&::before {
 			transform: rotate(-180deg);
+		}
+	}
+	@include breakpoint(tablet-desktop) {
+		.item-inner {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+		}
+		h3, p {
+			width: 100%;
+		}
+		.btn {
+			margin-top: auto;
 		}
 	}
 	@include breakpoint(desktop) {
