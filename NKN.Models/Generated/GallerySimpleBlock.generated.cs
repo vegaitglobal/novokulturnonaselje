@@ -46,7 +46,7 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
-		/// Images
+		/// Images: Note: Recommended dimensions should be: 450x256 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("images")]

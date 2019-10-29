@@ -46,7 +46,7 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
-		/// Background Image
+		/// Background Image: Note: Recommended dimensions should be: 1903x1067 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("backgroundImage")]

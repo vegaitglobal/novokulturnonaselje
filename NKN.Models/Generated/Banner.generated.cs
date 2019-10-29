@@ -55,7 +55,7 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
-		/// Banner Image
+		/// Banner Image: Note: Recommended dimensions: 1093x555 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("bannerImage")]

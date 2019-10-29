@@ -1,6 +1,6 @@
 ﻿@inherits UmbracoViewPage<ImageAndVideoBlockViewModel>
 
-<section class="gallery-mixed-block js-gallery-mixed-block"   @{if (Model.BackgroungImage != null) { <text> style="background-image: url('@Model.BackgroungImage.Url');" </text>  }}>>
+<section class="gallery-mixed-block js-gallery-mixed-block"   @{if (Model.BackgroungImage != null) { <text> style="background-image: url('@Model.BackgroungImage.Url');" </text>  }}>
 	<span class="green-overlay"></span>
 	<div class="wrapper">
 		@if (!string.IsNullOrWhiteSpace(Model.SectionTitle))

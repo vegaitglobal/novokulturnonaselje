@@ -46,14 +46,14 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
-		/// Image
+		/// Image: Note: Recommended dimensions should be: 266x328 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("image")]
 		public IPublishedContent Image => this.Value<IPublishedContent>("image");
 
 		///<summary>
-		/// Image Hover
+		/// Image Hover: Note: Recommended dimensions should be: 266x328 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("imageHover")]

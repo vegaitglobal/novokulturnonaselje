@@ -81,14 +81,14 @@ namespace NKN.Models.Generated
 		public string InstagramLink => Header.GetInstagramLink(this);
 
 		///<summary>
-		/// Logo: The site logo image.
+		/// Logo: The site logo image. Recommended dimensions: 140x120 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("logo")]
 		public IPublishedContent Logo => Header.GetLogo(this);
 
 		///<summary>
-		/// Logo Black
+		/// Logo Black: Recommended dimensions: 140x120 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("logoBlack")]

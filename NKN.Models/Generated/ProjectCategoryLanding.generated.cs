@@ -46,13 +46,6 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
-		/// Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("image")]
-		public IPublishedContent Image => this.Value<IPublishedContent>("image");
-
-		///<summary>
 		/// Items
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -67,7 +60,7 @@ namespace NKN.Models.Generated
 		public IHtmlString Text => this.Value<IHtmlString>("text");
 
 		///<summary>
-		/// Banner Image
+		/// Banner Image: Note: Recommended dimensions: 1093x555 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("bannerImage")]

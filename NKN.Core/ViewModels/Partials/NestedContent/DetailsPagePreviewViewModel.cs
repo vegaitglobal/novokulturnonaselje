@@ -11,7 +11,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         public DetailsPagePreviewViewModel(DetailsPage content)
         {
             PageTitle = content.PageTitle;
-            SmallImage = (content.SmallImage as Image).ToViewModel();
+            SmallImage = content.SmallImage?.ToViewModel();
             ReleaseDate = content.ReleaseDate.ToString(AppSettings.DateFormat);
             Summary = string.Join(string.Empty, content.Summary.ToCharArray().Take(150));
             SummaryHighlighted = string.Join(string.Empty, content.Summary.ToCharArray().Take(200));

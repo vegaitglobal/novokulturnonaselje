@@ -53,13 +53,6 @@ namespace NKN.Models.Generated
 		public DateTime ReleaseDate => this.Value<DateTime>("releaseDate");
 
 		///<summary>
-		/// Small Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("smallImage")]
-		public IPublishedContent SmallImage => this.Value<IPublishedContent>("smallImage");
-
-		///<summary>
 		/// Summary
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

@@ -402,10 +402,11 @@
     <Compile Include="Generated\Contact.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generated\ContributorsBlock.cs" />
     <Compile Include="Generated\ContributorsBlock.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generated\DetailsPage.cs" />
+    <Compile Include="Generated\ContributorsBlock.cs" />
     <Compile Include="Generated\DetailsPage.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
