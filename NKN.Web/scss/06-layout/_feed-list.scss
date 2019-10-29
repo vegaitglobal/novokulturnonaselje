@@ -161,6 +161,7 @@
 
 //----------  highlighted news  ----------
 .feed-item-highlighted {
+	@include base-float;
 	@include breakpoint(tablet-desktop) {
 		display: flex;
 		justify-content: space-between;
