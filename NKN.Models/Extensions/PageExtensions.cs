@@ -20,14 +20,7 @@ namespace NKN.Models.Extensions
 
 		public static bool ChangeColorToBlack(this IPage node)
 		{
-			if (node.ChangeTitleColor)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			return node.ChangeTitleColor ? true : false;
 		}
 	}
 }

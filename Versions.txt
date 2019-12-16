@@ -10,3 +10,5 @@
 									-Title (sectionTwoTitle) : textstring
 									-Items (sectionTwoItems) : MNTP - Details Page
 				*deleted tab Future projects
+	*Settings/Document Types/Compositions/Banner
+				*added new properry Change Banner Title Color : checkbox

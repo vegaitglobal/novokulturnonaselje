@@ -60,6 +60,13 @@ namespace NKN.Models.Generated
 		public IPublishedContent BannerImage => Banner.GetBannerImage(this);
 
 		///<summary>
+		/// Change Banner Title Color: Note: If checked, the title color will be black instead of white.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("changeBannerTitleColor")]
+		public bool ChangeBannerTitleColor => Banner.GetChangeBannerTitleColor(this);
+
+		///<summary>
 		/// Alternate Languages: Language codes (en-US, en-GB etc).
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
@@ -74,7 +81,7 @@ namespace NKN.Models.Generated
 		public Umbraco.Web.Models.Link CanonicalLink => Page.GetCanonicalLink(this);
 
 		///<summary>
-		/// Change Title Color: Note: If checked, the page title color will be black instead of white.
+		/// Change Title Color: Note: If checked, the page title color in navigation will be black instead of white.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("changeTitleColor")]

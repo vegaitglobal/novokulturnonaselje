@@ -11,9 +11,11 @@ namespace NKN.Core.ViewModels.Partials.Layout
 		{
 			BannerImage = (banner.Composition.BannerImage as Image).ToViewModel();
 			PageTitle = banner.CurrentPage.PageTitle;
+			ChangeBannerTitleColor = banner.Composition.ChangeBannerTitleColor;
 		}
 		public ImageViewModel BannerImage { get; }
 		public string PageTitle { get; }
+		public bool ChangeBannerTitleColor { get; }
 	}
 	
 }

@@ -27,6 +27,10 @@ namespace NKN.Models.Generated
 		/// <summary>Banner Image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		IPublishedContent BannerImage { get; }
+
+		/// <summary>Change Banner Title Color</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		bool ChangeBannerTitleColor { get; }
 	}
 
 	/// <summary>Banner</summary>
@@ -64,5 +68,16 @@ namespace NKN.Models.Generated
 		/// <summary>Static getter for Banner Image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static IPublishedContent GetBannerImage(IBanner that) => that.Value<IPublishedContent>("bannerImage");
+
+		///<summary>
+		/// Change Banner Title Color: Note: If checked, the title color will be black instead of white.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("changeBannerTitleColor")]
+		public bool ChangeBannerTitleColor => GetChangeBannerTitleColor(this);
+
+		/// <summary>Static getter for Change Banner Title Color</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static bool GetChangeBannerTitleColor(IBanner that) => that.Value<bool>("changeBannerTitleColor");
 	}
 }
