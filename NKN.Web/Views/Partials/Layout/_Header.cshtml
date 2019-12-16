@@ -26,7 +26,7 @@
 				{
 					foreach (var item in Model.NavigationItems)
 					{
-						<a href="@item.Url" class="nav-link">@item.PageTitle</a>
+						<a href="@item.Url" class="nav-link @(Model.ChangePageTitleColor ? " title-black" : string.Empty)">@item.PageTitle</a>
 					}
 				}
 			</nav>

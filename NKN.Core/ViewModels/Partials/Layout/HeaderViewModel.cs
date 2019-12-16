@@ -5,7 +5,6 @@ using NKN.Models.Extensions;
 using NKN.Models.Generated;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 
@@ -28,6 +27,7 @@ namespace NKN.Core.ViewModels.Partials.Layout
 			CurrentPage = header.CurrentPage;
 			HomeName = header.Home.GetCultureFromDomains().Split('-')[0].ToUpper();
 			Home = header.Home;
+			ChangePageTitleColor = header.CurrentPage.ChangeColorToBlack();
 
 		}
 		public string HomeName { get; }
@@ -41,6 +41,7 @@ namespace NKN.Core.ViewModels.Partials.Layout
         public string YouTubeLink { get; }
         public IEnumerable<IPage> NavigationItems { get; }
 		public IPage Home { get; }
+		public bool ChangePageTitleColor { get; }
 
 	}
 }

@@ -60,6 +60,13 @@ namespace NKN.Models.Generated
 		public Umbraco.Web.Models.Link CanonicalLink => Page.GetCanonicalLink(this);
 
 		///<summary>
+		/// Change Title Color: Note: If checked, the page title color will be black instead of white.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("changeTitleColor")]
+		public bool ChangeTitleColor => Page.GetChangeTitleColor(this);
+
+		///<summary>
 		/// External Redirect: Redirects to provided external URL.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
