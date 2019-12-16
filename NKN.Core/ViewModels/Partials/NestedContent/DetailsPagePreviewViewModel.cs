@@ -16,6 +16,7 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
             Summary = string.Join(string.Empty, content.Summary.ToCharArray().Take(150));
             SummaryHighlighted = string.Join(string.Empty, content.Summary.ToCharArray().Take(200));
 			PageUrl = content.Url;
+			HideLink = content.HideLink;
         }
 
         public string PageTitle { get;  }
@@ -24,5 +25,6 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
         public string Summary { get;  }
         public string SummaryHighlighted { get; }
 		public string PageUrl { get; }
+		public bool HideLink { get; }
     }
 }

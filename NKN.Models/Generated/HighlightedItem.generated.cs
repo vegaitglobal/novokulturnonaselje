@@ -46,6 +46,13 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
+		/// Hide Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("hideLink")]
+		public bool HideLink => this.Value<bool>("hideLink");
+
+		///<summary>
 		/// Image: Note: Recommended dimensions should be: 266x328 px
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]

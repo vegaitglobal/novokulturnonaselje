@@ -22,7 +22,7 @@ namespace NKN.Models.Generated
 {
 	/// <summary>Project Category Landing</summary>
 	[PublishedModel("projectCategoryLanding")]
-	public partial class ProjectCategoryLanding : PublishedContentModel, IBanner, IPage, ISiteSettings
+	public partial class ProjectCategoryLanding : PublishedContentModel, IBanner, IPage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,11 +46,18 @@ namespace NKN.Models.Generated
 		// properties
 
 		///<summary>
-		/// Items
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("items")]
-		public IEnumerable<FutureProjectItem> Items => this.Value<IEnumerable<FutureProjectItem>>("items");
+		[ImplementPropertyType("sectionOneTitle")]
+		public string SectionOneTitle => this.Value<string>("sectionOneTitle");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("sectionTwoTitle")]
+		public string SectionTwoTitle => this.Value<string>("sectionTwoTitle");
 
 		///<summary>
 		/// Text
@@ -177,54 +184,5 @@ namespace NKN.Models.Generated
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("umbracoUrlName")]
 		public string UmbracoUrlName => Page.GetUmbracoUrlName(this);
-
-		///<summary>
-		/// Canonical Domain: The site canonical domain.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("canonicalDomain")]
-		public string CanonicalDomain => SiteSettings.GetCanonicalDomain(this);
-
-		///<summary>
-		/// Google Analytics Script Code
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("googleAnalyticsScriptCode")]
-		public string GoogleAnalyticsScriptCode => SiteSettings.GetGoogleAnalyticsScriptCode(this);
-
-		///<summary>
-		/// Google Tag Manager Non-Script Code
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("googleTagManagerNonScriptCode")]
-		public string GoogleTagManagerNonScriptCode => SiteSettings.GetGoogleTagManagerNonScriptCode(this);
-
-		///<summary>
-		/// Google Tag Manager Script Code
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("googleTagManagerScriptCode")]
-		public string GoogleTagManagerScriptCode => SiteSettings.GetGoogleTagManagerScriptCode(this);
-
-		///<summary>
-		/// Hide All Pages From Search Engines: This will create robots meta tag with "noindex,nofollow" value. Note: this should be unchecked on the live site.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("hideAllPagesFromSearchEngines")]
-		public bool HideAllPagesFromSearchEngines => SiteSettings.GetHideAllPagesFromSearchEngines(this);
-
-		///<summary>
-		/// Robots: Content that will be served when Robots.txt is requested.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("robots")]
-		public string Robots => SiteSettings.GetRobots(this);
-
-		///<summary>
-		/// Site Name: The site name.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("siteName")]
-		public string SiteName => SiteSettings.GetSiteName(this);
 	}
 }

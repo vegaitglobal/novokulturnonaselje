@@ -14,16 +14,15 @@ namespace NKN.Core.ViewModels.Partials.NestedContent
             Link = model.NestedContent.Link?.ToViewModel();
             Text = model.NestedContent.Text;
             Title = model.NestedContent.Title;
+			HideLink = model.NestedContent.HideLink;
         }
 
         public ImageViewModel Image { get; }
-
         public ImageViewModel ImageHover { get; }
-
         public LinkViewModel Link { get; }
-
+		public bool HideLink { get; }
         public string Text { get; }
-
         public string Title { get; }
+
     }
 }

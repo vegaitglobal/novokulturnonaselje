@@ -18,6 +18,10 @@
 
 		<div class="header-right-content">
 			<nav class="nav js-nav">
+				@if (Model.Home != null && !Model.Home.UmbracoNaviHide)
+				{
+					<a href="@Model.Home.Url" class="nav-link">@Model.Home.PageTitle</a>
+				}
 				@if (Model.NavigationItems != null && Model.NavigationItems.Any())
 				{
 					foreach (var item in Model.NavigationItems)
@@ -25,7 +29,6 @@
 						<a href="@item.Url" class="nav-link">@item.PageTitle</a>
 					}
 				}
-
 			</nav>
 			@if (!string.IsNullOrEmpty(Model.FacebookLink) || !string.IsNullOrEmpty(Model.InstagramLink) || !string.IsNullOrEmpty(Model.YouTubeLink))
 			{

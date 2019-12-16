@@ -25,19 +25,23 @@
 			</div>
 		</div>
 	</section>
-	@if (Model.AllProjects != null && Model.AllProjects.Any())
+	@if (Model.SectionOneItems != null && Model.SectionOneItems.Any())
 	{
 		<section class="feed-wrapper projects-wrapper">
 			<div class="wrapper">
-				<h2 class="section-title">@UmbracoDictionary.ProjectLanding.RealizedProjects</h2>
+				@if (!string.IsNullOrWhiteSpace(Model.SectionOneTitle))
+				{
+					<h2 class="section-title">@Model.SectionOneTitle</h2>
+				}
+
 				<div class="feed-list js-projects-slider">
-					@foreach (var projectPreview in Model.AllProjects)
+					@foreach (var projectPreview in Model.SectionOneItems)
 					{
 						<div class="feed-item">
 							@if (projectPreview.SmallImage != null)
 							{
 								<a href="@projectPreview.PageUrl" class="feed-image-holder">
-									<img src="@projectPreview.SmallImage.Url" alt="" />
+									<img src="@projectPreview.SmallImage.Url" alt="@projectPreview.SmallImage.AlternateText" />
 								</a>
 							}
 							<div class="feed-text-holder">
@@ -49,7 +53,10 @@
 								{
 									<p>@projectPreview.Summary</p>
 								}
-								<a href="@projectPreview.PageUrl" class="btn">@UmbracoDictionary.ProjectLanding.ViewMore</a>
+								@if (!projectPreview.HideLink)
+								{
+									<a href="@projectPreview.PageUrl" class="btn">@UmbracoDictionary.ProjectLanding.ViewMore</a>
+								}
 							</div>
 						</div>
 					}
@@ -58,26 +65,30 @@
 		</section>
 	}
 
-	@if (Model.FutureProjects != null && Model.FutureProjects.Any())
+	@if (Model.SectionTwoItems != null && Model.SectionTwoItems.Any())
 	{
 		<section class="future-projects-block">
 			<div class="wrapper">
-				<h2 class="section-title">@UmbracoDictionary.ProjectLanding.FutureProjects</h2>
+				@if (!string.IsNullOrWhiteSpace(Model.SectionTwoTitle))
+				{
+					<h2 class="section-title">@Model.SectionTwoTitle</h2>
+				}
+
 				<div class="cols-wrap">
-					@foreach (var item in Model.FutureProjects)
+					@foreach (var item in Model.SectionTwoItems)
 					{
 						<div class="col">
-							<div class="image-holder" @{if (item.Image != null) { <text> style="background-image: url('@item.Image.Url');" </text>  } }>
+							<div class="image-holder" @{if (item.SmallImage != null) { <text> style="background-image: url('@item.SmallImage.Url');" </text>  } }>
 								<span class="green-overlay"></span>
-								@if (!string.IsNullOrWhiteSpace(item.Title))
+								@if (!string.IsNullOrWhiteSpace(item.PageTitle))
 								{
-									<h3>@item.Title</h3>
+									<h3>@item.PageTitle</h3>
 								}
 							</div>
-							@if (!string.IsNullOrWhiteSpace(item.Text))
+							@if (!string.IsNullOrWhiteSpace(item.Summary))
 							{
 								<div class="text-holder">
-									<p>@item.Text</p>
+									<p>@item.Summary</p>
 								</div>
 							}
 
@@ -89,4 +100,4 @@
 	}
 
 </div>
-</div>
+

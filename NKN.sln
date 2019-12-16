@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{AD72554A-0F05-41D9-A917-090DD3618F77}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		Versions.txt = Versions.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKN.Search", "NKN.Search\NKN.Search.csproj", "{B55C6727-5339-46A3-B122-1D935E8B6909}"

@@ -27,6 +27,7 @@ namespace NKN.Core.ViewModels.Partials.Layout
 			Cultures = header.Home.Cultures;
 			CurrentPage = header.CurrentPage;
 			HomeName = header.Home.GetCultureFromDomains().Split('-')[0].ToUpper();
+			Home = header.Home;
 
 		}
 		public string HomeName { get; }
@@ -39,6 +40,7 @@ namespace NKN.Core.ViewModels.Partials.Layout
         public string InstagramLink { get; }
         public string YouTubeLink { get; }
         public IEnumerable<IPage> NavigationItems { get; }
+		public IPage Home { get; }
 
 	}
 }

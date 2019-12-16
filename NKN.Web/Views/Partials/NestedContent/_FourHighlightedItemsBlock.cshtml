@@ -31,7 +31,7 @@
 								@item.Text
 							</p>
 						}
-						@if (item.Link != null)
+						@if (item.Link != null && !item.HideLink)
 						{
 							<a href="@item.Link.Url" target="@item.Link.Target" class="btn">@UmbracoDictionary.ProjectLanding.ViewMore</a>
 						}

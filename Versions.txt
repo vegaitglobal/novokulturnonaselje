@@ -1,0 +1,12 @@
+2019-12-16 Marina Golubovic
+
+	*Settings/DataTypes/MNTP : added new MNTp: MNTP - Details Page
+	*Settigns/Pages/ProjectCategoryLanding : 
+				*added two content tabs:
+							1. Projects Section One
+									-Title (sectionOneTitle) : textstring
+									-Items (sectionOneItems) : MNTP - Details Page
+							2. Projects Section Two
+									-Title (sectionTwoTitle) : textstring
+									-Items (sectionTwoItems) : MNTP - Details Page
+				*deleted tab Future projects
