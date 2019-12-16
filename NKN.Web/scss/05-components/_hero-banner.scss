@@ -25,6 +25,7 @@
 		line-height: 1;
 		margin-top: 177px;
 		text-transform: uppercase;
+		text-align: right;
 	}
 	@include breakpoint(desktop-small) {
 		height: 500px;

@@ -62,6 +62,16 @@ var functions = (function() {
 					$('.js-four-highlighted-block').find('.image-holder').css('height', '');
 				}
 			}
+
+			if ($('.js-mission-slider').length) {
+				if (!mobileView) {
+					$('.js-mission-slider').each(function () {
+						helpers.equalHeight($(this).find('.js-mission-item'), 4);
+					});
+				} else {
+					$('.js-mission-slider').find('.js-mission-item').css('height', '');
+				}
+			}
 		},
 
 		subscribe: function () {
