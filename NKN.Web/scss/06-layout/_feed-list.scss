@@ -60,9 +60,9 @@
 	@include base-float;
 	h3 {
 		font-family: $bold-cons;
-		font-size: 46px;
+		font-size: 28px;
 		font-weight: bold;
-		line-height: 52px;
+		line-height: 1.2;
 		margin-bottom: 13px;
 		text-transform: uppercase;
 		a {
@@ -73,7 +73,7 @@
 	.feed-date {
 		color: $grey;
 		display: block;
-		font-size: 20px;
+		font-size: 16px;
 		font-style: italic;
 		line-height: 1;
 		margin-bottom: 16px;
@@ -82,7 +82,7 @@
 		color: $grey;
 		font-size: 16px;
 		font-weight: 600;
-		line-height: 28px;
+		line-height: 24px;
 		margin-bottom: 15px;
 	}
 	.btn {
@@ -95,8 +95,7 @@
 	}
 	@include breakpoint(touch) {
 		h3 {
-			font-size: 28px;
-			line-height: 1.2;
+			font-size: 24px;
 			margin-bottom: 10px;
 		}
 		.feed-date {
@@ -104,7 +103,6 @@
 		}
 		p {
 			font-size: 14px;
-			line-height: 24px;
 		}
 	}
 }
@@ -209,15 +207,8 @@
 	.rte-block {
 		padding-bottom: 44px;
 	}
-	@include breakpoint(desktop) {
-		.section-title {
-			margin-bottom: 77px;
-		}
-	}
-	@include breakpoint(tablet) {
-		.section-title {
-			margin-bottom: 50px;
-		}
+	.section-title {
+		margin-bottom: 50px;
 	}
 }
 
@@ -231,6 +222,7 @@
 	.feed-item {
 		margin-bottom: 55px;
 		padding: 0 35px;
+		vertical-align: top;
 	}
 	.slick-slide > div {
 		margin: 0 -35px;

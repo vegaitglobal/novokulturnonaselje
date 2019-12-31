@@ -21,7 +21,7 @@
 		color: $white;
 		float: right;
 		font-family: $bold-cons;
-		font-size: 66px;
+		font-size: 50px;
 		line-height: 1;
 		margin-top: 177px;
 		text-transform: uppercase;
@@ -33,14 +33,14 @@
 	@include breakpoint(tablet) {
 		height: 430px;
 		.page-title {
-			font-size: 50px;
+			font-size: 40px;
 			margin-top: 120px;
 		}
 	}
 	@include breakpoint(phone) {
 		height: 400px;
 		.page-title {
-			font-size: 40px;
+			font-size: 34px;
 			margin-top: 115px;
 		}
 	}

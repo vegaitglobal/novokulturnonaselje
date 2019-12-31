@@ -27,8 +27,13 @@
 		font-weight: bold;
 	}
 	@include breakpoint(phone) {
+		padding: 20px 0;
 		.footer-links li {
+			font-size: 12px;
 			margin: 0 10px;
+		}
+		.footer-links-item {
+			font-size: 12px;
 		}
 		.footer-credit {
 			display: block;

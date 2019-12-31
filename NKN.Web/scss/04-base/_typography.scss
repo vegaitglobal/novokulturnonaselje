@@ -2,21 +2,20 @@
 .section-title {
 	color: $grey-dark;
 	font-family: $bold-cons;
-	font-size: 46px;
+	font-size: 38px;
 	font-weight: bold;
-	line-height: 56px;
+	line-height: 1.2;
 	margin-bottom: 40px;
 	text-align: center;
 	text-transform: uppercase;
-	@include breakpoint(tablet) {
-		font-size: 42px;
-		line-height: 52px;
+	@include breakpoint(touch) {
 		margin-bottom: 30px;
 	}
+	@include breakpoint(tablet) {
+		font-size: 36px;
+	}
 	@include breakpoint(phone) {
-		font-size: 48px;
-		letter-spacing: -1px;
-		line-height: 45px;
+		font-size: 32px;
 	}
 }
 

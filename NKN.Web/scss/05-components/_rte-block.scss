@@ -5,11 +5,11 @@
 	h2 {
 		color: $black;
 		font-family: $bold-cons;
-		font-size: 46px;
+		font-size: 34px;
 		font-weight: bold;
 		letter-spacing: -1px;
-		line-height: 58px;
-		margin-bottom: 30px;
+		line-height: 1.2;
+		margin-bottom: 20px;
 		text-transform: uppercase;
 	}
 	h3 {
@@ -30,7 +30,7 @@
 	}
 	p {
 		font-size: 16px;
-		line-height: 28px;
+		line-height: 24px;
 		margin-bottom: 28px;
 		a {
 			color: $green;
@@ -48,7 +48,7 @@
 		margin-bottom: 28px;
 		li {
 			font-size: 16px;
-			line-height: 28px;
+			line-height: 24px;
 			margin-bottom: 15px;
 		}
 		a {
@@ -76,7 +76,7 @@
 		td, th {
 			border-color: $grey-lines;
 			font-size: 16px;
-			line-height: 28px;
+			line-height: 24px;
 			padding: 5px 10px;
 		}
 		a {
@@ -86,10 +86,6 @@
 	}
 	@include breakpoint(tablet) {
 		padding: 50px 0;
-		h2 {
-			font-size: 40px;
-			line-height: 50px;
-		}
 		.highlighted {
 			font-size: 18px;
 		}
@@ -97,12 +93,10 @@
 	@include breakpoint(phone) {
 		padding: 40px 0;
 		h2 {
-			font-size: 30px;
-			line-height: 38px;
+			font-size: 28px;
 		}
 		p {
 			font-size: 14px;
-			line-height: 24px;
 			margin-bottom: 20px;
 		}
 		ul, ol {

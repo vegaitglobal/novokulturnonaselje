@@ -17,8 +17,8 @@
 		padding-left: 10px;
 		width: 70%;
 		p {
-			font-size: 22px;
-			line-height: 40px;
+			font-size: 18px;
+			line-height: 28px;
 		}
 	}
 	.right-col {
@@ -29,12 +29,6 @@
 		.left-col {
 			margin-top: 30px;
 		}
-		.rte-content {
-			p {
-				font-size: 18px;
-				line-height: 34px;
-			}
-		}
 	}
 	@include breakpoint(tablet) {
 		.left-col {
@@ -42,12 +36,6 @@
 			margin: 0 auto;
 			max-width: 570px;
 			width: 100%;
-		}
-		.rte-content {
-			p {
-				font-size: 18px;
-				line-height: 36px;
-			}
 		}
 		.right-col {
 			float: none;
@@ -72,10 +60,6 @@
 		.rte-content {
 			padding-left: 0;
 			width: 100%;
-			p {
-				font-size: 18px;
-				line-height: 30px;
-			}
 		}
 		.right-col {
 			padding-top: 30px;

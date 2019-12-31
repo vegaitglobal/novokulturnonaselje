@@ -1,7 +1,7 @@
 //----------  future projects  ----------
 .future-projects-block {
 	@include base-float;
-	padding: 95px 0;
+	padding: 80px 0;
 	.cols-wrap {
 		display: flex;
 		flex-wrap: wrap;
@@ -34,7 +34,7 @@
 	h3 {
 		color: $white;
 		font-family: $bold-cons;
-		font-size: 48px;
+		font-size: 28px;
 		line-height: 1.2;
 		position: relative;
 		text-transform: uppercase;
@@ -42,18 +42,16 @@
 	}
 	p {
 		color: $grey;
-		font-size: 18px;
+		font-size: 16px;
 		font-weight: 600;
-		line-height: 28px;
+		line-height: 24px;
 	}
 	@include breakpoint(touch) {
 		h3 {
-			font-size: 28px;
-			line-height: 1.2;
+			font-size: 24px;
 		}
 		p {
 			font-size: 14px;
-			line-height: 24px;
 		}
 	}
 	@include breakpoint(tablet) {

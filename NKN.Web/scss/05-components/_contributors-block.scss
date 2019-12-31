@@ -3,11 +3,17 @@
 	@include base-float;
 	padding: 95px 0 100px;
 	.intro-text {
-		font-size: 20px;
+		font-size: 18px;
 		font-style: italic;
-		line-height: 30px;
+		line-height: 28px;
 		text-align: center;
 		width: 100%;
+	}
+	@include breakpoint(touch) {
+		.intro-text {
+			font-size: 16px;
+			line-height: 26px;
+		}
 	}
 	@include breakpoint(tablet) {
 		padding: 60px 0;

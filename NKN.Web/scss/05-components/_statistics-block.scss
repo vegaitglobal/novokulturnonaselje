@@ -48,9 +48,9 @@
 	}
 	.desc {
 		color: $black;
-		font-size: 22px;
+		font-size: 20px;
 		font-style: italic;
-		line-height: 30px;
+		line-height: 1.2;
 		position: relative;
 		text-transform: uppercase;
 	}
@@ -61,7 +61,7 @@
 			justify-content: center;
 		}
 		.value {
-			@include responsive-font(120, 160, 1025, 1600);
+			@include responsive-font(80, 120, 1025, 1600);
 			left: 50%;
 			position: absolute;
 			top: 50%;

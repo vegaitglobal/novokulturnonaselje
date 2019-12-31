@@ -43,10 +43,10 @@ textarea {
 	z-index: 4;
 	h2 {
 		font-family: $bold-cons;
-		font-size: 35px;
+		font-size: 28px;
 		font-weight: bold;
 		letter-spacing: -.8px;
-		line-height: 40px;
+		line-height: 1.2;
 		margin-bottom: 33px;
 		text-transform: uppercase;
 	}
@@ -83,6 +83,9 @@ textarea {
 	}
 	@include breakpoint(touch) {
 		margin-top: 0;
+		h2 {
+			font-size: 24px;
+		}
 	}
 	@include breakpoint(tablet) {
 		padding-left: 60px;
@@ -108,7 +111,6 @@ textarea {
 			width: 780px;
 		}
 		h2 {
-			letter-spacing: -1.5px;
 			margin-bottom: 45px;
 			text-align: center;
 			width: 100%;
