@@ -15,13 +15,13 @@
 	}
 }
 
+//----------  sticky header  ----------
 .header-sticky {
 	@include breakpoint(desktop) {
 		background-color: rgba(214, 214, 214, .95);
-		padding-bottom: 5px;
 		position: fixed;
 		.header-logo {
-			margin: 6px auto 0 0;
+			margin: 5px auto 5px 0;
 			width: 76px;
 			.header-logo-black {
 				display: block;
@@ -35,42 +35,32 @@
 		.language-switcher .selected-item {
 			color: $grey-dark;
 		}
-		.nav {
-			margin: 22px 0 0 auto;
+		.nav,
+		.language-switcher {
+			margin-top: 28px;
 		}
 		.header-social {
-			margin: 24px 0 0 45px;
-		}
-		.language-switcher {
-			margin: 25px 0 0 53px;
-			.selected-item {
-				font-size: 22px;
-				padding-right: 17px;
-			}
-		}
-	}
-	@include breakpoint(desktop-small) {
-		.nav {
-			margin-top: 28px;
+			margin-top: 25px;
 		}
 	}
 }
 
 //----------  logo  ----------
 .header-logo {
-	margin: 48px auto 0 0;
-	width: 140px;
+	margin: 20px auto 0 0;
+	width: 100px;
 	img {
 		width: 100%;
 	}
 	.header-logo-black {
 		display: none;
 	}
-	@include breakpoint(desktop-small) {
-		width: 160px;
+	@include breakpoint(tablet) {
+		margin-top: 15px;
+
 	}
-	@include breakpoint(touch) {
-		margin: 19px auto 0 0;
+	@include breakpoint(phone) {
+		margin: 10px auto 0 -10px;
 		width: 75px;
 	}
 }
@@ -81,11 +71,10 @@
 	.nav-link {
 		color: $white;
 		display: inline-block;
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: 600;
-		letter-spacing: -.6px;
-		line-height: 29px;
-		margin-left: 54px;
+		line-height: 20px;
+		margin-left: 36px;
 		text-transform: uppercase;
 		transition: .3s ease;
 		&:first-child {
@@ -101,11 +90,8 @@
 		}
 	}
 	@include breakpoint(desktop-small) {
-		margin-top: 45px;
 		.nav-link {
-			font-size: 18px;
-			line-height: 22px;
-			margin-left: 35px;
+			margin-left: 30px;
 		}
 	}
 	@include breakpoint(touch) {
@@ -136,7 +122,7 @@
 
 //----------  social icons  ----------
 .header-social {
-	margin: 42px 0 0 45px;
+	margin: 36px 0 0 36px;
 	.header-social-link {
 		display: inline-block;
 		margin-left: 11px;
@@ -153,7 +139,7 @@
 		}
 	}
 	@include breakpoint(desktop-small) {
-		margin: 42px 0 0 45px;
+		margin-left: 30px;
 	}
 	@include breakpoint(touch) {
 		margin: 16px 0 0;
@@ -182,12 +168,12 @@
 
 //----------  language switcher  ----------
 .language-switcher {
-	margin: 43px 0 0 52px;
+	margin: 40px 0 0 36px;
 	position: relative;
 	.selected-item {
 		color: $white;
 		display: inline-block;
-		font-size: 24px;
+		font-size: 16px;
 		font-weight: 600;
 		line-height: 1;
 		padding-right: 14px;
@@ -197,11 +183,11 @@
 			@include font-styles;
 			content: font-char(ico-arrow);
 			display: inline-block;
-			font-size: 14px;
+			font-size: 12px;
 			line-height: 1;
 			position: absolute;
 			right: 0;
-			top: 6px;
+			top: 3px;
 			transform: rotate(-90deg);
 		}
 	}
@@ -209,16 +195,16 @@
 		background-color: $white;
 		color: $grey-dark;
 		display: none;
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: 600;
-		padding: 10px 15px;
+		padding: 5px 10px;
 		position: absolute;
 		right: 0;
 		top: calc(100% + 10px);
 		li {
 			border-bottom: 1px solid $grey-lines;
 			cursor: pointer;
-			padding: 5px 15px;
+			padding: 5px 10px;
 			&:last-child {
 				border-bottom: 0;
 			}
@@ -237,23 +223,9 @@
 		}
 	}
 	@include breakpoint(desktop-small) {
-		margin: 43px 0 0 40px;
-		.selected-item {
-			font-size: 18px;
-			line-height: 22px;
-			&::after {
-				font-size: 12px;
-			}
-		}
+		margin-left: 30px;
 	}
 	@include breakpoint(touch) {
 		margin: 20px 0 0 20px;
-		.selected-item {
-			font-size: 16px;
-			&::after {
-				font-size: 12px;
-				top: 3px;
-			}
-		}
 	}
 }

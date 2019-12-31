@@ -211,6 +211,7 @@ var helpers = (function() {
 var sliders = (function() {
 	return {
 		sliderInit: function () {
+			var $heroSlider = $('.js-hero-banner-slider');
 			var $missionSlider = $('.js-mission-slider');
 			var $contributorsSlider = $('.js-contributors-slider');
 			var $mixedVideoSlider = $('.js-mixed-video-slider');
@@ -224,6 +225,14 @@ var sliders = (function() {
 					dots: true,
 					arrows: false
 				});
+
+				if ($heroSlider.length) {
+					$heroSlider.slick('slickSetOption', {
+						arrows: true,
+						dots: false,
+						appendArrows: '.js-hero-wrapper'
+					}, true);
+				}
 
 				//mission slider
 				if ($missionSlider.length) {

@@ -12,12 +12,12 @@ button {
 	border-radius: 30px;
 	color: $grey-dark;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 600;
 	height: 40px;
 	letter-spacing: 1px;
 	line-height: 36px;
-	padding: 0 22px;
+	padding: 0 20px;
 	text-transform: uppercase;
 	@include breakpoint(desktop) {
 		transition: background .3s ease, color .3s ease;
@@ -26,8 +26,8 @@ button {
 			color: $white;
 		}
 	}
-	@include breakpoint(tablet) {
-		font-size: 14px;
+	@include breakpoint(touch) {
+		font-size: 12px;
 		height: auto;
 		letter-spacing: 0;
 		line-height: 20px;

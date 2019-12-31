@@ -3,30 +3,40 @@
 
 @if (Model.Slides != null && Model.Slides.Any())
 {
-<section class="hero-banner-slider js-slider js-hero-banner-slider">
-	@foreach (var slide in Model.Slides)
-	{
-		<div class="item" @{if (slide.BackgroundImage != null) { <text> style="background-image: url('@slide.BackgroundImage.Url');" </text>  }}>
-			<div class="wrapper">
-				<div class="hero-slider-text-holder">
-					@if (!string.IsNullOrWhiteSpace(slide.Title))
-					{
-						<h2>@slide.Title</h2>
-					}
-					@if (!string.IsNullOrWhiteSpace(slide.Text))
-					{
-						<p>
-							@slide.Text
-						</p>
-					}
-					@if (slide.Link != null)
-					{
-						<a href="@slide.Link.Url" class="btn">@slide.Link.Content</a>
-					}
+<section class="hero-banner-slider-wrap">
+	<div class="hero-banner-slider js-slider js-hero-banner-slider">
+		@foreach (var slide in Model.Slides)
+		{
+			<div class="item" @{if (slide.BackgroundImage != null) { <text> style="background-image: url('@slide.BackgroundImage.Url');" </text>  }}>
+				@if (slide.BackgroundImage != null)
+				{
+					<img src="@slide.BackgroundImage.Url" alt="" />
+				}
+				<div class="hero-content">
+					<div class="wrapper">
+						<div class="hero-slider-text-holder">
+							@if (!string.IsNullOrWhiteSpace(slide.Title))
+							{
+								<h2>@slide.Title</h2>
+							}
+							@if (!string.IsNullOrWhiteSpace(slide.Text))
+							{
+								<p>
+									@slide.Text
+								</p>
+							}
+							@if (slide.Link != null)
+							{
+								<a href="@slide.Link.Url" class="btn">@slide.Link.Content</a>
+							}
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	}
+		}
+	</div>
+	<div class="hero-slider-arrows">
+		<div class="wrapper js-hero-wrapper"></div>
+	</div>
 </section>
 }
-
