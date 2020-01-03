@@ -13,6 +13,19 @@
 	.header-right-content {
 		display: flex;
 	}
+	&.title-black {
+		.nav .nav-link,
+		.header-social .icon,
+		.language-switcher .selected-item {
+			color: $black;
+		}
+		.header-logo-black {
+			display: block;
+		}
+		.header-logo-white {
+			display: none;
+		}
+	}
 }
 
 //----------  sticky header  ----------

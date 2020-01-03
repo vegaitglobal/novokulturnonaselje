@@ -27,6 +27,9 @@
 		text-transform: uppercase;
 		text-align: right;
 	}
+	.title-black {
+		color: $black;
+	}
 	@include breakpoint(desktop-small) {
 		height: 500px;
 	}
