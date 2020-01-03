@@ -13,7 +13,7 @@
 	.header-right-content {
 		display: flex;
 	}
-	&.title-black {
+	&.header-black {
 		.nav .nav-link,
 		.header-social .icon,
 		.language-switcher .selected-item {
@@ -24,6 +24,14 @@
 		}
 		.header-logo-white {
 			display: none;
+		}
+	}
+	@include breakpoint(desktop) {
+		&.header-black {
+			.nav .nav-link:hover,
+			.language-switcher .selected-item:hover {
+				color: $green;
+			}
 		}
 	}
 }

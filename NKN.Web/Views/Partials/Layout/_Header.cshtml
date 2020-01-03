@@ -1,7 +1,7 @@
 ﻿@using NKN.Core.ViewModels.Partials.Layout
 @inherits UmbracoViewPage<HeaderViewModel>
 
-<header class="header js-header @(Model.ChangePageTitleColor ? " title-black" : string.Empty)">
+<header class="header js-header @(Model.ChangePageTitleColor ? " header-black" : string.Empty)">
 	<div class="wrapper">
 		<a href="@Model.LogoUrl" class="header-logo">
 			@if (Model.Logo != null)
